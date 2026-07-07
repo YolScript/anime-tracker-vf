@@ -40,7 +40,11 @@ public class MainActivity extends Activity {
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
                 Uri uri = request.getUrl();
                 String host = uri.getHost();
-                if (host != null && host.equals(APP_HOST)) {
+                if (host != null && (host.equals(APP_HOST)
+                        // Flux de connexion Discord (sync Supabase) : rester dans le WebView
+                        || host.endsWith(".supabase.co")
+                        || host.equals("discord.com")
+                        || host.endsWith(".discord.com"))) {
                     return false; // navigation interne dans le WebView
                 }
                 // Liens externes (Crunchyroll, ADN...) -> navigateur / app dédiée
