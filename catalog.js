@@ -15649,10 +15649,10 @@ const DEFAULT_ANIME_DATA = [
     "seasons": []
   },
   {
-    "id": "franchise-netflix-pluto",
+    "id": "franchise-99088",
     "titleFr": "Pluto",
     "titleOrig": "PLUTO",
-    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx145788-b2x5qN2M1J0R.jpg",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx99088-LTJskMD1wbbQ.png",
     "netflixUrl": "https://www.netflix.com/title/81281344",
     "episodesTotal": 8,
     "episodesWatched": 0,
@@ -15671,10 +15671,10 @@ const DEFAULT_ANIME_DATA = [
     ]
   },
   {
-    "id": "franchise-netflix-cyberpunk",
+    "id": "franchise-120377",
     "titleFr": "Cyberpunk: Edgerunners",
     "titleOrig": "Cyberpunk: Edgerunners",
-    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx110349-9jW3b4n2k1L8.jpg",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx120377-ayZPoxiWt4Li.jpg",
     "netflixUrl": "https://www.netflix.com/title/81054853",
     "episodesTotal": 10,
     "episodesWatched": 0,
@@ -15693,10 +15693,10 @@ const DEFAULT_ANIME_DATA = [
     ]
   },
   {
-    "id": "franchise-netflix-baki",
+    "id": "franchise-97888",
     "titleFr": "Baki",
     "titleOrig": "Baki",
-    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx98322-6vM9W4j2l0p.jpg",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx97888-tdZ1r7qN1DRs.jpg",
     "netflixUrl": "https://www.netflix.com/title/80204451",
     "episodesTotal": 26,
     "episodesWatched": 0,
@@ -15715,10 +15715,10 @@ const DEFAULT_ANIME_DATA = [
     ]
   },
   {
-    "id": "franchise-disney-summertime",
+    "id": "franchise-129201",
     "titleFr": "Time Shadow (Summer Time Rendering)",
     "titleOrig": "Summer Time Render",
-    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx129201-9W4b2c1k3J8o.jpg",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx129201-HJBauga2be8I.png",
     "disneyUrl": "https://www.disneyplus.com/series/summer-time-rendering/4M6kE5S7H1T4",
     "episodesTotal": 25,
     "episodesWatched": 0,
@@ -15737,10 +15737,10 @@ const DEFAULT_ANIME_DATA = [
     ]
   },
   {
-    "id": "franchise-disney-tengoku",
+    "id": "franchise-155783",
     "titleFr": "Tengoku Daimakyo (Heavenly Delusion)",
     "titleOrig": "Tengoku Daimakyou",
-    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx155783-W1c3b4o2p9m8.jpg",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx155783-YosKbsmZzuDE.jpg",
     "disneyUrl": "https://www.disneyplus.com/series/heavenly-delusion/4F6kE8S7H2T4",
     "episodesTotal": 13,
     "episodesWatched": 0,
@@ -15759,10 +15759,10 @@ const DEFAULT_ANIME_DATA = [
     ]
   },
   {
-    "id": "franchise-prime-bananafish",
+    "id": "franchise-100388",
     "titleFr": "Banana Fish",
     "titleOrig": "BANANA FISH",
-    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx100738-9m2p4k1o0L8h.jpg",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx100388-hjkg1AnlJR5z.jpg",
     "primeUrl": "https://www.primevideo.com/detail/BANANA-FISH/0GD1C5S4H3T5",
     "episodesTotal": 24,
     "episodesWatched": 0,
@@ -15781,10 +15781,10 @@ const DEFAULT_ANIME_DATA = [
     ]
   },
   {
-    "id": "franchise-prime-dororo",
+    "id": "franchise-101347",
     "titleFr": "Dororo",
     "titleOrig": "Dororo",
-    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101347-8p2o4b1o9L7x.jpg",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101347-TGaDwEYqLfm1.jpg",
     "primeUrl": "https://www.primevideo.com/detail/Dororo/0GD1C5S4H3T6",
     "episodesTotal": 24,
     "episodesWatched": 0,
