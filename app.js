@@ -1494,6 +1494,12 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                             allow="autoplay; encrypted-media">
                         </iframe>
                         
+                        <!-- Button if video is geoblocked or unavailable -->
+                        <button id="player-fallback-btn" title="Vidéo bloquée ou indisponible ? Charger l'opening de secours" style="position: absolute; bottom: 12px; left: 12px; z-index: 10; background: rgba(0, 0, 0, 0.7); color: #ff6400; border: 1px solid rgba(255,100,0,0.35); border-radius: 18px; padding: 0 12px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.2s; gap: 6px;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                            Vidéo bloquée ?
+                        </button>
+
                         <!-- Fullscreen toggle overlay button -->
                         <button id="player-fullscreen-btn" style="position: absolute; bottom: 12px; right: 56px; z-index: 10; background: rgba(0, 0, 0, 0.7); color: #fff; border: 1px solid rgba(255,255,255,0.25); border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s, transform 0.2s;">
                             <svg id="fullscreen-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;">
@@ -1663,6 +1669,30 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                             `;
                         }
                     }
+                });
+            }
+        // Setup Fallback Video click logic
+        if (trailerId) {
+            const fallbackBtn = document.getElementById("player-fallback-btn");
+            if (fallbackBtn) {
+                fallbackBtn.addEventListener("click", () => {
+                    const iframe = document.getElementById("player-trailer-iframe");
+                    if (iframe) {
+                        const fallbackId = "S0M7f4G46F4"; // Naruto Silhouette fan OP
+                        iframe.src = `https://www.youtube-nocookie.com/embed/${fallbackId}?autoplay=1&mute=0&loop=1&playlist=${fallbackId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0&enablejsapi=1&cc_load_policy=3`;
+                        
+                        // Automatically update mute icon to unmuted state
+                        const svg = document.getElementById("mute-icon-svg");
+                        if (svg) {
+                            svg.innerHTML = `
+                                <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
+                                <path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                            `;
+                        }
+                    }
+                    
+                    // Hide the fallback button after clicking to keep UI clean
+                    fallbackBtn.style.display = "none";
                 });
             }
         }
