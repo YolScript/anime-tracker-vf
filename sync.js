@@ -4,8 +4,8 @@
 // Configuration : remplir les deux valeurs ci-dessous après avoir créé le
 // projet Supabase (Settings > API). Tant qu'elles sont vides, le bouton
 // Discord reste masqué et le site fonctionne comme avant (localStorage seul).
-const SUPABASE_URL = "";
-const SUPABASE_ANON_KEY = "";
+const SUPABASE_URL = "https://xjhdqrelwlthecoljuxm.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_3NPZsB8HBSK37ZCekjARBg_8soutVCi";
 
 const SYNC_STORAGE_KEY = "crunchy_tracker_progress_v2";
 const SYNC_TABLE = "anime_progress";
