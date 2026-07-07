@@ -71,9 +71,6 @@ const formSynopsis = document.getElementById("form-synopsis");
 const formCast = document.getElementById("form-cast");
 
 // Stats Counters
-const statTotalAnime = document.getElementById("stat-total-anime");
-const statTotalEpisodes = document.getElementById("stat-total-episodes");
-const statTotalTime = document.getElementById("stat-total-time");
 const statCompletionPct = document.getElementById("stat-completion-pct");
 const statProgressBar = document.getElementById("stat-progress-bar");
 
@@ -359,15 +356,7 @@ function updateStats() {
     const totalHours = Math.floor(totalMinutes / 60);
     const remainingMins = totalMinutes % 60;
     
-    // Updates
-    statTotalAnime.textContent = total;
-    statTotalEpisodes.textContent = watched;
-    
-    if (totalHours > 0) {
-        statTotalTime.textContent = `${totalHours}h ${remainingMins}m`;
-    } else {
-        statTotalTime.textContent = `${totalMinutes}m`;
-    }
+
     
     // Completion Pct (completed animes / total animes)
     const pct = total > 0 ? Math.round((completed / total) * 100) : 0;

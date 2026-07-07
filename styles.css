@@ -222,6 +222,12 @@ body {
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
     overflow: hidden;
+    transition: var(--transition-fast);
+}
+
+.select-wrapper:hover {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-glow);
 }
 
 .select-wrapper select {
@@ -235,6 +241,15 @@ body {
     cursor: pointer;
     appearance: none;
     font-weight: 500;
+    width: 100%;
+}
+
+.select-wrapper select option,
+select option {
+    background-color: var(--bg-card);
+    color: var(--text-white);
+    padding: 12px;
+    font-family: var(--font-sans);
 }
 
 .select-wrapper::after {
