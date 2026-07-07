@@ -1575,12 +1575,33 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                 fullscreenBtn.addEventListener("click", () => {
                     const playerContainer = videoPlayerWrapper.querySelector(".crunchy-mock-player");
                     if (!document.fullscreenElement) {
+                        let fsPromise = null;
                         if (playerContainer.requestFullscreen) {
-                            playerContainer.requestFullscreen();
+                            fsPromise = playerContainer.requestFullscreen();
                         } else if (playerContainer.webkitRequestFullscreen) {
-                            playerContainer.webkitRequestFullscreen();
+                            fsPromise = playerContainer.webkitRequestFullscreen();
                         } else if (playerContainer.msRequestFullscreen) {
-                            playerContainer.msRequestFullscreen();
+                            fsPromise = playerContainer.msRequestFullscreen();
+                        }
+                        
+                        if (fsPromise && fsPromise.then) {
+                            fsPromise.then(() => {
+                                // Auto lock to landscape on mobile devices
+                                if (screen.orientation && screen.orientation.lock) {
+                                    screen.orientation.lock("landscape").catch(err => {
+                                        console.warn("Screen orientation lock rejected:", err);
+                                    });
+                                }
+                            }).catch(err => {
+                                console.warn("Fullscreen request rejected:", err);
+                            });
+                        } else {
+                            // Fallback if promise is not returned immediately (older browsers)
+                            setTimeout(() => {
+                                if (document.fullscreenElement && screen.orientation && screen.orientation.lock) {
+                                    screen.orientation.lock("landscape").catch(e => {});
+                                }
+                            }, 300);
                         }
                     } else {
                         if (document.exitFullscreen) {
@@ -1590,7 +1611,7 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                 });
             }
             
-            // Fullscreen Change Listener for Icons
+            // Fullscreen Change Listener for Icons & Mobile Screen Rotation
             const fsChangeHandler = () => {
                 const fsIcon = document.getElementById("fullscreen-icon-svg");
                 if (fsIcon) {
@@ -1598,6 +1619,14 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                         fsIcon.innerHTML = `<path d="M4 14h6v6m10-6h-6v6M4 10h6V4m10 6h-6V4"></path>`;
                     } else {
                         fsIcon.innerHTML = `<path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>`;
+                        // Unlock screen orientation when leaving fullscreen
+                        if (screen.orientation && screen.orientation.unlock) {
+                            try {
+                                screen.orientation.unlock();
+                            } catch (e) {
+                                console.warn("Screen orientation unlock failed:", e);
+                            }
+                        }
                     }
                 }
             };
