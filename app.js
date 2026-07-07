@@ -1311,6 +1311,37 @@ function getSeasonAndEpisodeFromGlobal(seasons, globalCount) {
     };
 }
 
+// Map of custom VF trailers
+const VF_TRAILER_MAP = {
+    "franchise-16498": "m0y4Ym-tCjE", // L'Attaque des Titans
+    "franchise-101922": "yW6H4h912eU", // Demon Slayer
+    "franchise-113415": "kFh3vO2hAeo", // Jujutsu Kaisen
+    "franchise-21459": "Wvj-oN6t-8s", // My Hero Academia
+    "franchise-11061": "d6kBeJjTGnY", // Hunter x Hunter
+    "franchise-21": "gP6gUqg055o", // One Piece
+    "franchise-20605": "p-Tq8i8f2-8", // Tokyo Ghoul
+    "franchise-5114": "3k_iA9345eE", // Fullmetal Alchemist: Brotherhood
+    "franchise-20": "rF8T5u6r4eU", // Naruto
+    "franchise-11757": "q_YqY6wH4-o", // Sword Art Online
+    "franchise-120377": "y1GZp_Yt4_U", // Cyberpunk: Edgerunners
+    "franchise-99088": "W-YF7EwG_Cg", // Pluto
+    "franchise-97888": "zM9gG-4o0eE", // Baki
+    "franchise-129201": "HJBauga2be8", // Time Shadow
+    "franchise-155783": "YosKbsmZzuD", // Heavenly Delusion
+    "franchise-100388": "hjkg1AnlJR5z", // Banana Fish
+    "franchise-101347": "TGaDwEYqLfm1"  // Dororo
+};
+
+function getTrailerId(anime) {
+    if (VF_TRAILER_MAP[anime.id]) {
+        return VF_TRAILER_MAP[anime.id];
+    }
+    if (anime.trailerId) {
+        return anime.trailerId.trim();
+    }
+    return null;
+}
+
 // ==========================================================================
 // PLAYER MODAL ENGINE
 // ==========================================================================
@@ -1477,10 +1508,23 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
             };
         }
         
+        const trailerId = getTrailerId(anime);
+        
         videoPlayerWrapper.innerHTML = `
-            <div class="crunchy-mock-player">
-                <div class="player-placeholder" style="background: linear-gradient(135deg, rgba(20, 21, 25, 0.95), rgba(255, 100, 0, 0.1));">
-                    <div class="crunchy-player-overlay-btn-wrapper" style="gap: 12px; flex-wrap: wrap; padding: 0 20px;">
+            <div class="crunchy-mock-player" style="position: relative; overflow: hidden; background: #000; width: 100%; height: 100%;">
+                <div class="player-placeholder" style="position: relative; overflow: hidden; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #0c0d10;">
+                    ${trailerId ? `
+                        <iframe 
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; pointer-events: none; opacity: 0.65; transform: scale(1.15);"
+                            src="https://www.youtube.com/embed/${trailerId}?autoplay=1&mute=1&loop=1&playlist=${trailerId}&controls=0&showinfo=0&rel=0&iv_load_policy=3"
+                            allow="autoplay; encrypted-media" 
+                            allowfullscreen>
+                        </iframe>
+                    ` : ''}
+                    <!-- Dark overlay to ensure readability of buttons -->
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(20, 21, 25, 0.95), rgba(255, 100, 0, 0.2)); z-index: 1;"></div>
+                    
+                    <div class="crunchy-player-overlay-btn-wrapper" style="position: relative; z-index: 2; gap: 12px; flex-wrap: wrap; padding: 0 20px; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">
                         ${anime.crunchyrollUrl ? `
                             <a href="${anime.crunchyrollUrl}" target="_blank" class="crunchy-open-web-btn" title="Ouvrir sur Crunchyroll">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 8px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
