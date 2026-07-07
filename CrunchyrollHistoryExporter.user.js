@@ -1,158 +1,421 @@
 // ==UserScript==
-// @name         Crunchyroll History Exporter for CrunchyTracker
-// @namespace    http://tampermonkey.net/
-// @version      1.0
-// @description  Exporte votre historique de visionnage Crunchyroll sous forme de fichier JSON compatible avec CrunchyTracker.
-// @author       Antigravity AI
-// @match        https://www.crunchyroll.com/*/history*
-// @match        https://www.crunchyroll.com/history*
-// @grant        none
+// @name         Crunchyroll → Anime Tracker VF (Sync Historique)
+// @namespace    https://anime-tracker-vf.web.app
+// @version      2.0
+// @description  Synchronise automatiquement votre historique Crunchyroll vers Anime Tracker VF. Récupère vos épisodes vus via l'API interne de Crunchyroll.
+// @author       Anime Tracker VF
+// @match        https://www.crunchyroll.com/*
+// @grant        GM_xmlhttpRequest
+// @grant        GM_setValue
+// @grant        GM_getValue
+// @connect      www.crunchyroll.com
+// @run-at       document-idle
 // ==/UserScript==
 
-(function() {
+(function () {
     'use strict';
 
-    // Attendre que la page soit complètement chargée
-    window.addEventListener('load', () => {
-        setTimeout(createExportButton, 3000);
-    });
+    const TRACKER_ORIGIN = "https://energiecraftonline-afk.github.io";
+    const TRACKER_STORAGE_KEY = "crunchy_tracker_cr_sync";
 
-    function createExportButton() {
-        if (document.getElementById('crunchy-tracker-exporter-btn')) return;
+    // =====================================================================
+    // 1. Récupérer le Bearer Token depuis les cookies/session Crunchyroll
+    // =====================================================================
+    async function getAuthToken() {
+        // Méthode 1 : Intercepter le token depuis le localStorage de Crunchyroll
+        // Crunchyroll stocke souvent les infos de session dans le localStorage
+        const keys = Object.keys(localStorage);
+        for (const key of keys) {
+            try {
+                const val = localStorage.getItem(key);
+                if (val && val.includes("access_token")) {
+                    const parsed = JSON.parse(val);
+                    if (parsed.access_token) {
+                        return parsed.access_token;
+                    }
+                }
+            } catch (e) { /* ignore */ }
+        }
 
-        const btn = document.createElement('button');
-        btn.id = 'crunchy-tracker-exporter-btn';
+        // Méthode 2 : Essayer de récupérer depuis les cookies de session
+        // Le cookie etp_rt contient le refresh token
+        try {
+            const indexResp = await fetch("https://www.crunchyroll.com/index/v2", {
+                credentials: "include",
+                headers: { "Accept": "application/json" }
+            });
+            if (indexResp.ok) {
+                const indexData = await indexResp.json();
+                if (indexData.cms_web && indexData.cms_web.bucket) {
+                    // On a les infos CMS, on peut tenter de récupérer le token
+                    // depuis les en-têtes de la réponse
+                }
+            }
+        } catch (e) { /* ignore */ }
+
+        // Méthode 3 : Récupérer via l'endpoint token
+        try {
+            const tokenResp = await fetch("https://www.crunchyroll.com/auth/v1/token", {
+                method: "POST",
+                credentials: "include",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "Authorization": "Basic " + btoa("cr_web:")
+                },
+                body: "grant_type=etp_rt_cookie"
+            });
+            if (tokenResp.ok) {
+                const tokenData = await tokenResp.json();
+                if (tokenData.access_token) {
+                    return tokenData.access_token;
+                }
+            }
+        } catch (e) {
+            console.error("[CR Sync] Erreur récupération token:", e);
+        }
+
+        return null;
+    }
+
+    // =====================================================================
+    // 2. Récupérer l'Account ID
+    // =====================================================================
+    async function getAccountId(token) {
+        try {
+            const resp = await fetch("https://www.crunchyroll.com/accounts/v1/me", {
+                credentials: "include",
+                headers: {
+                    "Authorization": "Bearer " + token,
+                    "Accept": "application/json"
+                }
+            });
+            if (resp.ok) {
+                const data = await resp.json();
+                return data.account_id || data.external_id || null;
+            }
+        } catch (e) {
+            console.error("[CR Sync] Erreur récupération account:", e);
+        }
+        return null;
+    }
+
+    // =====================================================================
+    // 3. Récupérer l'historique complet de visionnage
+    // =====================================================================
+    async function fetchWatchHistory(token, accountId) {
+        const allItems = [];
+        let nextPage = `https://www.crunchyroll.com/content/v2/${accountId}/watch-history?page_size=100&locale=fr-FR`;
+
+        while (nextPage) {
+            try {
+                const resp = await fetch(nextPage, {
+                    credentials: "include",
+                    headers: {
+                        "Authorization": "Bearer " + token,
+                        "Accept": "application/json"
+                    }
+                });
+
+                if (!resp.ok) {
+                    console.error("[CR Sync] Erreur API watch-history:", resp.status);
+                    break;
+                }
+
+                const data = await resp.json();
+
+                if (data.data && Array.isArray(data.data)) {
+                    allItems.push(...data.data);
+                } else if (data.items && Array.isArray(data.items)) {
+                    allItems.push(...data.items);
+                }
+
+                // Pagination
+                if (data.meta && data.meta.next_page) {
+                    nextPage = data.meta.next_page;
+                } else if (data.next) {
+                    nextPage = data.next;
+                } else {
+                    nextPage = null;
+                }
+            } catch (e) {
+                console.error("[CR Sync] Erreur fetch historique:", e);
+                break;
+            }
+        }
+
+        return allItems;
+    }
+
+    // =====================================================================
+    // 4. Transformer les données pour Anime Tracker VF
+    // =====================================================================
+    function transformToTrackerFormat(historyItems) {
+        // Regrouper par série
+        const seriesMap = {};
+
+        historyItems.forEach(item => {
+            // Extraire les infos de la série
+            const seriesTitle = item.panel?.episode_metadata?.series_title
+                || item.episode_metadata?.series_title
+                || item.parent_title
+                || item.series_title
+                || "";
+
+            if (!seriesTitle) return;
+
+            const episodeNumber = item.panel?.episode_metadata?.episode_number
+                || item.episode_metadata?.episode_number
+                || item.episode_number
+                || 0;
+
+            const seasonNumber = item.panel?.episode_metadata?.season_number
+                || item.episode_metadata?.season_number
+                || item.season_number
+                || 1;
+
+            const seriesId = item.panel?.episode_metadata?.series_id
+                || item.episode_metadata?.series_id
+                || item.series_id
+                || "";
+
+            const seriesSlugTitle = item.panel?.episode_metadata?.series_slug_title
+                || item.episode_metadata?.series_slug_title
+                || item.series_slug_title
+                || "";
+
+            // Calcul de l'épisode global (pour les séries multi-saisons)
+            // On additionne les épisodes des saisons précédentes
+            const key = seriesTitle.toLowerCase().trim();
+
+            if (!seriesMap[key]) {
+                seriesMap[key] = {
+                    titleFr: seriesTitle,
+                    seriesId: seriesId,
+                    seriesSlug: seriesSlugTitle,
+                    maxEpisode: 0,
+                    seasons: {},
+                    crunchyrollUrl: seriesSlugTitle
+                        ? `https://www.crunchyroll.com/fr/series/${seriesSlugTitle}`
+                        : ""
+                };
+            }
+
+            // Tracker le max épisode par saison
+            if (!seriesMap[key].seasons[seasonNumber]) {
+                seriesMap[key].seasons[seasonNumber] = 0;
+            }
+            seriesMap[key].seasons[seasonNumber] = Math.max(
+                seriesMap[key].seasons[seasonNumber],
+                parseInt(episodeNumber) || 0
+            );
+        });
+
+        // Convertir en format Anime Tracker VF
+        const result = [];
+        Object.values(seriesMap).forEach(series => {
+            // Calculer le total d'épisodes vus (somme de tous les max par saison)
+            let totalWatched = 0;
+            Object.values(series.seasons).forEach(maxEp => {
+                totalWatched += maxEp;
+            });
+
+            if (totalWatched > 0) {
+                result.push({
+                    titleFr: series.titleFr,
+                    episodesWatched: totalWatched,
+                    crunchyrollUrl: series.crunchyrollUrl,
+                    source: "crunchyroll"
+                });
+            }
+        });
+
+        return result;
+    }
+
+    // =====================================================================
+    // 5. Interface utilisateur — Bouton de synchronisation
+    // =====================================================================
+    function createSyncButton() {
+        if (document.getElementById("anime-tracker-sync-btn")) return;
+
+        const btn = document.createElement("button");
+        btn.id = "anime-tracker-sync-btn";
         btn.innerHTML = `
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px; vertical-align: middle;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
-            Exporter vers CrunchyTracker
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px; vertical-align: middle;">
+                <polyline points="23 4 23 10 17 10"></polyline>
+                <polyline points="1 20 1 14 7 14"></polyline>
+                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+            </svg>
+            Sync → Anime Tracker VF
         `;
-        
-        // Styles du bouton
+
         Object.assign(btn.style, {
-            position: 'fixed',
-            bottom: '24px',
-            right: '24px',
-            backgroundColor: '#ff6400',
-            color: '#000000',
-            border: 'none',
-            borderRadius: '24px',
-            padding: '12px 20px',
-            fontSize: '14px',
-            fontWeight: 'bold',
-            cursor: 'pointer',
-            boxShadow: '0 8px 24px rgba(255, 100, 0, 0.4)',
-            zIndex: '99999',
-            fontFamily: 'sans-serif',
-            transition: 'transform 0.2s, background-color 0.2s',
-            display: 'flex',
-            align-items: 'center'
+            position: "fixed",
+            bottom: "24px",
+            right: "24px",
+            backgroundColor: "#ff6400",
+            color: "#000000",
+            border: "none",
+            borderRadius: "24px",
+            padding: "12px 20px",
+            fontSize: "14px",
+            fontWeight: "bold",
+            cursor: "pointer",
+            boxShadow: "0 8px 24px rgba(255, 100, 0, 0.4)",
+            zIndex: "99999",
+            fontFamily: "'Outfit', sans-serif",
+            transition: "transform 0.2s, background-color 0.2s",
+            display: "flex",
+            alignItems: "center"
         });
 
         btn.onmouseover = () => {
-            btn.style.backgroundColor = '#ff8533';
-            btn.style.transform = 'scale(1.05)';
+            btn.style.backgroundColor = "#ff8533";
+            btn.style.transform = "scale(1.05)";
         };
         btn.onmouseout = () => {
-            btn.style.backgroundColor = '#ff6400';
-            btn.style.transform = 'scale(1)';
+            btn.style.backgroundColor = "#ff6400";
+            btn.style.transform = "scale(1)";
         };
 
-        btn.addEventListener('click', scrapeAndExport);
+        btn.addEventListener("click", runSync);
         document.body.appendChild(btn);
     }
 
-    function scrapeAndExport() {
-        const historyItems = document.querySelectorAll('div.history-item, div.playable-card, article.playable-card'); // Sélecteurs communs pour Crunchyroll
-        
-        if (historyItems.length === 0) {
-            // Tentative alternative de sélection sur la structure de page actuelle
-            const alternativeItems = document.querySelectorAll('[data-test="playable-card"], .history-card, .playable-card');
-            if (alternativeItems.length > 0) {
-                processCards(alternativeItems);
+    // =====================================================================
+    // 6. Exécution de la synchronisation
+    // =====================================================================
+    async function runSync() {
+        const btn = document.getElementById("anime-tracker-sync-btn");
+        const originalText = btn.innerHTML;
+
+        btn.innerHTML = `
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px; vertical-align: middle; animation: spin 1s linear infinite;">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 6v6l4 2"></path>
+            </svg>
+            Synchronisation...
+        `;
+        btn.disabled = true;
+        btn.style.opacity = "0.7";
+
+        // Ajouter l'animation de rotation
+        if (!document.getElementById("anime-tracker-spin-style")) {
+            const style = document.createElement("style");
+            style.id = "anime-tracker-spin-style";
+            style.textContent = "@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }";
+            document.head.appendChild(style);
+        }
+
+        try {
+            // Étape 1 : Token
+            const token = await getAuthToken();
+            if (!token) {
+                showNotification("❌ Impossible de récupérer votre session. Êtes-vous bien connecté sur Crunchyroll ?", "error");
+                resetButton(btn, originalText);
                 return;
             }
-            alert("Aucun élément d'historique détecté sur cette page. Assurez-vous d'être bien connecté et sur la page de votre Historique.");
-            return;
+
+            // Étape 2 : Account ID
+            const accountId = await getAccountId(token);
+            if (!accountId) {
+                showNotification("❌ Impossible de récupérer votre profil Crunchyroll.", "error");
+                resetButton(btn, originalText);
+                return;
+            }
+
+            // Étape 3 : Historique
+            const history = await fetchWatchHistory(token, accountId);
+            if (history.length === 0) {
+                showNotification("⚠️ Aucun historique de visionnage trouvé.", "warning");
+                resetButton(btn, originalText);
+                return;
+            }
+
+            // Étape 4 : Transformer
+            const trackerData = transformToTrackerFormat(history);
+
+            // Étape 5 : Télécharger le fichier JSON
+            const dataStr = JSON.stringify(trackerData, null, 2);
+            const blob = new Blob([dataStr], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = `crunchyroll_sync_${new Date().toISOString().slice(0, 10)}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            showNotification(
+                `✅ ${trackerData.length} animés exportés depuis Crunchyroll ! Importez le fichier dans Anime Tracker VF.`,
+                "success"
+            );
+        } catch (e) {
+            console.error("[CR Sync] Erreur:", e);
+            showNotification("❌ Erreur lors de la synchronisation : " + e.message, "error");
         }
-        processCards(historyItems);
+
+        resetButton(btn, originalText);
     }
 
-    function processCards(cards) {
-        const exportedData = [];
-        
-        cards.forEach(card => {
-            try {
-                // Recherche du titre de la série
-                const seriesTitleEl = card.querySelector('.series-title, [class*="series-title"], .playable-card__series-title');
-                const epTitleEl = card.querySelector('.episode-title, [class*="episode-title"], .playable-card__title');
-                const progressFillEl = card.querySelector('.progress-bar__fill, [class*="progress-fill"], [class*="bar-fill"]');
-                
-                if (!seriesTitleEl) return;
-                
-                const titleFr = seriesTitleEl.textContent.trim();
-                let episodeNum = 1;
-                
-                // Recherche du numéro d'épisode dans le texte (ex: "E5 - Épisode 5")
-                const epText = epTitleEl ? epTitleEl.textContent : '';
-                const epMatch = epText.match(/(?:Épisode|Ep|E)\s*(\d+)/i) || titleFr.match(/(?:Épisode|Ep|E)\s*(\d+)/i);
-                if (epMatch) {
-                    episodeNum = parseInt(epMatch[1]);
-                }
-                
-                // Calcul si l'épisode a été terminé en fonction de la barre de progression
-                let pct = 0;
-                if (progressFillEl) {
-                    const styleWidth = progressFillEl.style.width || '';
-                    pct = parseInt(styleWidth) || 0;
-                }
-                
-                // Si la barre de progression est supérieure à 80%, on considère l'épisode comme vu
-                // Sinon, on prend l'épisode précédent comme dernier vu
-                let episodesWatched = episodeNum;
-                if (progressFillEl && pct < 80) {
-                    episodesWatched = Math.max(0, episodeNum - 1);
-                }
+    function resetButton(btn, originalText) {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+        btn.style.opacity = "1";
+    }
 
-                exportedData.push({
-                    titleFr: titleFr,
-                    episodesWatched: episodesWatched,
-                    status: episodesWatched > 0 ? "watching" : "plan-to-watch"
-                });
-            } catch (e) {
-                console.error("Erreur lors de la lecture d'une carte :", e);
-            }
-        });
-        
-        if (exportedData.length === 0) {
-            alert("Impossible d'extraire les données d'historique. Crunchyroll a peut-être modifié son code source.");
-            return;
-        }
+    // =====================================================================
+    // 7. Notification visuelle
+    // =====================================================================
+    function showNotification(message, type) {
+        const existing = document.getElementById("anime-tracker-notif");
+        if (existing) existing.remove();
 
-        // Éliminer les doublons (garder l'épisode le plus élevé vu pour chaque série)
-        const uniqueHistory = {};
-        exportedData.forEach(item => {
-            const existing = uniqueHistory[item.titleFr];
-            if (!existing || item.episodesWatched > existing.episodesWatched) {
-                uniqueHistory[item.titleFr] = item;
-            }
+        const notif = document.createElement("div");
+        notif.id = "anime-tracker-notif";
+
+        const bgColor = type === "success" ? "#22c55e"
+            : type === "error" ? "#ef4444"
+            : "#f59e0b";
+
+        Object.assign(notif.style, {
+            position: "fixed",
+            top: "24px",
+            right: "24px",
+            backgroundColor: bgColor,
+            color: "#fff",
+            padding: "14px 20px",
+            borderRadius: "12px",
+            fontSize: "14px",
+            fontWeight: "600",
+            fontFamily: "'Outfit', sans-serif",
+            zIndex: "100000",
+            maxWidth: "400px",
+            boxShadow: "0 8px 24px rgba(0,0,0,0.3)",
+            transition: "opacity 0.3s, transform 0.3s",
+            cursor: "pointer"
         });
 
-        const finalData = Object.values(uniqueHistory);
+        notif.textContent = message;
+        notif.addEventListener("click", () => notif.remove());
+        document.body.appendChild(notif);
 
-        // Lancer le téléchargement du fichier JSON
-        const dataStr = JSON.stringify(finalData, null, 2);
-        const blob = new Blob([dataStr], { type: 'application/json' });
-        const url = URL.createObjectURL(blob);
-        
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `crunchyroll_history_${new Date().toISOString().slice(0,10)}.json`;
-        document.body.appendChild(a);
-        a.click();
-        
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-        
-        alert(`Historique extrait avec succès ! ${finalData.length} animés prêts à être importés dans CrunchyTracker.`);
+        setTimeout(() => {
+            notif.style.opacity = "0";
+            notif.style.transform = "translateY(-10px)";
+            setTimeout(() => notif.remove(), 300);
+        }, 6000);
+    }
+
+    // =====================================================================
+    // Initialisation
+    // =====================================================================
+    // Attendre que la page soit chargée, puis afficher le bouton
+    if (document.readyState === "complete") {
+        setTimeout(createSyncButton, 2000);
+    } else {
+        window.addEventListener("load", () => setTimeout(createSyncButton, 2000));
     }
 })();

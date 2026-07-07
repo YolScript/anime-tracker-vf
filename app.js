@@ -1037,20 +1037,17 @@ function importFromJSON(e) {
                     renderGrid();
                     showToast("Données restaurées avec succès !", "success");
                 } else if (isPartialHistory) {
-                    // Mode Fusion Historique Crunchyroll
+                    // Mode Fusion Historique (Crunchyroll / ADN / autre)
+                    const source = importedData[0].source || "inconnu";
                     let updatedCount = 0;
+                    let notFoundTitles = [];
+                    
                     importedData.forEach(importedItem => {
                         const query = importedItem.titleFr.toLowerCase().trim();
-                        let localAnime = animeList.find(a => 
-                            a.titleFr.toLowerCase().trim() === query || 
-                            (a.titleOrig && a.titleOrig.toLowerCase().trim() === query)
-                        );
+                        let localAnime = findBestMatch(query, importedItem);
                         
                         if (!localAnime && typeof DEFAULT_ANIME_DATA !== 'undefined') {
-                            const catalogAnime = DEFAULT_ANIME_DATA.find(a => 
-                                a.titleFr.toLowerCase().trim() === query || 
-                                (a.titleOrig && a.titleOrig.toLowerCase().trim() === query)
-                            );
+                            const catalogAnime = findBestMatchInList(query, importedItem, DEFAULT_ANIME_DATA);
                             if (catalogAnime) {
                                 localAnime = { ...catalogAnime };
                                 animeList.push(localAnime);
@@ -1059,17 +1056,29 @@ function importFromJSON(e) {
                         
                         if (localAnime) {
                             const total = parseInt(localAnime.episodesTotal || 12);
-                            const watched = Math.max(0, Math.min(parseInt(importedItem.episodesWatched || 0), total));
+                            const newWatched = parseInt(importedItem.episodesWatched || 0);
+                            const currentWatched = parseInt(localAnime.episodesWatched || 0);
+                            // Garder le maximum entre l'existant et l'import
+                            const watched = Math.max(0, Math.min(Math.max(newWatched, currentWatched), total));
                             localAnime.episodesWatched = watched;
                             
                             if (watched === total && total > 0) {
                                 localAnime.status = "completed";
-                            } else if (watched > 0) {
+                            } else if (watched > 0 && (localAnime.status === "plan-to-watch" || localAnime.status === "on-hold")) {
                                 localAnime.status = "watching";
-                            } else {
-                                localAnime.status = "plan-to-watch";
                             }
+                            
+                            // Mettre à jour l'URL de la plateforme si disponible
+                            if (importedItem.crunchyrollUrl && !localAnime.crunchyrollUrl) {
+                                localAnime.crunchyrollUrl = importedItem.crunchyrollUrl;
+                            }
+                            if (importedItem.adnUrl && !localAnime.adnUrl) {
+                                localAnime.adnUrl = importedItem.adnUrl;
+                            }
+                            
                             updatedCount++;
+                        } else {
+                            notFoundTitles.push(importedItem.titleFr);
                         }
                     });
                     
@@ -1077,9 +1086,20 @@ function importFromJSON(e) {
                         saveData();
                         updateStats();
                         renderGrid();
-                        showToast(`${updatedCount} animés mis à jour depuis votre historique Crunchyroll !`, "success");
+                        const sourceLabel = source === "crunchyroll" ? "Crunchyroll"
+                            : source === "adn" ? "ADN"
+                            : "votre historique";
+                        let msg = `${updatedCount} animés mis à jour depuis ${sourceLabel} !`;
+                        if (notFoundTitles.length > 0) {
+                            msg += ` (${notFoundTitles.length} non trouvés)`;
+                            console.log("[Import] Titres non trouvés:", notFoundTitles);
+                        }
+                        showToast(msg, "success");
                     } else {
                         showToast("Aucune correspondance trouvée entre votre historique et les animés du catalogue.", "warning");
+                        if (notFoundTitles.length > 0) {
+                            console.log("[Import] Titres non trouvés:", notFoundTitles);
+                        }
                     }
                 } else {
                     showToast("Le fichier JSON ne respecte pas le format attendu.", "error");
@@ -1096,6 +1116,79 @@ function importFromJSON(e) {
     
     // Clear input so same file can be selected again
     e.target.value = "";
+}
+
+// Matching intelligent pour les imports
+function findBestMatch(query, importedItem) {
+    return findBestMatchInList(query, importedItem, animeList);
+}
+
+function findBestMatchInList(query, importedItem, list) {
+    // 1. Correspondance exacte par titre FR ou titre original
+    let match = list.find(a =>
+        a.titleFr.toLowerCase().trim() === query ||
+        (a.titleOrig && a.titleOrig.toLowerCase().trim() === query)
+    );
+    if (match) return match;
+    
+    // 2. Correspondance par URL Crunchyroll / ADN
+    if (importedItem.crunchyrollUrl) {
+        const slug = importedItem.crunchyrollUrl.split("/").pop();
+        if (slug) {
+            match = list.find(a =>
+                a.crunchyrollUrl && a.crunchyrollUrl.toLowerCase().includes(slug.toLowerCase())
+            );
+            if (match) return match;
+        }
+    }
+    if (importedItem.adnUrl) {
+        const slug = importedItem.adnUrl.split("/").pop();
+        if (slug) {
+            match = list.find(a =>
+                a.adnUrl && a.adnUrl.toLowerCase().includes(slug.toLowerCase())
+            );
+            if (match) return match;
+        }
+    }
+    
+    // 3. Correspondance partielle (le titre importé est contenu dans le titre local ou inversement)
+    match = list.find(a => {
+        const localFr = a.titleFr.toLowerCase().trim();
+        const localOrig = (a.titleOrig || "").toLowerCase().trim();
+        return (localFr.includes(query) || query.includes(localFr)) ||
+               (localOrig && (localOrig.includes(query) || query.includes(localOrig)));
+    });
+    if (match) return match;
+    
+    // 4. Correspondance par mots-clés (au moins 60% des mots en commun)
+    const queryWords = query.split(/[\s\-:,!?''""·.]+/).filter(w => w.length > 2);
+    if (queryWords.length >= 2) {
+        let bestScore = 0;
+        let bestMatch = null;
+        
+        list.forEach(a => {
+            const titleWords = a.titleFr.toLowerCase().split(/[\s\-:,!?''""·.]+/).filter(w => w.length > 2);
+            const origWords = (a.titleOrig || "").toLowerCase().split(/[\s\-:,!?''""·.]+/).filter(w => w.length > 2);
+            const allWords = [...titleWords, ...origWords];
+            
+            let matchCount = 0;
+            queryWords.forEach(qw => {
+                if (allWords.some(tw => tw.includes(qw) || qw.includes(tw))) {
+                    matchCount++;
+                }
+            });
+            
+            const score = matchCount / queryWords.length;
+            if (score > 0.6 && score > bestScore) {
+                bestScore = score;
+                bestMatch = a;
+            }
+        });
+        
+        if (bestMatch) return bestMatch;
+    }
+    
+    return null;
 }
 
 function resetToDefault() {
