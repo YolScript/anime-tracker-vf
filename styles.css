@@ -1615,7 +1615,8 @@ select option {
     border: 1px solid var(--border-color);
 }
 
-.video-container iframe {
+.video-container iframe,
+#video-player-wrapper {
     position: absolute;
     top: 0;
     left: 0;

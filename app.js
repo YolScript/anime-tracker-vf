@@ -1486,7 +1486,7 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                     ${trailerId ? `
                         <iframe 
                             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; pointer-events: none; opacity: 0.65; transform: scale(1.15);"
-                            src="https://www.youtube.com/embed/${trailerId}?autoplay=1&mute=1&loop=1&playlist=${trailerId}&controls=0&showinfo=0&rel=0&iv_load_policy=3"
+                            src="https://www.youtube-nocookie.com/embed/${trailerId}?autoplay=1&mute=1&loop=1&playlist=${trailerId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0"
                             allow="autoplay; encrypted-media" 
                             allowfullscreen>
                         </iframe>
