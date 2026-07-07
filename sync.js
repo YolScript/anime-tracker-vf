@@ -18,6 +18,11 @@ const OAUTH_REDIRECT = IS_ANDROID_APP
     ? "animetrackervf://callback"
     : window.location.origin + window.location.pathname;
 
+// Vrai si la page vient d'être ouverte au retour du login Discord
+// (les jetons OAuth sont dans le fragment d'URL) : après la première
+// synchronisation on recharge la page pour repartir sur une UI propre.
+const CAME_FROM_OAUTH = window.location.hash.indexOf("access_token") !== -1;
+
 let sbClient = null;
 let syncUser = null;
 let syncPushTimer = null;
@@ -168,9 +173,24 @@ function initDiscordSync() {
         lastPushedJson = null;
         updateDiscordUi();
         if (syncUser && !wasConnected) {
-            pullAndMergeFromCloud(true);
+            pullAndMergeFromCloud(!CAME_FROM_OAUTH).then(() => {
+                if (CAME_FROM_OAUTH) {
+                    // Recharger la page une seule fois après le login
+                    // (le fragment OAuth disparaît, donc pas de boucle)
+                    sessionStorage.setItem("discord_login_reload", "1");
+                    window.location.replace(window.location.pathname + window.location.search);
+                }
+            });
         }
     });
+
+    // Toast de confirmation après le rechargement post-login
+    if (sessionStorage.getItem("discord_login_reload")) {
+        sessionStorage.removeItem("discord_login_reload");
+        if (typeof showToast === "function") {
+            showToast("Connexion Discord réussie, progression synchronisée !", "success");
+        }
+    }
 
     // Envoyer les modifications locales vers le cloud après chaque sauvegarde
     if (typeof saveData === "function") {
