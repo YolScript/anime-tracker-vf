@@ -1262,14 +1262,49 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
         }
         playerEpisodeDesc.textContent = displayDesc;
         
-        if (epNum <= currentWatched) {
-            playerWatchedBtn.disabled = true;
-            playerWatchedBtn.querySelector("span").textContent = "Déjà vu";
-            playerWatchedBtn.style.opacity = "0.5";
+        playerWatchedBtn.disabled = false;
+        playerWatchedBtn.style.opacity = "1";
+
+        if (epNum === currentWatched) {
+            playerWatchedBtn.querySelector("span").textContent = `Marquer l'épisode ${epNum} comme NON vu`;
+            playerWatchedBtn.onclick = () => {
+                changeEpisodeCount(anime.id, epNum - 1);
+                loadEpisode(epNum);
+            };
+        } else if (epNum < currentWatched) {
+            playerWatchedBtn.querySelector("span").textContent = `Définir comme dernier vu (Ép. ${epNum})`;
+            playerWatchedBtn.onclick = () => {
+                changeEpisodeCount(anime.id, epNum);
+                loadEpisode(epNum);
+            };
         } else {
-            playerWatchedBtn.disabled = false;
-            playerWatchedBtn.style.opacity = "1";
             playerWatchedBtn.querySelector("span").textContent = `Marquer l'épisode ${epNum} comme vu`;
+            playerWatchedBtn.onclick = () => {
+                changeEpisodeCount(anime.id, epNum);
+                renderPlaylist();
+                
+                const autoplayCb = document.getElementById("player-autoplay-cb");
+                const isAutoplay = autoplayCb ? autoplayCb.checked : false;
+                
+                if (isAutoplay && epNum < total) {
+                    startAutoplayCountdown(epNum + 1);
+                } else if (epNum === total) {
+                    videoPlayerWrapper.innerHTML = `
+                        <div class="player-placeholder" style="background: linear-gradient(135deg, rgba(20, 21, 25, 0.95), rgba(255, 100, 0, 0.1));">
+                            <svg class="player-placeholder-icon" style="color: #22c55e;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            <h4 style="color:#22c55e;">Saison Terminée !</h4>
+                            <p>Félicitations ! Vous avez fini de visionner tous les épisodes de "${anime.titleFr}".</p>
+                            <button class="btn-primary" id="player-close-finished-btn">Fermer le lecteur</button>
+                        </div>
+                    `;
+                    document.getElementById("player-close-finished-btn").onclick = () => {
+                        closeModal(playerModal);
+                        videoPlayerWrapper.innerHTML = "";
+                    };
+                } else {
+                    loadEpisode(epNum);
+                }
+            };
         }
         
         videoPlayerWrapper.innerHTML = `
@@ -1292,35 +1327,16 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                 </div>
             </div>
         `;
-        
-        playerWatchedBtn.onclick = () => {
-            changeEpisodeCount(anime.id, epNum);
-            renderPlaylist();
-            
-            playerWatchedBtn.disabled = true;
-            playerWatchedBtn.style.opacity = "0.5";
-            playerWatchedBtn.querySelector("span").textContent = "Déjà vu";
-            
-            const autoplayCb = document.getElementById("player-autoplay-cb");
-            const isAutoplay = autoplayCb ? autoplayCb.checked : false;
-            
-            if (isAutoplay && epNum < total) {
-                startAutoplayCountdown(epNum + 1);
-            } else if (epNum === total) {
-                videoPlayerWrapper.innerHTML = `
-                    <div class="player-placeholder" style="background: linear-gradient(135deg, rgba(20, 21, 25, 0.95), rgba(255, 100, 0, 0.1));">
-                        <svg class="player-placeholder-icon" style="color: #22c55e;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                        <h4 style="color:#22c55e;">Saison Terminée !</h4>
-                        <p>Félicitations ! Vous avez fini de visionner tous les épisodes de "${anime.titleFr}".</p>
-                        <button class="btn-primary" id="player-close-finished-btn">Fermer le lecteur</button>
-                    </div>
-                `;
-                document.getElementById("player-close-finished-btn").onclick = () => {
-                    closeModal(playerModal);
-                    videoPlayerWrapper.innerHTML = "";
-                };
-            }
-        };
+
+        // Validation automatique quand on clique sur "Regarder sur Crunchyroll/ADN"
+        const playLinks = videoPlayerWrapper.querySelectorAll(".crunchy-open-web-btn");
+        playLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                if (epNum > currentWatched) {
+                    playerWatchedBtn.click();
+                }
+            });
+        });
         
         renderPlaylist();
     };
