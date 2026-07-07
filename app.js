@@ -362,6 +362,33 @@ function updateStats() {
     if (countHidden) countHidden.textContent = hiddenCount;
 }
 
+// Détection automatique de la version française (VF vs VOSTFR)
+function detectIfVf(anime) {
+    if (anime.audio === "vf") return true;
+    if (anime.audio === "vostfr") return false;
+
+    // Si le titre contient explicitement VF
+    if (anime.titleFr && /\bVF\b/i.test(anime.titleFr)) return true;
+    if (anime.titleOrig && /\bVF\b/i.test(anime.titleOrig)) return true;
+
+    // Si le casting contient des acteurs français
+    if (anime.cast) {
+        const castLower = anime.cast.toLowerCase();
+        const frenchIndicators = [
+            "adrien", "bastien", "bruno", "caroline", "christophe", "emmanuel", "enzo", "gregory", 
+            "lilly", "marie", "nathalie", "vincent", "arnaud", "benjamin", "carole", "catherine", 
+            "david", "eric", "françois", "jean", "julien", "laurent", "nicolas", "olivier", 
+            "patrice", "philippe", "stephane", "thierry", "valerie", "adeline", "bourlé", "bienaimé"
+        ];
+        if (frenchIndicators.some(name => castLower.includes(name))) {
+            return true;
+        }
+    }
+    
+    // Par défaut (toutes les séries du catalogue principal sont historiquement doublées en VF)
+    return true;
+}
+
 function renderGrid() {
     // 1. Filter
     let filteredList = animeList.filter(anime => {
@@ -495,12 +522,15 @@ function renderGrid() {
         // Stars rendering
         const starsText = anime.rating > 0 ? `★ ${anime.rating}` : "Pas noté";
         
+        // Auto-detect VF/VOSTFR
+        const isVf = detectIfVf(anime);
+        
         card.innerHTML = `
             <div class="card-status-bar ${anime.status}"></div>
             <div class="card-image-wrapper js-open-details">
                 <img class="card-image" src="${coverSrc}" alt="Affiche de ${anime.titleFr}" loading="lazy">
                 <div class="card-overlay"></div>
-                <span class="card-badge-vf">VF</span>
+                <span class="card-badge-vf ${isVf ? 'vf' : 'vostfr'}">${isVf ? 'VF' : 'VOSTFR'}</span>
                 <div class="card-platform-badges">
                     ${anime.crunchyrollUrl ? `
                         <span class="platform-badge cr" title="Disponible sur Crunchyroll">
@@ -516,22 +546,28 @@ function renderGrid() {
                     ` : ''}
                     ${anime.netflixUrl ? `
                         <span class="platform-badge netflix" title="Disponible sur Netflix">
-                            <svg viewBox="0 0 24 24">
-                                <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-family="'Outfit', sans-serif" font-weight="900" font-size="12px">N</text>
+                            <svg viewBox="0 0 24 24" style="background-color: #000; border-radius: 50%;">
+                                <path d="M16 4h3.5v16H16z" fill="#E50914"/>
+                                <path d="M4.5 4H8v16H4.5z" fill="#E50914"/>
+                                <path d="M8 4h4l8 16h-4z" fill="#B20710"/>
                             </svg>
                         </span>
                     ` : ''}
                     ${anime.disneyUrl ? `
                         <span class="platform-badge disney" title="Disponible sur Disney+">
                             <svg viewBox="0 0 24 24">
-                                <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-family="'Outfit', sans-serif" font-weight="900" font-size="10px">D+</text>
+                                <path d="M2.5 16.5c4-7.5 11.5-10.5 19-8.5" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M7 6.5h3.5c2 0 3.5 1 3.5 3s-1.5 3-3.5 3H7V6.5zm3 2v2h.5c.5 0 .8-.3.8-1s-.3-1-.8-1H10z" fill="#ffffff"/>
+                                <path d="M17.5 10.5h3M19 9v3" fill="none" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round"/>
                             </svg>
                         </span>
                     ` : ''}
                     ${anime.primeUrl ? `
                         <span class="platform-badge prime" title="Disponible sur Prime Video">
                             <svg viewBox="0 0 24 24">
-                                <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" fill="#ffffff" font-family="'Outfit', sans-serif" font-weight="900" font-size="10px">PV</text>
+                                <path d="M3 9.5h1.5v1.2c.3-.6.9-1.2 1.8-1.2c1.2 0 1.8.6 1.8 1.8V15H6.8v-3.5c0-.6-.2-.9-.7-.9s-.9.3-.9.9V15H3.8V9.5zm6.5 0h1.5v1.2c.3-.6.9-1.2 1.8-1.2c1.2 0 1.8.6 1.8 1.8V15h-1.5v-3.5c0-.6-.2-.9-.7-.9s-.9.3-.9.9V15H9.5V9.5z" fill="#ffffff"/>
+                                <path d="M3.5 17c3.5 2 9.5 2 13 0" fill="none" stroke="#00a8e1" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M16 16.2l.8.8l-1.2.4" fill="none" stroke="#00a8e1" stroke-width="1.5" stroke-linecap="round"/>
                             </svg>
                         </span>
                     ` : ''}

@@ -189,10 +189,25 @@
                 };
             }
 
+            // Détecter si c'est de la VF (par défaut true, sauf si présence de VOSTFR/VO dans le titre ou langue japonaise)
+            let isVf = true;
+            const videoTitle = item.videoTitle || item.title || item.name || "";
+            const language = item.language || "";
+            if (/\b(VOSTFR|VO|Japanese|ja)\b/i.test(videoTitle) || /\b(ja|japanese)\b/i.test(language)) {
+                isVf = false;
+            }
+
             seriesMap[key].maxEpisode = Math.max(
                 seriesMap[key].maxEpisode,
                 parseInt(episodeNumber) || 0
             );
+
+            // Privilégier la VF si au moins un épisode est regardé en VF
+            if (!seriesMap[key].audio) {
+                seriesMap[key].audio = isVf ? "vf" : "vostfr";
+            } else if (isVf) {
+                seriesMap[key].audio = "vf";
+            }
         });
 
         const result = [];
@@ -202,6 +217,7 @@
                     titleFr: series.titleFr,
                     episodesWatched: series.maxEpisode,
                     adnUrl: series.adnUrl,
+                    audio: series.audio,
                     source: "adn"
                 });
             }

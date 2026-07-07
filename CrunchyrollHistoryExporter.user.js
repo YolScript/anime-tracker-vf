@@ -200,6 +200,14 @@
                 };
             }
 
+            // Détecter si c'est du doublage VF (audio_locale == fr-FR)
+            const audioLocale = item.panel?.episode_metadata?.audio_locale
+                || item.episode_metadata?.audio_locale
+                || item.audio_locale
+                || "";
+            
+            const isVf = audioLocale === "fr-FR" || audioLocale.startsWith("fr");
+
             // Tracker le max épisode par saison
             if (!seriesMap[key].seasons[seasonNumber]) {
                 seriesMap[key].seasons[seasonNumber] = 0;
@@ -208,6 +216,13 @@
                 seriesMap[key].seasons[seasonNumber],
                 parseInt(episodeNumber) || 0
             );
+
+            // Privilégier la VF si au moins un épisode est regardé en VF
+            if (!seriesMap[key].audio) {
+                seriesMap[key].audio = isVf ? "vf" : "vostfr";
+            } else if (isVf) {
+                seriesMap[key].audio = "vf";
+            }
         });
 
         // Convertir en format Anime Tracker VF
@@ -224,6 +239,7 @@
                     titleFr: series.titleFr,
                     episodesWatched: totalWatched,
                     crunchyrollUrl: series.crunchyrollUrl,
+                    audio: series.audio,
                     source: "crunchyroll"
                 });
             }
