@@ -1339,17 +1339,20 @@ async function detectWorkingInvidiousInstance() {
             const controller = new AbortController();
             const timeoutId = setTimeout(() => controller.abort(), 1200); // 1.2s timeout
             
-            await fetch(`https://${instance}/robots.txt`, { 
+            const response = await fetch(`https://${instance}/api/v1/stats`, { 
                 method: "GET", 
-                mode: "no-cors", 
                 signal: controller.signal 
             });
             
-            clearTimeout(timeoutId);
-            workingInvidiousInstance = instance;
-            sessionStorage.setItem("detected_invidious_instance_v2", instance);
-            console.log(`Invidious instance selected: ${instance}`);
-            return instance;
+            if (response.ok) {
+                clearTimeout(timeoutId);
+                workingInvidiousInstance = instance;
+                sessionStorage.setItem("detected_invidious_instance_v2", instance);
+                console.log(`Invidious instance selected: ${instance}`);
+                return instance;
+            } else {
+                console.warn(`Invidious instance ${instance} returned status ${response.status}`);
+            }
         } catch (e) {
             console.warn(`Invidious instance ${instance} is unreachable:`, e);
         }
