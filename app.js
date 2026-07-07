@@ -1486,7 +1486,7 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                     ${trailerId ? `
                         <iframe 
                             id="player-trailer-iframe"
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; pointer-events: none; opacity: 1; transform: scale(1.35);"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; pointer-events: none; opacity: 1; transform: scale(1.0);"
                             src="https://www.youtube-nocookie.com/embed/${trailerId}?autoplay=1&mute=1&loop=1&playlist=${trailerId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0&enablejsapi=1"
                             allow="autoplay; encrypted-media">
                         </iframe>
@@ -1494,6 +1494,13 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                         <!-- Transparent shield blocking all mouse interactions / hover states from triggering YouTube's overlay -->
                         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; background: transparent;"></div>
                         
+                        <!-- Fullscreen toggle overlay button -->
+                        <button id="player-fullscreen-btn" style="position: absolute; bottom: 12px; right: 56px; z-index: 10; background: rgba(0, 0, 0, 0.7); color: #fff; border: 1px solid rgba(255,255,255,0.25); border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s, transform 0.2s;">
+                            <svg id="fullscreen-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;">
+                                <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+                            </svg>
+                        </button>
+
                         <!-- Small mute/unmute overlay button -->
                         <button id="player-mute-toggle-btn" style="position: absolute; bottom: 12px; right: 12px; z-index: 10; background: rgba(0, 0, 0, 0.7); color: #fff; border: 1px solid rgba(255,255,255,0.25); border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s, transform 0.2s;">
                             <svg id="mute-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;">
@@ -1557,6 +1564,44 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                     }
                 });
             });
+        }
+
+        // Setup Fullscreen click logic
+        if (trailerId) {
+            const fullscreenBtn = document.getElementById("player-fullscreen-btn");
+            if (fullscreenBtn) {
+                fullscreenBtn.addEventListener("click", () => {
+                    const playerContainer = videoPlayerWrapper.querySelector(".crunchy-mock-player");
+                    if (!document.fullscreenElement) {
+                        if (playerContainer.requestFullscreen) {
+                            playerContainer.requestFullscreen();
+                        } else if (playerContainer.webkitRequestFullscreen) {
+                            playerContainer.webkitRequestFullscreen();
+                        } else if (playerContainer.msRequestFullscreen) {
+                            playerContainer.msRequestFullscreen();
+                        }
+                    } else {
+                        if (document.exitFullscreen) {
+                            document.exitFullscreen();
+                        }
+                    }
+                });
+            }
+            
+            // Fullscreen Change Listener for Icons
+            const fsChangeHandler = () => {
+                const fsIcon = document.getElementById("fullscreen-icon-svg");
+                if (fsIcon) {
+                    if (document.fullscreenElement) {
+                        fsIcon.innerHTML = `<path d="M4 14h6v6m10-6h-6v6M4 10h6V4m10 6h-6V4"></path>`;
+                    } else {
+                        fsIcon.innerHTML = `<path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>`;
+                    }
+                }
+            };
+            
+            document.removeEventListener("fullscreenchange", fsChangeHandler);
+            document.addEventListener("fullscreenchange", fsChangeHandler);
         }
 
         // Setup Mute/Unmute click logic
