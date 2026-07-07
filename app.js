@@ -1482,63 +1482,114 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
         
         videoPlayerWrapper.innerHTML = `
             <div class="crunchy-mock-player" style="position: relative; overflow: hidden; background: #000; width: 100%; height: 100%;">
-                <div class="player-placeholder" style="position: relative; overflow: hidden; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #0c0d10;">
+                <div class="player-placeholder" style="position: relative; overflow: hidden; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #0c0d10; padding: 0;">
                     ${trailerId ? `
                         <iframe 
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; pointer-events: none; opacity: 0.65; transform: scale(1.15);"
-                            src="https://www.youtube-nocookie.com/embed/${trailerId}?autoplay=1&mute=1&loop=1&playlist=${trailerId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0"
+                            id="player-trailer-iframe"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; pointer-events: none; opacity: 1; transform: scale(1.15);"
+                            src="https://www.youtube-nocookie.com/embed/${trailerId}?autoplay=1&mute=1&loop=1&playlist=${trailerId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0&enablejsapi=1"
                             allow="autoplay; encrypted-media" 
                             allowfullscreen>
                         </iframe>
-                    ` : ''}
-                    <!-- Dark overlay to ensure readability of buttons -->
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(20, 21, 25, 0.95), rgba(255, 100, 0, 0.2)); z-index: 1;"></div>
-                    
-                    <div class="crunchy-player-overlay-btn-wrapper" style="position: relative; z-index: 2; gap: 12px; flex-wrap: wrap; padding: 0 20px; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">
-                        ${anime.crunchyrollUrl ? `
-                            <a href="${anime.crunchyrollUrl}" target="_blank" class="crunchy-open-web-btn" title="Ouvrir sur Crunchyroll">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 8px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                                <span>Regarder sur Crunchyroll</span>
-                            </a>
-                        ` : ''}
-                        ${anime.adnUrl ? `
-                            <a href="${anime.adnUrl}" target="_blank" class="crunchy-open-web-btn adn-theme" title="Ouvrir sur ADN">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 8px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                                <span>Regarder sur ADN</span>
-                            </a>
-                        ` : ''}
-                        ${anime.netflixUrl ? `
-                            <a href="${anime.netflixUrl}" target="_blank" class="crunchy-open-web-btn netflix-theme" title="Ouvrir sur Netflix">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 8px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                                <span>Regarder sur Netflix</span>
-                            </a>
-                        ` : ''}
-                        ${anime.disneyUrl ? `
-                            <a href="${anime.disneyUrl}" target="_blank" class="crunchy-open-web-btn disney-theme" title="Ouvrir sur Disney+">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 8px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                                <span>Regarder sur Disney+</span>
-                            </a>
-                        ` : ''}
-                        ${anime.primeUrl ? `
-                            <a href="${anime.primeUrl}" target="_blank" class="crunchy-open-web-btn prime-theme" title="Ouvrir sur Prime Video">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 8px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                                <span>Regarder sur Prime Video</span>
-                            </a>
-                        ` : ''}
-                    </div>
+                        
+                        <!-- Small mute/unmute overlay button -->
+                        <button id="player-mute-toggle-btn" style="position: absolute; bottom: 12px; right: 12px; z-index: 10; background: rgba(0, 0, 0, 0.7); color: #fff; border: 1px solid rgba(255,255,255,0.25); border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s, transform 0.2s;">
+                            <svg id="mute-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;">
+                                <line x1="1" y1="1" x2="23" y2="23"></line>
+                                <path d="M9 9v6a3 3 0 0 0 5.12 2.12M15 9.34V4a1 1 0 0 0-1.7-.7l-4.5 4.5"></path>
+                            </svg>
+                        </button>
+                    ` : `
+                        <div class="player-placeholder-icon-wrapper" style="text-align: center; padding: 24px;">
+                            <svg class="player-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width: 48px; height: 48px; color: var(--text-muted); margin-bottom: 12px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            <h4 style="font-size: 16px; margin-bottom: 4px;">Bande-annonce non disponible</h4>
+                            <p style="font-size: 13px; color: var(--text-muted);">Aucun trailer trouvé pour cet animé.</p>
+                        </div>
+                    `}
                 </div>
             </div>
         `;
 
-        // Validation automatique quand on clique sur "Regarder sur Crunchyroll/ADN"
-        const playLinks = videoPlayerWrapper.querySelectorAll(".crunchy-open-web-btn");
-        playLinks.forEach(link => {
-            link.addEventListener("click", () => {
-                if (epNum > currentWatched) {
-                    playerWatchedBtn.click();
-                }
+        // Populate platform buttons container below the title
+        const platformsContainer = document.getElementById("player-platforms-container");
+        if (platformsContainer) {
+            platformsContainer.innerHTML = `
+                ${anime.crunchyrollUrl ? `
+                    <a href="${anime.crunchyrollUrl}" target="_blank" class="crunchy-open-web-btn" title="Ouvrir sur Crunchyroll">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 8px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        <span>Regarder sur Crunchyroll</span>
+                    </a>
+                ` : ''}
+                ${anime.adnUrl ? `
+                    <a href="${anime.adnUrl}" target="_blank" class="crunchy-open-web-btn adn-theme" title="Ouvrir sur ADN">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 8px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        <span>Regarder sur ADN</span>
+                    </a>
+                ` : ''}
+                ${anime.netflixUrl ? `
+                    <a href="${anime.netflixUrl}" target="_blank" class="crunchy-open-web-btn netflix-theme" title="Ouvrir sur Netflix">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 8px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        <span>Regarder sur Netflix</span>
+                    </a>
+                ` : ''}
+                ${anime.disneyUrl ? `
+                    <a href="${anime.disneyUrl}" target="_blank" class="crunchy-open-web-btn disney-theme" title="Ouvrir sur Disney+">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 8px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        <span>Regarder sur Disney+</span>
+                    </a>
+                ` : ''}
+                ${anime.primeUrl ? `
+                    <a href="${anime.primeUrl}" target="_blank" class="crunchy-open-web-btn prime-theme" title="Ouvrir sur Prime Video">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 8px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        <span>Regarder sur Prime Video</span>
+                    </a>
+                ` : ''}
+            `;
+            
+            // Add automatic validation hooks
+            const playLinks = platformsContainer.querySelectorAll(".crunchy-open-web-btn");
+            playLinks.forEach(link => {
+                link.addEventListener("click", () => {
+                    if (epNum > currentWatched) {
+                        playerWatchedBtn.click();
+                    }
+                });
             });
-        });
+        }
+
+        // Setup Mute/Unmute click logic
+        if (trailerId) {
+            let isMuted = true;
+            const muteBtn = document.getElementById("player-mute-toggle-btn");
+            if (muteBtn) {
+                muteBtn.addEventListener("click", () => {
+                    isMuted = !isMuted;
+                    const iframe = document.getElementById("player-trailer-iframe");
+                    if (iframe && iframe.contentWindow) {
+                        iframe.contentWindow.postMessage(JSON.stringify({
+                            event: 'command',
+                            func: isMuted ? 'mute' : 'unMute'
+                        }), '*');
+                    }
+                    
+                    // Toggle Icon
+                    const svg = document.getElementById("mute-icon-svg");
+                    if (svg) {
+                        if (isMuted) {
+                            svg.innerHTML = `
+                                <line x1="1" y1="1" x2="23" y2="23"></line>
+                                <path d="M9 9v6a3 3 0 0 0 5.12 2.12M15 9.34V4a1 1 0 0 0-1.7-.7l-4.5 4.5"></path>
+                            `;
+                        } else {
+                            svg.innerHTML = `
+                                <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
+                                <path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                            `;
+                        }
+                    }
+                });
+            }
+        }
         
         renderPlaylist();
     };

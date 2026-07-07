@@ -226,10 +226,13 @@
                     <div class="video-container">
                         <div id="video-player-wrapper"></div>
                     </div>
-                    <div class="player-controls-desc">
+                    <div class="player-controls-desc" style="flex-direction: column; align-items: flex-start; gap: 12px;">
                         <div>
-                            <h3 id="player-anime-name">Nom de l'animé</h3>
+                            <h3 id="player-anime-name" style="margin-bottom: 4px;">Nom de l'animé</h3>
                             <p id="player-episode-desc">Épisode 1</p>
+                        </div>
+                        <div id="player-platforms-container" style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px;">
+                            <!-- Dynamically filled with platform buttons -->
                         </div>
                         <div class="player-actions" style="display: none;">
                             <button id="player-watched-btn" class="btn-primary">
