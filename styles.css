@@ -311,49 +311,39 @@ body {
     border-color: var(--text-muted);
 }
 
-/* APK Download Button */
-.btn-apk {
+/* Play Store Test Button */
+.btn-play {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     padding: 10px 18px;
-    background: linear-gradient(135deg, #ff6400 0%, #ff8c38 100%);
-    color: var(--text-dark);
+    background-color: #000000;
+    color: var(--text-white);
+    border: 1px solid var(--border-color);
     font-family: var(--font-sans);
-    font-size: 14px;
-    font-weight: 800;
-    letter-spacing: 0.5px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
     border-radius: var(--radius-full);
     text-decoration: none;
     white-space: nowrap;
-    box-shadow: 0 2px 12px var(--primary-glow), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
     transition: var(--transition-fast);
 }
 
-.btn-apk svg {
-    width: 18px;
-    height: 18px;
+.btn-play svg {
+    width: 20px;
+    height: 20px;
     flex-shrink: 0;
 }
 
-.btn-apk .btn-apk-arrow {
-    width: 15px;
-    height: 15px;
-    animation: apk-bounce 2s ease-in-out infinite;
-}
-
-@keyframes apk-bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(2px); }
-}
-
-.btn-apk:hover {
-    background: linear-gradient(135deg, #ff7e29 0%, #ffa057 100%);
+.btn-play:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 100, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    border-color: var(--text-muted);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.55);
 }
 
-.btn-apk:active {
+.btn-play:active {
     transform: translateY(0);
 }
 
