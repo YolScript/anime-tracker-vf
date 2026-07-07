@@ -9,6 +9,7 @@ const SUPABASE_ANON_KEY = "sb_publishable_3NPZsB8HBSK37ZCekjARBg_8soutVCi";
 
 const SYNC_STORAGE_KEY = "crunchy_tracker_progress_v2";
 const SYNC_TABLE = "anime_progress";
+const SYNC_VERSION = "13";
 
 // Dans l'APK Android (WebView), le retour du login Discord passe par un
 // deep link géré par l'app (voir android-app/MainActivity.java) : le login
@@ -32,6 +33,25 @@ let lastPushedJson = null;
 
 function isSyncConfigured() {
     return SUPABASE_URL !== "" && SUPABASE_ANON_KEY !== "" && typeof supabase !== "undefined";
+}
+
+// Journal de diagnostic : console partout + panneau visible dans l'APK
+// (pas de DevTools sur téléphone). Un appui sur le panneau le ferme.
+function syncLog(msg) {
+    console.log("[Sync] " + msg);
+    if (!IS_ANDROID_APP) return;
+    let box = document.getElementById("sync-debug-box");
+    if (!box) {
+        box = document.createElement("div");
+        box.id = "sync-debug-box";
+        box.style.cssText = "position:fixed;bottom:0;left:0;right:0;max-height:35vh;overflow:auto;"
+            + "background:rgba(0,0,0,0.88);color:#7CFC00;font:11px/1.5 monospace;"
+            + "padding:8px 10px;z-index:99999;white-space:pre-wrap;border-top:2px solid #ff6400;";
+        box.addEventListener("click", () => box.remove());
+        (document.body || document.documentElement).appendChild(box);
+    }
+    box.textContent += msg + "\n";
+    box.scrollTop = box.scrollHeight;
 }
 
 // ---------- Fusion des progressions (local + cloud) ----------
@@ -162,18 +182,22 @@ function initDiscordSync() {
     sbClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
         auth: { flowType: "pkce", detectSessionInUrl: false }
     });
-    console.log("[Sync] Initialisé. APK:", IS_ANDROID_APP, "| Retour OAuth:", CAME_FROM_OAUTH, "| URL hash:", window.location.hash ? "présent" : "vide");
+    syncLog("v" + SYNC_VERSION + " | APK:" + IS_ANDROID_APP
+        + " | query:" + (window.location.search || "(vide)")
+        + " | hash:" + (window.location.hash ? window.location.hash.substring(0, 30) + "..." : "(vide)"));
+    syncLog("verifier localStorage: " + (Object.keys(localStorage).some(k => k.indexOf("code-verifier") !== -1) ? "présent" : "ABSENT"));
 
     const returnedCode = new URLSearchParams(window.location.search).get("code");
     if (returnedCode) {
-        console.log("[Sync] Code OAuth reçu, échange en cours...");
+        syncLog("Code OAuth reçu, échange en cours...");
         sbClient.auth.exchangeCodeForSession(returnedCode).then(({ error }) => {
             if (error) {
-                console.error("[Sync] Échange du code échoué:", error);
+                syncLog("ÉCHEC échange: " + error.message);
                 alert("Échec de la connexion Discord :\n\n" + error.message);
                 history.replaceState(null, "", window.location.pathname);
+            } else {
+                syncLog("Échange réussi, session établie.");
             }
-            // Succès : l'événement SIGNED_IN déclenche la suite (pull + reload)
         });
     }
 
@@ -199,19 +223,19 @@ function initDiscordSync() {
             }
             return;
         }
-        console.log("[Sync] Lancement du login Discord, redirection attendue vers:", OAUTH_REDIRECT);
+        syncLog("Lancement login Discord, retour attendu: " + OAUTH_REDIRECT);
         const { error } = await sbClient.auth.signInWithOAuth({
             provider: "discord",
             options: { redirectTo: OAUTH_REDIRECT }
         });
         if (error) {
-            console.error("[Sync] Échec du lancement OAuth:", error);
+            syncLog("Échec lancement OAuth: " + error.message);
             showToast("Connexion Discord impossible : " + error.message, "error");
         }
     });
 
     sbClient.auth.onAuthStateChange((event, session) => {
-        console.log("[Sync] Événement auth:", event, "| session:", session ? session.user.id : "aucune");
+        syncLog("Événement auth: " + event + " | session: " + (session ? "OUI" : "non"));
         const wasConnected = !!syncUser;
         syncUser = session ? session.user : null;
         lastPushedJson = null;

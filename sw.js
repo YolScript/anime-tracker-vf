@@ -1,5 +1,5 @@
 // Service Worker for Anime Tracker VF - Offline Caching
-const CACHE_NAME = 'anime-tracker-vf-v12';
+const CACHE_NAME = 'anime-tracker-vf-v13';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
@@ -37,9 +37,14 @@ self.addEventListener('activate', (event) => {
     self.clients.claim();
 });
 
-// Fetch: Cache-first strategy for local assets, network-first for API calls
+// Fetch: Network-first partout (cache utilisé seulement hors-ligne).
+// Fini les versions en retard après chaque mise à jour du site.
 self.addEventListener('fetch', (event) => {
     const url = new URL(event.request.url);
+
+    if (event.request.method !== 'GET') {
+        return;
+    }
 
     // Never cache the APK download (binary file, direct network fetch)
     if (url.pathname.endsWith('.apk')) {
@@ -74,25 +79,22 @@ self.addEventListener('fetch', (event) => {
         return;
     }
     
-    // Cache-first for local assets
+    // Network-first for local assets: latest version online, cache offline
     event.respondWith(
-        caches.match(event.request).then((cachedResponse) => {
-            if (cachedResponse) {
-                // Return cache but also update in background
-                fetch(event.request).then((networkResponse) => {
-                    caches.open(CACHE_NAME).then((cache) => {
-                        cache.put(event.request, networkResponse);
-                    });
-                }).catch(() => {});
-                return cachedResponse;
-            }
-            return fetch(event.request).then((response) => {
+        fetch(event.request)
+            .then((response) => {
                 const responseClone = response.clone();
                 caches.open(CACHE_NAME).then((cache) => {
                     cache.put(event.request, responseClone);
                 });
                 return response;
-            });
-        })
+            })
+            .catch(() => caches.match(event.request).then((cached) => {
+                if (cached) return cached;
+                if (event.request.mode === 'navigate') {
+                    return caches.match('./index.html');
+                }
+                return Response.error();
+            }))
     );
 });
