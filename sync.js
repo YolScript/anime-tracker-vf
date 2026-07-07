@@ -182,10 +182,20 @@ function initDiscordSync() {
         };
     }
 
-    // Re-synchroniser quand on revient sur l'onglet / l'app
+    // Re-synchroniser quand on revient sur l'onglet / l'app.
+    // Plusieurs déclencheurs car le WebView Android n'émet pas toujours
+    // visibilitychange : focus, pageshow, hook natif onResume et intervalle.
+    const pullIfConnected = () => {
+        if (syncUser) pullAndMergeFromCloud(false);
+    };
     document.addEventListener("visibilitychange", () => {
-        if (!document.hidden && syncUser) pullAndMergeFromCloud(false);
+        if (!document.hidden) pullIfConnected();
     });
+    window.addEventListener("focus", pullIfConnected);
+    window.addEventListener("pageshow", pullIfConnected);
+    setInterval(pullIfConnected, 60000);
+    // Appelé par MainActivity (APK) à chaque retour au premier plan
+    window.__animeSyncPull = pullIfConnected;
 
     updateDiscordUi();
 }
