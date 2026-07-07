@@ -155,6 +155,21 @@ function initDiscordSync() {
     sbClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
     console.log("[Sync] Initialisé. APK:", IS_ANDROID_APP, "| Retour OAuth:", CAME_FROM_OAUTH, "| URL hash:", window.location.hash ? "présent" : "vide");
 
+    // Si Supabase renvoie une erreur OAuth dans l'URL (mauvais secret Discord,
+    // redirect refusé...), l'afficher clairement au lieu d'échouer en silence.
+    const hashParams = new URLSearchParams(window.location.hash.replace(/^#/, ""));
+    const queryParams = new URLSearchParams(window.location.search);
+    const oauthError = hashParams.get("error_description") || hashParams.get("error")
+        || queryParams.get("error_description") || queryParams.get("error");
+    if (oauthError) {
+        const message = oauthError.replace(/\+/g, " ");
+        console.error("[Sync] Erreur OAuth retournée par Supabase:", message);
+        if (typeof showToast === "function") {
+            showToast("Échec connexion Discord : " + message, "error");
+        }
+        alert("Échec de la connexion Discord :\n\n" + message);
+    }
+
     btn.addEventListener("click", async () => {
         if (syncUser) {
             if (confirm("Se déconnecter de Discord ? (vos données restent sur cet appareil)")) {
