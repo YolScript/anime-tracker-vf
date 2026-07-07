@@ -1310,61 +1310,10 @@ function getTrailerId(anime) {
         const trimmed = anime.trailerId.trim();
         if (trimmed) return trimmed;
     }
-    // Fallback à l'opening d'animé le plus célèbre au monde (version animation de l'animé) : A Cruel Angel's Thesis (Neon Genesis Evangelion OP)
-    return "t-QSmNReDyI";
+    // Fallback à l'opening d'animé le plus célèbre et ouvert mondialement (sans blocage géographique) : Idol (Oshi no Ko OP 1 - YOASOBI)
+    return "ZRtdQ81jCgA";
 }
 
-// Invidious Instances list for fallback and bypass
-const INVIDIOUS_INSTANCES = [
-    "invidious.flokinet.to",
-    "invidious.projectsegfaut.im",
-    "invidious.privacydev.net",
-    "invidious.no-logs.com",
-    "invidious.lunar.icu"
-];
-
-let workingInvidiousInstance = null;
-
-async function detectWorkingInvidiousInstance() {
-    if (workingInvidiousInstance) return workingInvidiousInstance;
-    
-    const cached = sessionStorage.getItem("detected_invidious_instance_v3");
-    if (cached) {
-        workingInvidiousInstance = cached;
-        return cached;
-    }
-    
-    for (const instance of INVIDIOUS_INSTANCES) {
-        try {
-            const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 1200); // 1.2s timeout
-            
-            // Check connectivity and dynamic video stream retrieval ability (checks for rate-limits & companion app requirements)
-            const response = await fetch(`https://${instance}/api/v1/videos/t-QSmNReDyI`, { 
-                method: "GET", 
-                signal: controller.signal 
-            });
-            
-            if (response.ok) {
-                clearTimeout(timeoutId);
-                workingInvidiousInstance = instance;
-                sessionStorage.setItem("detected_invidious_instance_v3", instance);
-                console.log(`Invidious instance selected: ${instance}`);
-                return instance;
-            } else {
-                console.warn(`Invidious instance ${instance} returned status ${response.status}`);
-            }
-        } catch (e) {
-            console.warn(`Invidious instance ${instance} is unreachable or blocked:`, e);
-        }
-    }
-    
-    // Fallback to official youtube if all instances are offline or blocked
-    workingInvidiousInstance = "youtube-nocookie";
-    sessionStorage.setItem("detected_invidious_instance_v3", "youtube-nocookie");
-    console.log("All Invidious instances unreachable. Falling back to YouTube.");
-    return "youtube-nocookie";
-}
 
 // ==========================================================================
 // PLAYER MODAL ENGINE
@@ -1474,7 +1423,7 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
         if (overlay) overlay.remove();
     };
     
-    const loadEpisode = async (epNum) => {
+    const loadEpisode = (epNum) => {
         currentPlayingEp = epNum;
         const currentWatched = parseInt(anime.episodesWatched || 0);
         
@@ -1533,32 +1482,17 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
         }
         
         const trailerId = getTrailerId(anime);
-        const instance = await detectWorkingInvidiousInstance();
         
-        let embedSrc = "";
-        if (instance === "youtube-nocookie") {
-            embedSrc = `https://www.youtube-nocookie.com/embed/${trailerId}?autoplay=1&mute=1&loop=1&playlist=${trailerId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0&enablejsapi=1`;
-        } else {
-            embedSrc = `https://${instance}/embed/${trailerId}?autoplay=1&mute=1&muted=1&loop=1&playlist=${trailerId}&controls=0&local=true`;
-        }
-        
-        const isYoutube = (instance === "youtube-nocookie");
-
         videoPlayerWrapper.innerHTML = `
             <div class="crunchy-mock-player" style="position: relative; overflow: hidden; background: #000; width: 100%; height: 100%;">
                 <div class="player-placeholder" style="position: relative; overflow: hidden; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #0c0d10; padding: 0;">
                     ${trailerId ? `
                         <iframe 
                             id="player-trailer-iframe"
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; opacity: 1; transform: scale(1.0); ${isYoutube ? 'pointer-events: auto;' : 'pointer-events: none;'}"
-                            src="${embedSrc}"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; opacity: 1; transform: scale(1.0); pointer-events: auto;"
+                            src="https://www.youtube-nocookie.com/embed/${trailerId}?autoplay=1&mute=1&loop=1&playlist=${trailerId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0&enablejsapi=1"
                             allow="autoplay; encrypted-media">
                         </iframe>
-                        
-                        <!-- Transparent shield blocking all mouse interactions ONLY for Invidious, so users can click 'Skip Ad' on fallback YouTube -->
-                        ${isYoutube ? '' : `
-                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; background: transparent;"></div>
-                        `}
                         
                         <!-- Fullscreen toggle overlay button -->
                         <button id="player-fullscreen-btn" style="position: absolute; bottom: 12px; right: 56px; z-index: 10; background: rgba(0, 0, 0, 0.7); color: #fff; border: 1px solid rgba(255,255,255,0.25); border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s, transform 0.2s;">
@@ -1707,13 +1641,11 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                 muteBtn.addEventListener("click", () => {
                     isMuted = !isMuted;
                     const iframe = document.getElementById("player-trailer-iframe");
-                    if (iframe) {
-                        const muteVal = isMuted ? 1 : 0;
-                        if (instance === "youtube-nocookie") {
-                            iframe.src = `https://www.youtube-nocookie.com/embed/${trailerId}?autoplay=1&mute=${muteVal}&loop=1&playlist=${trailerId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0&enablejsapi=1`;
-                        } else {
-                            iframe.src = `https://${instance}/embed/${trailerId}?autoplay=1&mute=${muteVal}&muted=${muteVal}&loop=1&playlist=${trailerId}&controls=0&local=true`;
-                        }
+                    if (iframe && iframe.contentWindow) {
+                        iframe.contentWindow.postMessage(JSON.stringify({
+                            event: 'command',
+                            func: isMuted ? 'mute' : 'unMute'
+                        }), '*');
                     }
                     
                     // Toggle Icon
