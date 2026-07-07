@@ -9,7 +9,7 @@ const SUPABASE_ANON_KEY = "sb_publishable_3NPZsB8HBSK37ZCekjARBg_8soutVCi";
 
 const SYNC_STORAGE_KEY = "crunchy_tracker_progress_v2";
 const SYNC_TABLE = "anime_progress";
-const SYNC_VERSION = "14";
+const SYNC_VERSION = "15";
 
 // Dans l'APK Android (WebView), le retour du login Discord passe par un
 // deep link géré par l'app (voir android-app/MainActivity.java) : le login
@@ -177,14 +177,15 @@ function initDiscordSync() {
         if (btn) btn.style.display = "none";
         return;
     }
-    // Navigateurs : flux PKCE (?code= en query string).
-    // Application Android : flux implicite (#access_token) + setSession manuel,
-    // méthode recommandée par Supabase pour les deep links mobiles — le
-    // "code verifier" PKCE se perd quand le login passe par l'app Discord externe.
+    // Flux PKCE partout : le ?code= en query string survit au retour deep link
+    // Android (le fragment #access_token du flux implicite y est coupé — vérifié
+    // sur appareil : retour avec hash vide). Le code verifier reste dans le
+    // localStorage du WebView, qui ne quitte jamais la page : l'échange manuel
+    // ci-dessous fonctionne donc aussi dans l'application.
     // detectSessionInUrl désactivé : on gère le retour nous-mêmes pour
     // pouvoir afficher les erreurs à l'écran (sinon échec silencieux).
     sbClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
-        auth: { flowType: IS_ANDROID_APP ? "implicit" : "pkce", detectSessionInUrl: false }
+        auth: { flowType: "pkce", detectSessionInUrl: false }
     });
     syncLog("v" + SYNC_VERSION + " | APK:" + IS_ANDROID_APP
         + " | query:" + (window.location.search || "(vide)")
