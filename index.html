@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Suivez et gérez vos animés doublés en français (VF) sur Crunchyroll. Suivi d'épisodes, notes, statistiques en temps réel et base de données personnalisable.">
+    <meta name="theme-color" content="#ff6400">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon-512.png">
+    <title>Anime Tracker VF</title>
+    <!-- Google Fonts - Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Link to styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- App Container -->
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo-area">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20Z" fill="currentColor"/>
+                    <path d="M12 6C8.69 6 6 8.69 6 12C6 15.31 8.69 18 12 18C15.31 18 18 15.31 18 12C18 8.69 15.31 6 12 6ZM12 16C9.79 16 8 14.21 8 12C8 9.79 9.79 8 12 8C14.21 8 16 9.79 16 12C16 14.21 14.21 16 12 16Z" fill="currentColor"/>
+                    <path d="M12 9C10.34 9 9 10.34 9 12C9 13.66 10.34 15 12 15C13.66 15 15 13.66 15 12C15 10.34 13.66 9 12 9Z" fill="currentColor"/>
+                </svg>
+                <div class="logo-text">
+                    <span class="logo-primary">Crunchy</span><span class="logo-secondary">Tracker</span>
+                    <span class="badge-vf">VF</span>
+                </div>
+            </div>
+            
+            <div class="header-actions">
+                <!-- Search Bar -->
+                <div class="search-box">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" id="search-input" placeholder="Rechercher un animé..." autocomplete="off">
+                    <button id="clear-search" class="clear-search-btn" aria-label="Effacer la recherche" style="display: none;">
+                        &times;
+                    </button>
+                </div>
+
+                <!-- Sort Selector -->
+                <div class="select-wrapper">
+                    <select id="sort-select">
+                        <option value="alphabetical">Nom (A-Z)</option>
+                        <option value="rating">Note (Décroissante)</option>
+                        <option value="episodes-left">Épisodes restants</option>
+                        <option value="progress-pct">Progression (%)</option>
+                        <option value="release-date-desc">Date de sortie (Récent)</option>
+                        <option value="release-date-asc">Date de sortie (Ancien)</option>
+                        <option value="last-episode-desc">Dernier épisode (Récent)</option>
+                    </select>
+                </div>
+
+                <!-- Sync Indicator -->
+                <div id="sync-status" class="sync-indicator-badge success" title="Synchroniser avec AniList pour les nouveautés VF">
+                    <span class="sync-dot"></span>
+                    <span class="sync-text">À jour</span>
+                </div>
+
+
+                <!-- Data Dropdown Button -->
+                <div class="dropdown">
+                    <button id="data-dropdown-btn" class="btn-secondary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="4" y1="12" x2="20" y2="12"></line>
+                            <line x1="4" y1="6" x2="20" y2="6"></line>
+                            <line x1="4" y1="18" x2="20" y2="18"></line>
+                        </svg>
+                    </button>
+                    <div id="data-dropdown-menu" class="dropdown-menu">
+                        <button id="export-btn" class="dropdown-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+                            Exporter en JSON
+                        </button>
+                        <button id="import-trigger-btn" class="dropdown-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                            Importer JSON
+                        </button>
+                        <input type="file" id="import-file-input" accept=".json" style="display: none;">
+                        <button id="reset-btn" class="dropdown-item text-danger">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                            Réinitialiser
+                        </button>
+                        <hr style="border: none; border-top: 1px solid var(--border-color); margin: 4px 0;">
+                        <button id="install-app-btn" class="dropdown-item" style="display: none;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            📱 Installer l'App
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Stats Dashboard -->
+        <section class="stats-dashboard">
+            <div class="stat-card">
+                <div class="stat-icon icon-anime">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5v-15z"/></svg>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-label">Animés Suivis</span>
+                    <span id="stat-total-anime" class="stat-value">0</span>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon icon-episodes">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="7" y2="7"></line><line x1="2" y1="17" x2="7" y2="17"></line><line x1="17" y1="17" x2="22" y2="17"></line><line x1="17" y1="7" x2="22" y2="7"></line></svg>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-label">Épisodes Vus</span>
+                    <span id="stat-total-episodes" class="stat-value">0</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon icon-hours">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-label">Temps de Visionnage</span>
+                    <span id="stat-total-time" class="stat-value">0h</span>
+                </div>
+            </div>
+
+            <div class="stat-card progress-summary-card">
+                <div class="stat-info">
+                    <span class="stat-label">Taux de Complétion</span>
+                    <span id="stat-completion-pct" class="stat-value">0%</span>
+                </div>
+                <div class="stat-progress-bar-wrapper">
+                    <div class="progress-bar-bg">
+                        <div id="stat-progress-bar" class="progress-bar-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Filter Nav Bar -->
+            <div class="filter-navbar">
+                <button class="filter-tab active" data-status="all">
+                    <span>Tout</span>
+                    <span class="tab-count" id="count-all">0</span>
+                </button>
+                <button class="filter-tab" data-status="watching">
+                    <span class="indicator watching"></span>
+                    <span>En cours</span>
+                    <span class="tab-count" id="count-watching">0</span>
+                </button>
+                <button class="filter-tab" data-status="plan-to-watch">
+                    <span class="indicator plan-to-watch"></span>
+                    <span>À voir</span>
+                    <span class="tab-count" id="count-plan-to-watch">0</span>
+                </button>
+                <button class="filter-tab" data-status="completed">
+                    <span class="indicator completed"></span>
+                    <span>Terminé</span>
+                    <span class="tab-count" id="count-completed">0</span>
+                </button>
+                <button class="filter-tab" data-status="on-hold">
+                    <span class="indicator on-hold"></span>
+                    <span>En pause</span>
+                    <span class="tab-count" id="count-on-hold">0</span>
+                </button>
+                <button class="filter-tab" data-status="hidden">
+                    <span class="indicator hidden-indicator"></span>
+                    <span>Masqués</span>
+                    <span class="tab-count" id="count-hidden">0</span>
+                </button>
+            </div>
+
+            <!-- Anime Grid -->
+            <div id="anime-grid" class="anime-grid">
+                <!-- Anime Cards will be dynamically inserted here -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="empty-state" class="empty-state" style="display: none;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="empty-icon">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                </svg>
+                <h3>Aucun animé trouvé</h3>
+                <p>Essayez de modifier votre recherche.</p>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>&copy; 2026 CrunchyTracker VF. Développé pour le suivi des animes en doublage français.</p>
+            <p class="footer-disclaimer">Ce site est un outil de suivi personnel et n'est pas affilié à Crunchyroll.</p>
+        </footer>
+    </div>
+
+    <!-- MODAL 1: Detail Modal -->
+    <div id="detail-modal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container detail-modal-container">
+            <button class="close-modal-btn">&times;</button>
+            <div class="detail-modal-body" id="detail-modal-body">
+                <!-- Dynamically generated detail content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 3: Player Modal -->
+    <div id="player-modal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container player-modal-container">
+            <button class="close-modal-btn">&times;</button>
+            <div class="modal-header">
+                <h2 id="player-title">Lecteur d'épisode</h2>
+            </div>
+            <div class="player-body">
+                <div class="player-main-col">
+                    <div class="video-container">
+                        <div id="video-player-wrapper"></div>
+                    </div>
+                    <div class="player-controls-desc">
+                        <div>
+                            <h3 id="player-anime-name">Nom de l'animé</h3>
+                            <p id="player-episode-desc">Épisode 1</p>
+                        </div>
+                        <div class="player-actions">
+                            <button id="player-watched-btn" class="btn-primary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>Marquer comme vu</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="player-sidebar-col">
+                    <div class="player-sidebar-header">
+                        <h4>Épisodes</h4>
+                        <label class="autoplay-toggle">
+                            <input type="checkbox" id="player-autoplay-cb" checked>
+                            <span>Lecture Auto</span>
+                        </label>
+                    </div>
+                    <div id="player-episodes-list" class="player-episodes-list">
+                        <!-- Dynamically filled with episode items -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 2: Add/Edit Modal -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container form-modal-container">
+            <button class="close-modal-btn">&times;</button>
+            <div class="modal-header">
+                <h2 id="modal-title">Ajouter un Animé</h2>
+            </div>
+            <form id="anime-form" class="anime-form">
+                <input type="hidden" id="form-anime-id">
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="form-title-fr">Titre Français *</label>
+                        <input type="text" id="form-title-fr" required placeholder="ex: Demon Slayer - Kimetsu no Yaiba">
+                    </div>
+                    <div class="form-group">
+                        <label for="form-title-orig">Titre Original / Anglais</label>
+                        <input type="text" id="form-title-orig" placeholder="ex: Kimetsu no Yaiba">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group" style="flex: 2;">
+                        <label for="form-image-url">URL de l'affiche (Image)</label>
+                        <input type="url" id="form-image-url" placeholder="https://exemple.com/image.jpg">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="form-crunchyroll-url">URL Crunchyroll</label>
+                        <input type="url" id="form-crunchyroll-url" placeholder="https://www.crunchyroll.com/fr/series/...">
+                    </div>
+                    <div class="form-group">
+                        <label for="form-adn-url">URL ADN (Animation Digital Network)</label>
+                        <input type="url" id="form-adn-url" placeholder="https://animationdigitalnetwork.fr/video/...">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="form-episodes-total">Total d'épisodes *</label>
+                        <input type="number" id="form-episodes-total" min="1" required value="12">
+                    </div>
+                    <div class="form-group">
+                        <label for="form-episodes-watched">Épisodes vus</label>
+                        <input type="number" id="form-episodes-watched" min="0" value="0">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="form-status">Statut de visionnage</label>
+                        <select id="form-status">
+                            <option value="plan-to-watch">À voir</option>
+                            <option value="watching">En cours</option>
+                            <option value="completed">Terminé</option>
+                            <option value="on-hold">En pause</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="form-rating">Note personnelle</label>
+                        <div class="rating-input-container">
+                            <select id="form-rating">
+                                <option value="0">Pas noté</option>
+                                <option value="1">⭐ (Très mauvais)</option>
+                                <option value="2">⭐⭐ (Moyen)</option>
+                                <option value="3">⭐⭐⭐ (Bon)</option>
+                                <option value="4">⭐⭐⭐⭐ (Très bon)</option>
+                                <option value="5">⭐⭐⭐⭐⭐ (Chef-d'œuvre)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="form-season">Saison / Partie</label>
+                        <input type="text" id="form-season" placeholder="ex: Saison 1, Cour 2, Film...">
+                    </div>
+                    <div class="form-group">
+                        <label for="form-genres">Genres (séparés par des virgules)</label>
+                        <input type="text" id="form-genres" placeholder="Action, Fantasy, Drame">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="form-synopsis">Synopsis</label>
+                    <textarea id="form-synopsis" rows="4" placeholder="Résumé de l'histoire..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="form-cast">Doublage VF (Voix principales)</label>
+                    <textarea id="form-cast" rows="2" placeholder="ex: Enzo Ratsito (Tanjiro), Margaux Maillet (Nezuko)"></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" id="cancel-form-btn">Annuler</button>
+                    <button type="submit" class="btn-primary" id="save-anime-btn">Sauvegarder</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification Container -->
+    <div id="notification-container" class="notification-container"></div>
+
+    <!-- Link to app logic -->
+    <script src="catalog.js"></script>
+    <script src="app.js"></script>
+
+    <!-- PWA: Service Worker Registration & Install Prompt -->
+    <script>
+        // Register Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('[PWA] Service Worker enregistré:', reg.scope))
+                    .catch(err => console.log('[PWA] Erreur SW:', err));
+            });
+        }
+
+        // Capture the beforeinstallprompt event for the install button
+        let deferredPrompt = null;
+        const installBtn = document.getElementById('install-app-btn');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            if (installBtn) {
+                installBtn.style.display = 'flex';
+            }
+        });
+
+        if (installBtn) {
+            installBtn.addEventListener('click', async () => {
+                if (deferredPrompt) {
+                    deferredPrompt.prompt();
+                    const { outcome } = await deferredPrompt.userChoice;
+                    if (outcome === 'accepted') {
+                        console.log('[PWA] Installation acceptée');
+                        installBtn.style.display = 'none';
+                    }
+                    deferredPrompt = null;
+                } else {
+                    // Fallback: show instructions
+                    alert('Pour installer l\'application :\n\n📱 Sur Android : ouvrez cette page dans Chrome, puis appuyez sur le menu ⋮ → "Installer l\'application"\n\n🖥️ Sur PC : cliquez sur l\'icône d\'installation dans la barre d\'adresse de Chrome');
+                }
+            });
+        }
+
+        // Hide install button if already installed
+        window.addEventListener('appinstalled', () => {
+            if (installBtn) installBtn.style.display = 'none';
+            deferredPrompt = null;
+            console.log('[PWA] App installée avec succès !');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+    "name": "Anime Tracker VF",
+    "short_name": "AnimeVF",
+    "description": "Suivez vos animés doublés en français (VF) sur Crunchyroll et ADN. Progression, statistiques et lecteur intégré.",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#0e0f13",
+    "theme_color": "#ff6400",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": ["entertainment", "lifestyle"],
+    "lang": "fr",
+    "dir": "ltr"
+}

@@ -1,0 +1,5 @@
+node_modules/
+crunchyroll_all_anime.json
+*.log
+.DS_Store
+Thumbs.db
