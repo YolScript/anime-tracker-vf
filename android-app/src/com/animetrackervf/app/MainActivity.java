@@ -55,9 +55,17 @@ public class MainActivity extends Activity {
                         // ne gère le deep link que sur ce second chemin.
                         target = Uri.parse(uri.toString().replace("/api/oauth2/authorize", "/oauth2/authorize"));
                     }
+                    // 1. Forcer l'app Discord si elle est installée et accepte ce lien
+                    Intent discordApp = new Intent(Intent.ACTION_VIEW, target);
+                    discordApp.setPackage("com.discord");
                     try {
-                        startActivity(new Intent(Intent.ACTION_VIEW, target));
-                    } catch (Exception ignored) {
+                        startActivity(discordApp);
+                    } catch (Exception notHandledByDiscordApp) {
+                        // 2. Sinon : navigateur (session Discord web souvent déjà active)
+                        try {
+                            startActivity(new Intent(Intent.ACTION_VIEW, target));
+                        } catch (Exception ignored) {
+                        }
                     }
                     return true;
                 }
