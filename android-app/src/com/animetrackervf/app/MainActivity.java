@@ -40,8 +40,30 @@ public class MainActivity extends Activity {
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
                 Uri uri = request.getUrl();
                 String host = uri.getHost();
+                String path = uri.getPath() == null ? "" : uri.getPath();
+
+                // Page d'autorisation Discord : ouvrir l'app Discord installée
+                // (deep link) pour autoriser sans retaper de mot de passe. Le
+                // retour se fait via animetrackervf://callback (voir manifest).
+                boolean isDiscordAuthorize = host != null
+                        && (host.equals("discord.com") || host.endsWith(".discord.com"))
+                        && path.contains("/oauth2/authorize");
+                if (isDiscordAuthorize) {
+                    Uri target = uri;
+                    if (path.startsWith("/api/")) {
+                        // /api/oauth2/authorize -> /oauth2/authorize : l'app Discord
+                        // ne gère le deep link que sur ce second chemin.
+                        target = Uri.parse(uri.toString().replace("/api/oauth2/authorize", "/oauth2/authorize"));
+                    }
+                    try {
+                        startActivity(new Intent(Intent.ACTION_VIEW, target));
+                    } catch (Exception ignored) {
+                    }
+                    return true;
+                }
+
                 if (host != null && (host.equals(APP_HOST)
-                        // Flux de connexion Discord (sync Supabase) : rester dans le WebView
+                        // Reste du flux Supabase / Discord : rester dans le WebView
                         || host.endsWith(".supabase.co")
                         || host.equals("discord.com")
                         || host.endsWith(".discord.com"))) {
@@ -59,11 +81,31 @@ public class MainActivity extends Activity {
 
         setContentView(webView);
 
-        if (savedInstanceState != null) {
-            webView.restoreState(savedInstanceState);
-        } else {
-            webView.loadUrl(APP_URL);
+        if (!handleAuthDeepLink(getIntent())) {
+            if (savedInstanceState != null) {
+                webView.restoreState(savedInstanceState);
+            } else {
+                webView.loadUrl(APP_URL);
+            }
         }
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+        handleAuthDeepLink(intent);
+    }
+
+    // Retour du login Discord : animetrackervf://callback#access_token=...
+    // On recharge le site avec le fragment pour que supabase-js récupère la session.
+    private boolean handleAuthDeepLink(Intent intent) {
+        if (intent == null || intent.getData() == null) return false;
+        Uri data = intent.getData();
+        if (!"animetrackervf".equals(data.getScheme())) return false;
+        String fragment = data.getFragment();
+        webView.loadUrl(fragment != null && !fragment.isEmpty() ? APP_URL + "#" + fragment : APP_URL);
+        return true;
     }
 
     @Override

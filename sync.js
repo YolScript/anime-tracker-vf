@@ -10,6 +10,14 @@ const SUPABASE_ANON_KEY = "sb_publishable_3NPZsB8HBSK37ZCekjARBg_8soutVCi";
 const SYNC_STORAGE_KEY = "crunchy_tracker_progress_v2";
 const SYNC_TABLE = "anime_progress";
 
+// Dans l'APK Android (WebView), le retour du login Discord passe par un
+// deep link géré par l'app (voir android-app/MainActivity.java) : le login
+// s'ouvre dans l'app Discord installée, puis revient automatiquement ici.
+const IS_ANDROID_APP = /; wv\)/.test(navigator.userAgent);
+const OAUTH_REDIRECT = IS_ANDROID_APP
+    ? "animetrackervf://callback"
+    : window.location.origin + window.location.pathname;
+
 let sbClient = null;
 let syncUser = null;
 let syncPushTimer = null;
@@ -150,7 +158,7 @@ function initDiscordSync() {
         }
         await sbClient.auth.signInWithOAuth({
             provider: "discord",
-            options: { redirectTo: window.location.origin + window.location.pathname }
+            options: { redirectTo: OAUTH_REDIRECT }
         });
     });
 
