@@ -19,9 +19,11 @@ const OAUTH_REDIRECT = IS_ANDROID_APP
     : window.location.origin + window.location.pathname;
 
 // Vrai si la page vient d'être ouverte au retour du login Discord
-// (les jetons OAuth sont dans le fragment d'URL) : après la première
-// synchronisation on recharge la page pour repartir sur une UI propre.
-const CAME_FROM_OAUTH = window.location.hash.indexOf("access_token") !== -1;
+// (jetons dans le fragment en flux implicite, ou ?code= en flux PKCE) :
+// après la première synchronisation on recharge la page pour repartir
+// sur une UI propre.
+const CAME_FROM_OAUTH = window.location.hash.indexOf("access_token") !== -1
+    || /[?&]code=/.test(window.location.search);
 
 let sbClient = null;
 let syncUser = null;
@@ -152,7 +154,12 @@ function initDiscordSync() {
         if (btn) btn.style.display = "none";
         return;
     }
-    sbClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    // Flux PKCE : le retour OAuth porte un ?code= dans la query string,
+    // qui survit au passage navigateur -> application Android (les fragments
+    // #access_token du flux implicite y sont souvent perdus).
+    sbClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+        auth: { flowType: "pkce" }
+    });
     console.log("[Sync] Initialisé. APK:", IS_ANDROID_APP, "| Retour OAuth:", CAME_FROM_OAUTH, "| URL hash:", window.location.hash ? "présent" : "vide");
 
     // Si Supabase renvoie une erreur OAuth dans l'URL (mauvais secret Discord,
