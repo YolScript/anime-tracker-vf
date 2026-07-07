@@ -105,14 +105,22 @@ public class MainActivity extends Activity {
         handleAuthDeepLink(intent);
     }
 
-    // Retour du login Discord : animetrackervf://callback#access_token=...
-    // On recharge le site avec le fragment pour que supabase-js récupère la session.
+    // Retour du login Discord : animetrackervf://callback#access_token=... (flux implicite)
+    // ou animetrackervf://callback?code=... (flux PKCE). On recharge le site avec
+    // les mêmes paramètres pour que supabase-js récupère la session.
     private boolean handleAuthDeepLink(Intent intent) {
         if (intent == null || intent.getData() == null) return false;
         Uri data = intent.getData();
         if (!"animetrackervf".equals(data.getScheme())) return false;
         String fragment = data.getFragment();
-        webView.loadUrl(fragment != null && !fragment.isEmpty() ? APP_URL + "#" + fragment : APP_URL);
+        String query = data.getQuery();
+        String target = APP_URL;
+        if (fragment != null && !fragment.isEmpty()) {
+            target = APP_URL + "#" + fragment;
+        } else if (query != null && !query.isEmpty()) {
+            target = APP_URL + "?" + query;
+        }
+        webView.loadUrl(target);
         return true;
     }
 

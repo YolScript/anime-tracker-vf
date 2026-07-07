@@ -153,6 +153,7 @@ function initDiscordSync() {
         return;
     }
     sbClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    console.log("[Sync] Initialisé. APK:", IS_ANDROID_APP, "| Retour OAuth:", CAME_FROM_OAUTH, "| URL hash:", window.location.hash ? "présent" : "vide");
 
     btn.addEventListener("click", async () => {
         if (syncUser) {
@@ -161,13 +162,19 @@ function initDiscordSync() {
             }
             return;
         }
-        await sbClient.auth.signInWithOAuth({
+        console.log("[Sync] Lancement du login Discord, redirection attendue vers:", OAUTH_REDIRECT);
+        const { error } = await sbClient.auth.signInWithOAuth({
             provider: "discord",
             options: { redirectTo: OAUTH_REDIRECT }
         });
+        if (error) {
+            console.error("[Sync] Échec du lancement OAuth:", error);
+            showToast("Connexion Discord impossible : " + error.message, "error");
+        }
     });
 
     sbClient.auth.onAuthStateChange((event, session) => {
+        console.log("[Sync] Événement auth:", event, "| session:", session ? session.user.id : "aucune");
         const wasConnected = !!syncUser;
         syncUser = session ? session.user : null;
         lastPushedJson = null;
