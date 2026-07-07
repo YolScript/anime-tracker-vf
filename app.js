@@ -172,6 +172,15 @@ function loadData() {
         if (t.includes("vinland saga")) return "https://www.netflix.com/title/81249833";
         if (t.includes("chainsaw man")) return "https://www.netflix.com/title/81617290";
         if (t.includes("monster")) return "https://www.netflix.com/title/81648083";
+        if (t.includes("one punch") || t.includes("one-punch")) return "https://www.netflix.com/title/80117291";
+        if (t.includes("tokyo ghoul")) return "https://www.netflix.com/title/80040119";
+        if (t.includes("seven deadly sins")) return "https://www.netflix.com/title/80050063";
+        if (t.includes("assassination classroom")) return "https://www.netflix.com/title/80062008";
+        if (t.includes("violet evergarden")) return "https://www.netflix.com/title/80191371";
+        if (t.includes("cyberpunk")) return "https://www.netflix.com/title/81054853";
+        if (t.includes("haikyu")) return "https://www.netflix.com/title/80090673";
+        if (t.includes("pluto")) return "https://www.netflix.com/title/81281344";
+        if (t.includes("baki")) return "https://www.netflix.com/title/80204451";
         return null;
     };
 
@@ -180,6 +189,12 @@ function loadData() {
         const t = titleFr.toLowerCase();
         if (t.includes("bleach")) return "https://www.disneyplus.com/series/bleach/3v4e3Xk1xT4D";
         if (t.includes("tokyo revengers")) return "https://www.disneyplus.com/series/tokyo-revengers/4M6kE5S7H1T3";
+        if (t.includes("summer time") || t.includes("time shadow") || t.includes("rendering")) return "https://www.disneyplus.com/series/summer-time-rendering/4M6kE5S7H1T4";
+        if (t.includes("heavenly delusion") || t.includes("tengoku daimakyo") || t.includes("heavenly")) return "https://www.disneyplus.com/series/heavenly-delusion/4F6kE8S7H2T4";
+        if (t.includes("sand land")) return "https://www.disneyplus.com/series/sand-land-the-series/3F5kE7S6H1T3";
+        if (t.includes("undead unluck")) return "https://www.disneyplus.com/series/undead-unluck/3F5kE7S6H1T4";
+        if (t.includes("fable")) return "https://www.disneyplus.com/series/the-fable/5G6kE9S8H3T6";
+        if (t.includes("ranger reject") || t.includes("loser ranger")) return "https://www.disneyplus.com/series/go-go-loser-ranger/5G6kE9S8H3T7";
         return null;
     };
 
@@ -189,6 +204,12 @@ function loadData() {
         if (t.includes("vinland saga")) return "https://www.primevideo.com/detail/Vinland-Saga/0GD1C5S4H3T2";
         if (t.includes("demon slayer")) return "https://www.primevideo.com/detail/Demon-Slayer-Kimetsu-no-Yaiba/0GD1C5S4H3T1";
         if (t.includes("evangelion")) return "https://www.primevideo.com/detail/Evangelion-3010-Thrice-Upon-a-Time/0GD1C5S4H3T4";
+        if (t.includes("banana fish")) return "https://www.primevideo.com/detail/BANANA-FISH/0GD1C5S4H3T5";
+        if (t.includes("dororo")) return "https://www.primevideo.com/detail/Dororo/0GD1C5S4H3T6";
+        if (t.includes("goldorak")) return "https://www.primevideo.com/detail/Goldorak/0GD1C5S4H3T3";
+        if (t.includes("hunter x hunter") || t.includes("hunterxhunter")) return "https://www.primevideo.com/detail/Hunter-x-Hunter/0GD1C5S4H3T7";
+        if (t.includes("attaque des titans") || t.includes("attack on titan")) return "https://www.primevideo.com/detail/Attack-on-Titan/0GD1C5S4H3T8";
+        if (t.includes("my hero academia")) return "https://www.primevideo.com/detail/My-Hero-Academia/0GD1C5S4H3T9";
         return null;
     };
     
