@@ -1542,19 +1542,23 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
             embedSrc = `https://${instance}/embed/${trailerId}?autoplay=1&mute=1&muted=1&loop=1&playlist=${trailerId}&controls=0&local=true`;
         }
         
+        const isYoutube = (instance === "youtube-nocookie");
+
         videoPlayerWrapper.innerHTML = `
             <div class="crunchy-mock-player" style="position: relative; overflow: hidden; background: #000; width: 100%; height: 100%;">
                 <div class="player-placeholder" style="position: relative; overflow: hidden; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #0c0d10; padding: 0;">
                     ${trailerId ? `
                         <iframe 
                             id="player-trailer-iframe"
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; pointer-events: none; opacity: 1; transform: scale(1.0);"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; opacity: 1; transform: scale(1.0); ${isYoutube ? 'pointer-events: auto;' : 'pointer-events: none;'}"
                             src="${embedSrc}"
                             allow="autoplay; encrypted-media">
                         </iframe>
                         
-                        <!-- Transparent shield blocking all mouse interactions / hover states from triggering YouTube's overlay -->
-                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; background: transparent;"></div>
+                        <!-- Transparent shield blocking all mouse interactions ONLY for Invidious, so users can click 'Skip Ad' on fallback YouTube -->
+                        ${isYoutube ? '' : `
+                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; background: transparent;"></div>
+                        `}
                         
                         <!-- Fullscreen toggle overlay button -->
                         <button id="player-fullscreen-btn" style="position: absolute; bottom: 12px; right: 56px; z-index: 10; background: rgba(0, 0, 0, 0.7); color: #fff; border: 1px solid rgba(255,255,255,0.25); border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s, transform 0.2s;">
