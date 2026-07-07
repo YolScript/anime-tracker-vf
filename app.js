@@ -1310,10 +1310,23 @@ function getTrailerId(anime) {
         const trimmed = anime.trailerId.trim();
         if (trimmed) return trimmed;
     }
-    // Fallback à l'opening d'animé le plus célèbre au monde (version animation de l'animé) : Naruto Shippuden OP 16 (Silhouette) via Crunchyroll
-    return "k66bQH_596w";
+    // Fallback à l'opening d'animé le plus célèbre au monde (ouvert mondialement) : Naruto Shippuden OP 16 (Silhouette)
+    return "S0M7f4G46F4";
 }
 
+// Détecteur automatique d'erreur de lecture YouTube (bloquée, privée, supprimée...) pour basculer sur l'opening de secours
+window.addEventListener("message", (event) => {
+    try {
+        const data = typeof event.data === "string" ? JSON.parse(event.data) : event.data;
+        if (data && data.info && typeof data.info.error !== "undefined") {
+            console.warn("YouTube Player error detected, falling back automatically:", data.info.error);
+            const fallbackBtn = document.getElementById("player-fallback-btn");
+            if (fallbackBtn && fallbackBtn.style.display !== "none") {
+                fallbackBtn.click();
+            }
+        }
+    } catch (e) {}
+});
 
 // ==========================================================================
 // PLAYER MODAL ENGINE
