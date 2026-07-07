@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Règles de confidentialité d'Anime Tracker VF : données collectées, utilisation et suppression.">
+    <meta name="theme-color" content="#ff6400">
+    <link rel="icon" type="image/png" href="icon-512.png">
+    <title>Règles de confidentialité — Anime Tracker VF</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0e0f13;
+            --bg-card: #16181f;
+            --border: #262933;
+            --text: #e8e8ea;
+            --muted: #a0a0a5;
+            --primary: #ff6400;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Outfit', sans-serif;
+            line-height: 1.7;
+            padding: 32px 20px 60px;
+        }
+        .page {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 28px;
+        }
+        .back-link:hover { text-decoration: underline; }
+        header.top {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 8px;
+        }
+        header.top img {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        .updated {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 32px;
+        }
+        section {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 22px 24px;
+            margin-bottom: 18px;
+        }
+        h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        p { margin-bottom: 10px; }
+        p:last-child { margin-bottom: 0; }
+        ul {
+            margin: 0 0 10px 22px;
+        }
+        li { margin-bottom: 6px; }
+        a { color: var(--primary); }
+        .muted { color: var(--muted); font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <a class="back-link" href="index.html">← Retour à Anime Tracker VF</a>
+
+        <header class="top">
+            <img src="icon-512.png" alt="Anime Tracker VF">
+            <h1>Règles de confidentialité</h1>
+        </header>
+        <p class="updated">Dernière mise à jour : 7 juillet 2026 — s'applique au site web et à l'application Android (APK) Anime Tracker VF.</p>
+
+        <section>
+            <h2>1. En résumé</h2>
+            <p>Anime Tracker VF est un outil personnel et gratuit de suivi d'animés en doublage français. Il fonctionne sans compte : par défaut, <strong>toutes vos données restent sur votre appareil</strong>. Aucune publicité, aucun traqueur publicitaire, aucune vente de données.</p>
+        </section>
+
+        <section>
+            <h2>2. Données stockées localement sur votre appareil</h2>
+            <ul>
+                <li><strong>Votre progression</strong> : épisodes vus, statuts (en cours, terminé…), notes personnelles et animés ajoutés manuellement — enregistrés dans le stockage local du navigateur (localStorage).</li>
+                <li><strong>Cache hors-ligne</strong> : les fichiers du site (pages, images, catalogue) sont mis en cache sur votre appareil pour un fonctionnement sans connexion.</li>
+            </ul>
+            <p class="muted">Ces données ne quittent jamais votre appareil tant que vous ne vous connectez pas avec Discord.</p>
+        </section>
+
+        <section>
+            <h2>3. Connexion Discord (facultative)</h2>
+            <p>La connexion Discord sert uniquement à synchroniser votre progression entre vos appareils (PC ↔ téléphone). Si vous l'activez, sont collectés et stockés :</p>
+            <ul>
+                <li><strong>Votre identité Discord</strong> : identifiant, pseudo, avatar et adresse e-mail associée au compte Discord (fournis par Discord lors de l'autorisation).</li>
+                <li><strong>Votre progression</strong> : la même que celle stockée localement, copiée dans une base de données cloud (Supabase) pour la synchronisation.</li>
+            </ul>
+            <p>Ces données sont protégées par des règles d'accès strictes : <strong>seul votre compte peut lire ou modifier vos données</strong>. Elles ne sont ni partagées, ni vendues, ni utilisées à d'autres fins que la synchronisation.</p>
+        </section>
+
+        <section>
+            <h2>4. Services tiers utilisés</h2>
+            <ul>
+                <li><strong>GitHub Pages</strong> — hébergement du site (journaux techniques standards du serveur, dont l'adresse IP).</li>
+                <li><strong>Supabase</strong> — authentification et base de données pour la synchronisation (si connexion Discord).</li>
+                <li><strong>Discord</strong> — uniquement pour l'autorisation de connexion (OAuth2).</li>
+                <li><strong>AniList</strong> — récupération anonyme du catalogue et des nouveautés VF (aucune donnée personnelle envoyée).</li>
+                <li><strong>Google Fonts et jsDelivr</strong> — chargement de la police et de bibliothèques ; ces services voient votre adresse IP lors du chargement.</li>
+            </ul>
+            <p class="muted">Les liens vers Crunchyroll et ADN ouvrent leurs sites/applications respectifs, soumis à leurs propres politiques de confidentialité.</p>
+        </section>
+
+        <section>
+            <h2>5. Application Android (APK)</h2>
+            <p>L'application Android affiche le même site dans une vue web intégrée. Elle ne demande que la permission <strong>Internet</strong>, ne collecte aucune donnée supplémentaire (pas de localisation, contacts, fichiers…) et conserve le même cache local pour le mode hors-ligne.</p>
+        </section>
+
+        <section>
+            <h2>6. Durée de conservation et suppression</h2>
+            <ul>
+                <li><strong>Données locales</strong> : conservées tant que vous n'effacez pas les données du site/de l'application (bouton « Réinitialiser » dans le menu, ou effacement des données du navigateur).</li>
+                <li><strong>Données cloud</strong> : conservées tant que votre compte est connecté. La déconnexion arrête la synchronisation ; pour demander la suppression définitive de vos données cloud, ouvrez une demande sur la page GitHub du projet.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>7. Contact</h2>
+            <p>Pour toute question ou demande concernant vos données : <a href="https://github.com/energiecraftonline-afk/anime-tracker-vf/issues" target="_blank" rel="noopener">page GitHub du projet</a>.</p>
+        </section>
+    </div>
+</body>
+</html>

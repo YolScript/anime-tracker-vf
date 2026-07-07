@@ -1420,6 +1420,16 @@ body {
     opacity: 0.7;
 }
 
+.privacy-link {
+    color: var(--text-muted);
+    text-decoration: underline;
+    transition: var(--transition-fast);
+}
+
+.privacy-link:hover {
+    color: var(--primary);
+}
+
 /* ==========================================================================
    RESPONSIVE DESIGN (MEDIA QUERIES)
    ========================================================================== */
