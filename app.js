@@ -1267,9 +1267,6 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
         videoPlayerWrapper.innerHTML = `
             <div class="crunchy-mock-player">
                 <div class="player-placeholder" style="background: linear-gradient(135deg, rgba(20, 21, 25, 0.95), rgba(255, 100, 0, 0.1));">
-                    <div class="crunchy-player-watermark">
-                        <span class="crunchy-orange-text">crunchyroll</span><span class="player-sub">DIRECT</span>
-                    </div>
                     <div class="crunchy-player-overlay-btn-wrapper" style="gap: 12px;">
                         ${anime.crunchyrollUrl ? `
                             <a href="${anime.crunchyrollUrl}" target="_blank" class="crunchy-open-web-btn" title="Ouvrir sur Crunchyroll">
