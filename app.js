@@ -498,31 +498,6 @@ function renderGrid() {
                     <div class="card-progress-bar-bg">
                         <div class="card-progress-bar-fill" style="width: ${progressPct}%"></div>
                     </div>
-                    <div class="user-rating-row">
-                        <span class="label">Ma Note :</span>
-                        <span class="stars">${anime.rating > 0 ? '★'.repeat(anime.rating) + '☆'.repeat(5 - anime.rating) : 'Non noté'}</span>
-                    </div>
-                    
-                    <div class="episode-adjuster">
-                        <button class="adjust-btn btn-minus" aria-label="Retirer un épisode" ${watched === 0 ? "disabled" : ""}>-</button>
-                        <input type="number" class="episode-input-display" value="${watched}" min="0" max="${total}">
-                        <button class="adjust-btn btn-plus" aria-label="Ajouter un épisode" ${watched >= total ? "disabled" : ""}>+</button>
-                    </div>
-                </div>
-                
-                <div class="card-actions">
-                    <button class="card-btn-details js-open-details">
-                        Détails
-                    </button>
-                    <button class="btn-primary card-btn-play js-play-episode" style="padding: 6px 12px; font-size: 13px; gap: 4px;">
-                        <svg viewBox="0 0 24 24" fill="currentColor" style="width: 12px; height: 12px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                        <span>Regarder</span>
-                    </button>
-                    ${anime.crunchyrollUrl ? `
-                        <a href="${anime.crunchyrollUrl}" target="_blank" class="card-link-crunchy" title="Ouvrir sur Crunchyroll">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        </a>
-                    ` : ''}
                 </div>
             </div>
         `;
@@ -538,41 +513,7 @@ function renderGrid() {
         card.querySelectorAll(".js-open-details").forEach(elem => {
             elem.addEventListener("click", () => showAnimeDetails(anime.id));
         });
-
-        // Play Trigger
-        const btnPlay = card.querySelector(".js-play-episode");
-        if (btnPlay) {
-            btnPlay.addEventListener("click", (e) => {
-                e.stopPropagation();
-                openPlayerModal(anime.id);
-            });
-        }
         
-        // Episode decrement
-        const btnMinus = card.querySelector(".btn-minus");
-        btnMinus.addEventListener("click", (e) => {
-            e.stopPropagation();
-            changeEpisodeCount(anime.id, watched - 1);
-        });
-        
-        // Episode increment
-        const btnPlus = card.querySelector(".btn-plus");
-        btnPlus.addEventListener("click", (e) => {
-            e.stopPropagation();
-            changeEpisodeCount(anime.id, watched + 1);
-        });
-        
-        // Direct input change
-        const episodeInput = card.querySelector(".episode-input-display");
-        episodeInput.addEventListener("click", (e) => e.stopPropagation());
-        episodeInput.addEventListener("change", (e) => {
-            const val = parseInt(e.target.value);
-            if (isNaN(val) || val < 0) {
-                e.target.value = watched;
-            } else {
-                changeEpisodeCount(anime.id, Math.min(val, total));
-            }
-        });
         
         animeGrid.appendChild(card);
     });
