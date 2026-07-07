@@ -13,6 +13,7 @@ let animeList = [];
 let currentFilter = "all";
 let currentSearch = "";
 let currentSort = "alphabetical";
+let currentPlatform = "all";
 
 // ==========================================================================
 // DOM ELEMENTS
@@ -22,6 +23,7 @@ const emptyState = document.getElementById("empty-state");
 const searchInput = document.getElementById("search-input");
 const clearSearchBtn = document.getElementById("clear-search");
 const sortSelect = document.getElementById("sort-select");
+const platformSelect = document.getElementById("platform-select");
 const filterTabs = document.querySelectorAll(".filter-tab");
 const addAnimeBtn = document.getElementById("add-anime-btn");
 const emptyAddBtn = document.getElementById("empty-add-btn");
@@ -327,6 +329,15 @@ function renderGrid() {
         // Status filter
         if (currentFilter !== "all" && anime.status !== currentFilter) {
             return false;
+        }
+
+        // Platform filter
+        if (currentPlatform !== "all") {
+            if (currentPlatform === "crunchyroll" && !anime.crunchyrollUrl) return false;
+            if (currentPlatform === "adn" && !anime.adnUrl) return false;
+            if (currentPlatform === "netflix" && !anime.netflixUrl) return false;
+            if (currentPlatform === "disney" && !anime.disneyUrl) return false;
+            if (currentPlatform === "prime" && !anime.primeUrl) return false;
         }
         
         // Search filter
@@ -1514,6 +1525,14 @@ document.addEventListener("DOMContentLoaded", () => {
             currentSort = e.target.value;
             renderGrid();
         });
+
+        // Platform dropdown listener
+        if (platformSelect) {
+            platformSelect.addEventListener("change", (e) => {
+                currentPlatform = e.target.value;
+                renderGrid();
+            });
+        }
         
         if (addAnimeBtn) addAnimeBtn.addEventListener("click", openAddAnimeModal);
         if (emptyAddBtn) emptyAddBtn.addEventListener("click", openAddAnimeModal);
