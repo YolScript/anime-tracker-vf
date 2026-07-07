@@ -1486,11 +1486,13 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                     ${trailerId ? `
                         <iframe 
                             id="player-trailer-iframe"
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; pointer-events: none; opacity: 1; transform: scale(1.15);"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; pointer-events: none; opacity: 1; transform: scale(1.35);"
                             src="https://www.youtube-nocookie.com/embed/${trailerId}?autoplay=1&mute=1&loop=1&playlist=${trailerId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0&enablejsapi=1"
-                            allow="autoplay; encrypted-media" 
-                            allowfullscreen>
+                            allow="autoplay; encrypted-media">
                         </iframe>
+                        
+                        <!-- Transparent shield blocking all mouse interactions / hover states from triggering YouTube's overlay -->
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; background: transparent;"></div>
                         
                         <!-- Small mute/unmute overlay button -->
                         <button id="player-mute-toggle-btn" style="position: absolute; bottom: 12px; right: 12px; z-index: 10; background: rgba(0, 0, 0, 0.7); color: #fff; border: 1px solid rgba(255,255,255,0.25); border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s, transform 0.2s;">
