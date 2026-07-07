@@ -1490,7 +1490,7 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                         <iframe 
                             id="player-trailer-iframe"
                             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; opacity: 1; transform: scale(1.0); pointer-events: auto;"
-                            src="https://www.youtube-nocookie.com/embed/${trailerId}?autoplay=1&mute=1&loop=1&playlist=${trailerId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0&enablejsapi=1&cc_load_policy=3"
+                            src="https://www.youtube.com/embed/${trailerId}?autoplay=1&mute=1&loop=1&playlist=${trailerId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0&enablejsapi=1&cc_load_policy=3&origin=${encodeURIComponent(window.location.origin)}"
                             allow="autoplay; encrypted-media">
                         </iframe>
                         
@@ -1679,7 +1679,7 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                     const iframe = document.getElementById("player-trailer-iframe");
                     if (iframe) {
                         const fallbackId = "S0M7f4G46F4"; // Naruto Silhouette fan OP
-                        iframe.src = `https://www.youtube-nocookie.com/embed/${fallbackId}?autoplay=1&mute=0&loop=1&playlist=${fallbackId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0&enablejsapi=1&cc_load_policy=3`;
+                        iframe.src = `https://www.youtube.com/embed/${fallbackId}?autoplay=1&mute=0&loop=1&playlist=${fallbackId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0&enablejsapi=1&cc_load_policy=3&origin=${encodeURIComponent(window.location.origin)}`;
                         
                         // Automatically update mute icon to unmuted state
                         const svg = document.getElementById("mute-icon-svg");
