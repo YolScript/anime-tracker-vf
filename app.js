@@ -1316,10 +1316,11 @@ function getTrailerId(anime) {
 
 // Invidious Instances list for fallback and bypass
 const INVIDIOUS_INSTANCES = [
-    "invidious.nerdvpn.de",
     "invidious.flokinet.to",
+    "invidious.projectsegfaut.im",
     "invidious.privacydev.net",
-    "yewtu.be"
+    "invidious.no-logs.com",
+    "invidious.lunar.icu"
 ];
 
 let workingInvidiousInstance = null;
@@ -1327,7 +1328,7 @@ let workingInvidiousInstance = null;
 async function detectWorkingInvidiousInstance() {
     if (workingInvidiousInstance) return workingInvidiousInstance;
     
-    const cached = sessionStorage.getItem("detected_invidious_instance");
+    const cached = sessionStorage.getItem("detected_invidious_instance_v2");
     if (cached) {
         workingInvidiousInstance = cached;
         return cached;
@@ -1346,7 +1347,7 @@ async function detectWorkingInvidiousInstance() {
             
             clearTimeout(timeoutId);
             workingInvidiousInstance = instance;
-            sessionStorage.setItem("detected_invidious_instance", instance);
+            sessionStorage.setItem("detected_invidious_instance_v2", instance);
             console.log(`Invidious instance selected: ${instance}`);
             return instance;
         } catch (e) {
@@ -1356,7 +1357,7 @@ async function detectWorkingInvidiousInstance() {
     
     // Fallback to official youtube if all instances are offline or blocked
     workingInvidiousInstance = "youtube-nocookie";
-    sessionStorage.setItem("detected_invidious_instance", "youtube-nocookie");
+    sessionStorage.setItem("detected_invidious_instance_v2", "youtube-nocookie");
     console.log("All Invidious instances unreachable. Falling back to YouTube.");
     return "youtube-nocookie";
 }
