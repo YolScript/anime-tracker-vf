@@ -15647,5 +15647,159 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": []
+  },
+  {
+    "id": "franchise-netflix-pluto",
+    "titleFr": "Pluto",
+    "titleOrig": "PLUTO",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx145788-b2x5qN2M1J0R.jpg",
+    "netflixUrl": "https://www.netflix.com/title/81281344",
+    "episodesTotal": 8,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "4.5",
+    "genres": "Action, Mystery, Sci-Fi, Psychological",
+    "synopsis": "Dans un monde futuriste où les robots vivent en harmonie avec les humains, les sept robots les plus puissants du monde et leurs créateurs scientifiques sont assassinés les uns après les autres. L'inspecteur robot Gesicht de l'Europol est chargé d'enquêter sur ces crimes mystérieux et découvre bientôt une terrible vérité.",
+    "cast": "Bastien Bourlé (Gesicht), Nathalie Bienaimé (Atom), Vincent de Bouard (Pluto)",
+    "airingStatus": "FINISHED",
+    "seasons": [
+      {
+        "name": "Saison 1",
+        "episodesCount": 8
+      }
+    ]
+  },
+  {
+    "id": "franchise-netflix-cyberpunk",
+    "titleFr": "Cyberpunk: Edgerunners",
+    "titleOrig": "Cyberpunk: Edgerunners",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx110349-9jW3b4n2k1L8.jpg",
+    "netflixUrl": "https://www.netflix.com/title/81054853",
+    "episodesTotal": 10,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "4.6",
+    "genres": "Action, Sci-Fi, Psychological, Drama",
+    "synopsis": "Dans une métropole dystopique rongée par la corruption et les implants cybernétiques, un gamin des rues brillant mais fauché décide de survivre en devenant un edgerunner : un mercenaire hors-la-loi cyber-amélioré.",
+    "cast": "Enzo Ratsito (David Martinez), Lilly Caruso (Lucy), Frédéric Souterelle (Maine)",
+    "airingStatus": "FINISHED",
+    "seasons": [
+      {
+        "name": "Saison 1",
+        "episodesCount": 10
+      }
+    ]
+  },
+  {
+    "id": "franchise-netflix-baki",
+    "titleFr": "Baki",
+    "titleOrig": "Baki",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx98322-6vM9W4j2l0p.jpg",
+    "netflixUrl": "https://www.netflix.com/title/80204451",
+    "episodesTotal": 26,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "3.8",
+    "genres": "Action, Sports",
+    "synopsis": "Cinq condamnés à mort sanguinaire et d'une force surhumaine s'évadent de prison pour se rendre à Tokyo afin d'y affronter le champion d'arts martiaux mixtes de 17 ans, Baki Hanma, et goûter enfin à la défaite.",
+    "cast": "Martin Faliu (Baki Hanma), Emmanuel Gradi (Yujiro Hanma)",
+    "airingStatus": "FINISHED",
+    "seasons": [
+      {
+        "name": "Saison 1",
+        "episodesCount": 26
+      }
+    ]
+  },
+  {
+    "id": "franchise-disney-summertime",
+    "titleFr": "Time Shadow (Summer Time Rendering)",
+    "titleOrig": "Summer Time Render",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx129201-9W4b2c1k3J8o.jpg",
+    "disneyUrl": "https://www.disneyplus.com/series/summer-time-rendering/4M6kE5S7H1T4",
+    "episodesTotal": 25,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "4.4",
+    "genres": "Action, Mystery, Supernatural, Thriller",
+    "synopsis": "De retour sur son île natale pour les funérailles de son amie d'enfance Ushio, Shinpei découvre que sa mort n'est peut-être pas accidentelle. Une vieille légende locale parlant d'êtres appelés 'Ombres' et de meurtres étranges commence à se matérialiser sous ses yeux.",
+    "cast": "Clément Moreau (Shinpei Ajiro), Clara Soares (Ushio Kofune)",
+    "airingStatus": "FINISHED",
+    "seasons": [
+      {
+        "name": "Saison 1",
+        "episodesCount": 25
+      }
+    ]
+  },
+  {
+    "id": "franchise-disney-tengoku",
+    "titleFr": "Tengoku Daimakyo (Heavenly Delusion)",
+    "titleOrig": "Tengoku Daimakyou",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx155783-W1c3b4o2p9m8.jpg",
+    "disneyUrl": "https://www.disneyplus.com/series/heavenly-delusion/4F6kE8S7H2T4",
+    "episodesTotal": 13,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "4.3",
+    "genres": "Adventure, Mystery, Sci-Fi",
+    "synopsis": "Dans un Japon post-apocalyptique infesté de monstres cannibales, Maru et sa garde du corps Kiruko parcourent le pays en ruines à la recherche du 'Paradis'. En parallèle, des enfants grandissent à l'abri du monde extérieur dans une institution mystérieuse et ultra-technologique.",
+    "cast": "Alan Aubert-Carlin (Maru), Adeline Chetail (Kiruko)",
+    "airingStatus": "FINISHED",
+    "seasons": [
+      {
+        "name": "Saison 1",
+        "episodesCount": 13
+      }
+    ]
+  },
+  {
+    "id": "franchise-prime-bananafish",
+    "titleFr": "Banana Fish",
+    "titleOrig": "BANANA FISH",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx100738-9m2p4k1o0L8h.jpg",
+    "primeUrl": "https://www.primevideo.com/detail/BANANA-FISH/0GD1C5S4H3T5",
+    "episodesTotal": 24,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "4.3",
+    "genres": "Action, Adventure, Drama, Thriller",
+    "synopsis": "À New York, Ash Lynx, un jeune chef de gang charismatique, recueille un homme mourant qui lui remet une mystérieuse drogue ainsi qu'une adresse en lui murmurant deux mots : 'Banana Fish'. Ash décide d'enquêter malgré l'opposition de son parrain mafieux Dino Golzine, entraînant avec lui Eiji Okumura, un jeune photographe japonais de passage.",
+    "cast": "Arnaud Laurent (Ash Lynx), Benjamin Bollen (Eiji Okumura)",
+    "airingStatus": "FINISHED",
+    "seasons": [
+      {
+        "name": "Saison 1",
+        "episodesCount": 24
+      }
+    ]
+  },
+  {
+    "id": "franchise-prime-dororo",
+    "titleFr": "Dororo",
+    "titleOrig": "Dororo",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101347-8p2o4b1o9L7x.jpg",
+    "primeUrl": "https://www.primevideo.com/detail/Dororo/0GD1C5S4H3T6",
+    "episodesTotal": 24,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "4.4",
+    "genres": "Action, Adventure, Drama, Supernatural",
+    "synopsis": "Durant l'ère Sengoku, un seigneur de guerre sacrifie les organes de son fils nouveau-né à 48 démons en échange de la prospérité de ses terres. Abandonné, l'enfant survit grâce à un médecin qui lui fabrique des prothèses mortelles. Devenu grand, il parcourt le Japon pour terrasser les démons et récupérer son corps, accompagné du jeune orphelin Dororo.",
+    "cast": "Arthur Pestel (Hyakkimaru), Fanny Bloc (Dororo)",
+    "airingStatus": "FINISHED",
+    "seasons": [
+      {
+        "name": "Saison 1",
+        "episodesCount": 24
+      }
+    ]
   }
 ];
