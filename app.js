@@ -1328,7 +1328,7 @@ let workingInvidiousInstance = null;
 async function detectWorkingInvidiousInstance() {
     if (workingInvidiousInstance) return workingInvidiousInstance;
     
-    const cached = sessionStorage.getItem("detected_invidious_instance_v2");
+    const cached = sessionStorage.getItem("detected_invidious_instance_v3");
     if (cached) {
         workingInvidiousInstance = cached;
         return cached;
@@ -1339,7 +1339,8 @@ async function detectWorkingInvidiousInstance() {
             const controller = new AbortController();
             const timeoutId = setTimeout(() => controller.abort(), 1200); // 1.2s timeout
             
-            const response = await fetch(`https://${instance}/api/v1/stats`, { 
+            // Check connectivity and dynamic video stream retrieval ability (checks for rate-limits & companion app requirements)
+            const response = await fetch(`https://${instance}/api/v1/videos/t-QSmNReDyI`, { 
                 method: "GET", 
                 signal: controller.signal 
             });
@@ -1347,20 +1348,20 @@ async function detectWorkingInvidiousInstance() {
             if (response.ok) {
                 clearTimeout(timeoutId);
                 workingInvidiousInstance = instance;
-                sessionStorage.setItem("detected_invidious_instance_v2", instance);
+                sessionStorage.setItem("detected_invidious_instance_v3", instance);
                 console.log(`Invidious instance selected: ${instance}`);
                 return instance;
             } else {
                 console.warn(`Invidious instance ${instance} returned status ${response.status}`);
             }
         } catch (e) {
-            console.warn(`Invidious instance ${instance} is unreachable:`, e);
+            console.warn(`Invidious instance ${instance} is unreachable or blocked:`, e);
         }
     }
     
     // Fallback to official youtube if all instances are offline or blocked
     workingInvidiousInstance = "youtube-nocookie";
-    sessionStorage.setItem("detected_invidious_instance_v2", "youtube-nocookie");
+    sessionStorage.setItem("detected_invidious_instance_v3", "youtube-nocookie");
     console.log("All Invidious instances unreachable. Falling back to YouTube.");
     return "youtube-nocookie";
 }
