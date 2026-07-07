@@ -145,6 +145,14 @@
                     if (width) progress = parseInt(width) || 100;
                 }
 
+                // Détecter si c'est de la VF
+                let isVf = true;
+                if (/\b(VOSTFR|VO|Japanese|ja)\b/i.test(title) || (epEl && /\b(VOSTFR|VO|Japanese|ja)\b/i.test(epEl.textContent))) {
+                    isVf = false;
+                }
+
+                if (!isVf) return; // Ne garder que le doublage FR (VF)
+
                 // Considérer comme vu si progression > 80%
                 if (progress >= 80) {
                     results.push({
@@ -197,17 +205,14 @@
                 isVf = false;
             }
 
+            if (!isVf) return; // Ne garder que le doublage FR (VF)
+
             seriesMap[key].maxEpisode = Math.max(
                 seriesMap[key].maxEpisode,
                 parseInt(episodeNumber) || 0
             );
 
-            // Privilégier la VF si au moins un épisode est regardé en VF
-            if (!seriesMap[key].audio) {
-                seriesMap[key].audio = isVf ? "vf" : "vostfr";
-            } else if (isVf) {
-                seriesMap[key].audio = "vf";
-            }
+            seriesMap[key].audio = "vf";
         });
 
         const result = [];
@@ -217,7 +222,7 @@
                     titleFr: series.titleFr,
                     episodesWatched: series.maxEpisode,
                     adnUrl: series.adnUrl,
-                    audio: series.audio,
+                    audio: "vf",
                     source: "adn"
                 });
             }
@@ -356,7 +361,16 @@
                 return;
             }
 
-            // Télécharger le fichier JSON
+            // Redirection pour synchronisation automatique
+            try {
+                const b64Data = btoa(unescape(encodeURIComponent(JSON.stringify(trackerData))));
+                const trackerUrl = `https://energiecraftonline-afk.github.io/anime-tracker-vf/#sync-data=${b64Data}`;
+                window.open(trackerUrl, "_blank");
+            } catch (e) {
+                console.error("[ADN Sync] Erreur redirection auto-sync:", e);
+            }
+
+            // Télécharger le fichier JSON (fallback)
             const dataStr = JSON.stringify(trackerData, null, 2);
             const blob = new Blob([dataStr], { type: "application/json" });
             const url = URL.createObjectURL(blob);
@@ -370,7 +384,7 @@
             URL.revokeObjectURL(url);
 
             showNotification(
-                `✅ ${trackerData.length} animés exportés depuis ADN ! Importez le fichier dans Anime Tracker VF.`,
+                `✅ ${trackerData.length} animés synchronisés avec succès vers Anime Tracker VF !`,
                 "success"
             );
         } catch (e) {

@@ -208,6 +208,8 @@
             
             const isVf = audioLocale === "fr-FR" || audioLocale.startsWith("fr");
 
+            if (!isVf) return; // Ne garder que le doublage FR (VF)
+
             // Tracker le max épisode par saison
             if (!seriesMap[key].seasons[seasonNumber]) {
                 seriesMap[key].seasons[seasonNumber] = 0;
@@ -351,7 +353,16 @@
             // Étape 4 : Transformer
             const trackerData = transformToTrackerFormat(history);
 
-            // Étape 5 : Télécharger le fichier JSON
+            // Redirection pour synchronisation automatique
+            try {
+                const b64Data = btoa(unescape(encodeURIComponent(JSON.stringify(trackerData))));
+                const trackerUrl = `https://energiecraftonline-afk.github.io/anime-tracker-vf/#sync-data=${b64Data}`;
+                window.open(trackerUrl, "_blank");
+            } catch (e) {
+                console.error("[CR Sync] Erreur redirection auto-sync:", e);
+            }
+
+            // Étape 5 : Télécharger le fichier JSON (fallback)
             const dataStr = JSON.stringify(trackerData, null, 2);
             const blob = new Blob([dataStr], { type: "application/json" });
             const url = URL.createObjectURL(blob);
@@ -365,7 +376,7 @@
             URL.revokeObjectURL(url);
 
             showNotification(
-                `✅ ${trackerData.length} animés exportés depuis Crunchyroll ! Importez le fichier dans Anime Tracker VF.`,
+                `✅ ${trackerData.length} animés synchronisés avec succès vers Anime Tracker VF !`,
                 "success"
             );
         } catch (e) {

@@ -1112,89 +1112,7 @@ function importFromJSON(e) {
     reader.onload = function(event) {
         try {
             const importedData = JSON.parse(event.target.result);
-            
-            if (Array.isArray(importedData) && importedData.length > 0) {
-                // Vérifier si c'est un fichier d'historique partiel (export de compte)
-                const isPartialHistory = importedData.every(item => item.titleFr && typeof item.episodesTotal === 'undefined');
-                const isFullBackup = importedData.every(item => item.titleFr && typeof item.episodesTotal === 'number');
-                
-                if (isFullBackup) {
-                    animeList = importedData;
-                    saveData();
-                    updateStats();
-                    renderGrid();
-                    showToast("Données restaurées avec succès !", "success");
-                } else if (isPartialHistory) {
-                    // Mode Fusion Historique (Crunchyroll / ADN / autre)
-                    const source = importedData[0].source || "inconnu";
-                    let updatedCount = 0;
-                    let notFoundTitles = [];
-                    
-                    importedData.forEach(importedItem => {
-                        const query = importedItem.titleFr.toLowerCase().trim();
-                        let localAnime = findBestMatch(query, importedItem);
-                        
-                        if (!localAnime && typeof DEFAULT_ANIME_DATA !== 'undefined') {
-                            const catalogAnime = findBestMatchInList(query, importedItem, DEFAULT_ANIME_DATA);
-                            if (catalogAnime) {
-                                localAnime = { ...catalogAnime };
-                                animeList.push(localAnime);
-                            }
-                        }
-                        
-                        if (localAnime) {
-                            const total = parseInt(localAnime.episodesTotal || 12);
-                            const newWatched = parseInt(importedItem.episodesWatched || 0);
-                            const currentWatched = parseInt(localAnime.episodesWatched || 0);
-                            // Garder le maximum entre l'existant et l'import
-                            const watched = Math.max(0, Math.min(Math.max(newWatched, currentWatched), total));
-                            localAnime.episodesWatched = watched;
-                            
-                            if (watched === total && total > 0) {
-                                localAnime.status = "completed";
-                            } else if (watched > 0 && (localAnime.status === "plan-to-watch" || localAnime.status === "on-hold")) {
-                                localAnime.status = "watching";
-                            }
-                            
-                            // Mettre à jour l'URL de la plateforme si disponible
-                            if (importedItem.crunchyrollUrl && !localAnime.crunchyrollUrl) {
-                                localAnime.crunchyrollUrl = importedItem.crunchyrollUrl;
-                            }
-                            if (importedItem.adnUrl && !localAnime.adnUrl) {
-                                localAnime.adnUrl = importedItem.adnUrl;
-                            }
-                            
-                            updatedCount++;
-                        } else {
-                            notFoundTitles.push(importedItem.titleFr);
-                        }
-                    });
-                    
-                    if (updatedCount > 0) {
-                        saveData();
-                        updateStats();
-                        renderGrid();
-                        const sourceLabel = source === "crunchyroll" ? "Crunchyroll"
-                            : source === "adn" ? "ADN"
-                            : "votre historique";
-                        let msg = `${updatedCount} animés mis à jour depuis ${sourceLabel} !`;
-                        if (notFoundTitles.length > 0) {
-                            msg += ` (${notFoundTitles.length} non trouvés)`;
-                            console.log("[Import] Titres non trouvés:", notFoundTitles);
-                        }
-                        showToast(msg, "success");
-                    } else {
-                        showToast("Aucune correspondance trouvée entre votre historique et les animés du catalogue.", "warning");
-                        if (notFoundTitles.length > 0) {
-                            console.log("[Import] Titres non trouvés:", notFoundTitles);
-                        }
-                    }
-                } else {
-                    showToast("Le fichier JSON ne respecte pas le format attendu.", "error");
-                }
-            } else {
-                showToast("Format de fichier JSON non valide ou vide.", "error");
-            }
+            importDataList(importedData);
         } catch (err) {
             console.error(err);
             showToast("Erreur lors de la lecture du fichier.", "error");
@@ -1204,6 +1122,96 @@ function importFromJSON(e) {
     
     // Clear input so same file can be selected again
     e.target.value = "";
+}
+
+function importDataList(importedData) {
+    if (Array.isArray(importedData) && importedData.length > 0) {
+        // Vérifier si c'est un fichier d'historique partiel (export de compte)
+        const isPartialHistory = importedData.every(item => item.titleFr && typeof item.episodesTotal === 'undefined');
+        const isFullBackup = importedData.every(item => item.titleFr && typeof item.episodesTotal === 'number');
+        
+        if (isFullBackup) {
+            animeList = importedData;
+            saveData();
+            updateStats();
+            renderGrid();
+            showToast("Données restaurées avec succès !", "success");
+        } else if (isPartialHistory) {
+            // Mode Fusion Historique (Crunchyroll / ADN / autre)
+            const source = importedData[0].source || "inconnu";
+            let updatedCount = 0;
+            let notFoundTitles = [];
+            
+            importedData.forEach(importedItem => {
+                const query = importedItem.titleFr.toLowerCase().trim();
+                let localAnime = findBestMatch(query, importedItem);
+                
+                if (!localAnime && typeof DEFAULT_ANIME_DATA !== 'undefined') {
+                    const catalogAnime = findBestMatchInList(query, importedItem, DEFAULT_ANIME_DATA);
+                    if (catalogAnime) {
+                        localAnime = { ...catalogAnime };
+                        animeList.push(localAnime);
+                    }
+                }
+                
+                if (localAnime) {
+                    const total = parseInt(localAnime.episodesTotal || 12);
+                    const newWatched = parseInt(importedItem.episodesWatched || 0);
+                    const currentWatched = parseInt(localAnime.episodesWatched || 0);
+                    // Garder le maximum entre l'existant et l'import
+                    const watched = Math.max(0, Math.min(Math.max(newWatched, currentWatched), total));
+                    localAnime.episodesWatched = watched;
+                    
+                    if (watched === total && total > 0) {
+                        localAnime.status = "completed";
+                    } else if (watched > 0 && (localAnime.status === "plan-to-watch" || localAnime.status === "on-hold")) {
+                        localAnime.status = "watching";
+                    }
+                    
+                    // Mettre à jour l'audio si importé
+                    if (importedItem.audio) {
+                        localAnime.audio = importedItem.audio;
+                    }
+                    
+                    // Mettre à jour l'URL de la plateforme si disponible
+                    if (importedItem.crunchyrollUrl && !localAnime.crunchyrollUrl) {
+                        localAnime.crunchyrollUrl = importedItem.crunchyrollUrl;
+                    }
+                    if (importedItem.adnUrl && !localAnime.adnUrl) {
+                        localAnime.adnUrl = importedItem.adnUrl;
+                    }
+                    
+                    updatedCount++;
+                } else {
+                    notFoundTitles.push(importedItem.titleFr);
+                }
+            });
+            
+            if (updatedCount > 0) {
+                saveData();
+                updateStats();
+                renderGrid();
+                const sourceLabel = source === "crunchyroll" ? "Crunchyroll"
+                    : source === "adn" ? "ADN"
+                    : "votre historique";
+                let msg = `${updatedCount} animés mis à jour depuis ${sourceLabel} !`;
+                if (notFoundTitles.length > 0) {
+                    msg += ` (${notFoundTitles.length} non trouvés)`;
+                    console.log("[Import] Titres non trouvés:", notFoundTitles);
+                }
+                showToast(msg, "success");
+            } else {
+                showToast("Aucune correspondance trouvée entre votre historique et les animés du catalogue.", "warning");
+                if (notFoundTitles.length > 0) {
+                    console.log("[Import] Titres non trouvés:", notFoundTitles);
+                }
+            }
+        } else {
+            showToast("Le fichier JSON ne respecte pas le format attendu.", "error");
+        }
+    } else {
+        showToast("Format de fichier JSON non valide ou vide.", "error");
+    }
 }
 
 // Matching intelligent pour les imports
@@ -1590,6 +1598,28 @@ document.addEventListener("DOMContentLoaded", () => {
         loadData();
         updateStats();
         renderGrid();
+
+        // Check for auto-sync data in URL hash
+        const handleHashSync = () => {
+            const hash = window.location.hash;
+            if (hash && hash.startsWith("#sync-data=")) {
+                try {
+                    const base64Data = hash.substring("#sync-data=".length);
+                    const jsonStr = decodeURIComponent(escape(atob(base64Data)));
+                    const importedData = JSON.parse(jsonStr);
+                    
+                    if (Array.isArray(importedData) && importedData.length > 0) {
+                        importDataList(importedData);
+                    }
+                    // Clear the hash from URL without reloading
+                    history.replaceState(null, "", window.location.pathname);
+                } catch (e) {
+                    console.error("Failed to parse sync-data hash", e);
+                }
+            }
+        };
+        handleHashSync();
+        window.addEventListener("hashchange", handleHashSync);
         
         // Filter Navigation
         filterTabs.forEach(tab => {
