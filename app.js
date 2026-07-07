@@ -847,36 +847,6 @@ function showAnimeDetails(id) {
                         <svg viewBox="0 0 24 24" fill="currentColor" style="width: 14px; height: 14px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
                         <span style="margin-left: 6px;">Regarder</span>
                     </button>
-                    ${anime.crunchyrollUrl ? `
-                        <a href="${anime.crunchyrollUrl}" target="_blank" class="btn-secondary" style="text-decoration: none;" title="Ouvrir sur Crunchyroll">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                            <span style="margin-left: 6px;">Crunchyroll</span>
-                        </a>
-                    ` : ''}
-                    ${anime.adnUrl ? `
-                        <a href="${anime.adnUrl}" target="_blank" class="btn-secondary btn-adn" style="text-decoration: none;" title="Ouvrir sur ADN">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; color: #00a8e8;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                            <span style="margin-left: 6px;">ADN</span>
-                        </a>
-                    ` : ''}
-                    ${anime.netflixUrl ? `
-                        <a href="${anime.netflixUrl}" target="_blank" class="btn-secondary btn-netflix" style="text-decoration: none;" title="Ouvrir sur Netflix">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; color: #E50914;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                            <span style="margin-left: 6px;">Netflix</span>
-                        </a>
-                    ` : ''}
-                    ${anime.disneyUrl ? `
-                        <a href="${anime.disneyUrl}" target="_blank" class="btn-secondary btn-disney" style="text-decoration: none;" title="Ouvrir sur Disney+">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; color: #0063e5;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                            <span style="margin-left: 6px;">Disney+</span>
-                        </a>
-                    ` : ''}
-                    ${anime.primeUrl ? `
-                        <a href="${anime.primeUrl}" target="_blank" class="btn-secondary btn-prime" style="text-decoration: none;" title="Ouvrir sur Prime Video">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; color: #00a8e1;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                            <span style="margin-left: 6px;">Prime Video</span>
-                        </a>
-                    ` : ''}
                     <button class="btn-secondary" id="detail-hide-btn" style="margin-left: auto;">
                         ${anime.status === "hidden" ? `
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px;"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
