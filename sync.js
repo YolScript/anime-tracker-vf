@@ -38,23 +38,9 @@ function isSyncConfigured() {
     return SUPABASE_URL !== "" && SUPABASE_ANON_KEY !== "" && typeof supabase !== "undefined";
 }
 
-// Journal de diagnostic : console partout + panneau visible dans l'APK
-// (pas de DevTools sur téléphone). Un appui sur le panneau le ferme.
+// Journal de diagnostic : console uniquement
 function syncLog(msg) {
     console.log("[Sync] " + msg);
-    if (!IS_ANDROID_APP) return;
-    let box = document.getElementById("sync-debug-box");
-    if (!box) {
-        box = document.createElement("div");
-        box.id = "sync-debug-box";
-        box.style.cssText = "position:fixed;bottom:0;left:0;right:0;max-height:35vh;overflow:auto;"
-            + "background:rgba(0,0,0,0.88);color:#7CFC00;font:11px/1.5 monospace;"
-            + "padding:8px 10px;z-index:99999;white-space:pre-wrap;border-top:2px solid #ff6400;";
-        box.addEventListener("click", () => box.remove());
-        (document.body || document.documentElement).appendChild(box);
-    }
-    box.textContent += msg + "\n";
-    box.scrollTop = box.scrollHeight;
 }
 
 // ---------- Fusion des progressions (local + cloud) ----------

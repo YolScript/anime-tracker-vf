@@ -1266,23 +1266,24 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
         
         videoPlayerWrapper.innerHTML = `
             <div class="crunchy-mock-player">
-                <video id="crunchy-video-player" src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" autoplay loop controls muted></video>
-                <div class="crunchy-player-watermark">
-                    <span class="crunchy-orange-text">crunchyroll</span><span class="player-sub">DIRECT</span>
-                </div>
-                <div class="crunchy-player-overlay-btn-wrapper" style="gap: 12px;">
-                    ${anime.crunchyrollUrl ? `
-                        <a href="${anime.crunchyrollUrl}" target="_blank" class="crunchy-open-web-btn" title="Ouvrir sur Crunchyroll">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 8px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                            <span>Regarder sur Crunchyroll</span>
-                        </a>
-                    ` : ''}
-                    ${anime.adnUrl ? `
-                        <a href="${anime.adnUrl}" target="_blank" class="crunchy-open-web-btn adn-theme" title="Ouvrir sur ADN">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 8px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                            <span>Regarder sur ADN</span>
-                        </a>
-                    ` : ''}
+                <div class="player-placeholder" style="background: linear-gradient(135deg, rgba(20, 21, 25, 0.95), rgba(255, 100, 0, 0.1));">
+                    <div class="crunchy-player-watermark">
+                        <span class="crunchy-orange-text">crunchyroll</span><span class="player-sub">DIRECT</span>
+                    </div>
+                    <div class="crunchy-player-overlay-btn-wrapper" style="gap: 12px;">
+                        ${anime.crunchyrollUrl ? `
+                            <a href="${anime.crunchyrollUrl}" target="_blank" class="crunchy-open-web-btn" title="Ouvrir sur Crunchyroll">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 8px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                <span>Regarder sur Crunchyroll</span>
+                            </a>
+                        ` : ''}
+                        ${anime.adnUrl ? `
+                            <a href="${anime.adnUrl}" target="_blank" class="crunchy-open-web-btn adn-theme" title="Ouvrir sur ADN">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; margin-right: 8px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                <span>Regarder sur ADN</span>
+                            </a>
+                        ` : ''}
+                    </div>
                 </div>
             </div>
         `;
