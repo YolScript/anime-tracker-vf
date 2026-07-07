@@ -157,10 +157,53 @@ function loadData() {
         if (t.includes("fire force")) return "https://animationdigitalnetwork.fr/video/fire-force";
         return null;
     };
+
+    // Auto-backfill Netflix URLs
+    const getNetflixUrlForShow = (titleFr) => {
+        const t = titleFr.toLowerCase();
+        if (t.includes("demon slayer")) return "https://www.netflix.com/title/81091979";
+        if (t.includes("hunter x hunter") || t.includes("hunterxhunter")) return "https://www.netflix.com/title/70300472";
+        if (t.includes("naruto")) return "https://www.netflix.com/title/747490";
+        if (t.includes("one piece")) return "https://www.netflix.com/title/80217863";
+        if (t.includes("attaque des titans") || t.includes("attack on titan")) return "https://www.netflix.com/title/70299043";
+        if (t.includes("jujutsu kaisen")) return "https://www.netflix.com/title/81278456";
+        if (t.includes("my hero academia")) return "https://www.netflix.com/title/80182056";
+        if (t.includes("death note")) return "https://www.netflix.com/title/70204970";
+        if (t.includes("vinland saga")) return "https://www.netflix.com/title/81249833";
+        if (t.includes("chainsaw man")) return "https://www.netflix.com/title/81617290";
+        if (t.includes("monster")) return "https://www.netflix.com/title/81648083";
+        return null;
+    };
+
+    // Auto-backfill Disney+ URLs
+    const getDisneyUrlForShow = (titleFr) => {
+        const t = titleFr.toLowerCase();
+        if (t.includes("bleach")) return "https://www.disneyplus.com/series/bleach/3v4e3Xk1xT4D";
+        if (t.includes("tokyo revengers")) return "https://www.disneyplus.com/series/tokyo-revengers/4M6kE5S7H1T3";
+        return null;
+    };
+
+    // Auto-backfill Prime Video URLs
+    const getPrimeUrlForShow = (titleFr) => {
+        const t = titleFr.toLowerCase();
+        if (t.includes("vinland saga")) return "https://www.primevideo.com/detail/Vinland-Saga/0GD1C5S4H3T2";
+        if (t.includes("demon slayer")) return "https://www.primevideo.com/detail/Demon-Slayer-Kimetsu-no-Yaiba/0GD1C5S4H3T1";
+        if (t.includes("evangelion")) return "https://www.primevideo.com/detail/Evangelion-3010-Thrice-Upon-a-Time/0GD1C5S4H3T4";
+        return null;
+    };
     
     mergedList.forEach(anime => {
         if (!anime.adnUrl) {
             anime.adnUrl = getAdnUrlForShow(anime.titleFr);
+        }
+        if (!anime.netflixUrl) {
+            anime.netflixUrl = getNetflixUrlForShow(anime.titleFr);
+        }
+        if (!anime.disneyUrl) {
+            anime.disneyUrl = getDisneyUrlForShow(anime.titleFr);
+        }
+        if (!anime.primeUrl) {
+            anime.primeUrl = getPrimeUrlForShow(anime.titleFr);
         }
     });
     
