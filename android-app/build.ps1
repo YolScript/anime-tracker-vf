@@ -30,7 +30,7 @@ if ($LASTEXITCODE -ne 0) { throw "aapt2 compile a echoue" }
 if ($LASTEXITCODE -ne 0) { throw "aapt2 link a echoue" }
 
 # 3. Compiler le Java
-& javac --release 8 -classpath $androidJar -d "$proj\out\classes" "$proj\src\com\animetrackervf\app\MainActivity.java"
+& javac --release 8 -classpath $androidJar -d "$proj\out\classes" "$proj\src\com\app\animetracker\MainActivity.java"
 if ($LASTEXITCODE -ne 0) { throw "javac a echoue" }
 
 # 4. Dex

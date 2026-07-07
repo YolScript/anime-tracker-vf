@@ -1,4 +1,4 @@
-package com.animetrackervf.app;
+package com.app.animetracker;
 
 import android.app.Activity;
 import android.content.Intent;

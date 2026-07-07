@@ -6,3 +6,4 @@ Thumbs.db
 release.keystore
 keystore-info.txt
 android-app/out/
+*.aab
