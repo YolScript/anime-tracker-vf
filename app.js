@@ -1671,6 +1671,7 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                     }
                 });
             }
+        }
         // Setup Fallback Video click logic
         if (trailerId) {
             const fallbackBtn = document.getElementById("player-fallback-btn");
