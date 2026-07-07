@@ -1489,10 +1489,13 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                     ${trailerId ? `
                         <iframe 
                             id="player-trailer-iframe"
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; opacity: 1; transform: scale(1.0); pointer-events: auto;"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; opacity: 1; transform: scale(1.0); pointer-events: none;"
                             src="https://www.youtube.com/embed/${trailerId}?autoplay=1&mute=1&loop=1&playlist=${trailerId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0&enablejsapi=1&cc_load_policy=3&origin=${encodeURIComponent(window.location.origin)}"
                             allow="autoplay; encrypted-media">
                         </iframe>
+                        
+                        <!-- Transparent shield blocking all mouse interactions with the YouTube video -->
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; background: transparent;"></div>
                         
                         <!-- Button if video is geoblocked or unavailable -->
                         <button id="player-fallback-btn" title="Vidéo bloquée ou indisponible ? Charger l'opening de secours" style="position: absolute; bottom: 12px; left: 12px; z-index: 10; background: rgba(0, 0, 0, 0.7); color: #ff6400; border: 1px solid rgba(255,100,0,0.35); border-radius: 18px; padding: 0 12px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.2s; gap: 6px;">
