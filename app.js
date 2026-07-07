@@ -1314,6 +1314,53 @@ function getTrailerId(anime) {
     return "t-QSmNReDyI";
 }
 
+// Invidious Instances list for fallback and bypass
+const INVIDIOUS_INSTANCES = [
+    "invidious.nerdvpn.de",
+    "invidious.flokinet.to",
+    "invidious.privacydev.net",
+    "yewtu.be"
+];
+
+let workingInvidiousInstance = null;
+
+async function detectWorkingInvidiousInstance() {
+    if (workingInvidiousInstance) return workingInvidiousInstance;
+    
+    const cached = sessionStorage.getItem("detected_invidious_instance");
+    if (cached) {
+        workingInvidiousInstance = cached;
+        return cached;
+    }
+    
+    for (const instance of INVIDIOUS_INSTANCES) {
+        try {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 1200); // 1.2s timeout
+            
+            await fetch(`https://${instance}/robots.txt`, { 
+                method: "GET", 
+                mode: "no-cors", 
+                signal: controller.signal 
+            });
+            
+            clearTimeout(timeoutId);
+            workingInvidiousInstance = instance;
+            sessionStorage.setItem("detected_invidious_instance", instance);
+            console.log(`Invidious instance selected: ${instance}`);
+            return instance;
+        } catch (e) {
+            console.warn(`Invidious instance ${instance} is unreachable:`, e);
+        }
+    }
+    
+    // Fallback to official youtube if all instances are offline or blocked
+    workingInvidiousInstance = "youtube-nocookie";
+    sessionStorage.setItem("detected_invidious_instance", "youtube-nocookie");
+    console.log("All Invidious instances unreachable. Falling back to YouTube.");
+    return "youtube-nocookie";
+}
+
 // ==========================================================================
 // PLAYER MODAL ENGINE
 // ==========================================================================
@@ -1422,7 +1469,7 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
         if (overlay) overlay.remove();
     };
     
-    const loadEpisode = (epNum) => {
+    const loadEpisode = async (epNum) => {
         currentPlayingEp = epNum;
         const currentWatched = parseInt(anime.episodesWatched || 0);
         
@@ -1481,6 +1528,14 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
         }
         
         const trailerId = getTrailerId(anime);
+        const instance = await detectWorkingInvidiousInstance();
+        
+        let embedSrc = "";
+        if (instance === "youtube-nocookie") {
+            embedSrc = `https://www.youtube-nocookie.com/embed/${trailerId}?autoplay=1&mute=1&loop=1&playlist=${trailerId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0&enablejsapi=1`;
+        } else {
+            embedSrc = `https://${instance}/embed/${trailerId}?autoplay=1&mute=1&muted=1&loop=1&playlist=${trailerId}&controls=0&local=true`;
+        }
         
         videoPlayerWrapper.innerHTML = `
             <div class="crunchy-mock-player" style="position: relative; overflow: hidden; background: #000; width: 100%; height: 100%;">
@@ -1489,7 +1544,7 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                         <iframe 
                             id="player-trailer-iframe"
                             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; pointer-events: none; opacity: 1; transform: scale(1.0);"
-                            src="https://yewtu.be/embed/${trailerId}?autoplay=1&mute=1&muted=1&loop=1&playlist=${trailerId}&controls=0&local=true"
+                            src="${embedSrc}"
                             allow="autoplay; encrypted-media">
                         </iframe>
                         
@@ -1644,10 +1699,11 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                     isMuted = !isMuted;
                     const iframe = document.getElementById("player-trailer-iframe");
                     if (iframe) {
-                        if (isMuted) {
-                            iframe.src = `https://yewtu.be/embed/${trailerId}?autoplay=1&mute=1&muted=1&loop=1&playlist=${trailerId}&controls=0&local=true`;
+                        const muteVal = isMuted ? 1 : 0;
+                        if (instance === "youtube-nocookie") {
+                            iframe.src = `https://www.youtube-nocookie.com/embed/${trailerId}?autoplay=1&mute=${muteVal}&loop=1&playlist=${trailerId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0&enablejsapi=1`;
                         } else {
-                            iframe.src = `https://yewtu.be/embed/${trailerId}?autoplay=1&mute=0&muted=0&loop=1&playlist=${trailerId}&controls=0&local=true`;
+                            iframe.src = `https://${instance}/embed/${trailerId}?autoplay=1&mute=${muteVal}&muted=${muteVal}&loop=1&playlist=${trailerId}&controls=0&local=true`;
                         }
                     }
                     
