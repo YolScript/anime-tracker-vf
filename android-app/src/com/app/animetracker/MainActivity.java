@@ -34,6 +34,9 @@ public class MainActivity extends Activity {
         settings.setMediaPlaybackRequiresUserGesture(false);
         settings.setLoadWithOverviewMode(true);
         settings.setUseWideViewPort(true);
+        // Marqueur fiable pour que le site détecte l'application
+        // (le "; wv)" du user-agent n'est pas garanti sur tous les appareils)
+        settings.setUserAgentString(settings.getUserAgentString() + " AnimeTrackerApp/1.6");
 
         webView.setWebViewClient(new WebViewClient() {
             @Override

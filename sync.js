@@ -14,7 +14,10 @@ const SYNC_VERSION = "13";
 // Dans l'APK Android (WebView), le retour du login Discord passe par un
 // deep link géré par l'app (voir android-app/MainActivity.java) : le login
 // s'ouvre dans l'app Discord installée, puis revient automatiquement ici.
-const IS_ANDROID_APP = /; wv\)/.test(navigator.userAgent);
+// L'APK ajoute "AnimeTrackerApp" au user-agent (détection fiable) ;
+// "; wv)" reste en repli pour les anciennes versions de l'app.
+const IS_ANDROID_APP = navigator.userAgent.indexOf("AnimeTrackerApp") !== -1
+    || /; wv\)/.test(navigator.userAgent);
 const OAUTH_REDIRECT = IS_ANDROID_APP
     ? "animetrackervf://callback"
     : window.location.origin + window.location.pathname;
@@ -174,13 +177,14 @@ function initDiscordSync() {
         if (btn) btn.style.display = "none";
         return;
     }
-    // Flux PKCE : le retour OAuth porte un ?code= dans la query string,
-    // qui survit au passage navigateur -> application Android (les fragments
-    // #access_token du flux implicite y sont souvent perdus).
-    // detectSessionInUrl désactivé : on échange le code nous-mêmes pour
+    // Navigateurs : flux PKCE (?code= en query string).
+    // Application Android : flux implicite (#access_token) + setSession manuel,
+    // méthode recommandée par Supabase pour les deep links mobiles — le
+    // "code verifier" PKCE se perd quand le login passe par l'app Discord externe.
+    // detectSessionInUrl désactivé : on gère le retour nous-mêmes pour
     // pouvoir afficher les erreurs à l'écran (sinon échec silencieux).
     sbClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
-        auth: { flowType: "pkce", detectSessionInUrl: false }
+        auth: { flowType: IS_ANDROID_APP ? "implicit" : "pkce", detectSessionInUrl: false }
     });
     syncLog("v" + SYNC_VERSION + " | APK:" + IS_ANDROID_APP
         + " | query:" + (window.location.search || "(vide)")
@@ -198,6 +202,24 @@ function initDiscordSync() {
             } else {
                 syncLog("Échange réussi, session établie.");
             }
+        });
+    }
+
+    // Flux implicite (application) : jetons directement dans le fragment,
+    // session établie manuellement (recommandation Supabase pour mobile).
+    const tokenParams = new URLSearchParams(window.location.hash.replace(/^#/, ""));
+    const accessToken = tokenParams.get("access_token");
+    const refreshToken = tokenParams.get("refresh_token");
+    if (accessToken && refreshToken) {
+        syncLog("Jetons reçus, établissement de la session...");
+        sbClient.auth.setSession({ access_token: accessToken, refresh_token: refreshToken }).then(({ error }) => {
+            if (error) {
+                syncLog("ÉCHEC setSession: " + error.message);
+                alert("Échec de la connexion Discord :\n\n" + error.message);
+            } else {
+                syncLog("Session établie avec succès.");
+            }
+            history.replaceState(null, "", window.location.pathname);
         });
     }
 
