@@ -161,7 +161,7 @@ body {
     align-items: center;
     background-color: var(--bg-input);
     border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-full);
     width: 280px;
     transition: var(--transition-fast);
 }
@@ -173,7 +173,7 @@ body {
 
 .search-icon {
     position: absolute;
-    left: 12px;
+    left: 16px;
     width: 18px;
     height: 18px;
     color: var(--text-muted);
@@ -185,7 +185,7 @@ body {
     border: none;
     outline: none;
     color: var(--text-white);
-    padding: 10px 36px 10px 40px;
+    padding: 10px 36px 10px 44px;
     font-family: var(--font-sans);
     font-size: 14px;
     width: 100%;
@@ -220,7 +220,7 @@ body {
     position: relative;
     background-color: var(--bg-input);
     border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-full);
     overflow: hidden;
     transition: var(--transition-fast);
 }
@@ -235,7 +235,7 @@ body {
     border: none;
     outline: none;
     color: var(--text-white);
-    padding: 10px 32px 10px 16px;
+    padding: 10px 36px 10px 20px;
     font-family: var(--font-sans);
     font-size: 14px;
     cursor: pointer;
@@ -491,9 +491,8 @@ select option {
    STATS DASHBOARD
    ========================================================================== */
 .stats-dashboard {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px;
+    display: flex;
+    justify-content: center;
     padding: 24px 0;
 }
 
@@ -627,9 +626,9 @@ select option {
 }
 
 .filter-tab.active {
-    background-color: var(--text-white);
-    color: var(--bg-dark);
-    border-color: var(--text-white);
+    background-color: rgba(255, 100, 0, 0.08) !important;
+    color: #ff8e42 !important;
+    border-color: rgba(255, 100, 0, 0.3) !important;
 }
 
 .tab-count {
@@ -642,8 +641,8 @@ select option {
 }
 
 .filter-tab.active .tab-count {
-    background-color: var(--bg-dark);
-    color: var(--text-white);
+    background-color: rgba(255, 100, 0, 0.18) !important;
+    color: #ff8e42 !important;
 }
 
 .indicator {
@@ -2771,6 +2770,8 @@ body {
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     border-radius: 16px;
     padding: 20px;
+    width: 100%;
+    max-width: 600px;
     transition: border-color 0.4s var(--ease-premium), box-shadow 0.4s var(--ease-premium), transform 0.4s var(--ease-premium) !important;
 }
 
