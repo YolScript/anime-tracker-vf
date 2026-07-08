@@ -302,13 +302,17 @@ async function fetchAndRenderLeaderboard() {
     const contentEl = document.getElementById("leaderboard-content");
     if (!contentEl) return;
     
-    contentEl.innerHTML = `
-        <div class="leaderboard-loading">
-            <div class="spinner"></div>
-            <span>Chargement du classement...</span>
-        </div>
-    `;
-    
+    // Spinner uniquement au premier chargement (le rafraîchissement auto
+    // remplace le contenu sans clignotement)
+    if (!lbUsersCache) {
+        contentEl.innerHTML = `
+            <div class="leaderboard-loading">
+                <div class="spinner"></div>
+                <span>Chargement du classement...</span>
+            </div>
+        `;
+    }
+
     if (!sbClient) {
         contentEl.innerHTML = `
             <div class="leaderboard-empty">
@@ -340,12 +344,22 @@ async function fetchAndRenderLeaderboard() {
 
             let totalEps = 0;
             let completedCount = 0;
+            let topAnimeId = null;
+            let topAnimeEps = 0;
             Object.keys(progress).forEach(key => {
                 if (key !== "__user_profile" && progress[key] && typeof progress[key] === "object") {
-                    totalEps += parseInt(progress[key].episodesWatched || 0);
+                    const eps = parseInt(progress[key].episodesWatched || 0);
+                    totalEps += eps;
                     if (progress[key].status === "completed") completedCount++;
+                    if (eps > topAnimeEps) { topAnimeEps = eps; topAnimeId = key; }
                 }
             });
+            // Titre de l'animé le plus regardé (depuis le catalogue chargé)
+            let topAnimeTitle = null;
+            if (topAnimeId && typeof DEFAULT_ANIME_DATA !== "undefined") {
+                const found = DEFAULT_ANIME_DATA.find(a => a.id === topAnimeId);
+                if (found) topAnimeTitle = found.titleFr;
+            }
 
             const totalMins = totalEps * 24;
             const hours = Math.round(totalMins / 60);
@@ -358,6 +372,7 @@ async function fetchAndRenderLeaderboard() {
                 avatarUrl: avatarUrl,
                 episodesCount: totalEps,
                 completedCount: completedCount,
+                topAnimeTitle: topAnimeTitle,
                 hours: hours,
                 updatedAt: new Date(row.updated_at)
             };
@@ -375,89 +390,9 @@ async function fetchAndRenderLeaderboard() {
             return;
         }
         
-        activeUsers.sort((a, b) => {
-            if (b.hours !== a.hours) return b.hours - a.hours;
-            if (b.episodesCount !== a.episodesCount) return b.episodesCount - a.episodesCount;
-            return a.name.localeCompare(b.name, "fr");
-        });
-        
-        // ----- Rendu : podium top 3 + liste + ma position épinglée -----
-        const fallbackAvatar = (name) => `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=ff6400&color=fff&bold=true`;
-        const levelOf = (h) => h >= 500 ? { name: "Légende", color: "#f59e0b" }
-            : h >= 200 ? { name: "Otaku", color: "#a855f7" }
-            : h >= 50 ? { name: "Passionné", color: "#3b82f6" }
-            : h >= 10 ? { name: "Amateur", color: "#22c55e" }
-            : { name: "Novice", color: "#9ca3af" };
-        const fmtTime = (h) => h >= 48 ? `${Math.floor(h / 24)}j ${h % 24}h` : `${h}h`;
-        const maxHours = Math.max(activeUsers[0].hours, 1);
-        const medals = ["🥇", "🥈", "🥉"];
-
-        const podiumUsers = activeUsers.slice(0, 3);
-        // Ordre visuel du podium : 2e, 1er, 3e
-        const podiumOrder = [podiumUsers[1], podiumUsers[0], podiumUsers[2]].filter(Boolean);
-
-        let html = `<div class="lb-podium">`;
-        podiumOrder.forEach((user) => {
-            const rank = activeUsers.indexOf(user) + 1;
-            const lvl = levelOf(user.hours);
-            const isMe = syncUser && syncUser.id === user.userId;
-            html += `
-                <div class="lb-podium-col place-${rank} ${isMe ? "current-user" : ""}">
-                    <span class="lb-medal">${medals[rank - 1]}</span>
-                    <img class="lb-podium-avatar" src="${user.avatarUrl}" alt="" onerror="this.src='${fallbackAvatar(user.name)}'">
-                    <span class="lb-podium-name">${user.name}${isMe ? " (Vous)" : ""}</span>
-                    <span class="lb-podium-hours">${fmtTime(user.hours)}</span>
-                    <span class="lb-level" style="color: ${lvl.color}; border-color: ${lvl.color}44; background: ${lvl.color}1a;">${lvl.name}</span>
-                    <div class="lb-podium-base">${rank}</div>
-                </div>
-            `;
-        });
-        html += `</div>`;
-
-        // Liste à partir du 4e
-        activeUsers.slice(3).forEach((user, i) => {
-            const rank = i + 4;
-            const isMe = syncUser && syncUser.id === user.userId;
-            const lvl = levelOf(user.hours);
-            const barPct = Math.max(3, Math.round((user.hours / maxHours) * 100));
-            html += `
-                <div class="leaderboard-item ${isMe ? "current-user" : ""}">
-                    <div class="leaderboard-rank">${rank}</div>
-                    <img class="leaderboard-avatar" src="${user.avatarUrl}" alt="" onerror="this.src='${fallbackAvatar(user.name)}'">
-                    <div class="leaderboard-info">
-                        <div class="leaderboard-name">${user.name}${isMe ? " (Vous)" : ""} <span class="lb-level" style="color: ${lvl.color}; border-color: ${lvl.color}44; background: ${lvl.color}1a;">${lvl.name}</span></div>
-                        <div class="leaderboard-stats">${user.episodesCount} ép. vus · ${user.completedCount} terminé${user.completedCount > 1 ? "s" : ""}</div>
-                        <div class="lb-bar"><div style="width: ${barPct}%"></div></div>
-                    </div>
-                    <div class="leaderboard-hours">
-                        <span>${fmtTime(user.hours)}</span>
-                        <span class="leaderboard-hours-label">de visionnage</span>
-                    </div>
-                </div>
-            `;
-        });
-
-        contentEl.innerHTML = html;
-
-        // Ma position, toujours visible en bas
-        if (syncUser) {
-            const myIndex = activeUsers.findIndex(u => u.userId === syncUser.id);
-            const meBar = document.createElement("div");
-            meBar.className = "lb-me-bar";
-            if (myIndex !== -1) {
-                const me = activeUsers[myIndex];
-                const ahead = myIndex > 0 ? activeUsers[myIndex - 1] : null;
-                const gap = ahead ? (ahead.hours - me.hours) : 0;
-                meBar.innerHTML = `
-                    <span class="lb-me-rank">#${myIndex + 1}</span>
-                    <span class="lb-me-text">Votre position · ${fmtTime(me.hours)} de visionnage</span>
-                    <span class="lb-me-gap">${myIndex === 0 ? "👑 En tête !" : `${fmtTime(gap)} du rang #${myIndex}`}</span>
-                `;
-            } else {
-                meBar.innerHTML = `<span class="lb-me-text">Marquez des épisodes vus pour entrer au classement !</span>`;
-            }
-            contentEl.appendChild(meBar);
-        }
+        lbUsersCache = activeUsers;
+        renderLeaderboardContent(contentEl);
+        return;
         
     } catch (err) {
         console.error("Error fetching leaderboard:", err);
@@ -467,6 +402,138 @@ async function fetchAndRenderLeaderboard() {
                 <p style="font-size: 0.75rem; margin-top: 8px;">Vérifiez que la table <code>anime_progress</code> est lisible publiquement (RLS SELECT) dans Supabase.</p>
             </div>
         `;
+    }
+}
+
+// ----- Rendu du classement : stats communauté, tri, podium, liste -----
+let lbUsersCache = null;
+let lbSortMode = "hours"; // hours | completed | episodes
+
+function renderLeaderboardContent(contentEl) {
+    if (!contentEl || !lbUsersCache || lbUsersCache.length === 0) return;
+
+    const fallbackAvatar = (name) => `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=ff6400&color=fff&bold=true`;
+    const levelOf = (h) => h >= 500 ? { name: "Légende", color: "#f59e0b" }
+        : h >= 200 ? { name: "Otaku", color: "#a855f7" }
+        : h >= 50 ? { name: "Passionné", color: "#3b82f6" }
+        : h >= 10 ? { name: "Amateur", color: "#22c55e" }
+        : { name: "Novice", color: "#9ca3af" };
+    const fmtTime = (h) => h >= 48 ? `${Math.floor(h / 24)}j ${h % 24}h` : `${h}h`;
+    const activityOf = (d) => {
+        const days = Math.floor((Date.now() - d.getTime()) / 86400000);
+        return days <= 0 ? "🟢 actif aujourd'hui" : days === 1 ? "🟡 actif hier" : `⚪ actif il y a ${days} j`;
+    };
+
+    const sorters = {
+        hours: (a, b) => b.hours - a.hours || b.episodesCount - a.episodesCount,
+        completed: (a, b) => b.completedCount - a.completedCount || b.hours - a.hours,
+        episodes: (a, b) => b.episodesCount - a.episodesCount || b.hours - a.hours
+    };
+    const mainValue = {
+        hours: (u) => fmtTime(u.hours),
+        completed: (u) => `${u.completedCount}`,
+        episodes: (u) => `${u.episodesCount}`
+    };
+    const mainLabel = { hours: "de visionnage", completed: "terminés", episodes: "épisodes" };
+
+    const users = [...lbUsersCache].sort(sorters[lbSortMode] || sorters.hours);
+    const maxRef = Math.max(lbSortMode === "completed" ? users[0].completedCount : lbSortMode === "episodes" ? users[0].episodesCount : users[0].hours, 1);
+    const refOf = (u) => lbSortMode === "completed" ? u.completedCount : lbSortMode === "episodes" ? u.episodesCount : u.hours;
+    const medals = ["🥇", "🥈", "🥉"];
+
+    // Stats de la communauté
+    const totalHours = users.reduce((s, u) => s + u.hours, 0);
+    const totalEps = users.reduce((s, u) => s + u.episodesCount, 0);
+    let html = `
+        <div class="lb-community">
+            <div class="lb-community-stat"><span>${users.length}</span><label>Membre${users.length > 1 ? "s" : ""}</label></div>
+            <div class="lb-community-stat"><span>${fmtTime(totalHours)}</span><label>Cumulées</label></div>
+            <div class="lb-community-stat"><span>${totalEps}</span><label>Épisodes</label></div>
+        </div>
+        <div class="lb-tabs">
+            <button class="lb-tab ${lbSortMode === "hours" ? "active" : ""}" data-sort="hours">⏱ Heures</button>
+            <button class="lb-tab ${lbSortMode === "completed" ? "active" : ""}" data-sort="completed">🏁 Terminés</button>
+            <button class="lb-tab ${lbSortMode === "episodes" ? "active" : ""}" data-sort="episodes">📺 Épisodes</button>
+        </div>
+    `;
+
+    // Podium (ordre visuel 2-1-3)
+    const podium = [users[1], users[0], users[2]].filter(Boolean);
+    html += `<div class="lb-podium">`;
+    podium.forEach((user) => {
+        const rank = users.indexOf(user) + 1;
+        const lvl = levelOf(user.hours);
+        const isMe = syncUser && syncUser.id === user.userId;
+        html += `
+            <div class="lb-podium-col place-${rank} ${isMe ? "current-user" : ""}">
+                <span class="lb-medal">${medals[rank - 1]}</span>
+                <img class="lb-podium-avatar" src="${user.avatarUrl}" alt="" onerror="this.src='${fallbackAvatar(user.name)}'">
+                <span class="lb-podium-name">${user.name}${isMe ? " (Vous)" : ""}</span>
+                <span class="lb-podium-hours">${mainValue[lbSortMode](user)}</span>
+                <span class="lb-level" style="color: ${lvl.color}; border-color: ${lvl.color}44; background: ${lvl.color}1a;">${lvl.name}</span>
+                <div class="lb-podium-base">${rank}</div>
+            </div>
+        `;
+    });
+    html += `</div>`;
+
+    // Liste à partir du 4e
+    users.slice(3).forEach((user, i) => {
+        const rank = i + 4;
+        const isMe = syncUser && syncUser.id === user.userId;
+        const lvl = levelOf(user.hours);
+        const barPct = Math.max(3, Math.round((refOf(user) / maxRef) * 100));
+        html += `
+            <div class="leaderboard-item ${isMe ? "current-user" : ""}">
+                <div class="leaderboard-rank">${rank}</div>
+                <img class="leaderboard-avatar" src="${user.avatarUrl}" alt="" onerror="this.src='${fallbackAvatar(user.name)}'">
+                <div class="leaderboard-info">
+                    <div class="leaderboard-name">${user.name}${isMe ? " (Vous)" : ""} <span class="lb-level" style="color: ${lvl.color}; border-color: ${lvl.color}44; background: ${lvl.color}1a;">${lvl.name}</span></div>
+                    <div class="leaderboard-stats">${user.episodesCount} ép. · ${user.completedCount} terminé${user.completedCount > 1 ? "s" : ""} · ${activityOf(user.updatedAt)}</div>
+                    ${user.topAnimeTitle ? `<div class="lb-top-anime">Fan de ${user.topAnimeTitle}</div>` : ""}
+                    <div class="lb-bar"><div style="width: ${barPct}%"></div></div>
+                </div>
+                <div class="leaderboard-hours">
+                    <span>${mainValue[lbSortMode](user)}</span>
+                    <span class="leaderboard-hours-label">${mainLabel[lbSortMode]}</span>
+                </div>
+            </div>
+        `;
+    });
+
+    contentEl.innerHTML = html;
+
+    // Onglets de tri
+    contentEl.querySelectorAll(".lb-tab").forEach(tab => {
+        tab.addEventListener("click", () => {
+            lbSortMode = tab.getAttribute("data-sort");
+            renderLeaderboardContent(contentEl);
+        });
+    });
+
+    // Ma position épinglée (clic = défiler jusqu'à ma ligne)
+    if (syncUser) {
+        const myIndex = users.findIndex(u => u.userId === syncUser.id);
+        const meBar = document.createElement("div");
+        meBar.className = "lb-me-bar";
+        if (myIndex !== -1) {
+            const me = users[myIndex];
+            const ahead = myIndex > 0 ? users[myIndex - 1] : null;
+            const gap = ahead ? Math.max(refOf(ahead) - refOf(me), 0) : 0;
+            const gapText = lbSortMode === "hours" ? fmtTime(gap) : gap;
+            meBar.innerHTML = `
+                <span class="lb-me-rank">#${myIndex + 1}</span>
+                <span class="lb-me-text">Votre position · ${mainValue[lbSortMode](me)} ${mainLabel[lbSortMode]}</span>
+                <span class="lb-me-gap">${myIndex === 0 ? "👑 En tête !" : `${gapText} du rang #${myIndex}`}</span>
+            `;
+            meBar.addEventListener("click", () => {
+                const meRow = contentEl.querySelector(".leaderboard-item.current-user, .lb-podium-col.current-user");
+                if (meRow) meRow.scrollIntoView({ behavior: "smooth", block: "center" });
+            });
+        } else {
+            meBar.innerHTML = `<span class="lb-me-text">Marquez des épisodes vus pour entrer au classement !</span>`;
+        }
+        contentEl.appendChild(meBar);
     }
 }
 
@@ -496,6 +563,11 @@ function initLeaderboardEvents() {
             toggleBtn.classList.remove("drawer-open");
         }
     });
+
+    // Rafraîchissement automatique tant que le classement est ouvert
+    setInterval(() => {
+        if (isLeaderboardOpen) fetchAndRenderLeaderboard();
+    }, 60000);
 }
 
 window.addEventListener("load", initDiscordSync);

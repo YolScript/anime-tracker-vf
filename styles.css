@@ -3252,3 +3252,109 @@ body {
     white-space: nowrap;
 }
 
+
+/* ==========================================================================
+   CLASSEMENT — vague 2 : stats communauté, onglets de tri, top animé
+   ========================================================================== */
+.lb-community {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.lb-community-stat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 10px 6px;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+}
+
+.lb-community-stat span {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.lb-community-stat label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--text-muted);
+}
+
+.lb-tabs {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 4px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    padding: 4px;
+}
+
+.lb-tab {
+    flex: 1;
+    background: transparent;
+    color: var(--text-muted);
+    border: none;
+    font-family: var(--font-sans);
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 7px 4px;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all 0.25s var(--ease-premium);
+    white-space: nowrap;
+}
+
+.lb-tab:hover {
+    color: var(--text-white);
+}
+
+.lb-tab.active {
+    background: rgba(255, 100, 0, 0.16);
+    color: #ffb27d;
+    border: 1px solid rgba(255, 100, 0, 0.35);
+}
+
+.lb-top-anime {
+    font-size: 10.5px;
+    color: #ffb27d;
+    margin-top: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.lb-top-anime::before {
+    content: "❤ ";
+    font-size: 9px;
+}
+
+@keyframes lbRowIn {
+    from { opacity: 0; transform: translateX(10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.leaderboard-item {
+    animation: lbRowIn 0.35s var(--ease-premium) backwards;
+}
+
+.leaderboard-item:nth-child(-n+10) { animation-delay: calc(0.03s * var(--i, 1)); }
+
+.lb-me-bar {
+    cursor: pointer;
+    transition: transform 0.25s var(--ease-premium), box-shadow 0.25s var(--ease-premium);
+}
+
+.lb-me-bar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 100, 0, 0.2);
+}
+
