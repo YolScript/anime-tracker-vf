@@ -2882,3 +2882,166 @@ body {
     .grid-heading { font-size: 16px; }
 }
 
+
+/* ==========================================================================
+   REDESIGN — vague 3 : Polissage esthétique et micro-animations Premium
+   ========================================================================== */
+
+/* 1. Tableau de bord des statistiques - Effet Verre & Néon */
+.progress-summary-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%), var(--bg-card) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border-radius: 16px;
+    padding: 20px;
+    transition: border-color 0.4s var(--ease-premium), box-shadow 0.4s var(--ease-premium), transform 0.4s var(--ease-premium) !important;
+}
+
+.progress-summary-card:hover {
+    border-color: rgba(255, 100, 0, 0.35) !important;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 100, 0, 0.12);
+    transform: translateY(-4px) !important;
+}
+
+.progress-bar-bg {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    height: 10px !important;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.progress-bar-fill {
+    background: linear-gradient(90deg, #ff6400, #ff8e42) !important;
+    box-shadow: 0 0 10px rgba(255, 100, 0, 0.55);
+}
+
+/* 2. Modales - Animation d'entrée organique et fluide */
+.modal {
+    transition: opacity 0.4s var(--ease-premium) !important;
+}
+
+.modal-container {
+    transform: scale(0.96) translateY(10px) !important;
+    transition: transform 0.45s var(--ease-premium), opacity 0.4s var(--ease-premium) !important;
+}
+
+.modal.show .modal-container {
+    transform: scale(1) translateY(0) !important;
+}
+
+/* 3. Micro-interactions de survol - Effet de surbrillance "Shine" */
+.card-image-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-image-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.18) 50%, transparent);
+    transform: skewX(-25deg);
+    pointer-events: none;
+    z-index: 3;
+    transition: none;
+}
+
+.anime-card:hover .card-image-wrapper::after {
+    left: 150%;
+    transition: left 0.85s var(--ease-premium);
+}
+
+/* Effet Shine similaire pour les carrousels */
+.row-card-poster {
+    position: relative;
+    overflow: hidden;
+}
+
+.row-card-poster::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.18) 50%, transparent);
+    transform: skewX(-25deg);
+    pointer-events: none;
+    z-index: 3;
+    transition: none;
+}
+
+.row-card:hover .row-card-poster::after {
+    left: 150%;
+    transition: left 0.85s var(--ease-premium);
+}
+
+/* Échelle lente des affiches */
+.anime-card .card-image {
+    transition: transform 0.6s var(--ease-premium);
+}
+
+.anime-card:hover .card-image {
+    transform: scale(1.04);
+}
+
+/* 4. Filtres - Indicateur d'onglet actif pulsant */
+.filter-tab {
+    position: relative;
+}
+
+.filter-tab.active {
+    box-shadow: 0 4px 15px rgba(255, 100, 0, 0.15);
+    border-color: rgba(255, 100, 0, 0.4) !important;
+}
+
+.filter-tab.active::after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 2px;
+    animation: tabPulse 1.8s infinite ease-in-out;
+}
+
+@keyframes tabPulse {
+    0%, 100% {
+        transform: scale(0.8);
+        opacity: 0.5;
+        box-shadow: 0 0 0 0 rgba(255, 100, 0, 0.7);
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+        box-shadow: 0 0 8px 2px rgba(255, 100, 0, 0.4);
+    }
+}
+
+/* 5. Menus déroulants et selects - Effet de verre dépoli */
+.dropdown-menu {
+    background-color: rgba(20, 21, 25, 0.85) !important;
+    backdrop-filter: blur(18px) saturate(120%);
+    -webkit-backdrop-filter: blur(18px) saturate(120%);
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5) !important;
+}
+
+.select-wrapper {
+    background-color: rgba(26, 28, 34, 0.6) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.select-wrapper:hover {
+    border-color: rgba(255, 100, 0, 0.45) !important;
+    box-shadow: 0 0 0 3px rgba(255, 100, 0, 0.1) !important;
+}
+
+
