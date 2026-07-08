@@ -2682,13 +2682,6 @@ body {
     gap: 8px;
 }
 
-.row-title::before {
-    content: "";
-    width: 4px;
-    height: 16px;
-    background: var(--primary);
-    border-radius: 2px;
-}
 
 .row-scroller {
     display: flex;
