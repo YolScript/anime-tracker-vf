@@ -30,6 +30,33 @@ function clearActiveYtPlayback() {
     }
 }
 
+// Détecteur de langue et traducteur automatique de synopsis
+function isEnglishText(text) {
+    if (!text) return false;
+    const englishWords = /\b(the|and|of|to|a|is|in|that|it|was|for|on|with|as|at|by|an|be|this|are|from|or|had|but)\b/i;
+    const frenchWords = /\b(le|la|les|et|de|un|une|est|dans|en|que|qui|ce|pour|sur|avec|pour|par|ou|plus|dans)\b/i;
+    
+    let enCount = (text.match(new RegExp(englishWords, "gi")) || []).length;
+    let frCount = (text.match(new RegExp(frenchWords, "gi")) || []).length;
+    
+    return enCount > frCount;
+}
+
+async function translateTextToFrench(text) {
+    if (!text || text.trim() === "") return text;
+    try {
+        const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=fr&dt=t&q=${encodeURIComponent(text)}`;
+        const res = await fetch(url);
+        const data = await res.json();
+        if (data && data[0]) {
+            return data[0].map(x => x[0]).join("");
+        }
+    } catch (e) {
+        console.error("Erreur de traduction:", e);
+    }
+    return text;
+}
+
 // ==========================================================================
 // DOM ELEMENTS
 // ==========================================================================
@@ -427,6 +454,20 @@ function renderHero() {
             </div>
         </div>
     `;
+
+    // Auto-translate hero synopsis in background if in English
+    if (pick.synopsis && isEnglishText(pick.synopsis)) {
+        translateTextToFrench(pick.synopsis).then(translated => {
+            if (translated && translated !== pick.synopsis) {
+                pick.synopsis = translated;
+                saveData();
+                const heroSynEl = hero.querySelector(".hero-synopsis");
+                if (heroSynEl) {
+                    heroSynEl.textContent = translated.split("\n")[0];
+                }
+            }
+        });
+    }
     const playBtn = document.getElementById("hero-play-btn");
     if (playBtn) playBtn.addEventListener("click", () => openPlayerModal(pick.id));
     const detailsBtn = document.getElementById("hero-details-btn");
@@ -1001,6 +1042,20 @@ function showAnimeDetails(id) {
     });
     
     openModal(detailModal);
+
+    // Auto-translate detail synopsis in background if in English
+    if (anime.synopsis && isEnglishText(anime.synopsis)) {
+        translateTextToFrench(anime.synopsis).then(translated => {
+            if (translated && translated !== anime.synopsis) {
+                const synTextEl = detailModal.querySelector(".detail-synopsis-text");
+                if (synTextEl) {
+                    synTextEl.innerHTML = `${translated} <span style="font-size: 10px; color: var(--primary); display: block; margin-top: 6px; font-style: italic;">(Traduit automatiquement par l'IA)</span>`;
+                }
+                anime.synopsis = translated;
+                saveData();
+            }
+        });
+    }
 }
 
 // ==========================================================================
