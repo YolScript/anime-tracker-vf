@@ -51,6 +51,11 @@ self.addEventListener('fetch', (event) => {
         return;
     }
 
+    // Never cache the background video (large binary, not needed offline)
+    if (url.pathname.endsWith('.mp4')) {
+        return;
+    }
+
     // Network-first for API calls (AniList GraphQL)
     if (url.hostname === 'graphql.anilist.co') {
         event.respondWith(

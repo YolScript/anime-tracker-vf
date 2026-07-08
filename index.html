@@ -19,8 +19,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Link to styles -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Priorise le telechargement du catalogue (~1 Mo) des le debut du chargement -->
+    <link rel="preload" as="script" href="catalog.js">
 </head>
 <body>
+    <!-- Video d'arriere-plan (boucle silencieuse, assombrie en CSS pour la lisibilite) -->
+    <video class="bg-video" autoplay muted loop playsinline poster="bg-video-poster.jpg" aria-hidden="true">
+        <source src="bg-video.mp4" type="video/mp4">
+    </video>
+
     <!-- App Container -->
     <div class="app-container">
         <!-- Header -->
@@ -46,29 +53,77 @@
                     </button>
                 </div>
 
-                <!-- Sort Selector -->
-                <div class="select-wrapper">
-                    <select id="sort-select">
-                        <option value="last-episode-desc" selected>Dernier épisode (Récent)</option>
-                        <option value="alphabetical">Nom (A-Z)</option>
-                        <option value="rating">Note (Décroissante)</option>
-                        <option value="episodes-left">Épisodes restants</option>
-                        <option value="progress-pct">Progression (%)</option>
-                        <option value="release-date-desc">Date de sortie (Récent)</option>
-                        <option value="release-date-asc">Date de sortie (Ancien)</option>
-                    </select>
-                </div>
-
-                <!-- Platform Filter Selector -->
-                <div class="select-wrapper">
-                    <select id="platform-select">
-                        <option value="all">Toutes plateformes</option>
-                        <option value="crunchyroll">Crunchyroll</option>
-                        <option value="adn">ADN</option>
-                        <option value="netflix">Netflix</option>
-                        <option value="disney">Disney+</option>
-                        <option value="prime">Prime Video</option>
-                    </select>
+                <!-- Tri + Plateforme : regroupes derriere un seul bouton Filtres -->
+                <div class="dropdown filters-dropdown">
+                    <button id="filters-toggle-btn" class="btn-filters" type="button">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                        </svg>
+                        <span>Filtres</span>
+                    </button>
+                    <div id="filters-menu" class="dropdown-menu filters-menu">
+                        <div class="filters-menu-group">
+                            <label for="sort-select">Trier par</label>
+                            <div class="select-wrapper">
+                                <select id="sort-select">
+                                    <option value="last-episode-desc" selected>Dernier épisode (Récent)</option>
+                                    <option value="alphabetical">Nom (A-Z)</option>
+                                    <option value="rating">Note (Décroissante)</option>
+                                    <option value="episodes-left">Épisodes restants</option>
+                                    <option value="progress-pct">Progression (%)</option>
+                                    <option value="release-date-desc">Date de sortie (Récent)</option>
+                                    <option value="release-date-asc">Date de sortie (Ancien)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="filters-menu-group">
+                            <label for="platform-select">Plateforme</label>
+                            <div class="select-wrapper">
+                                <select id="platform-select">
+                                    <option value="all">Toutes plateformes</option>
+                                    <option value="crunchyroll">Crunchyroll</option>
+                                    <option value="adn">ADN</option>
+                                    <option value="netflix">Netflix</option>
+                                    <option value="disney">Disney+</option>
+                                    <option value="prime">Prime Video</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="filters-menu-group">
+                            <label>Statut</label>
+                            <div class="filter-navbar">
+                                <button class="filter-tab active" data-status="all">
+                                    <span>Tout</span>
+                                    <span class="tab-count" id="count-all">0</span>
+                                </button>
+                                <button class="filter-tab" data-status="watching">
+                                    <span class="indicator watching"></span>
+                                    <span>En cours</span>
+                                    <span class="tab-count" id="count-watching">0</span>
+                                </button>
+                                <button class="filter-tab" data-status="plan-to-watch">
+                                    <span class="indicator plan-to-watch"></span>
+                                    <span>À voir</span>
+                                    <span class="tab-count" id="count-plan-to-watch">0</span>
+                                </button>
+                                <button class="filter-tab" data-status="completed">
+                                    <span class="indicator completed"></span>
+                                    <span>Terminé</span>
+                                    <span class="tab-count" id="count-completed">0</span>
+                                </button>
+                                <button class="filter-tab" data-status="on-hold">
+                                    <span class="indicator on-hold"></span>
+                                    <span>En pause</span>
+                                    <span class="tab-count" id="count-on-hold">0</span>
+                                </button>
+                                <button class="filter-tab" data-status="hidden">
+                                    <span class="indicator hidden-indicator"></span>
+                                    <span>Masqués</span>
+                                    <span class="tab-count" id="count-hidden">0</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Sync Indicator (masqué) -->
@@ -150,39 +205,6 @@
 
         <!-- Main Content Area -->
         <main class="main-content">
-            <!-- Filter Nav Bar -->
-            <div class="filter-navbar">
-                <button class="filter-tab active" data-status="all">
-                    <span>Tout</span>
-                    <span class="tab-count" id="count-all">0</span>
-                </button>
-                <button class="filter-tab" data-status="watching">
-                    <span class="indicator watching"></span>
-                    <span>En cours</span>
-                    <span class="tab-count" id="count-watching">0</span>
-                </button>
-                <button class="filter-tab" data-status="plan-to-watch">
-                    <span class="indicator plan-to-watch"></span>
-                    <span>À voir</span>
-                    <span class="tab-count" id="count-plan-to-watch">0</span>
-                </button>
-                <button class="filter-tab" data-status="completed">
-                    <span class="indicator completed"></span>
-                    <span>Terminé</span>
-                    <span class="tab-count" id="count-completed">0</span>
-                </button>
-                <button class="filter-tab" data-status="on-hold">
-                    <span class="indicator on-hold"></span>
-                    <span>En pause</span>
-                    <span class="tab-count" id="count-on-hold">0</span>
-                </button>
-                <button class="filter-tab" data-status="hidden">
-                    <span class="indicator hidden-indicator"></span>
-                    <span>Masqués</span>
-                    <span class="tab-count" id="count-hidden">0</span>
-                </button>
-            </div>
-
             <!-- Section heading -->
             <div id="grid-heading" class="grid-heading" style="display: none;"></div>
 
@@ -408,12 +430,12 @@
         </div>
     </div>
 
-    <!-- Link to app logic -->
-    <script src="catalog.js"></script>
-    <script src="app.js"></script>
+    <!-- Link to app logic (defer : execution non-bloquante, ordre preserve) -->
+    <script src="catalog.js" defer></script>
+    <script src="app.js" defer></script>
     <!-- Sync Discord (Supabase) -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-    <script src="sync.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" defer></script>
+    <script src="sync.js" defer></script>
 
     <!-- PWA: Service Worker Registration & Install Prompt -->
     <script>

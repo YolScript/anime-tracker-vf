@@ -15,6 +15,10 @@ let currentSearch = "";
 let currentSort = "last-episode-desc";
 let currentPlatform = "all";
 
+// Debounce du champ recherche + jeton d'annulation du rendu par lots
+let searchDebounceTimer = null;
+let renderToken = 0;
+
 // YouTube Error Auto-Fallback Globals
 let activeYtTimeout = null;
 let activeYtListener = null;
@@ -66,6 +70,8 @@ const searchInput = document.getElementById("search-input");
 const clearSearchBtn = document.getElementById("clear-search");
 const sortSelect = document.getElementById("sort-select");
 const platformSelect = document.getElementById("platform-select");
+const filtersToggleBtn = document.getElementById("filters-toggle-btn");
+const filtersMenu = document.getElementById("filters-menu");
 const filterTabs = document.querySelectorAll(".filter-tab");
 const addAnimeBtn = document.getElementById("add-anime-btn");
 const emptyAddBtn = document.getElementById("empty-add-btn");
@@ -393,7 +399,6 @@ function renderHero() {
 
     hero.style.display = "flex";
     hero.innerHTML = `
-        <div class="hero-backdrop" style="background-image: url('${pick.imageUrl}')"></div>
         <div class="hero-inner">
             <img class="hero-poster" src="${pick.imageUrl}" alt="${pick.titleFr}">
             <div class="hero-content">
@@ -633,8 +638,31 @@ function renderGrid() {
 
     animeGrid.style.display = "grid";
     emptyState.style.display = "none";
-    
-    filteredList.forEach(anime => {
+
+    // Rendu par lots (requestAnimationFrame) : construire les ~600+ fiches en un
+    // seul passage synchrone gèle visiblement le thread principal. On étale la
+    // construction sur plusieurs frames et on annule via renderToken si un
+    // nouveau renderGrid() démarre entre-temps (recherche/tri/filtre rapides).
+    const myRenderToken = ++renderToken;
+    const CHUNK_SIZE = 60;
+    let cursor = 0;
+
+    function renderChunk() {
+        if (myRenderToken !== renderToken) return;
+        const fragment = document.createDocumentFragment();
+        const end = Math.min(cursor + CHUNK_SIZE, filteredList.length);
+        for (; cursor < end; cursor++) {
+            fragment.appendChild(createAnimeCard(filteredList[cursor]));
+        }
+        animeGrid.appendChild(fragment);
+        if (cursor < filteredList.length) {
+            requestAnimationFrame(renderChunk);
+        }
+    }
+    renderChunk();
+}
+
+function createAnimeCard(anime) {
         const card = document.createElement("div");
         card.className = "anime-card" + (anime.unavailable ? " unavailable" : "");
         card.setAttribute("data-id", anime.id);
@@ -763,10 +791,8 @@ function renderGrid() {
         card.querySelectorAll(".js-open-details").forEach(elem => {
             elem.addEventListener("click", () => showAnimeDetails(anime.id));
         });
-        
-        
-        animeGrid.appendChild(card);
-    });
+
+        return card;
 }
 
 // ==========================================================================
@@ -2115,7 +2141,8 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
         
-        // Search Listener
+        // Search Listener (debounced : évite un rebuild complet de la grille
+        // à chaque frappe, qui saccadait la saisie sur un catalogue de 600+ fiches)
         searchInput.addEventListener("input", (e) => {
             currentSearch = e.target.value;
             if (currentSearch.trim() !== "") {
@@ -2123,11 +2150,13 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 clearSearchBtn.style.display = "none";
             }
-            renderGrid();
+            clearTimeout(searchDebounceTimer);
+            searchDebounceTimer = setTimeout(renderGrid, 150);
         });
         
         // Clear search trigger
         clearSearchBtn.addEventListener("click", () => {
+            clearTimeout(searchDebounceTimer);
             searchInput.value = "";
             currentSearch = "";
             clearSearchBtn.style.display = "none";
@@ -2162,10 +2191,22 @@ document.addEventListener("DOMContentLoaded", () => {
             e.stopPropagation();
             dataDropdownMenu.classList.toggle("show");
         });
-        
+
         document.addEventListener("click", () => {
             dataDropdownMenu.classList.remove("show");
         });
+
+        // Filters dropdown (tri + plateforme)
+        if (filtersToggleBtn && filtersMenu) {
+            filtersToggleBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                filtersMenu.classList.toggle("show");
+            });
+            filtersMenu.addEventListener("click", (e) => e.stopPropagation());
+            document.addEventListener("click", () => {
+                filtersMenu.classList.remove("show");
+            });
+        }
         
         exportBtn.addEventListener("click", exportToJSON);
         
