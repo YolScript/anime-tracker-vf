@@ -1559,6 +1559,9 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                                 Lire
                             `}
                         </span>
+                        <div class="player-episode-progress-bar">
+                            <div style="width: ${isWatched ? 100 : 0}%"></div>
+                        </div>
                     `;
                     
                     item.addEventListener("click", () => {
@@ -1591,6 +1594,9 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                             Lire
                         `}
                     </span>
+                    <div class="player-episode-progress-bar">
+                        <div style="width: ${isWatched ? 100 : 0}%"></div>
+                    </div>
                 `;
                 
                 item.addEventListener("click", () => {
@@ -1768,9 +1774,21 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                     try {
                         const data = typeof event.data === "string" ? JSON.parse(event.data) : event.data;
                         if (data) {
-                            if (data.event === "infoDelivery" && data.info && data.info.playerState === 1) {
-                                played = true;
-                                clearActiveYtPlayback();
+                            if (data.event === "infoDelivery" && data.info) {
+                                if (data.info.playerState === 1) {
+                                    played = true;
+                                    if (activeYtTimeout) {
+                                        clearTimeout(activeYtTimeout);
+                                        activeYtTimeout = null;
+                                    }
+                                }
+                                if (typeof data.info.currentTime !== "undefined" && typeof data.info.duration !== "undefined") {
+                                    const pct = data.info.duration > 0 ? Math.round((data.info.currentTime / data.info.duration) * 100) : 0;
+                                    const activeProgressInner = document.querySelector(`.player-episode-item.active .player-episode-progress-bar div`);
+                                    if (activeProgressInner) {
+                                        activeProgressInner.style.width = `${pct}%`;
+                                    }
+                                }
                             }
                             if (data.info && typeof data.info.error !== "undefined") {
                                 console.warn("YouTube Player error detected via iframe message:", data.info.error);
@@ -1799,6 +1817,13 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                     vid.addEventListener("error", () => {
                         mediaIndex++;
                         renderMediaStep();
+                    });
+                    vid.addEventListener("timeupdate", () => {
+                        const pct = vid.duration > 0 ? Math.round((vid.currentTime / vid.duration) * 100) : 0;
+                        const activeProgressInner = document.querySelector(`.player-episode-item.active .player-episode-progress-bar div`);
+                        if (activeProgressInner) {
+                            activeProgressInner.style.width = `${pct}%`;
+                        }
                     });
                 }
             }
@@ -2451,19 +2476,9 @@ async function syncWithAniList() {
         syncStatusEl.className = "sync-indicator-badge success";
         syncStatusEl.querySelector(".sync-text").textContent = "À jour";
         
-        if (newShowsCount > 0 || updatedShowsCount > 0) {
-            let msg = "Mise à jour terminée !";
-            if (newShowsCount > 0) msg += ` +${newShowsCount} nouveautés VF ajoutées.`;
-            if (updatedShowsCount > 0) msg += ` ${updatedShowsCount} animés mis à jour.`;
-            showToast(msg, "success");
-        } else {
-            showToast("Catalogue et épisodes déjà à jour !", "success");
-        }
-        
     } catch (err) {
         console.error("Sync error :", err);
         syncStatusEl.className = "sync-indicator-badge error";
         syncStatusEl.querySelector(".sync-text").textContent = "Erreur Sync";
-        showToast("Impossible de se connecter à AniList pour la mise à jour.", "error");
     }
 }

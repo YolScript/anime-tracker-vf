@@ -1804,18 +1804,6 @@ select option {
     overflow-y: auto;
 }
 
-.player-episode-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 12px;
-    border-radius: var(--radius-sm);
-    background-color: var(--bg-darker);
-    border: 1px solid transparent;
-    cursor: pointer;
-    transition: var(--transition-fast);
-}
-
 .player-episode-item:hover {
     background-color: var(--bg-dark);
     border-color: var(--text-muted);
@@ -1828,7 +1816,7 @@ select option {
 }
 
 .player-episode-item.watched {
-    opacity: 0.6;
+    opacity: 0.85;
 }
 
 .player-episode-title {
@@ -2590,6 +2578,35 @@ body {
 .hero-progress {
     margin-top: 16px;
     max-width: 380px;
+}
+
+.player-episode-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px 13px 12px;
+    border-radius: var(--radius-sm);
+    background-color: var(--bg-darker);
+    border: 1px solid transparent;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition-fast);
+}
+
+.player-episode-progress-bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.player-episode-progress-bar div {
+    height: 100%;
+    background: var(--primary);
+    transition: width 0.25s linear;
 }
 
 .hero-progress .hero-progress-label {
