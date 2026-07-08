@@ -1636,8 +1636,17 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                         <span>Regarder sur Prime Video</span>
                     </a>
                 ` : ''}
+                <div id="player-episode-progress" style="width: 100%; margin-top: 12px;">
+                    <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--text-muted); margin-bottom: 5px;">
+                        <span>Progression — Épisode ${epNum} sélectionné</span>
+                        <span style="color: var(--text-white); font-weight: 600;">${currentWatched} / ${total} vus (${total > 0 ? Math.round((currentWatched / total) * 100) : 0}%)</span>
+                    </div>
+                    <div style="height: 6px; background: var(--bg-darker); border-radius: 9999px; overflow: hidden;">
+                        <div style="height: 100%; width: ${total > 0 ? Math.round((currentWatched / total) * 100) : 0}%; background: var(--primary); border-radius: 9999px; transition: width 0.3s ease;"></div>
+                    </div>
+                </div>
             `;
-            
+
             // Add automatic validation hooks
             const playLinks = platformsContainer.querySelectorAll(".crunchy-open-web-btn");
             playLinks.forEach(link => {
@@ -1647,6 +1656,37 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                     }
                 });
             });
+
+            // ADN : ouvrir directement l'épisode sélectionné (résolution via
+            // l'API publique ADN au moment du clic ; repli = page de la série)
+            const adnLink = platformsContainer.querySelector(".adn-theme");
+            const adnShowMatch = anime.adnUrl ? anime.adnUrl.match(/\/video\/(\d+)/) : null;
+            if (adnLink && adnShowMatch) {
+                adnLink.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    // Fenêtre ouverte immédiatement (sinon bloquée comme popup)
+                    const win = window.open("", "_blank");
+                    const fallback = () => {
+                        if (win) win.location = anime.adnUrl;
+                        else window.open(anime.adnUrl, "_blank");
+                    };
+                    fetch(`https://gw.api.animationdigitalnetwork.fr/video/show/${adnShowMatch[1]}?offset=${epNum - 1}&limit=1&order=asc`, {
+                        headers: { "X-Target-Distribution": "fr" }
+                    })
+                        .then((r) => r.json())
+                        .then((j) => {
+                            const url = j && j.videos && j.videos[0] && j.videos[0].url;
+                            if (url) {
+                                const target = url.replace("animationdigitalnetwork.com", "animationdigitalnetwork.fr");
+                                if (win) win.location = target;
+                                else window.open(target, "_blank");
+                            } else {
+                                fallback();
+                            }
+                        })
+                        .catch(fallback);
+                });
+            }
         }
 
         // Setup Fullscreen click logic
