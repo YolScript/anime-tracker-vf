@@ -453,29 +453,45 @@ select option {
     display: inline-flex;
 }
 
+.apk-preview-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(4, 5, 8, 0.78);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s var(--transition-fast), visibility 0.25s;
+    pointer-events: none;
+    z-index: 1999;
+}
+
+.apk-preview-wrapper:hover .apk-preview-backdrop {
+    opacity: 1;
+    visibility: visible;
+}
+
 .apk-preview-popup {
-    position: absolute;
-    top: calc(100% + 12px);
-    right: 0;
-    width: 320px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: min(960px, 88vw);
     aspect-ratio: 16 / 9;
-    border-radius: 12px;
+    border-radius: 16px;
     overflow: hidden;
     background: #000;
     border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: var(--shadow-lg);
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-6px);
-    transition: opacity 0.2s var(--transition-fast), transform 0.2s var(--transition-fast), visibility 0.2s;
+    transform: translate(-50%, -50%) scale(0.94);
+    transition: opacity 0.25s var(--transition-fast), transform 0.25s var(--transition-fast), visibility 0.25s;
     pointer-events: none;
-    z-index: 200;
+    z-index: 2000;
 }
 
 .apk-preview-wrapper:hover .apk-preview-popup {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: translate(-50%, -50%) scale(1);
 }
 
 .apk-preview-popup video {
@@ -486,7 +502,8 @@ select option {
 }
 
 @media (max-width: 768px) {
-    .apk-preview-popup {
+    .apk-preview-popup,
+    .apk-preview-backdrop {
         display: none;
     }
 }
