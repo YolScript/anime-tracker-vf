@@ -277,19 +277,23 @@ function loadData() {
         } else {
             const defaultAnime = mergedList.find(a => a.id === id);
             if (defaultAnime) {
+                processedIds.add(id);
+                // Pas de doublage VF confirmé : exclu du classement,
+                // même avec une progression déjà commencée ou terminée.
+                if (defaultAnime.noVf) return;
                 const updated = { ...defaultAnime };
                 updated.episodesWatched = record.episodesWatched || 0;
                 updated.status = record.status || "plan-to-watch";
                 updated.rating = record.rating || 0;
                 finalActiveList.push(updated);
-                processedIds.add(id);
             }
         }
     });
-    
-    // Add remaining default catalog shows that have no progress yet
+
+    // Add remaining default catalog shows that have no progress yet.
+    // Les animés sans doublage VF confirmé (noVf) sont exclus du classement.
     mergedList.forEach(defaultAnime => {
-        if (!processedIds.has(defaultAnime.id)) {
+        if (!processedIds.has(defaultAnime.id) && !defaultAnime.noVf) {
             finalActiveList.push(defaultAnime);
         }
     });
@@ -1499,26 +1503,27 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
             };
         }
         
+        // Chaîne de lecture : trailer VF -> trailer VO -> opening vidéo de
+        // l'animé (animethemes.moe, creditless) -> message "non disponible".
         const trailerCandidates = getTrailerCandidates(anime);
-        let trailerIndex = 0;
-        const trailerId = trailerCandidates.length > 0 ? trailerCandidates[0] : null;
+        const mediaSteps = trailerCandidates.map(id => ({ type: "yt", id: id }));
+        if (anime.openingUrl) {
+            mediaSteps.push({ type: "opening", url: anime.openingUrl });
+        }
+        let mediaIndex = 0;
+        const hasMedia = mediaSteps.length > 0;
 
         videoPlayerWrapper.innerHTML = `
             <div class="crunchy-mock-player" style="position: relative; overflow: hidden; background: #000; width: 100%; height: 100%;">
                 <div class="player-placeholder" style="position: relative; overflow: hidden; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #0c0d10; padding: 0;">
-                    ${trailerId ? `
-                        <iframe 
-                            id="player-trailer-iframe"
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; opacity: 1; transform: scale(1.0); pointer-events: none;"
-                            src="https://www.youtube.com/embed/${trailerId}?autoplay=1&mute=1&loop=1&playlist=${trailerId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0&enablejsapi=1&cc_load_policy=3&origin=${encodeURIComponent(window.location.origin)}"
-                            allow="autoplay; encrypted-media">
-                        </iframe>
-                        
+                    ${hasMedia ? `
+                        <div id="player-media-slot" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
+
                         <!-- Transparent shield blocking all mouse interactions with the YouTube video -->
                         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; background: transparent;"></div>
                         
                         <!-- Button if video is geoblocked or unavailable -->
-                        <button id="player-fallback-btn" title="Vidéo bloquée ou indisponible ? Charger l'opening de secours" style="position: absolute; bottom: 12px; left: 12px; z-index: 10; background: rgba(0, 0, 0, 0.7); color: #ff6400; border: 1px solid rgba(255,100,0,0.35); border-radius: 18px; padding: 0 12px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; gap: 6px;">
+                        <button id="player-fallback-btn" title="Vidéo bloquée ou indisponible ? Essayer la vidéo suivante (trailer VO, opening...)" style="position: absolute; bottom: 12px; left: 12px; z-index: 10; background: rgba(0, 0, 0, 0.7); color: #ff6400; border: 1px solid rgba(255,100,0,0.35); border-radius: 18px; padding: 0 12px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; gap: 6px;">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
                             <span>Vidéo bloquée ?</span>
                         </button>
@@ -1547,6 +1552,55 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                 </div>
             </div>
         `;
+
+        // Affiche l'étape média courante (trailer YouTube ou opening vidéo),
+        // ou le message final quand plus rien n'est lisible.
+        const renderMediaStep = () => {
+            const slot = document.getElementById("player-media-slot");
+            if (!slot) return;
+            if (mediaIndex >= mediaSteps.length) {
+                const placeholder = videoPlayerWrapper.querySelector(".player-placeholder");
+                if (placeholder) {
+                    placeholder.innerHTML = `
+                        <div class="player-placeholder-icon-wrapper" style="text-align: center; padding: 24px;">
+                            <svg class="player-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width: 48px; height: 48px; color: var(--text-muted); margin-bottom: 12px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            <h4 style="font-size: 16px; margin-bottom: 4px;">Bande-annonce non disponible</h4>
+                            <p style="font-size: 13px; color: var(--text-muted);">Aucune vidéo lisible pour cet animé.</p>
+                        </div>
+                    `;
+                }
+                return;
+            }
+            const step = mediaSteps[mediaIndex];
+            if (step.type === "yt") {
+                slot.innerHTML = `
+                    <iframe
+                        id="player-trailer-iframe"
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; pointer-events: none;"
+                        src="https://www.youtube.com/embed/${step.id}?autoplay=1&mute=1&loop=1&playlist=${step.id}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0&enablejsapi=1&cc_load_policy=3&origin=${encodeURIComponent(window.location.origin)}"
+                        allow="autoplay; encrypted-media">
+                    </iframe>
+                `;
+            } else {
+                slot.innerHTML = `
+                    <video
+                        id="player-trailer-video"
+                        src="${step.url}"
+                        autoplay muted loop playsinline
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; background: #000;">
+                    </video>
+                    <span style="position: absolute; top: 12px; right: 12px; z-index: 6; background: rgba(0,0,0,0.7); color: #ff6400; border: 1px solid rgba(255,100,0,0.35); font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Opening</span>
+                `;
+                const vid = document.getElementById("player-trailer-video");
+                if (vid) {
+                    vid.addEventListener("error", () => {
+                        mediaIndex++;
+                        renderMediaStep();
+                    });
+                }
+            }
+        };
+        if (hasMedia) renderMediaStep();
 
         // Populate platform buttons container below the title
         const platformsContainer = document.getElementById("player-platforms-container");
@@ -1596,7 +1650,7 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
         }
 
         // Setup Fullscreen click logic
-        if (trailerId) {
+        if (hasMedia) {
             const fullscreenBtn = document.getElementById("player-fullscreen-btn");
             if (fullscreenBtn) {
                 fullscreenBtn.addEventListener("click", () => {
@@ -1663,14 +1717,17 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
         }
 
         // Setup Mute/Unmute click logic
-        if (trailerId) {
+        if (hasMedia) {
             let isMuted = true;
             const muteBtn = document.getElementById("player-mute-toggle-btn");
             if (muteBtn) {
                 muteBtn.addEventListener("click", () => {
                     isMuted = !isMuted;
                     const iframe = document.getElementById("player-trailer-iframe");
-                    if (iframe && iframe.contentWindow) {
+                    const video = document.getElementById("player-trailer-video");
+                    if (video) {
+                        video.muted = isMuted;
+                    } else if (iframe && iframe.contentWindow) {
                         iframe.contentWindow.postMessage(JSON.stringify({
                             event: 'command',
                             func: isMuted ? 'mute' : 'unMute'
@@ -1695,33 +1752,14 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                 });
             }
         }
-        // Setup Fallback Video click logic : essayer le trailer suivant
-        // (VF -> VO), et masquer le lecteur quand plus rien ne fonctionne.
-        if (trailerId) {
+        // Setup Fallback Video click logic : passer à la vidéo suivante de la
+        // chaîne (trailer VF -> trailer VO -> opening -> message final).
+        if (hasMedia) {
             const fallbackBtn = document.getElementById("player-fallback-btn");
             if (fallbackBtn) {
                 fallbackBtn.addEventListener("click", () => {
-                    const iframe = document.getElementById("player-trailer-iframe");
-                    trailerIndex++;
-
-                    if (iframe && trailerIndex < trailerCandidates.length) {
-                        // Candidat suivant (trailer VO après le VF)
-                        const nextId = trailerCandidates[trailerIndex];
-                        iframe.src = `https://www.youtube.com/embed/${nextId}?autoplay=1&mute=1&loop=1&playlist=${nextId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0&enablejsapi=1&cc_load_policy=3&origin=${encodeURIComponent(window.location.origin)}`;
-                        return;
-                    }
-
-                    // Plus aucun trailer valide : masquer le lecteur proprement
-                    const placeholder = videoPlayerWrapper.querySelector(".player-placeholder");
-                    if (placeholder) {
-                        placeholder.innerHTML = `
-                            <div class="player-placeholder-icon-wrapper" style="text-align: center; padding: 24px;">
-                                <svg class="player-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width: 48px; height: 48px; color: var(--text-muted); margin-bottom: 12px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                                <h4 style="font-size: 16px; margin-bottom: 4px;">Bande-annonce non disponible</h4>
-                                <p style="font-size: 13px; color: var(--text-muted);">Aucune vidéo lisible pour cet animé.</p>
-                            </div>
-                        `;
-                    }
+                    mediaIndex++;
+                    renderMediaStep();
                 });
             }
         }

@@ -4,7 +4,7 @@ const DEFAULT_ANIME_DATA = [
     "titleFr": "L'Attaque des Titans",
     "titleOrig": "Shingeki no Kyojin",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx16498-buvcRTBx4NSm.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/attack-on-titan",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GR751KNZY/attack-on-titan",
     "adnUrl": "https://animationdigitalnetwork.fr/video/662-attaque-des-titans-shingeki-no-kyojin",
     "episodesTotal": 88,
     "episodesWatched": 0,
@@ -143,14 +143,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 4
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/ShingekiNoKyojin-OP1.webm"
   },
   {
     "id": "franchise-101922",
     "titleFr": "Demon Slayer: Kimetsu no Yaiba",
     "titleOrig": "Kimetsu no Yaiba",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101922-WBsBl0ClmgYL.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/demon-slayer-kimetsu-no-yaiba",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GY5P48XEY/demon-slayer-kimetsu-no-yaiba",
     "adnUrl": "https://animationdigitalnetwork.fr/video/846-demon-slayer-kimetsu-no-yaiba",
     "episodesTotal": 64,
     "episodesWatched": 0,
@@ -273,14 +274,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 30
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/KimetsuNoYaiba-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-113415",
     "titleFr": "JUJUTSU KAISEN",
     "titleOrig": "Jujutsu Kaisen",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx113415-LHBAeoZDIsnF.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/jujutsu-kaisen",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GRDV0019R/jujutsu-kaisen",
     "adnUrl": null,
     "episodesTotal": 60,
     "episodesWatched": 0,
@@ -371,14 +373,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 27
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/JujutsuKaisen-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-21459",
     "titleFr": "My Hero Academia",
     "titleOrig": "Boku no Hero Academia",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21459-nYh85uj2Fuwr.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/my-hero-academia",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6NQ5DWZ6/my-hero-academia",
     "adnUrl": "https://animationdigitalnetwork.fr/video/405-my-hero-academia",
     "episodesTotal": 160,
     "episodesWatched": 0,
@@ -533,14 +536,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 12
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/BokuNoHeroAcademia-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-11061",
     "titleFr": "Hunter x Hunter (2011)",
     "titleOrig": "HUNTER×HUNTER (2011)",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx11061-y5gsT1hoHuHw.png",
-    "crunchyrollUrl": "http://www.crunchyroll.com/hunter-x-hunter",
+    "crunchyrollUrl": null,
     "adnUrl": "https://animationdigitalnetwork.fr/video/267-hunter-x-hunter-2011",
     "episodesTotal": 148,
     "episodesWatched": 0,
@@ -583,14 +587,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 24
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/HunterHunter2011-OP1.webm"
   },
   {
     "id": "franchise-21",
     "titleFr": "ONE PIECE",
     "titleOrig": "ONE PIECE",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21-ELSYx3yMPcKM.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/one-piece",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GRMG8ZQZR/one-piece",
     "adnUrl": "https://animationdigitalnetwork.fr/video/561-one-piece",
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -633,14 +638,15 @@ const DEFAULT_ANIME_DATA = [
           "day": null
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/OnePiece-OP1.webm"
   },
   {
     "id": "franchise-20605",
     "titleFr": "Tokyo Ghoul",
     "titleOrig": "Tokyo Ghoul",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b20605-k665mVkSug8D.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/en-gb/tokyo-ghoul",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6NV7Z50Y/tokyo-ghoul",
     "adnUrl": "https://animationdigitalnetwork.fr/video/656-tokyo-ghoul",
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -683,14 +689,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 19
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/TokyoGhoul-OP1.webm"
   },
   {
     "id": "franchise-5114",
     "titleFr": "Fullmetal Alchemist: Brotherhood",
     "titleOrig": "Hagane no Renkinjutsushi: FULLMETAL ALCHEMIST",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx5114-nSWCgQlmOMtj.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/fullmetal-alchemist-brotherhood",
+    "crunchyrollUrl": null,
     "adnUrl": "https://animationdigitalnetwork.fr/video/1103-fullmetal-alchemist-brotherhood",
     "episodesTotal": 64,
     "episodesWatched": 0,
@@ -733,14 +740,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 4
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/FullmetalAlchemistBrotherhood-OP1.webm"
   },
   {
     "id": "franchise-20",
     "titleFr": "Naruto",
     "titleOrig": "NARUTO",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20-dE6UHbFFg1A5.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/naruto",
+    "crunchyrollUrl": null,
     "adnUrl": "https://animationdigitalnetwork.fr/video/266-naruto",
     "episodesTotal": 220,
     "episodesWatched": 0,
@@ -783,14 +791,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 8
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Naruto-OP1.webm"
   },
   {
     "id": "franchise-11757",
     "titleFr": "Sword Art Online",
     "titleOrig": "Sword Art Online",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx11757-SxYDUzdr9rh2.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/sword-art-online",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GR49G9VP6/sword-art-online",
     "adnUrl": "https://animationdigitalnetwork.fr/video/442-sword-art-online",
     "episodesTotal": 97,
     "episodesWatched": 0,
@@ -913,14 +922,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 20
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/SwordArtOnline-OP1.webm"
   },
   {
     "id": "franchise-21519",
     "titleFr": "Your Name.",
     "titleOrig": "Kimi no Na wa.",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21519-SUo3ZQuCbYhJ.png",
-    "crunchyrollUrl": "https://www.crunchyroll.com/your-name",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
@@ -963,14 +973,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 26
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/KimiNoNaWa-OP1-EN.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-101759",
     "titleFr": "The Promised Neverland",
     "titleOrig": "Yakusoku no Neverland",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101759-8UR7r9MNVpz2.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/the-promised-neverland",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GYVD2K1WY/the-promised-neverland",
     "adnUrl": null,
     "episodesTotal": 23,
     "episodesWatched": 0,
@@ -1029,14 +1042,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 26
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/YakusokuNoNeverland-OP1-Lyrics.webm"
   },
   {
     "id": "franchise-20755",
     "titleFr": "Assassination Classroom",
     "titleOrig": "Ansatsu Kyoushitsu",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20755-dWrhs569YGUO.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/assassination-classroom",
+    "crunchyrollUrl": null,
     "adnUrl": "https://animationdigitalnetwork.fr/video/344-assassination-classroom",
     "episodesTotal": 22,
     "episodesWatched": 0,
@@ -1079,14 +1093,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 20
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/AnsatsuKyoushitsu-OP1.webm"
   },
   {
     "id": "franchise-21507",
     "titleFr": "Mob Psycho 100",
     "titleOrig": "Mob Psycho 100",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21507-6YUSbh2m0N1p.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/mob-psycho-100",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GY190DKQR/mob-psycho-100",
     "adnUrl": null,
     "episodesTotal": 37,
     "episodesWatched": 0,
@@ -1161,7 +1176,8 @@ const DEFAULT_ANIME_DATA = [
           "day": 22
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/MobPsycho100-OP1.webm"
   },
   {
     "id": "franchise-127230",
@@ -1211,14 +1227,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 28
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/ChainsawMan-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-21355",
     "titleFr": "Re:ZERO -Starting Life in Another World",
     "titleOrig": "Re:Zero kara Hajimeru Isekai Seikatsu",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21355-wRVUrGxpvIQQ.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/rezero-starting-life-in-another-world-",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GRGG9798R/rezero-starting-life-in-another-world-",
     "adnUrl": null,
     "episodesTotal": 66,
     "episodesWatched": 0,
@@ -1309,14 +1326,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 26
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/ReZero-OP1.webm"
   },
   {
     "id": "franchise-20665",
     "titleFr": "Your lie in April",
     "titleOrig": "Shigatsu wa Kimi no Uso",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20665-TLgkL8T8IRFd.png",
-    "crunchyrollUrl": "http://www.crunchyroll.com/your-lie-in-april",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G63V7KN9Y/your-lie-in-april",
     "adnUrl": null,
     "episodesTotal": 22,
     "episodesWatched": 0,
@@ -1359,14 +1377,16 @@ const DEFAULT_ANIME_DATA = [
           "day": 20
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/KimiUso-OP1.webm",
+    "noVf": true
   },
   {
     "id": "franchise-1735",
     "titleFr": "Naruto: Shippuden",
     "titleOrig": "NARUTO: Shippuuden",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx1735-kGfVm0YqCPcu.png",
-    "crunchyrollUrl": "http://www.crunchyroll.com/naruto-shippuden",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GYQ4MW246/naruto-shippuden",
     "adnUrl": "https://animationdigitalnetwork.fr/video/265-naruto-shippuden",
     "episodesTotal": 500,
     "episodesWatched": 0,
@@ -1409,14 +1429,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 23
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/NarutoShippuuden-OP1.webm"
   },
   {
     "id": "franchise-21234",
     "titleFr": "ERASED",
     "titleOrig": "Boku dake ga Inai Machi",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21234-XmqW39aQ9o7O.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/erased",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -1459,14 +1480,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 25
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/BokuDakeGaInaiMachi-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-9253",
     "titleFr": "Steins;Gate",
     "titleOrig": "Steins;Gate",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx9253-tIUXF2gfU8Sg.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/steinsgate",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 24,
     "episodesWatched": 0,
@@ -1509,14 +1533,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 14
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/SteinsGate-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-20464",
     "titleFr": "HAIKYU!!",
     "titleOrig": "Haikyuu!!",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20464-ooZUyBe4ptp9.png",
-    "crunchyrollUrl": "http://www.crunchyroll.com/haikyu",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GY8VM8MWY/haikyu",
     "adnUrl": "https://animationdigitalnetwork.fr/video/461-haikyuu",
     "episodesTotal": 25,
     "episodesWatched": 0,
@@ -1559,7 +1586,8 @@ const DEFAULT_ANIME_DATA = [
           "day": 21
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Haikyuu-OP1.webm"
   },
   {
     "id": "franchise-97940",
@@ -1609,7 +1637,8 @@ const DEFAULT_ANIME_DATA = [
           "day": 30
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/BlackClover-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-101291",
@@ -1659,14 +1688,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 27
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Aobuta-OP1-Lyrics.webm"
   },
   {
     "id": "franchise-140960",
     "titleFr": "SPY x FAMILY",
     "titleOrig": "SPY×FAMILY",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx140960-Kb6R5nYQfjmP.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/spy-x-family",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G4PH0WXVJ/spy-x-family",
     "adnUrl": null,
     "episodesTotal": 37,
     "episodesWatched": 0,
@@ -1741,14 +1771,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 23
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/SpyXFamily-OP1.webm"
   },
   {
     "id": "franchise-101921",
     "titleFr": "Kaguya-sama: Love is War",
     "titleOrig": "Kaguya-sama wa Kokurasetai: Tensaitachi no Renai Zunousen",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101921-ufrjLzhSz7L1.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/kaguya-sama-love-is-war",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GRJ0J828Y/kaguya-sama-love-is-war",
     "adnUrl": null,
     "episodesTotal": 37,
     "episodesWatched": 0,
@@ -1823,14 +1854,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 25
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/KaguyaSamaWaKokurasetai-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-105333",
     "titleFr": "Dr. STONE",
     "titleOrig": "Dr. STONE",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx105333-GybuoSoOZfpH.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/dr-stone",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GYEXQKJG6/dr-stone",
     "adnUrl": null,
     "episodesTotal": 46,
     "episodesWatched": 0,
@@ -1905,14 +1937,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 15
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/DrStone-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-4224",
     "titleFr": "Toradora!",
     "titleOrig": "Toradora!",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx4224-PXVMBLNwy2aF.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/toradora",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 25,
     "episodesWatched": 0,
@@ -1955,7 +1988,10 @@ const DEFAULT_ANIME_DATA = [
           "day": 26
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Toradora-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-20447",
@@ -2005,7 +2041,9 @@ const DEFAULT_ANIME_DATA = [
           "day": 23
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Noragami-OP1.webm",
+    "noVf": true
   },
   {
     "id": "franchise-101348",
@@ -2071,14 +2109,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 20
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/VinlandSaga-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-124080",
     "titleFr": "Horimiya",
     "titleOrig": "Horimiya",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx124080-3i22mRVPBS0T.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/horimiya",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G9VHN9P43/horimiya",
     "adnUrl": null,
     "episodesTotal": 13,
     "episodesWatched": 0,
@@ -2121,14 +2160,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 4
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Horimiya-OP1-BD1080.webm"
   },
   {
     "id": "franchise-21202",
     "titleFr": "KONOSUBA -God's blessing on this wonderful world!",
     "titleOrig": "Kono Subarashii Sekai ni Shukufuku wo!",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21202-mPOr80AEjUcZ.png",
-    "crunchyrollUrl": "http://www.crunchyroll.com/konosuba-gods-blessing-on-this-wonderful-world",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GYE5K3GQR/konosuba-gods-blessing-on-this-wonderful-world",
     "adnUrl": "https://animationdigitalnetwork.fr/video/1120-konosuba-gods-blessing-on-this-wonderful-world",
     "episodesTotal": 21,
     "episodesWatched": 0,
@@ -2203,14 +2243,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 30
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Konosuba-OP1.webm"
   },
   {
     "id": "franchise-99423",
     "titleFr": "DARLING in the FRANXX",
     "titleOrig": "Darling in the Franxx",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx99423-8MBxtwCeHf8B.png",
-    "crunchyrollUrl": "http://www.crunchyroll.com/darling-in-the-franxx",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GY8VEQ95Y/darling-in-the-franxx",
     "adnUrl": null,
     "episodesTotal": 24,
     "episodesWatched": 0,
@@ -2253,14 +2294,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 7
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/DarlingInTheFranXX-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-1575",
     "titleFr": "Code Geass: Lelouch of the Rebellion",
     "titleOrig": "Code Geass: Hangyaku no Lelouch",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx1575-hsmWM2ydNm1m.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/code-geass",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GY2P9ED0Y/code-geass",
     "adnUrl": null,
     "episodesTotal": 25,
     "episodesWatched": 0,
@@ -2303,14 +2345,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 28
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/CodeGeass-OP1.webm"
   },
   {
     "id": "franchise-105310",
     "titleFr": "Fire Force",
     "titleOrig": "Enen no Shouboutai",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx105310-2PKUvoaA6fTn.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/fire-force",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GYQWNXPZY/fire-force",
     "adnUrl": null,
     "episodesTotal": 48,
     "episodesWatched": 0,
@@ -2369,14 +2412,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 12
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/EnenNoShouboutai-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-14719",
     "titleFr": "JoJo's Bizarre Adventure (TV)",
     "titleOrig": "JoJo no Kimyou na Bouken (TV)",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx14719-VT5dRzTBSZ0w.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/jojos-bizarre-adventure",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GYP8DP1MY/jojos-bizarre-adventure",
     "adnUrl": null,
     "episodesTotal": 26,
     "episodesWatched": 0,
@@ -2419,14 +2463,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 6
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/JojoNoKimyouNaBouken-OP1.webm"
   },
   {
     "id": "franchise-20931",
     "titleFr": "Death Parade",
     "titleOrig": "Death Parade",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx20931-bktYqOcxPERi.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/death-parade",
+    "crunchyrollUrl": null,
     "adnUrl": "https://animationdigitalnetwork.fr/video/347-death-parade",
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -2469,14 +2514,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 28
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/DeathParade-OP1.webm"
   },
   {
     "id": "franchise-97668",
     "titleFr": "One-Punch Man",
     "titleOrig": "One Punch Man 2",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx97668-nC8gQrXVxt7k.png",
-    "crunchyrollUrl": "https://www.crunchyroll.com/one-punch-man",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G63K98PZ6/one-punch-man",
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -2519,14 +2565,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 3
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/OnePunchManS2-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-1",
     "titleFr": "Cowboy Bebop",
     "titleOrig": "Cowboy Bebop",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx1-GCsPm7waJ4kS.png",
-    "crunchyrollUrl": "http://www.crunchyroll.com/cowboy-bebop",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 26,
     "episodesWatched": 0,
@@ -2569,7 +2616,10 @@ const DEFAULT_ANIME_DATA = [
           "day": 24
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/CowboyBebop-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-154587",
@@ -2635,14 +2685,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 27
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/SousouNoFrieren-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-9919",
     "titleFr": "Blue Exorcist",
     "titleOrig": "Ao no Exorcist",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx9919-nXS7JOZrWHfS.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/blue-exorcist",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G649PJ0JY/blue-exorcist",
     "adnUrl": null,
     "episodesTotal": 25,
     "episodesWatched": 0,
@@ -2685,14 +2736,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 2
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/AoNoExorcist-OP1.webm"
   },
   {
     "id": "franchise-99263",
     "titleFr": "The Rising of the Shield Hero",
     "titleOrig": "Tate no Yuusha no Nariagari",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx99263-LcazQwdlWzMy.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/the-rising-of-the-shield-hero",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6W4QKX0R/the-rising-of-the-shield-hero",
     "adnUrl": null,
     "episodesTotal": 38,
     "episodesWatched": 0,
@@ -2751,14 +2803,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 29
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/ShieldHero-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-101280",
     "titleFr": "Moi, quand je me réincarne en Slime",
     "titleOrig": "Tensei Shitara Slime Datta Ken",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101280-tDxCVJm714nt.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/that-time-i-got-reincarnated-as-a-slime",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GYZJ43JMR/that-time-i-got-reincarnated-as-a-slime",
     "adnUrl": null,
     "episodesTotal": 72,
     "episodesWatched": 0,
@@ -2849,14 +2902,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 27
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Tensura-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-108465",
     "titleFr": "Mushoku Tensei: Jobless Reincarnation",
     "titleOrig": "Mushoku Tensei: Isekai Ittara Honki Dasu",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx108465-1ANspF1EWyFx.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/mushoku-tensei-jobless-reincarnation",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G24H1N3MP/mushoku-tensei-jobless-reincarnation",
     "adnUrl": null,
     "episodesTotal": 48,
     "episodesWatched": 0,
@@ -2954,7 +3008,7 @@ const DEFAULT_ANIME_DATA = [
     "titleFr": "Tokyo Revengers",
     "titleOrig": "Tokyo Revengers",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx120120-cWDmnmeEntSe.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/tokyo-revengers",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G3KHEVMN1/tokyo-revengers",
     "adnUrl": null,
     "episodesTotal": 24,
     "episodesWatched": 0,
@@ -2997,14 +3051,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 19
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/TokyoRevengers-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-6547",
     "titleFr": "Angel Beats!",
     "titleOrig": "Angel Beats!",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx6547-SYexAn5aFyss.png",
-    "crunchyrollUrl": "https://www.crunchyroll.com/angel-beats",
+    "crunchyrollUrl": null,
     "adnUrl": "https://animationdigitalnetwork.fr/video/1304-angel-beats",
     "episodesTotal": 13,
     "episodesWatched": 0,
@@ -3047,14 +3102,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 26
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/AngelBeats-OP1.webm"
   },
   {
     "id": "franchise-98659",
     "titleFr": "Classroom of the Elite",
     "titleOrig": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx98659-WNyPLIZDpGGY.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/classroom-of-the-elite",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GRVN8MNQY/classroom-of-the-elite",
     "adnUrl": null,
     "episodesTotal": 38,
     "episodesWatched": 0,
@@ -3129,14 +3185,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 27
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/YoukosoZitsu-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-151807",
     "titleFr": "Solo Leveling",
     "titleOrig": "Ore dake Level Up na Ken",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx151807-it355ZgzquUd.png",
-    "crunchyrollUrl": "https://www.crunchyroll.com/solo-leveling",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GDKHZEJ0K/solo-leveling",
     "adnUrl": null,
     "episodesTotal": 25,
     "episodesWatched": 0,
@@ -3195,14 +3252,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 30
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/SoloLeveling-OP1.webm"
   },
   {
     "id": "franchise-20997",
     "titleFr": "Charlotte",
     "titleOrig": "Charlotte",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20997-axVYrsIfjtYJ.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/charlotte",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 13,
     "episodesWatched": 0,
@@ -3245,14 +3303,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 27
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Charlotte-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-10620",
     "titleFr": "The Future Diary",
     "titleOrig": "Mirai Nikki",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx10620-dUZeNej0W4QN.png",
-    "crunchyrollUrl": "https://www.crunchyroll.com/the-future-diary",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GYGGXPQ2Y/the-future-diary",
     "adnUrl": null,
     "episodesTotal": 26,
     "episodesWatched": 0,
@@ -3295,14 +3356,16 @@ const DEFAULT_ANIME_DATA = [
           "day": 15
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/MiraiNikki-OP1.webm",
+    "noVf": true
   },
   {
     "id": "franchise-21311",
     "titleFr": "Bungo Stray Dogs",
     "titleOrig": "Bungou Stray Dogs",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21311-hAXyT8Yoh6G9.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/bungo-stray-dogs",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GR5VXQ8PR/bungo-stray-dogs",
     "adnUrl": null,
     "episodesTotal": 36,
     "episodesWatched": 0,
@@ -3377,7 +3440,8 @@ const DEFAULT_ANIME_DATA = [
           "day": 28
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/BungouStrayDogs-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-132405",
@@ -3443,14 +3507,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 21
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/BisqueDoll-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-18679",
     "titleFr": "Kill la Kill",
     "titleOrig": "Kill la Kill",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b18679-lbkq7iYESoFW.png",
-    "crunchyrollUrl": "https://www.crunchyroll.com/kill-la-kill",
+    "crunchyrollUrl": null,
     "adnUrl": "https://animationdigitalnetwork.fr/video/1218-kill-la-kill",
     "episodesTotal": 24,
     "episodesWatched": 0,
@@ -3500,7 +3565,7 @@ const DEFAULT_ANIME_DATA = [
     "titleFr": "Tokyo Ghoul √A",
     "titleOrig": "Tokyo Ghoul √A",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20850-glDf9EMKeCwe.jpg",
-    "crunchyrollUrl": "https://crunchyroll.com/tokyo-ghoul",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6NV7Z50Y/tokyo-ghoul",
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -3543,14 +3608,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 27
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/TokyoGhoulRootA-OP1.webm"
   },
   {
     "id": "franchise-20923",
     "titleFr": "Food Wars!",
     "titleOrig": "Shokugeki no Souma",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20923-pNT38pjW3RFH.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/food-wars-shokugeki-no-soma",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6GG91P26/food-wars-shokugeki-no-soma",
     "adnUrl": null,
     "episodesTotal": 24,
     "episodesWatched": 0,
@@ -3593,14 +3659,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 26
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/ShokugekiNoSouma-OP1.webm"
   },
   {
     "id": "franchise-20832",
     "titleFr": "Overlord",
     "titleOrig": "Overlord",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20832-vUNm5zrYWifc.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/overlord",
+    "crunchyrollUrl": null,
     "adnUrl": "https://animationdigitalnetwork.fr/video/370-overlord",
     "episodesTotal": 39,
     "episodesWatched": 0,
@@ -3675,14 +3742,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 2
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Overlord-OP1.webm"
   },
   {
     "id": "franchise-20992",
     "titleFr": "HAIKYU!! 2nd Season",
     "titleOrig": "Haikyuu!! 2nd Season",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20992-aHgNbcalVEqk.png",
-    "crunchyrollUrl": "http://www.crunchyroll.com/haikyu",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GY8VM8MWY/haikyu",
     "adnUrl": null,
     "episodesTotal": 25,
     "episodesWatched": 0,
@@ -3725,7 +3793,8 @@ const DEFAULT_ANIME_DATA = [
           "day": 26
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/HaikyuuS2-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-15809",
@@ -3775,14 +3844,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 27
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/HatarakuMaouSama-OP1.webm"
   },
   {
     "id": "franchise-20920",
     "titleFr": "Is It Wrong to Try to Pick Up Girls in a Dungeon?",
     "titleOrig": "Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20920-MTREwZOG4BAD.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/is-it-wrong-to-try-to-pick-up-girls-in-a-dungeon",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6DQN9KGR/is-it-wrong-to-try-to-pick-up-girls-in-a-dungeon",
     "adnUrl": null,
     "episodesTotal": 13,
     "episodesWatched": 0,
@@ -3825,14 +3895,16 @@ const DEFAULT_ANIME_DATA = [
           "day": 27
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/DanMachi-OP1.webm",
+    "noVf": true
   },
   {
     "id": "franchise-9989",
     "titleFr": "Anohana: The Flower We Saw That Day",
     "titleOrig": "Ano Hi Mita Hana no Namae wo Bokutachi wa Mada Shiranai.",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx9989-hImMg6kCMm6I.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/anohana-the-flower-we-saw-that-day",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 11,
     "episodesWatched": 0,
@@ -3875,14 +3947,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 24
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Anohana-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-3588",
     "titleFr": "Soul Eater",
     "titleOrig": "Soul Eater",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx3588-fSMggQoFSbUI.png",
-    "crunchyrollUrl": "https://www.crunchyroll.com/soul-eater",
+    "crunchyrollUrl": null,
     "adnUrl": "https://animationdigitalnetwork.fr/video/171-soul-eater",
     "episodesTotal": 51,
     "episodesWatched": 0,
@@ -3925,14 +4000,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 30
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/SoulEater-OP1.webm"
   },
   {
     "id": "franchise-11111",
     "titleFr": "Another",
     "titleOrig": "Another",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx11111-gvvE5bBYsyFo.png",
-    "crunchyrollUrl": "http://www.crunchyroll.com/another",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -3975,14 +4051,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 27
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Another-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-6702",
     "titleFr": "Fairy Tail",
     "titleOrig": "FAIRY TAIL",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b6702-KI4qgSMyI8Pm.png",
-    "crunchyrollUrl": "http://www.crunchyroll.com/fairy-tail",
+    "crunchyrollUrl": null,
     "adnUrl": "https://animationdigitalnetwork.fr/video/269-fairy-tail",
     "episodesTotal": 277,
     "episodesWatched": 0,
@@ -4041,14 +4120,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 26
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/FairyTail-OP1.webm"
   },
   {
     "id": "franchise-14813",
     "titleFr": "My Teen Romantic Comedy SNAFU",
     "titleOrig": "Yahari Ore no Seishun Love Come wa Machigatteiru.",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx14813-3mNvcKNEQcDs.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/my-teen-romantic-comedy-snafu",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 13,
     "episodesWatched": 0,
@@ -4091,14 +4171,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 28
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/OreGairu-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-2001",
     "titleFr": "Gurren Lagann",
     "titleOrig": "Tengen Toppa Gurren Lagann",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx2001-XwRnjzGeFWRQ.png",
-    "crunchyrollUrl": "http://www.crunchyroll.com/gurren-lagann",
+    "crunchyrollUrl": null,
     "adnUrl": "https://animationdigitalnetwork.fr/video/1219-gurren-lagann",
     "episodesTotal": 27,
     "episodesWatched": 0,
@@ -4141,7 +4224,8 @@ const DEFAULT_ANIME_DATA = [
           "day": 30
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/TengenToppaGurrenLagann-OP1.webm"
   },
   {
     "id": "franchise-171018",
@@ -4207,14 +4291,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 19
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Dandadan-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-21170",
     "titleFr": "Assassination Classroom Second Season",
     "titleOrig": "Ansatsu Kyoushitsu 2nd Season",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21170-kbcfTTZGSaFt.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/assassination-classroom",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 25,
     "episodesWatched": 0,
@@ -4257,14 +4342,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 1
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/AnsatsuKyoushitsuS2-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-21698",
     "titleFr": "HAIKYU!! 3rd Season",
     "titleOrig": "Haikyuu!!: Karasuno Koukou VS Shiratorizawa Gakuen Koukou",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21698-RL71mr1YU5Io.png",
-    "crunchyrollUrl": "http://www.crunchyroll.com/haikyu",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GY8VM8MWY/haikyu",
     "adnUrl": null,
     "episodesTotal": 10,
     "episodesWatched": 0,
@@ -4307,14 +4395,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 10
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/HaikyuuS3-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-2904",
     "titleFr": "Code Geass: Lelouch of the Rebellion R2",
     "titleOrig": "Code Geass: Hangyaku no Lelouch R2",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx2904-Fet9Q33suC7G.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/code-geass",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GY2P9ED0Y/code-geass",
     "adnUrl": null,
     "episodesTotal": 25,
     "episodesWatched": 0,
@@ -4357,14 +4446,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 28
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/CodeGeassR2-OP1.webm"
   },
   {
     "id": "franchise-13601",
     "titleFr": "PSYCHO-PASS",
     "titleOrig": "PSYCHO-PASS",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx13601-i42VFuHpqEOJ.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/psycho-pass",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GR75253JY/psycho-pass",
     "adnUrl": "https://animationdigitalnetwork.fr/video/536-psycho-pass",
     "episodesTotal": 22,
     "episodesWatched": 0,
@@ -4407,7 +4497,8 @@ const DEFAULT_ANIME_DATA = [
           "day": 22
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/PsychoPass-OP1.webm"
   },
   {
     "id": "franchise-128893",
@@ -4457,14 +4548,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 1
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Jigokuraku-OP1.webm"
   },
   {
     "id": "franchise-12189",
     "titleFr": "Hyouka",
     "titleOrig": "Hyouka",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx12189-zj5AWUYO53Fv.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/hyouka",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 22,
     "episodesWatched": 0,
@@ -4507,14 +4599,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 16
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Hyouka-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-14741",
     "titleFr": "Love, Chunibyo & Other Delusions",
     "titleOrig": "Chuunibyou demo Koi ga Shitai!",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx14741-CGXEIeUe2roA.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/love-chunibyo-other-delusions",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -4557,14 +4652,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 20
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Chuunibyou-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-10087",
     "titleFr": "Fate/Zero",
     "titleOrig": "Fate/Zero",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx10087-M4Hd9qrHGrXk.png",
-    "crunchyrollUrl": "http://www.crunchyroll.com/fatezero",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 25,
     "episodesWatched": 0,
@@ -4623,14 +4721,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 24
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/FateZero-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-20474",
     "titleFr": "JoJo's Bizarre Adventure: Stardust Crusaders",
     "titleOrig": "JoJo no Kimyou na Bouken: Stardust Crusaders",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20474-xuqem5GBlBtb.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/jojos-bizarre-adventure",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GYP8DP1MY/jojos-bizarre-adventure",
     "adnUrl": null,
     "episodesTotal": 87,
     "episodesWatched": 0,
@@ -4705,14 +4806,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 28
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/JojoNoKimyouNaBoukenS2-OP1.webm"
   },
   {
     "id": "franchise-5081",
     "titleFr": "Bakemonogatari",
     "titleOrig": "Bakemonogatari",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx5081-9GocceQ5Z865.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/bakemonogatari",
+    "crunchyrollUrl": null,
     "adnUrl": "https://animationdigitalnetwork.fr/video/1216-bakemonogatari",
     "episodesTotal": 15,
     "episodesWatched": 0,
@@ -4755,14 +4857,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 25
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Bakemonogatari-OP1.webm"
   },
   {
     "id": "franchise-115230",
     "titleFr": "Tower of God",
     "titleOrig": "Kami no Tou: Tower of God",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx115230-QHOdSN7yt8ab.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/tower-of-god",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6J0G49DR/tower-of-god",
     "adnUrl": null,
     "episodesTotal": 13,
     "episodesWatched": 0,
@@ -4805,14 +4908,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 25
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/KamiNoTou-OP1-BD1080.webm"
   },
   {
     "id": "franchise-21776",
     "titleFr": "Miss Kobayashi's Dragon Maid",
     "titleOrig": "Kobayashi-san Chi no Maidragon",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21776-bwPaYKhnKfUs.png",
-    "crunchyrollUrl": "http://www.crunchyroll.com/miss-kobayashis-dragon-maid",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6497Z43Y/miss-kobayashis-dragon-maid",
     "adnUrl": null,
     "episodesTotal": 13,
     "episodesWatched": 0,
@@ -4855,14 +4959,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 6
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/KobayashiSanChiNoMaidDragon-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-9756",
     "titleFr": "Puella Magi Madoka Magica",
     "titleOrig": "Mahou Shoujo Madoka☆Magica",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx9756-QnUGwlwwnsuN.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/puella-magi-madoka-magica",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -4905,7 +5010,10 @@ const DEFAULT_ANIME_DATA = [
           "day": 22
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/MadokaMagica-OP1-NCBD1080.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-150672",
@@ -4955,7 +5063,8 @@ const DEFAULT_ANIME_DATA = [
           "day": 28
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/OshiNoKo-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-137822",
@@ -5005,14 +5114,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 26
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/BlueLock-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-103572",
     "titleFr": "The Quintessential Quintuplets",
     "titleOrig": "Go-toubun no Hanayome",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx103572-cchriAdH95cQ.png",
-    "crunchyrollUrl": "https://www.crunchyroll.com/the-quintessential-quintuplets",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GY4PD7Z06/the-quintessential-quintuplets",
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -5055,14 +5165,16 @@ const DEFAULT_ANIME_DATA = [
           "day": 29
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/GotoubunNoHanayome-OP1-NCBD1080.webm",
+    "noVf": true
   },
   {
     "id": "franchise-114535",
     "titleFr": "To Your Eternity",
     "titleOrig": "Fumetsu no Anata e",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx114535-y3NnjexcqKG1.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/to-your-eternity",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GG5H5XMWV/to-your-eternity",
     "adnUrl": null,
     "episodesTotal": 20,
     "episodesWatched": 0,
@@ -5105,14 +5217,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 30
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/FumetsuNoAnataE-OP1.webm"
   },
   {
     "id": "franchise-21450",
     "titleFr": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
     "titleOrig": "JoJo no Kimyou na Bouken: Diamond wa Kudakenai",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21450-D7XFwEQjZ5GA.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/jojos-bizarre-adventure",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GYP8DP1MY/jojos-bizarre-adventure",
     "adnUrl": null,
     "episodesTotal": 39,
     "episodesWatched": 0,
@@ -5155,7 +5268,8 @@ const DEFAULT_ANIME_DATA = [
           "day": 24
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/JojoNoKimyouNaBoukenS4-OP1.webm"
   },
   {
     "id": "franchise-21128",
@@ -5205,14 +5319,16 @@ const DEFAULT_ANIME_DATA = [
           "day": 26
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/NoragamiAragoto-OP1.webm",
+    "noVf": true
   },
   {
     "id": "franchise-11617",
     "titleFr": "High School DxD",
     "titleOrig": "High School DxD",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx11617-nmxMU9Zh3H5R.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/high-school-dxd",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -5255,7 +5371,9 @@ const DEFAULT_ANIME_DATA = [
           "day": 23
         }
       }
-    ]
+    ],
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-161645",
@@ -5321,14 +5439,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 4
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/KusuriyaNoHitorigoto-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-105334",
     "titleFr": "Fruits Basket (2019)",
     "titleOrig": "Fruits Basket: 1st Season",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx105334-AZwEdMu4KFtV.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/fruits-basket",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6ZJMGEXY/fruits-basket",
     "adnUrl": null,
     "episodesTotal": 25,
     "episodesWatched": 0,
@@ -5371,14 +5490,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 21
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/FruitsBasket2019-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-113813",
     "titleFr": "Rent-a-Girlfriend",
     "titleOrig": "Kanojo, Okarishimasu",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx113813-SnljeXpU3Pw7.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/rent-a-girlfriend",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6QWV3976/rent-a-girlfriend",
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -5421,14 +5541,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 26
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Kanokari-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-100240",
     "titleFr": "Tokyo Ghoul:re",
     "titleOrig": "Tokyo Ghoul:re",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx100240-vJNaKd5HwPJ2.jpg",
-    "crunchyrollUrl": "https://crunchyroll.com/tokyo-ghoul",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6NV7Z50Y/tokyo-ghoul",
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -5471,14 +5592,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 19
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/TokyoGhoulRE-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-101165",
     "titleFr": "GOBLIN SLAYER",
     "titleOrig": "Goblin Slayer",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101165-v5NwPXWPFDuD.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/goblin-slayer",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6VDMN306/goblin-slayer",
     "adnUrl": "https://animationdigitalnetwork.fr/video/701-goblin-slayer",
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -5521,14 +5643,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 30
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/GoblinSlayer-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-116006",
     "titleFr": "The God of High School",
     "titleOrig": "THE GOD OF HIGH SCHOOL",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx116006-Wt8JSA1ZQxlM.png",
-    "crunchyrollUrl": "https://www.crunchyroll.com/the-god-of-high-school",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GRVD0ZDQR/the-god-of-high-school",
     "adnUrl": null,
     "episodesTotal": 13,
     "episodesWatched": 0,
@@ -5571,14 +5694,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 28
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/TheGodOfHighSchool-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-918",
     "titleFr": "Gintama",
     "titleOrig": "Gintama",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx918-iOaeBVUn4uK7.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/gintama",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GYQ4MKDZ6/gintama",
     "adnUrl": null,
     "episodesTotal": 201,
     "episodesWatched": 0,
@@ -5621,14 +5745,16 @@ const DEFAULT_ANIME_DATA = [
           "day": 25
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Gintama-OP1.webm",
+    "noVf": true
   },
   {
     "id": "franchise-106625",
     "titleFr": "HAIKYU!! TO THE TOP",
     "titleOrig": "Haikyuu!! TO THE TOP",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx106625-UR22wB2NuNVi.png",
-    "crunchyrollUrl": "https://www.crunchyroll.com/haikyu",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GY8VM8MWY/haikyu",
     "adnUrl": null,
     "episodesTotal": 25,
     "episodesWatched": 0,
@@ -5687,14 +5813,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 19
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/HaikyuuS4-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-20661",
     "titleFr": "Terror in Resonance",
     "titleOrig": "Zankyou no Terror",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20661-aCR7QgzDfOSI.png",
-    "crunchyrollUrl": "https://www.crunchyroll.com/terror-in-resonance",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 11,
     "episodesWatched": 0,
@@ -5737,14 +5864,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 26
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/ZankyouNoTerror-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-124845",
     "titleFr": "WONDER EGG PRIORITY",
     "titleOrig": "Wonder Egg Priority",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx124845-JXORhqCTGt04.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/wonder-egg-priority",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GXJHM372Z/wonder-egg-priority",
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -5787,14 +5917,16 @@ const DEFAULT_ANIME_DATA = [
           "day": 31
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/WonderEggPriority-OP1-NCBD1080.webm",
+    "noVf": true
   },
   {
     "id": "franchise-11771",
     "titleFr": "Kuroko's Basketball",
     "titleOrig": "Kuroko no Basket",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx11771-uvr44RAwRxPw.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/kurokos-basketball",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G62P48X56/kurokos-basketball",
     "adnUrl": "https://animationdigitalnetwork.fr/video/437-kuroko-film-1",
     "episodesTotal": 25,
     "episodesWatched": 0,
@@ -5837,7 +5969,8 @@ const DEFAULT_ANIME_DATA = [
           "day": 22
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/KurokoNoBasket-OP1.webm"
   },
   {
     "id": "franchise-151801",
@@ -5887,14 +6020,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 30
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Mashle-OP1.webm"
   },
   {
     "id": "franchise-205",
     "titleFr": "Samurai Champloo",
     "titleOrig": "Samurai Champloo",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx205-7tHVFu6dPBm9.png",
-    "crunchyrollUrl": "https://crunchyroll.com/series/G6WEK0026/samurai-champloo",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 26,
     "episodesWatched": 0,
@@ -5937,14 +6071,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 19
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/SamuraiChamploo-OP1-NCBD1080.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-5680",
     "titleFr": "K-ON!",
     "titleOrig": "K-ON!",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx5680-r3AI3Cwfv0Aq.png",
-    "crunchyrollUrl": "https://www.crunchyroll.com/series/GXJHM3N2E/k-on",
+    "crunchyrollUrl": null,
     "adnUrl": "https://animationdigitalnetwork.fr/video/62-k-on",
     "episodesTotal": 13,
     "episodesWatched": 0,
@@ -5987,14 +6124,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 26
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/KOn-OP1.webm"
   },
   {
     "id": "franchise-13759",
     "titleFr": "The Pet Girl of Sakurasou",
     "titleOrig": "Sakurasou no Pet na Kanojo",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx13759-xNf0gJK4Axt2.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/the-pet-girl-of-sakurasou",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 24,
     "episodesWatched": 0,
@@ -6037,7 +6175,10 @@ const DEFAULT_ANIME_DATA = [
           "day": 26
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Sakurasou-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-153288",
@@ -6087,14 +6228,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 29
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Kaijuu8Gou-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-20698",
     "titleFr": "My Teen Romantic Comedy SNAFU TOO!",
     "titleOrig": "Yahari Ore no Seishun Love Come wa Machigatteiru. Zoku",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20698-YZIYor2zW3Ta.png",
-    "crunchyrollUrl": "http://www.crunchyroll.com/my-teen-romantic-comedy-snafu",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 13,
     "episodesWatched": 0,
@@ -6137,14 +6279,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 26
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/OreGairuS2-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-226",
     "titleFr": "Elfen Lied",
     "titleOrig": "Elfen Lied",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx226-MibyRKhIrnTe.png",
-    "crunchyrollUrl": "https://www.crunchyroll.com/series/G6WE0Z9G6/elfen-lied",
+    "crunchyrollUrl": null,
     "adnUrl": "https://animationdigitalnetwork.fr/video/172-elfen-lied",
     "episodesTotal": 13,
     "episodesWatched": 0,
@@ -6194,7 +6339,7 @@ const DEFAULT_ANIME_DATA = [
     "titleFr": "Saga of Tanya the Evil",
     "titleOrig": "Youjo Senki",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21613-qT3NiwYP5dYc.png",
-    "crunchyrollUrl": "http://www.crunchyroll.com/saga-of-tanya-the-evil",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GR9P57W96/saga-of-tanya-the-evil",
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -6237,14 +6382,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 31
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/YoujoSenki-OP1.webm"
   },
   {
     "id": "franchise-18897",
     "titleFr": "Nisekoi",
     "titleOrig": "Nisekoi",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx18897-G2Fx2ZACsXBU.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/nisekoi",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 20,
     "episodesWatched": 0,
@@ -6287,14 +6433,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 24
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Nisekoi-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-120697",
     "titleFr": "DON'T TOY WITH ME, MISS NAGATORO",
     "titleOrig": "Ijiranaide, Nagatoro-san",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx120697-BA2TqxB1I5bJ.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/dont-toy-with-me-miss-nagatoro",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GQWH0M455/dont-toy-with-me-miss-nagatoro",
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -6337,14 +6486,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 27
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/IjiranaideNagatoroSan-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-19603",
     "titleFr": "Fate/stay night: Unlimited Blade Works",
     "titleOrig": "Fate/stay night: Unlimited Blade Works",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx19603-ycT0pyEgDVQu.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/series/GY8V11X7Y/fatestay-night-unlimited-blade-works",
+    "crunchyrollUrl": null,
     "adnUrl": "https://animationdigitalnetwork.fr/video/1295-fatestay-night-unlimited-blade-works",
     "episodesTotal": 13,
     "episodesWatched": 0,
@@ -6387,14 +6537,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 28
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/FateStayNightUBW-OP1.webm"
   },
   {
     "id": "franchise-112301",
     "titleFr": "The Misfit of Demon King Academy: History’s Strongest Demon King Reincarnates and Goes to School with His Descendants",
     "titleOrig": "Maou Gakuin no Futekigousha: Shijou Saikyou no Maou no Shiso, Tensei shite Shison-tachi no Gakkou e Kayou",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx112301-f88Fs2es4pSr.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/the-misfit-of-demon-king-academy",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GY243NN0R/the-misfit-of-demon-king-academy",
     "adnUrl": null,
     "episodesTotal": 13,
     "episodesWatched": 0,
@@ -6437,14 +6588,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 26
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/MaouGakuinNoFutekigousha-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-21518",
     "titleFr": "Food Wars! The Second Plate",
     "titleOrig": "Shokugeki no Souma: Ni no Sara",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21518-uBqzDGIuSxJ5.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/food-wars-shokugeki-no-soma",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6GG91P26/food-wars-shokugeki-no-soma",
     "adnUrl": null,
     "episodesTotal": 13,
     "episodesWatched": 0,
@@ -6487,7 +6639,8 @@ const DEFAULT_ANIME_DATA = [
           "day": 24
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/ShokugekiNoSomaNiNoSara-OP1.webm"
   },
   {
     "id": "franchise-4898",
@@ -6537,14 +6690,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 27
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Kuroshitsuji-OP1.webm"
   },
   {
     "id": "franchise-14227",
     "titleFr": "My Little Monster",
     "titleOrig": "Tonari no Kaibutsu-kun",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx14227-VGxPG1xDZG7v.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/my-little-monster",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6MG8P1W6/my-little-monster",
     "adnUrl": null,
     "episodesTotal": 13,
     "episodesWatched": 0,
@@ -6587,7 +6741,9 @@ const DEFAULT_ANIME_DATA = [
           "day": 25
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/TonariNoKaibutsuKun-OP1.webm",
+    "noVf": true
   },
   {
     "id": "franchise-130003",
@@ -6637,7 +6793,8 @@ const DEFAULT_ANIME_DATA = [
           "day": 25
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/BocchiTheRock-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-20458",
@@ -6687,7 +6844,8 @@ const DEFAULT_ANIME_DATA = [
           "day": 28
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/MahoukaKoukouNoRettousei-OP1.webm"
   },
   {
     "id": "franchise-104157",
@@ -6744,7 +6902,7 @@ const DEFAULT_ANIME_DATA = [
     "titleFr": "ReLIFE",
     "titleOrig": "ReLIFE",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21049-4AHSLeiDE9eg.png",
-    "crunchyrollUrl": "http://www.crunchyroll.com/relife",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 13,
     "episodesWatched": 0,
@@ -6787,14 +6945,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 24
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/ReLIFE-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-20872",
     "titleFr": "Plastic Memories",
     "titleOrig": "Plastic Memories",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20872-j5PBzzVtrYDM.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/plastic-memories",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 13,
     "episodesWatched": 0,
@@ -6837,14 +6998,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 28
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/PlasticMemories-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-813",
     "titleFr": "Dragon Ball Z",
     "titleOrig": "Dragon Ball Z",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx813-ZhnFNOeCU5dQ.png",
-    "crunchyrollUrl": "https://www.crunchyroll.com/dragon-ball-z",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G9VHN9PPW/dragon-ball-z",
     "adnUrl": "https://animationdigitalnetwork.fr/video/1003-dragon-ball-z",
     "episodesTotal": 291,
     "episodesWatched": 0,
@@ -6887,14 +7051,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 31
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/DragonBallZ-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-853",
     "titleFr": "Ouran High School Host Club",
     "titleOrig": "Ouran Koukou Host Club",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx853-fiUtW8yohsSF.jpg",
-    "crunchyrollUrl": "https://crunchyroll.com/series/GRGGJWD2R/ouran-high-school-host-club",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 26,
     "episodesWatched": 0,
@@ -6937,14 +7102,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 27
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/OuranKoukouHostClub-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-889",
     "titleFr": "Black Lagoon",
     "titleOrig": "BLACK LAGOON",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx889-4S7N2ciq2cwA.png",
-    "crunchyrollUrl": "https://www.crunchyroll.com/black-lagoon",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -6987,14 +7155,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 25
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/BlackLagoon-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-6880",
     "titleFr": "Deadman Wonderland",
     "titleOrig": "Deadman Wonderland",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx6880-qZ1jIqIYpST2.png",
-    "crunchyrollUrl": "https://www.crunchyroll.com/deadman-wonderland",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -7037,14 +7208,16 @@ const DEFAULT_ANIME_DATA = [
           "day": 3
         }
       }
-    ]
+    ],
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-339",
     "titleFr": "Serial Experiments Lain",
     "titleOrig": "serial experiments lain",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx339-xF2wp1NQuQ4r.png",
-    "crunchyrollUrl": "https://www.crunchyroll.com/series/G649DWXJY/serial-experiments-lain?srsltid=AfmBOoqy4RNm5F9R6_w2RqfN8fH-pB9qJMPHJcqZaU8eCP5WAWXKHaGe",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 13,
     "episodesWatched": 0,
@@ -7087,14 +7260,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 28
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/SerialExperimentsLain-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-6045",
     "titleFr": "Kimi ni Todoke: From Me to You",
     "titleOrig": "Kimi ni Todoke",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx6045-JujXjoWtslUM.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/kimi-ni-todoke-from-me-to-you",
+    "crunchyrollUrl": null,
     "adnUrl": "https://animationdigitalnetwork.fr/video/1117-kimi-ni-todoke",
     "episodesTotal": 25,
     "episodesWatched": 0,
@@ -7137,14 +7313,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 31
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/KimiNiTodoke-OP1.webm"
   },
   {
     "id": "franchise-20807",
     "titleFr": "Prison School",
     "titleOrig": "Prison School",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20807-8nFoO0AUdGsy.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/prison-school",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -7187,14 +7364,16 @@ const DEFAULT_ANIME_DATA = [
           "day": 26
         }
       }
-    ]
+    ],
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-15583",
     "titleFr": "Date A Live",
     "titleOrig": "Date A Live",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx15583-Sxd2J4RJdRhj.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/date-a-live",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GYEX5E1G6/date-a-live",
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -7244,7 +7423,7 @@ const DEFAULT_ANIME_DATA = [
     "titleFr": "The Ancient Magus' Bride",
     "titleOrig": "Mahoutsukai no Yome",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx98436-n7sK6POCd0XV.png",
-    "crunchyrollUrl": "http://www.crunchyroll.com/the-ancient-magus-bride",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GRZXQJJ8Y/the-ancient-magus-bride",
     "adnUrl": null,
     "episodesTotal": 24,
     "episodesWatched": 0,
@@ -7287,14 +7466,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 25
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/MahoutsukaiNoYome-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-116267",
     "titleFr": "TONIKAWA: Over The Moon For You",
     "titleOrig": "Tonikaku Kawaii",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx116267-Eo1biPBTlL4i.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/tonikawa-over-the-moon-for-you",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GRWMGGQ86/tonikawa-over-the-moon-for-you",
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -7337,14 +7517,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 19
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Tonikawa-OP1.webm"
   },
   {
     "id": "franchise-101167",
     "titleFr": "Is It Wrong to Try to Pick Up Girls in a Dungeon? II",
     "titleOrig": "Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka II",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101167-Yasvj97UR9ue.png",
-    "crunchyrollUrl": "https://www.crunchyroll.com/is-it-wrong-to-try-to-pick-up-girls-in-a-dungeon",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6DQN9KGR/is-it-wrong-to-try-to-pick-up-girls-in-a-dungeon",
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -7387,7 +7568,9 @@ const DEFAULT_ANIME_DATA = [
           "day": 28
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/DanMachiS2-OP1-NCBD1080.webm",
+    "noVf": true
   },
   {
     "id": "franchise-437",
@@ -7487,14 +7670,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 21
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Gachiakuta-OP1.webm"
   },
   {
     "id": "franchise-21857",
     "titleFr": "Masamune-kun's Revenge",
     "titleOrig": "Masamune-kun no Revenge",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx21857-haPDVD7DKDpg.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/masamune-kuns-revenge",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GYX02P3MR/masamune-kuns-revenge",
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -7537,14 +7721,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 23
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/MasamuneKunNoRevenge-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-10793",
     "titleFr": "Guilty Crown",
     "titleOrig": "Guilty Crown",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx10793-KCysCbrVNqK9.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/guilty-crown",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 22,
     "episodesWatched": 0,
@@ -7587,14 +7772,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 23
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/GuiltyCrown-OP2.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-10165",
     "titleFr": "Nichijou - My Ordinary Life",
     "titleOrig": "Nichijou",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx10165-tw8Cz7K9tfVJ.png",
-    "crunchyrollUrl": "https://www.crunchyroll.com/nichijou-my-ordinary-life",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 26,
     "episodesWatched": 0,
@@ -7637,14 +7825,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 25
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Nichijou-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-108463",
     "titleFr": "Toilet-bound Hanako-kun",
     "titleOrig": "Jibaku Shounen Hanako-kun",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx108463-u03vrYnyB3L9.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/toilet-bound-hanako-kun",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G24H1N3ZP/toilet-bound-hanako-kun",
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -7687,14 +7878,16 @@ const DEFAULT_ANIME_DATA = [
           "day": 27
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/JibakuShounenHanakoKun-OP1.webm",
+    "noVf": true
   },
   {
     "id": "franchise-17265",
     "titleFr": "Log Horizon",
     "titleOrig": "Log Horizon",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx17265-RyErURYesjJt.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/log-horizon",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GRVNMG93Y/log-horizon",
     "adnUrl": null,
     "episodesTotal": 25,
     "episodesWatched": 0,
@@ -7737,7 +7930,8 @@ const DEFAULT_ANIME_DATA = [
           "day": 22
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/LogHorizon-OP1.webm"
   },
   {
     "id": "franchise-159831",
@@ -7787,7 +7981,8 @@ const DEFAULT_ANIME_DATA = [
           "day": 26
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Zom100-OP1.webm"
   },
   {
     "id": "franchise-102351",
@@ -7837,14 +8032,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 25
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/TokyoGhoulRES2-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-124153",
     "titleFr": "SK8 the Infinity",
     "titleOrig": "SK∞",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx124153-uEBI764OSavB.png",
-    "crunchyrollUrl": "https://www.crunchyroll.com/sk8-the-infinity",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G5PHNM434/sk8-the-infinity",
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -7887,14 +8083,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 4
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/SK8-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-21647",
     "titleFr": "Orange",
     "titleOrig": "orange",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21647-zMUXNhcVyRyv.png",
-    "crunchyrollUrl": "http://www.crunchyroll.com/orange",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GRVNXW75Y/orange",
     "adnUrl": null,
     "episodesTotal": 13,
     "episodesWatched": 0,
@@ -7937,14 +8134,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 26
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Orange-OP1-NCBD.webm"
   },
   {
     "id": "franchise-16592",
     "titleFr": "Danganronpa: The Animation",
     "titleOrig": "Danganronpa: Kibou no Gakuen to Zetsubou no Koukousei - The Animation",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx16592-mFn1gfMXlKtw.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/danganronpa-the-animation",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GR75N43MY/danganronpa-the-animation",
     "adnUrl": null,
     "episodesTotal": 13,
     "episodesWatched": 0,
@@ -7987,14 +8185,16 @@ const DEFAULT_ANIME_DATA = [
           "day": 27
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Danganronpa-OP1.webm",
+    "noVf": true
   },
   {
     "id": "franchise-223",
     "titleFr": "Dragon Ball",
     "titleOrig": "Dragon Ball",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx223-scE5uJfXqqj8.png",
-    "crunchyrollUrl": "https://www.crunchyroll.com/dragon-ball",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G8DHV7W21/dragon-ball",
     "adnUrl": "https://animationdigitalnetwork.fr/video/996-dragon-ball",
     "episodesTotal": 153,
     "episodesWatched": 0,
@@ -8037,14 +8237,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 12
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/DragonBall-OP1.webm"
   },
   {
     "id": "franchise-14513",
     "titleFr": "Magi: The Labyrinth of Magic",
     "titleOrig": "Magi: The labyrinth of magic",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx14513-HuUdrFFYftA7.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/magi",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 25,
     "episodesWatched": 0,
@@ -8087,14 +8288,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 31
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/MagiLabyrinthOfMagic-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-21709",
     "titleFr": "Yuri!!! on ICE",
     "titleOrig": "Yuuri!!! on ICE",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21709-aqPBDxJPruYR.png",
-    "crunchyrollUrl": "http://www.crunchyroll.com/yuri-on-ice",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GY2PEJ0MY/yuri-on-ice",
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -8137,7 +8341,8 @@ const DEFAULT_ANIME_DATA = [
           "day": 22
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/YuriOnIce-OP1.webm"
   },
   {
     "id": "franchise-100922",
@@ -8187,14 +8392,16 @@ const DEFAULT_ANIME_DATA = [
           "day": 29
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/GrandBlue-OP1-NCBD1080.webm",
+    "noVf": true
   },
   {
     "id": "franchise-47",
     "titleFr": "Akira",
     "titleOrig": "AKIRA",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx47-4CR68arv452h.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/akira",
+    "crunchyrollUrl": null,
     "adnUrl": "https://animationdigitalnetwork.fr/video/851-akira",
     "episodesTotal": 1,
     "episodesWatched": 0,
@@ -8237,14 +8444,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 16
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/KirakiraHappyHirakeCocotama-OP1.webm"
   },
   {
     "id": "franchise-20727",
     "titleFr": "Blood Blockade Battlefront",
     "titleOrig": "Kekkai Sensen",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20727-jgVnxLCHAKqZ.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/blood-blockade-battlefront",
+    "crunchyrollUrl": null,
     "adnUrl": "https://animationdigitalnetwork.fr/video/351-kekkai-sensen",
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -8287,14 +8495,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 4
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/KekkaiSensen-OP1.webm"
   },
   {
     "id": "franchise-109261",
     "titleFr": "The Quintessential Quintuplets 2",
     "titleOrig": "Go-toubun no Hanayome ∬",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx109261-65rKxMDlcU9r.png",
-    "crunchyrollUrl": "https://www.crunchyroll.com/the-quintessential-quintuplets",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GY4PD7Z06/the-quintessential-quintuplets",
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -8337,14 +8546,16 @@ const DEFAULT_ANIME_DATA = [
           "day": 26
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/GotoubunNoHanayomeS2-OP1-NCBD1080.webm",
+    "noVf": true
   },
   {
     "id": "franchise-99255",
     "titleFr": "Food Wars! The Third Plate",
     "titleOrig": "Shokugeki no Souma: San no Sara",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx99255-heGTtj5b4owl.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/food-wars-shokugeki-no-soma",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6GG91P26/food-wars-shokugeki-no-soma",
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -8387,14 +8598,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 20
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/ShokugekiNoSoumaSanNoSara-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-100668",
     "titleFr": "Arifureta: From Commonplace to World's Strongest",
     "titleOrig": "Arifureta Shokugyou de Sekai Saikyou",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx100668-DvOn5bMOt4cy.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/arifureta-from-commonplace-to-worlds-strongest",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G4PH0WXD1/arifureta-from-commonplace-to-worlds-strongest",
     "adnUrl": null,
     "episodesTotal": 13,
     "episodesWatched": 0,
@@ -8437,14 +8649,16 @@ const DEFAULT_ANIME_DATA = [
           "day": 7
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Arifureta-OP1-NCBD1080.webm",
+    "noVf": true
   },
   {
     "id": "franchise-97938",
     "titleFr": "Boruto: Naruto Next Generations",
     "titleOrig": "BORUTO: NARUTO NEXT GENERATIONS",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx97938-BnF6M5yTaNB1.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/boruto-naruto-next-generations",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GR75Q020Y/boruto-naruto-next-generations",
     "adnUrl": "https://animationdigitalnetwork.fr/video/457-boruto-naruto-next-generations",
     "episodesTotal": 293,
     "episodesWatched": 0,
@@ -8487,14 +8701,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 26
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Boruto-OP1-BD1080.webm"
   },
   {
     "id": "franchise-108489",
     "titleFr": "My Teen Romantic Comedy SNAFU Climax!",
     "titleOrig": "Yahari Ore no Seishun Love Come wa Machigatteiru. Kan",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx108489-yGmYCE6dhFta.png",
-    "crunchyrollUrl": "https://www.crunchyroll.com/my-teen-romantic-comedy-snafu",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -8537,7 +8752,10 @@ const DEFAULT_ANIME_DATA = [
           "day": 25
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/OreGairuS3-OP1-NCBD1080.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-113717",
@@ -8587,14 +8805,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 25
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/OusamaRanking-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-103139",
     "titleFr": "Domestic Girlfriend",
     "titleOrig": "Domestic na Kanojo",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx103139-2TfvRyGTE1qp.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/domestic-girlfriend",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -8637,14 +8856,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 30
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/DomesticNaKanojo-OP1-NCBD1080.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-21127",
     "titleFr": "Steins;Gate 0",
     "titleOrig": "Steins;Gate 0",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21127-7ARWZkDXKiiD.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/steinsgate-0",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 23,
     "episodesWatched": 0,
@@ -8687,14 +8909,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 27
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/SteinsGateZero-OP1-NCBD1080.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-171627",
     "titleFr": "Chainsaw Man – The Movie: Reze Arc",
     "titleOrig": "Chainsaw Man: Reze-hen",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx171627-ZN9D7P46yHnw.png",
-    "crunchyrollUrl": "https://www.crunchyroll.com/series/GNVHKN92K/chainsaw-man--the-movie-reze-arc",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
@@ -8737,14 +8962,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 19
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/ChainsawManRezeHen-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-99629",
     "titleFr": "Angels of Death",
     "titleOrig": "Satsuriku no Tenshi",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx99629-BXyAJ6PDq4sr.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/angels-of-death",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GRVDN485R/angels-of-death",
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -8787,14 +9015,16 @@ const DEFAULT_ANIME_DATA = [
           "day": 21
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/SatsurikuNoTenshi-OP1-NCBD1080.webm",
+    "noVf": true
   },
   {
     "id": "franchise-20770",
     "titleFr": "Yona of the Dawn",
     "titleOrig": "Akatsuki no Yona",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20770-brCDvhTXlums.png",
-    "crunchyrollUrl": "http://www.crunchyroll.com/yona",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6VN35J7R/yona-of-the-dawn",
     "adnUrl": null,
     "episodesTotal": 24,
     "episodesWatched": 0,
@@ -8837,14 +9067,16 @@ const DEFAULT_ANIME_DATA = [
           "day": 24
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/AkatsukiNoYona-OP1.webm",
+    "noVf": true
   },
   {
     "id": "franchise-21175",
     "titleFr": "Dragon Ball Super",
     "titleOrig": "Dragon Ball Super",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21175-EH06qlfF8TnB.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/dragon-ball-super",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GR19V7816/dragon-ball-super",
     "adnUrl": "https://animationdigitalnetwork.fr/video/999-dragon-ball-super",
     "episodesTotal": 131,
     "episodesWatched": 0,
@@ -8887,14 +9119,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 25
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/DragonBallSuper-OP1.webm"
   },
   {
     "id": "franchise-21366",
     "titleFr": "March comes in like a lion",
     "titleOrig": "3-gatsu no Lion",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21366-0wrYK0kjKeFn.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/march-comes-in-like-a-lion",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 22,
     "episodesWatched": 0,
@@ -8937,14 +9170,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 18
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/SangatsuNoLion-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-127911",
     "titleFr": "Shikimori's Not Just a Cutie",
     "titleOrig": "Kawaii dake ja Nai Shikimori-san",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx127911-qfJDzUt0qCna.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/shikimoris-not-just-a-cutie",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GNVHKN7M4/shikimoris-not-just-a-cutie",
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -8987,14 +9223,16 @@ const DEFAULT_ANIME_DATA = [
           "day": 10
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Shikimori-OP1-NCBD1080.webm",
+    "noVf": true
   },
   {
     "id": "franchise-108430",
     "titleFr": "given",
     "titleOrig": "Given",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx108430-UdruJPro4vDK.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/given",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GRG5WWD4R/given",
     "adnUrl": null,
     "episodesTotal": 11,
     "episodesWatched": 0,
@@ -9037,14 +9275,16 @@ const DEFAULT_ANIME_DATA = [
           "day": 20
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Given-OP1-NCBD1080.webm",
+    "noVf": true
   },
   {
     "id": "franchise-143270",
     "titleFr": "Lycoris Recoil",
     "titleOrig": "Lycoris Recoil",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx143270-rfkyiYXhek5w.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/lycoris-recoil",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G1XHJV2X9/lycoris-recoil",
     "adnUrl": null,
     "episodesTotal": 13,
     "episodesWatched": 0,
@@ -9087,14 +9327,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 24
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/LycorisRecoil-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-131646",
     "titleFr": "The Case Study of Vanitas",
     "titleOrig": "Vanitas no Carte",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx131646-cuyGfKcekZ62.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/the-case-study-of-vanitas",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GEXH3W8DG/the-case-study-of-vanitas",
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -9137,14 +9378,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 18
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/VanitasNoCarte-OP1.webm"
   },
   {
     "id": "franchise-20910",
     "titleFr": "SHIMONETA: A Boring World Where the Concept of Dirty Jokes Doesn’t Exist",
     "titleOrig": "Shimoneta to Iu Gainen ga Sonzai Shinai Taikutsu na Sekai",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20910-U7txwG3o9gma.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/shimoneta-a-boring-world-where-the-concept-of-dirty-jokes-doesnt-exist",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -9187,7 +9429,9 @@ const DEFAULT_ANIME_DATA = [
           "day": 19
         }
       }
-    ]
+    ],
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-877",
@@ -9237,14 +9481,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 28
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Nana-OP1.webm"
   },
   {
     "id": "franchise-20792",
     "titleFr": "Fate/stay night: Unlimited Blade Works 2nd Season",
     "titleOrig": "Fate/stay night: Unlimited Blade Works 2nd Season",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20792-Q53sZsUAh5FF.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/series/GY8V11X7Y/fatestay-night-unlimited-blade-works",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 13,
     "episodesWatched": 0,
@@ -9287,14 +9532,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 28
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/FateStayNightUBWS2-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-101004",
     "titleFr": "How NOT to Summon a Demon Lord",
     "titleOrig": "Isekai Maou to Shoukan Shoujo no Dorei Majutsu",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101004-rJLBIWGypbYK.png",
-    "crunchyrollUrl": "http://www.crunchyroll.com/how-not-to-summon-a-demon-lord",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GYZJXWWGR/how-not-to-summon-a-demon-lord",
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -9337,14 +9585,16 @@ const DEFAULT_ANIME_DATA = [
           "day": 20
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/IsekaiMaou-OP1-NCBD1080.webm",
+    "noVf": true
   },
   {
     "id": "franchise-100977",
     "titleFr": "Cells at Work!",
     "titleOrig": "Hataraku Saibou",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx100977-nH1J2dR7GGAk.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/cells-at-work",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GR3KVPQER/cells-at-work",
     "adnUrl": null,
     "episodesTotal": 13,
     "episodesWatched": 0,
@@ -9387,14 +9637,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 30
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/HatarakuSaibou-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-21421",
     "titleFr": "Kiznaiver",
     "titleOrig": "Kiznaiver",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21421-5y8ryXsMB7aJ.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/kiznaiver",
+    "crunchyrollUrl": null,
     "adnUrl": "https://animationdigitalnetwork.fr/video/1026-kiznaiver",
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -9437,7 +9688,8 @@ const DEFAULT_ANIME_DATA = [
           "day": 25
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Kiznaiver-OP1.webm"
   },
   {
     "id": "franchise-147105",
@@ -9487,14 +9739,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 22
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/TongariBoushiNoAtelier-OP1.webm"
   },
   {
     "id": "franchise-849",
     "titleFr": "The Melancholy of Haruhi Suzumiya",
     "titleOrig": "Suzumiya Haruhi no Yuuutsu",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx849-wQM3GqLvl62P.png",
-    "crunchyrollUrl": "https://www.crunchyroll.com/the-melancholy-of-haruhi-suzumiya",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 14,
     "episodesWatched": 0,
@@ -9537,14 +9790,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 3
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/SuzumiyaHaruhiNoYuuutsu-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-1210",
     "titleFr": "Welcome to the N-H-K",
     "titleOrig": "NHK ni Youkoso!",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx1210-2XotjcgqdcaX.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/welcome-to-the-n-h-k",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 24,
     "episodesWatched": 0,
@@ -9587,7 +9843,10 @@ const DEFAULT_ANIME_DATA = [
           "day": 18
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/NHKNiYoukoso-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-154965",
@@ -9637,7 +9896,9 @@ const DEFAULT_ANIME_DATA = [
           "day": 25
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/YamadaLv999-OP1-NCBD1080.webm",
+    "noVf": true
   },
   {
     "id": "franchise-129898",
@@ -9687,14 +9948,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 22
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/AnsatsuKizoku-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-21711",
     "titleFr": "91 Days",
     "titleOrig": "91Days",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21711-EQN4sCIXRhKf.png",
-    "crunchyrollUrl": "http://www.crunchyroll.com/91-days",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -9737,14 +9999,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 1
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/91Days-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-21700",
     "titleFr": "Akashic Records of Bastard Magic Instructor",
     "titleOrig": "Rokudenashi Majutsu Koushi to Akashic Records",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21700-HhTEXPZKxupP.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/akashic-records-of-bastard-magical-instructor",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GYDQ8WZ16/akashic-records-of-bastard-magic-instructor",
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -9787,14 +10052,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 20
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/AkashicRecords-OP1.webm"
   },
   {
     "id": "franchise-112124",
     "titleFr": "Is It Wrong to Try to Pick Up Girls in a Dungeon? III",
     "titleOrig": "Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka III",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx112124-ZmoOntBuiSUU.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/is-it-wrong-to-try-to-pick-up-girls-in-a-dungeon",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6DQN9KGR/is-it-wrong-to-try-to-pick-up-girls-in-a-dungeon",
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -9837,14 +10103,16 @@ const DEFAULT_ANIME_DATA = [
           "day": 19
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/DanMachiS3-OP1-NCBD1080.webm",
+    "noVf": true
   },
   {
     "id": "franchise-105156",
     "titleFr": "Cautious Hero: The Hero Is Overpowered but Overly Cautious",
     "titleOrig": "Shinchou Yuusha: Kono Yuusha ga Ore TUEEE Kuse ni Shinchou Sugiru",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx105156-ZVtxISdoUqnY.png",
-    "crunchyrollUrl": "https://www.crunchyroll.com/cautious-hero-the-hero-is-overpowered-but-overly-cautious",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GNVHKN78X/cautious-hero-the-hero-is-overpowered-but-overly-cautious",
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -9887,7 +10155,9 @@ const DEFAULT_ANIME_DATA = [
           "day": 27
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/ShinchouYuusha-OP1.webm",
+    "noVf": true
   },
   {
     "id": "franchise-142770",
@@ -9944,7 +10214,7 @@ const DEFAULT_ANIME_DATA = [
     "titleFr": "TRINITY SEVEN",
     "titleOrig": "Trinity Seven",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20631-LdCiy3goitcT.png",
-    "crunchyrollUrl": "http://www.crunchyroll.com/trinity-seven",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G60914JM6/trinity-seven",
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -9987,14 +10257,16 @@ const DEFAULT_ANIME_DATA = [
           "day": 24
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/TrinitySeven-OP1.webm",
+    "noVf": true
   },
   {
     "id": "franchise-15451",
     "titleFr": "High School DxD NEW",
     "titleOrig": "High School DxD NEW",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx15451-A5T54vmxUq9t.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/high-school-dxd",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -10037,14 +10309,16 @@ const DEFAULT_ANIME_DATA = [
           "day": 22
         }
       }
-    ]
+    ],
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-98291",
     "titleFr": "Tsuredure Children",
     "titleOrig": "Tsurezure Children",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx98291-LY6txxZTX8We.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/tsuredure-children",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GY2P9PZPY/tsuredure-children",
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -10087,14 +10361,16 @@ const DEFAULT_ANIME_DATA = [
           "day": 19
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/TsurezureChildren-OP1-NCDVD.webm",
+    "noVf": true
   },
   {
     "id": "franchise-20994",
     "titleFr": "Gate",
     "titleOrig": "GATE: Jieitai Kanochi nite, Kaku Tatakaeri",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20994-pSDk4I58jAK5.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/gate",
+    "crunchyrollUrl": null,
     "adnUrl": "https://animationdigitalnetwork.fr/video/1027-gate",
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -10137,7 +10413,8 @@ const DEFAULT_ANIME_DATA = [
           "day": 19
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Gate-OP1.webm"
   },
   {
     "id": "franchise-162804",
@@ -10187,14 +10464,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 18
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Roshidere-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-21196",
     "titleFr": "Kabaneri of the Iron Fortress",
     "titleOrig": "Koutetsujou no Kabaneri",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21196-2PfPfIDrxKki.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/kabaneri-of-the-iron-fortress/videos",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GR24GX896/kabaneri-of-the-iron-fortress",
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -10237,14 +10515,16 @@ const DEFAULT_ANIME_DATA = [
           "day": 1
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/KoutetsujouNoKabaneri-OP1v2.webm",
+    "noVf": true
   },
   {
     "id": "franchise-12355",
     "titleFr": "Wolf Children",
     "titleOrig": "Ookami Kodomo no Ame to Yuki",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx12355-wNsvhEsXEgrH.png",
-    "crunchyrollUrl": "https://www.crunchyroll.com/wolf-children",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
@@ -10287,14 +10567,16 @@ const DEFAULT_ANIME_DATA = [
           "day": 25
         }
       }
-    ]
+    ],
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-11843",
     "titleFr": "Daily Lives of High School Boys",
     "titleOrig": "Danshi Koukousei no Nichijou",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx11843-ui2jBcuQUqnl.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/daily-lives-of-high-school-boys",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -10337,14 +10619,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 27
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/DanshiKoukouseiNoNichijou-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-4654",
     "titleFr": "A Certain Magical Index",
     "titleOrig": "Toaru Majutsu no Index",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx4654-ba44icsxDQZd.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/a-certain-magical-index/",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GRVNZK5PY/a-certain-magical-index",
     "adnUrl": null,
     "episodesTotal": 24,
     "episodesWatched": 0,
@@ -10387,14 +10672,16 @@ const DEFAULT_ANIME_DATA = [
           "day": 19
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/ToaruMajutsuNoIndex-OP1.webm",
+    "noVf": true
   },
   {
     "id": "franchise-20966",
     "titleFr": "Yamada and the Seven Witches",
     "titleOrig": "Yamada-kun to 7-nin no Majo",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20966-HboUtUzEKWl6.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/yamada-kun-and-the-seven-witches",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G63VMKVQY/yamada-kun-and-the-seven-witches",
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -10437,7 +10724,8 @@ const DEFAULT_ANIME_DATA = [
           "day": 28
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/YamadaKun-OP1.webm"
   },
   {
     "id": "franchise-105228",
@@ -10487,14 +10775,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 30
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Dorohedoro-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-114232",
     "titleFr": "Higehiro: After Being Rejected, I Shaved and Took in a High School Runaway",
     "titleOrig": "Hige wo Soru. Soshite Joshikousei wo Hirou.",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx114232-2rm50ZD1cQgP.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/higehiro-after-being-rejected-i-shaved-and-took-in-a-high-school-runaway",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GXJHM3NW5/higehiro-after-being-rejected-i-shaved-and-took-in-a-high-school-runaway",
     "adnUrl": null,
     "episodesTotal": 13,
     "episodesWatched": 0,
@@ -10537,14 +10826,16 @@ const DEFAULT_ANIME_DATA = [
           "day": 28
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Higehiro-OP1-NCBD1080.webm",
+    "noVf": true
   },
   {
     "id": "franchise-21685",
     "titleFr": "Eromanga Sensei",
     "titleOrig": "Eromanga Sensei",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21685-h1SrcpaNnrIq.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/eromanga-sensei",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -10587,14 +10878,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 25
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/EromangaSensei-OP1-NCBD1080.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-11597",
     "titleFr": "Nisemonogatari",
     "titleOrig": "Nisemonogatari",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx11597-x2vd4KSHcI1S.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/nisemonogatari",
+    "crunchyrollUrl": null,
     "adnUrl": "https://animationdigitalnetwork.fr/video/1217-nisemonogatari",
     "episodesTotal": 11,
     "episodesWatched": 0,
@@ -10637,14 +10931,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 18
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Nisemonogatari-OP1.webm"
   },
   {
     "id": "franchise-111762",
     "titleFr": "Fruits Basket",
     "titleOrig": "Fruits Basket: 2nd Season",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx111762-C8TNf5uRlVNQ.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/fruits-basket",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6ZJMGEXY/fruits-basket",
     "adnUrl": "https://animationdigitalnetwork.fr/video/558-fruits-basket",
     "episodesTotal": 25,
     "episodesWatched": 0,
@@ -10687,7 +10982,8 @@ const DEFAULT_ANIME_DATA = [
           "day": 22
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/FruitsBasketS2-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-163270",
@@ -10737,14 +11033,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 28
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/WindBreaker-OP1.webm"
   },
   {
     "id": "franchise-777",
     "titleFr": "Hellsing Ultimate",
     "titleOrig": "HELLSING OVA",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx777-F6547pSAR2Zd.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/hellsing-ultimate",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 10,
     "episodesWatched": 0,
@@ -10787,14 +11084,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 26
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Hellsing-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-18507",
     "titleFr": "Free! -Iwatobi Swim Club",
     "titleOrig": "Free!",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx18507-RajfCYPpBfT3.png",
-    "crunchyrollUrl": "http://www.crunchyroll.com/free-iwatobi-swim-club",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GRDQV2VWY/free-iwatobi-swim-club",
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -10837,14 +11137,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 25
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Free-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-18671",
     "titleFr": "Love, Chunibyo & Other Delusions - Heart Throb",
     "titleOrig": "Chuunibyou demo Koi ga Shitai! Ren",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx18671-RVIY9TGd737H.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/love-chunibyo-other-delusions-heart-throb-",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -10887,14 +11188,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 27
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/ChuunibyouS2-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-113596",
     "titleFr": "Josee, the Tiger and the Fish",
     "titleOrig": "Josee to Tora to Sakanatachi",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx113596-LKA0bYJGjLnB.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/josee-the-tiger-and-the-fish",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
@@ -10937,14 +11241,16 @@ const DEFAULT_ANIME_DATA = [
           "day": 25
         }
       }
-    ]
+    ],
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-16894",
     "titleFr": "Kuroko's Basketball 2",
     "titleOrig": "Kuroko no Basket 2nd SEASON",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx16894-iXt8GDs1L6dr.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/kurokos-basketball",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G62P48X56/kurokos-basketball",
     "adnUrl": null,
     "episodesTotal": 25,
     "episodesWatched": 0,
@@ -10987,14 +11293,16 @@ const DEFAULT_ANIME_DATA = [
           "day": 30
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/KurokoNoBasketS2-OP1-Lyrics.webm",
+    "noVf": true
   },
   {
     "id": "franchise-100112",
     "titleFr": "Wise Man’s Grandchild",
     "titleOrig": "Kenja no Mago",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx100112-eExFpnYG2QAK.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/wise-mans-grandchild",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G63K95846/wise-mans-grandchild",
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -11037,14 +11345,16 @@ const DEFAULT_ANIME_DATA = [
           "day": 26
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/KenjaNoMago-OP1-NCBD1080.webm",
+    "noVf": true
   },
   {
     "id": "franchise-97994",
     "titleFr": "BLEND-S",
     "titleOrig": "Blend S",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx97994-JZ1rLkJBcO8V.png",
-    "crunchyrollUrl": "http://www.crunchyroll.com/blend-s",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -11087,14 +11397,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 24
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/BlendS-OP1-BD1080.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-2966",
     "titleFr": "Spice and Wolf",
     "titleOrig": "Ookami to Koushinryou",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx2966-AEULMyYA9WKb.png",
-    "crunchyrollUrl": "https://www.crunchyroll.com/spice-and-wolf",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 13,
     "episodesWatched": 0,
@@ -11137,14 +11450,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 30
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/OokamiToKoushinryou-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-21428",
     "titleFr": "Grimgar of Fantasy and Ash",
     "titleOrig": "Hai to Gensou no Grimgar",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21428-dFVIHeZ8McBe.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/grimgar-ashes-and-illusions",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -11187,14 +11503,17 @@ const DEFAULT_ANIME_DATA = [
           "day": 28
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Grimgar-OP1-NCBD1080.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-21058",
     "titleFr": "Snow White with the Red Hair",
     "titleOrig": "Akagami no Shirayuki-hime",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21058-GRqasG1xk3bD.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/snow-white-with-the-red-hair",
+    "crunchyrollUrl": null,
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -11237,7 +11556,10 @@ const DEFAULT_ANIME_DATA = [
           "day": 22
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/AkagamiNoShirayukiHime-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-151970",
@@ -11287,14 +11609,15 @@ const DEFAULT_ANIME_DATA = [
           "day": 31
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/ShangrilaFrontier-OP1.webm"
   },
   {
     "id": "franchise-106479",
     "titleFr": "BOFURI: I Don't Want to Get Hurt, so I'll Max Out My Defense.",
     "titleOrig": "Itai no wa Iya nano de Bougyoryoku ni Kyokufuri Shitai to Omoimasu.",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx106479-JmPk1F5ubMtm.png",
-    "crunchyrollUrl": "https://www.crunchyroll.com/bofuri-i-dont-want-to-get-hurt-so-ill-max-out-my-defense",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GKEH2G428/bofuri-i-dont-want-to-get-hurt-so-ill-max-out-my-defense",
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -11337,14 +11660,16 @@ const DEFAULT_ANIME_DATA = [
           "day": 25
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Bofuri-OP1-NCBD1080.webm",
+    "noVf": true
   },
   {
     "id": "franchise-128546",
     "titleFr": "Vivy -Fluorite Eye's Song",
     "titleOrig": "Vivy: Fluorite Eye’s Song",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx128546-UIwyhuhjxmL0.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/vivy-fluorite-eyes-song-",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GMEHME4M4/vivy-fluorite-eyes-song-",
     "adnUrl": null,
     "episodesTotal": 13,
     "episodesWatched": 0,
@@ -11387,14 +11712,16 @@ const DEFAULT_ANIME_DATA = [
           "day": 19
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/Vivy-OP3-NCBD1080.webm",
+    "noVf": true
   },
   {
     "id": "franchise-21861",
     "titleFr": "Blue Exorcist: Kyoto Saga",
     "titleOrig": "Ao no Exorcist: Kyoto Fujouou-hen",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21861-KDvJJQenJJlT.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/blue-exorcist",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G649PJ0JY/blue-exorcist",
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -11437,7 +11764,8 @@ const DEFAULT_ANIME_DATA = [
           "day": 25
         }
       }
-    ]
+    ],
+    "openingUrl": "https://v.animethemes.moe/AoNoExorcistS2-OP1-NCBD1080.webm"
   },
   {
     "id": "adn-1343",
@@ -11466,7 +11794,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/OjamajoDoremi-OP1.webm"
   },
   {
     "id": "adn-1405",
@@ -11545,7 +11874,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/IsekaiNonbiriNouka-OP1-NCBD1080.webm"
   },
   {
     "id": "adn-1398",
@@ -11574,7 +11904,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/FullmetalAlchemist-OP1.webm"
   },
   {
     "id": "adn-427",
@@ -11603,7 +11934,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/SailorMoon-OP1.webm"
   },
   {
     "id": "adn-1393",
@@ -11632,7 +11964,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/Hellsing-OP1.webm"
   },
   {
     "id": "adn-1358",
@@ -11661,7 +11994,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/InazumaEleven-OP1.webm"
   },
   {
     "id": "adn-1361",
@@ -11690,7 +12024,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/SailorMoonCrystal-OP1.webm"
   },
   {
     "id": "adn-1371",
@@ -11719,7 +12054,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/KonosubaBakuen-OP1-NCBD1080.webm"
   },
   {
     "id": "adn-1359",
@@ -11831,7 +12167,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/DragonBallZ-OP1-NCBD1080.webm"
   },
   {
     "id": "adn-1333",
@@ -11889,7 +12226,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/NeonGenesisEvangelion-OP1.webm"
   },
   {
     "id": "adn-912",
@@ -11918,7 +12256,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/YofukashiNoUta-OP1-BD1080.webm"
   },
   {
     "id": "adn-444",
@@ -11947,7 +12286,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/JojoNoKimyouNaBouken-OP1.webm"
   },
   {
     "id": "adn-1319",
@@ -12101,7 +12441,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/YGO-OP1.webm"
   },
   {
     "id": "adn-329",
@@ -12130,7 +12471,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/Eyeshield21-OP1.webm"
   },
   {
     "id": "adn-1301",
@@ -12184,7 +12526,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/Bakuman-OP1.webm"
   },
   {
     "id": "adn-1279",
@@ -12209,7 +12552,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/KimagureOrangeRoad-OP1.webm"
   },
   {
     "id": "adn-588",
@@ -12296,7 +12640,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/X-OP1.webm"
   },
   {
     "id": "adn-1187",
@@ -12325,7 +12670,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/FairyTail100NenQuest-OP1.webm"
   },
   {
     "id": "adn-363",
@@ -12350,7 +12696,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/DragonBallZ-OP1-NCBD1080.webm"
   },
   {
     "id": "adn-1252",
@@ -12375,7 +12722,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/DragonBallZ-OP1-NCBD1080.webm"
   },
   {
     "id": "adn-1241",
@@ -12433,7 +12781,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/Toriko-OP1.webm"
   },
   {
     "id": "adn-1207",
@@ -12491,7 +12840,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/SaintSeiyaSoulOfGold-OP1.webm"
   },
   {
     "id": "adn-1210",
@@ -12574,7 +12924,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/UruseiYatsura-OP1.webm"
   },
   {
     "id": "adn-1200",
@@ -12632,7 +12983,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/SaintSeiyaHadesMeikaiHen-OP1.webm"
   },
   {
     "id": "adn-1192",
@@ -12736,7 +13088,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/CityHunter-OP2.webm"
   },
   {
     "id": "adn-934",
@@ -12765,7 +13118,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/CityHunter-OP2.webm"
   },
   {
     "id": "adn-935",
@@ -12794,7 +13148,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/CityHunter-OP2.webm"
   },
   {
     "id": "adn-936",
@@ -12819,7 +13174,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/CityHunter-OP2.webm"
   },
   {
     "id": "adn-937",
@@ -12844,7 +13200,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/CityHunter-OP2.webm"
   },
   {
     "id": "adn-938",
@@ -12869,7 +13226,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/CityHunter-OP2.webm"
   },
   {
     "id": "adn-1037",
@@ -12898,7 +13256,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/Bokuyaba-OP1-NCBD1080.webm"
   },
   {
     "id": "adn-1122",
@@ -12981,7 +13340,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/DigimonUniverse-OP1.webm"
   },
   {
     "id": "adn-1127",
@@ -13035,7 +13395,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/ShadowGarden-OP1-NCBD1080.webm"
   },
   {
     "id": "adn-1084",
@@ -13093,7 +13454,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/Shigurui-OP1.webm"
   },
   {
     "id": "adn-1096",
@@ -13143,7 +13505,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/EdensZeroS2-OP1.webm"
   },
   {
     "id": "adn-1076",
@@ -13168,7 +13531,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/SaintSeiya-OP1.webm"
   },
   {
     "id": "adn-1077",
@@ -13193,7 +13557,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/SaintSeiya-OP1.webm"
   },
   {
     "id": "adn-1078",
@@ -13218,7 +13583,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/SaintSeiya-OP1.webm"
   },
   {
     "id": "adn-1079",
@@ -13243,7 +13609,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/SaintSeiya-OP1.webm"
   },
   {
     "id": "adn-1080",
@@ -13268,7 +13635,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/SaintSeiya-OP1.webm"
   },
   {
     "id": "adn-1069",
@@ -13326,7 +13694,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/YGO5DS-OP1.webm"
   },
   {
     "id": "adn-1060",
@@ -13384,7 +13753,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/AirGear-OP1.webm"
   },
   {
     "id": "adn-624",
@@ -13442,7 +13812,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/Beck-OP1.webm"
   },
   {
     "id": "adn-1046",
@@ -13471,7 +13842,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/Berserk-OP1.webm"
   },
   {
     "id": "adn-885",
@@ -13500,7 +13872,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/HajimeNoIppo-OP1.webm"
   },
   {
     "id": "adn-1017",
@@ -13529,7 +13902,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/FushigiNoUmiNoNadia-OP1.webm"
   },
   {
     "id": "adn-1018",
@@ -13587,7 +13961,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/IeNakiKo-OP1.webm"
   },
   {
     "id": "adn-998",
@@ -13670,7 +14045,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/DrSlumpAraleChan-OP1.webm"
   },
   {
     "id": "adn-997",
@@ -13699,7 +14075,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/DragonBallKai-OP1-NCBD.webm"
   },
   {
     "id": "adn-978",
@@ -13890,7 +14267,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/AshitaNoJoe2-OP1.webm"
   },
   {
     "id": "adn-948",
@@ -13969,7 +14347,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/TenseiKenja-OP1.webm"
   },
   {
     "id": "adn-920",
@@ -14397,7 +14776,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/SaintSeiya-OP1.webm"
   },
   {
     "id": "adn-847",
@@ -14426,7 +14806,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/MousouDairinin-OP1.webm"
   },
   {
     "id": "adn-809",
@@ -14530,7 +14911,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/UFORoboGrendizer-OP1.webm"
   },
   {
     "id": "adn-756",
@@ -14588,7 +14970,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/HokutoNoKen-OP1.webm"
   },
   {
     "id": "adn-856",
@@ -14642,7 +15025,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/OwariNoSeraph-OP1.webm"
   },
   {
     "id": "adn-697",
@@ -14700,7 +15084,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/Gangsta-OP1.webm"
   },
   {
     "id": "adn-644",
@@ -14758,7 +15143,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/DigimonTamers-OP1.webm"
   },
   {
     "id": "adn-137",
@@ -14787,7 +15173,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/xxxHOLiC-OP1.webm"
   },
   {
     "id": "adn-615",
@@ -14845,7 +15232,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/FateStayNight-OP1.webm"
   },
   {
     "id": "adn-601",
@@ -14874,7 +15262,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/DigimonAdventure02-OP1.webm"
   },
   {
     "id": "adn-591",
@@ -14903,7 +15292,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/DigimonAdventure-OP1.webm"
   },
   {
     "id": "adn-582",
@@ -14961,7 +15351,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/NoGameNoLife-OP1.webm"
   },
   {
     "id": "adn-548",
@@ -14990,7 +15381,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/CatsEye-OP1.webm"
   },
   {
     "id": "adn-587",
@@ -15019,7 +15411,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/NanatsuNoTaizai-OP1.webm"
   },
   {
     "id": "adn-362",
@@ -15048,7 +15441,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/Boruto-OP1-BD1080.webm"
   },
   {
     "id": "adn-510",
@@ -15077,7 +15471,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/DevilsLine-OP1-NCBD1080.webm"
   },
   {
     "id": "adn-462",
@@ -15193,7 +15588,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/InitialDExtraStage-OP1.webm"
   },
   {
     "id": "adn-463",
@@ -15251,7 +15647,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/AllOut-OP1.webm"
   },
   {
     "id": "adn-451",
@@ -15280,7 +15677,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/KoroSenseiQuest-OP1.webm"
   },
   {
     "id": "adn-411",
@@ -15309,7 +15707,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/Endride-OP1.webm"
   },
   {
     "id": "adn-319",
@@ -15338,7 +15737,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/NarutoSD-OP1.webm"
   },
   {
     "id": "adn-315",
@@ -15367,7 +15767,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/NoGameNoLife-OP1.webm"
   },
   {
     "id": "adn-301",
@@ -15396,7 +15797,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/WitchCraftWorks-OP1.webm"
   },
   {
     "id": "adn-297",
@@ -15446,7 +15848,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/Naruto-OP1.webm"
   },
   {
     "id": "adn-295",
@@ -15471,7 +15874,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/Naruto-OP1.webm"
   },
   {
     "id": "adn-292",
@@ -15646,7 +16050,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "openingUrl": "https://v.animethemes.moe/Naruto-OP1.webm"
   },
   {
     "id": "franchise-99088",
@@ -15669,7 +16074,7 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 8
       }
     ],
-    "unavailable": true
+    "noVf": true
   },
   {
     "id": "franchise-120377",
@@ -15692,7 +16097,8 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 10
       }
     ],
-    "unavailable": true
+    "openingUrl": "https://v.animethemes.moe/CyberpunkEdgerunners-OP1.webm",
+    "noVf": true
   },
   {
     "id": "franchise-97888",
@@ -15715,7 +16121,8 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 26
       }
     ],
-    "unavailable": true
+    "openingUrl": "https://v.animethemes.moe/Baki-OP1.webm",
+    "noVf": true
   },
   {
     "id": "franchise-129201",
@@ -15738,7 +16145,8 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 25
       }
     ],
-    "unavailable": true
+    "openingUrl": "https://v.animethemes.moe/SummertimeRender-OP1-NCBD1080.webm",
+    "noVf": true
   },
   {
     "id": "franchise-155783",
@@ -15761,7 +16169,8 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 13
       }
     ],
-    "unavailable": true
+    "openingUrl": "https://v.animethemes.moe/TengokuDaimakyou-OP1-NCBD1080.webm",
+    "noVf": true
   },
   {
     "id": "franchise-100388",
@@ -15784,7 +16193,8 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 24
       }
     ],
-    "unavailable": true
+    "openingUrl": "https://v.animethemes.moe/BananaFish-OP1-NCBD1080.webm",
+    "noVf": true
   },
   {
     "id": "franchise-101347",
@@ -15807,6 +16217,7 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 24
       }
     ],
-    "unavailable": true
+    "openingUrl": "https://v.animethemes.moe/Dororo2019-OP1-NCBD1080.webm",
+    "noVf": true
   }
 ];

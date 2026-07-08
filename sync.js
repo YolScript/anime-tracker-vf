@@ -9,7 +9,7 @@ const SUPABASE_ANON_KEY = "sb_publishable_3NPZsB8HBSK37ZCekjARBg_8soutVCi";
 
 const SYNC_STORAGE_KEY = "crunchy_tracker_progress_v2";
 const SYNC_TABLE = "anime_progress";
-const SYNC_VERSION = "15";
+const SYNC_VERSION = "16";
 
 // Dans l'APK Android (WebView), le retour du login Discord passe par un
 // deep link géré par l'app (voir android-app/MainActivity.java) : le login
@@ -43,39 +43,11 @@ function syncLog(msg) {
     console.log("[Sync] " + msg);
 }
 
-// ---------- Fusion des progressions (local + cloud) ----------
-// Pour chaque animé : max d'épisodes vus, meilleure note, statut le plus avancé.
-function mergeProgress(local, cloud) {
-    const statusRank = {
-        "completed": 4,
-        "watching": 3,
-        "hidden": 2,
-        "on-hold": 1,
-        "plan-to-watch": 0
-    };
-    const merged = { ...cloud };
-    Object.keys(local).forEach((id) => {
-        const l = local[id];
-        const c = merged[id];
-        if (!c) {
-            merged[id] = l;
-            return;
-        }
-        if (l.isCustom || c.isCustom) {
-            // Animé ajouté manuellement : garder la version la plus avancée
-            merged[id] = (l.episodesWatched || 0) >= (c.episodesWatched || 0) ? l : c;
-            return;
-        }
-        merged[id] = {
-            episodesWatched: Math.max(l.episodesWatched || 0, c.episodesWatched || 0),
-            rating: Math.max(l.rating || 0, c.rating || 0),
-            status: (statusRank[l.status] || 0) >= (statusRank[c.status] || 0) ? l.status : c.status
-        };
-    });
-    return merged;
-}
-
 // ---------- Cloud <-> localStorage ----------
+// Le cloud est la seule source de vérité quand on est connecté : au pull,
+// il REMPLACE les données locales (pas de fusion — la dernière modification
+// faite sur n'importe quel appareil gagne). Si le cloud est encore vide
+// (première connexion), il est initialisé avec les données locales.
 async function pullAndMergeFromCloud(showFeedback) {
     if (!sbClient || !syncUser) return;
     const { data, error } = await sbClient
@@ -84,21 +56,24 @@ async function pullAndMergeFromCloud(showFeedback) {
         .eq("user_id", syncUser.id)
         .maybeSingle();
     if (error) {
-        console.error("[Sync] Erreur de lecture cloud:", error);
+        syncLog("Erreur de lecture cloud: " + error.message);
         if (showFeedback) showToast("Erreur de synchronisation Discord.", "error");
         return;
     }
-    const cloud = (data && data.data) ? data.data : {};
-    let local = {};
-    try {
-        local = JSON.parse(localStorage.getItem(SYNC_STORAGE_KEY) || "{}");
-    } catch (e) { /* localStorage corrompu : on repart du cloud */ }
+    const cloud = (data && data.data) ? data.data : null;
 
-    const merged = mergeProgress(local, cloud);
-    localStorage.setItem(SYNC_STORAGE_KEY, JSON.stringify(merged));
-    await pushToCloud();
+    if (cloud && Object.keys(cloud).length > 0) {
+        const json = JSON.stringify(cloud);
+        localStorage.setItem(SYNC_STORAGE_KEY, json);
+        lastPushedJson = json;
+        syncLog("Données cloud appliquées (" + Object.keys(cloud).length + " animés).");
+    } else {
+        // Cloud vide : première connexion, on l'initialise avec le local
+        syncLog("Cloud vide, envoi des données locales...");
+        await pushToCloud();
+    }
 
-    // Recharger l'interface avec les données fusionnées
+    // Recharger l'interface avec les données à jour
     if (typeof loadData === "function") {
         loadData();
         if (typeof updateStats === "function") updateStats();
