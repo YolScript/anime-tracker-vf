@@ -15,6 +15,21 @@ let currentSearch = "";
 let currentSort = "alphabetical";
 let currentPlatform = "all";
 
+// YouTube Error Auto-Fallback Globals
+let activeYtTimeout = null;
+let activeYtListener = null;
+
+function clearActiveYtPlayback() {
+    if (activeYtTimeout) {
+        clearTimeout(activeYtTimeout);
+        activeYtTimeout = null;
+    }
+    if (activeYtListener) {
+        window.removeEventListener("message", activeYtListener);
+        activeYtListener = null;
+    }
+}
+
 // ==========================================================================
 // DOM ELEMENTS
 // ==========================================================================
@@ -1426,8 +1441,9 @@ window.addEventListener("message", (event) => {
         const data = typeof event.data === "string" ? JSON.parse(event.data) : event.data;
         if (data && data.info && typeof data.info.error !== "undefined") {
             console.warn("YouTube Player error detected, falling back automatically:", data.info.error);
+            clearActiveYtPlayback();
             const fallbackBtn = document.getElementById("player-fallback-btn");
-            if (fallbackBtn && fallbackBtn.style.display !== "none") {
+            if (fallbackBtn) {
                 fallbackBtn.click();
             }
         }
@@ -1653,6 +1669,7 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
         // Affiche l'étape média courante (trailer YouTube ou opening vidéo),
         // ou le message final quand plus rien n'est lisible.
         const renderMediaStep = () => {
+            clearActiveYtPlayback();
             const slot = document.getElementById("player-media-slot");
             if (!slot) return;
             if (mediaIndex >= mediaSteps.length) {
@@ -1678,6 +1695,40 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                         allow="autoplay; encrypted-media">
                     </iframe>
                 `;
+
+                let played = false;
+                
+                // Fallback auto-trigger: if video doesn't play in 3.2s, auto-trigger the "Vidéo bloquée" fallback.
+                activeYtTimeout = setTimeout(() => {
+                    if (!played) {
+                        console.warn("YouTube video did not start playing within 3.2s (timeout), auto-triggering fallback...");
+                        const fallbackBtn = document.getElementById("player-fallback-btn");
+                        if (fallbackBtn) {
+                            fallbackBtn.click();
+                        }
+                    }
+                }, 3200);
+
+                activeYtListener = (event) => {
+                    try {
+                        const data = typeof event.data === "string" ? JSON.parse(event.data) : event.data;
+                        if (data) {
+                            if (data.event === "infoDelivery" && data.info && data.info.playerState === 1) {
+                                played = true;
+                                clearActiveYtPlayback();
+                            }
+                            if (data.info && typeof data.info.error !== "undefined") {
+                                console.warn("YouTube Player error detected via iframe message:", data.info.error);
+                                clearActiveYtPlayback();
+                                const fallbackBtn = document.getElementById("player-fallback-btn");
+                                if (fallbackBtn) {
+                                    fallbackBtn.click();
+                                }
+                            }
+                        }
+                    } catch (e) {}
+                };
+                window.addEventListener("message", activeYtListener);
             } else {
                 slot.innerHTML = `
                     <video
@@ -1948,6 +1999,7 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
     closeBtns.forEach(btn => {
         btn.addEventListener("click", () => {
             clearCountdown();
+            clearActiveYtPlayback();
             videoPlayerWrapper.innerHTML = "";
         }, { once: true });
     });
@@ -2078,6 +2130,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const openModalElement = document.querySelector(".modal.show");
                 if (openModalElement) {
                     if (openModalElement.id === "player-modal") {
+                        clearActiveYtPlayback();
                         videoPlayerWrapper.innerHTML = "";
                     }
                     closeModal(openModalElement);
