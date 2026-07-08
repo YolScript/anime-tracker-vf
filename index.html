@@ -533,15 +533,18 @@
             });
         }
 
-        // Bouton Ko-fi : masque dans l'appli Android (WebView), affiche seulement sur le site web
+    </script>
+
+    <!-- Ko-fi Support Button : le widget utilise document.write en interne, donc il
+         doit rester dans un <script> statique execute pendant le parsing initial
+         (un chargement JS differe apres le "load" declenche document.open() et
+         efface toute la page). Masque dans l'appli Android (WebView) via la
+         meme detection isAndroidWebView definie plus haut. -->
+    <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
+    <script type='text/javascript'>
         if (!isAndroidWebView) {
-            const kofiScript = document.createElement('script');
-            kofiScript.src = 'https://storage.ko-fi.com/cdn/widget/Widget_2.js';
-            kofiScript.onload = () => {
-                kofiwidget2.init('Support me on Ko-fi', '#72a4f2', 'E0J822UNFL');
-                kofiwidget2.draw();
-            };
-            document.body.appendChild(kofiScript);
+            kofiwidget2.init('Support me on Ko-fi', '#72a4f2', 'E0J822UNFL');
+            kofiwidget2.draw();
         }
     </script>
 </body>
