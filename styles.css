@@ -1564,17 +1564,31 @@ select option {
 @media (max-width: 768px) {
     .app-header {
         padding: 16px 0;
+        justify-content: flex-start;
     }
-    
+
+    /* "Deplie" le groupe d'actions : ses enfants redeviennent des items flex
+       directs de .app-header, pour pouvoir placer Filtres/Discord juste a
+       cote du logo (1re ligne) et renvoyer recherche/app sur une 2e ligne. */
     .header-actions {
-        width: 100%;
-        justify-content: space-between;
+        display: contents;
     }
-    
+
+    .logo-area {
+        margin-right: auto;
+    }
+
+    .filters-dropdown { order: 1; }
+    #discord-login-btn { order: 2; }
+    #sync-status { order: 3; }
+
     .search-box {
         width: 100%;
-        order: 1; /* Place search box full width at bottom of header actions */
+        order: 4;
+        flex-basis: 100%; /* Place search box full width at bottom of header actions */
     }
+
+    .apk-preview-wrapper { order: 5; }
 
     .stats-dashboard {
         grid-template-columns: 1fr 1fr;
@@ -1639,7 +1653,24 @@ select option {
     .header-actions {
         gap: 8px;
     }
-    
+
+    /* Empeche le menu Filtres de deborder hors de l'ecran sur mobile */
+    .filters-menu {
+        max-width: calc(100vw - 24px);
+    }
+
+    /* Icone seule pour Filtres/Discord : les deux tiennent a cote du logo
+       meme sur un petit ecran (Anime Tracker VF prend deja pas mal de place) */
+    .btn-filters span,
+    #discord-btn-label {
+        display: none;
+    }
+
+    .btn-filters,
+    #discord-login-btn {
+        padding: 10px;
+    }
+
     .btn-primary span {
         display: none; /* Icon-only on very small screens */
     }
