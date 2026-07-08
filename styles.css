@@ -447,6 +447,50 @@ select option {
     transform: translateY(0);
 }
 
+/* Apercu video au survol du bouton "Tester l'application" */
+.apk-preview-wrapper {
+    position: relative;
+    display: inline-flex;
+}
+
+.apk-preview-popup {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    width: 320px;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity 0.2s var(--transition-fast), transform 0.2s var(--transition-fast), visibility 0.2s;
+    pointer-events: none;
+    z-index: 200;
+}
+
+.apk-preview-wrapper:hover .apk-preview-popup {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.apk-preview-popup video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .apk-preview-popup {
+        display: none;
+    }
+}
+
 /* Discord Sync Button */
 .btn-discord {
     display: flex;
@@ -2377,7 +2421,9 @@ body {
 .anime-card {
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 18px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.015), transparent 30%), var(--bg-card);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.015), transparent 30%), rgba(20, 21, 25, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     transition: transform 0.4s var(--ease-premium), box-shadow 0.4s var(--ease-premium), border-color 0.4s var(--ease-premium);
 }
 
@@ -3186,10 +3232,10 @@ body {
    ========================================================================== */
 .lb-podium {
     display: flex;
-    align-items: flex-end;
+    align-items: stretch;
     justify-content: center;
     gap: 10px;
-    padding: 18px 8px 6px;
+    padding: 4px 4px 16px;
     margin-bottom: 14px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
@@ -3198,44 +3244,38 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    justify-content: center;
+    gap: 4px;
     flex: 1;
     min-width: 0;
-    padding: 8px 4px 0;
-    border-radius: 14px 14px 0 0;
-    transition: transform 0.35s var(--ease-premium);
+    padding: 14px 8px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.02);
+    transition: border-color 0.25s var(--ease-premium), background-color 0.25s var(--ease-premium);
 }
 
 .lb-podium-col:hover {
-    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.16);
 }
 
 .lb-podium-col.current-user {
-    background: linear-gradient(180deg, rgba(255, 100, 0, 0.08), transparent);
+    border-color: rgba(255, 100, 0, 0.35);
+    background: rgba(255, 100, 0, 0.06);
 }
 
-.lb-medal {
-    font-size: 20px;
-    filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.5));
+.place-1.lb-podium-col {
+    border-color: rgba(245, 158, 11, 0.3);
 }
 
-.lb-podium-avatar {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+.lb-podium-rank {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
 }
 
-.place-1 .lb-podium-avatar {
-    width: 66px;
-    height: 66px;
-    border-color: #f59e0b;
-    box-shadow: 0 0 22px rgba(245, 158, 11, 0.35);
-}
-
-.place-2 .lb-podium-avatar { border-color: #cbd5e1; }
-.place-3 .lb-podium-avatar { border-color: #b45309; }
+.place-1 .lb-podium-rank { color: #f59e0b; }
 
 .lb-podium-name {
     font-size: 12px;
@@ -3251,22 +3291,6 @@ body {
     font-weight: 800;
     color: var(--primary);
 }
-
-.lb-podium-base {
-    width: 100%;
-    text-align: center;
-    font-size: 18px;
-    font-weight: 800;
-    color: rgba(255, 255, 255, 0.35);
-    border-radius: 10px 10px 0 0;
-    padding-top: 6px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
-    margin-top: 4px;
-}
-
-.place-1 .lb-podium-base { height: 46px; background: linear-gradient(180deg, rgba(245, 158, 11, 0.25), rgba(245, 158, 11, 0.05)); color: #fbbf24; }
-.place-2 .lb-podium-base { height: 32px; background: linear-gradient(180deg, rgba(203, 213, 225, 0.18), rgba(203, 213, 225, 0.03)); color: #e2e8f0; }
-.place-3 .lb-podium-base { height: 24px; background: linear-gradient(180deg, rgba(180, 83, 9, 0.22), rgba(180, 83, 9, 0.04)); color: #d97706; }
 
 .lb-level {
     display: inline-block;

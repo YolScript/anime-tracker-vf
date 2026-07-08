@@ -439,7 +439,6 @@ function renderLeaderboardContent(contentEl) {
     const users = [...lbUsersCache].sort(sorters[lbSortMode] || sorters.hours);
     const maxRef = Math.max(lbSortMode === "completed" ? users[0].completedCount : lbSortMode === "episodes" ? users[0].episodesCount : users[0].hours, 1);
     const refOf = (u) => lbSortMode === "completed" ? u.completedCount : lbSortMode === "episodes" ? u.episodesCount : u.hours;
-    const medals = ["🥇", "🥈", "🥉"];
 
     // Stats de la communauté
     const totalHours = users.reduce((s, u) => s + u.hours, 0);
@@ -457,21 +456,17 @@ function renderLeaderboardContent(contentEl) {
         </div>
     `;
 
-    // Podium (ordre visuel 2-1-3)
-    const podium = [users[1], users[0], users[2]].filter(Boolean);
+    // Podium simplifie : juste un cadre par membre du top 3 (pseudo + heures)
+    const podium = [users[0], users[1], users[2]].filter(Boolean);
     html += `<div class="lb-podium">`;
     podium.forEach((user) => {
         const rank = users.indexOf(user) + 1;
-        const lvl = levelOf(user.hours);
         const isMe = syncUser && syncUser.id === user.userId;
         html += `
             <div class="lb-podium-col place-${rank} ${isMe ? "current-user" : ""}">
-                <span class="lb-medal">${medals[rank - 1]}</span>
-                <img class="lb-podium-avatar" src="${user.avatarUrl}" alt="" onerror="this.src='${fallbackAvatar(user.name)}'">
+                <span class="lb-podium-rank">#${rank}</span>
                 <span class="lb-podium-name">${user.name}${isMe ? " (Vous)" : ""}</span>
                 <span class="lb-podium-hours">${mainValue[lbSortMode](user)}</span>
-                <span class="lb-level" style="color: ${lvl.color}; border-color: ${lvl.color}44; background: ${lvl.color}1a;">${lvl.name}</span>
-                <div class="lb-podium-base">${rank}</div>
             </div>
         `;
     });

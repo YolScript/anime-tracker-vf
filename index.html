@@ -139,16 +139,23 @@
                     <span id="discord-btn-label">Discord</span>
                 </button>
 
-                <!-- Play Store Test Button -->
-                <a id="download-apk-btn" class="btn-play" href="https://play.google.com/apps/internaltest/4701448277826892941" target="_blank" rel="noopener" title="Tester l'application Android sur le Play Store">
-                    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                        <path fill="#00c3ff" d="M32.14 20.12C25.7 28.68 22 39.2 22 50.32V461.7c0 11.12 3.7 21.63 10.14 30.2l235.88-235.9L32.14 20.12z"/>
-                        <path fill="#00f076" d="M99.62 8.06A50.19 50.19 0 0 0 60.8 1.34l230.93 230.94 74.85-74.85L99.62 8.06z"/>
-                        <path fill="#ffc900" d="M464.26 212.09l-67.27-37.64-81.54 81.55 81.55 81.55 67.27-37.64c16.12-9.03 25.74-25.44 25.74-43.91s-9.62-34.88-25.75-43.91z"/>
-                        <path fill="#ff3a44" d="M291.73 279.71 60.82 510.63c3.78.89 7.64 1.37 11.49 1.37a50.27 50.27 0 0 0 27.31-8.07l266.97-149.37-74.86-74.85z"/>
-                    </svg>
-                    <span>Tester l'application</span>
-                </a>
+                <!-- Play Store Test Button (avec apercu video au survol) -->
+                <div class="apk-preview-wrapper">
+                    <a id="download-apk-btn" class="btn-play" href="https://play.google.com/apps/internaltest/4701448277826892941" target="_blank" rel="noopener" title="Tester l'application Android sur le Play Store">
+                        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#00c3ff" d="M32.14 20.12C25.7 28.68 22 39.2 22 50.32V461.7c0 11.12 3.7 21.63 10.14 30.2l235.88-235.9L32.14 20.12z"/>
+                            <path fill="#00f076" d="M99.62 8.06A50.19 50.19 0 0 0 60.8 1.34l230.93 230.94 74.85-74.85L99.62 8.06z"/>
+                            <path fill="#ffc900" d="M464.26 212.09l-67.27-37.64-81.54 81.55 81.55 81.55 67.27-37.64c16.12-9.03 25.74-25.44 25.74-43.91s-9.62-34.88-25.75-43.91z"/>
+                            <path fill="#ff3a44" d="M291.73 279.71 60.82 510.63c3.78.89 7.64 1.37 11.49 1.37a50.27 50.27 0 0 0 27.31-8.07l266.97-149.37-74.86-74.85z"/>
+                        </svg>
+                        <span>Tester l'application</span>
+                    </a>
+                    <div id="apk-preview-popup" class="apk-preview-popup">
+                        <video id="apk-preview-video" muted loop playsinline preload="none" poster="icon-512.png">
+                            <source data-src="apk-preview.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
 
                 <!-- Data Dropdown Button (masqué) -->
                 <div class="dropdown" style="display: none;">
@@ -488,6 +495,30 @@
         const apkBtn = document.getElementById('download-apk-btn');
         if (apkBtn && /; wv\)/.test(navigator.userAgent)) {
             apkBtn.style.display = 'none';
+        }
+
+        // Apercu video au survol du bouton "Tester l'application" :
+        // source chargee seulement au premier survol (evite de telecharger la
+        // video pour rien), lecture en pause quand la souris quitte le bouton.
+        const apkPreviewWrapper = document.querySelector('.apk-preview-wrapper');
+        const apkPreviewVideo = document.getElementById('apk-preview-video');
+        if (apkPreviewWrapper && apkPreviewVideo) {
+            let previewLoaded = false;
+            apkPreviewWrapper.addEventListener('mouseenter', () => {
+                if (!previewLoaded) {
+                    const source = apkPreviewVideo.querySelector('source[data-src]');
+                    if (source) {
+                        source.src = source.getAttribute('data-src');
+                        apkPreviewVideo.load();
+                    }
+                    previewLoaded = true;
+                }
+                apkPreviewVideo.currentTime = 0;
+                apkPreviewVideo.play().catch(() => {});
+            });
+            apkPreviewWrapper.addEventListener('mouseleave', () => {
+                apkPreviewVideo.pause();
+            });
         }
     </script>
 </body>

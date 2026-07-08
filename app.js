@@ -1796,13 +1796,6 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                                         activeYtTimeout = null;
                                     }
                                 }
-                                if (typeof data.info.currentTime !== "undefined" && typeof data.info.duration !== "undefined") {
-                                    const pct = data.info.duration > 0 ? Math.round((data.info.currentTime / data.info.duration) * 100) : 0;
-                                    const activeProgressInner = document.querySelector(`.player-episode-item.active .player-episode-progress-bar div`);
-                                    if (activeProgressInner) {
-                                        activeProgressInner.style.width = `${pct}%`;
-                                    }
-                                }
                             }
                             if (data.info && typeof data.info.error !== "undefined") {
                                 console.warn("YouTube Player error detected via iframe message:", data.info.error);
@@ -1831,13 +1824,6 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                     vid.addEventListener("error", () => {
                         mediaIndex++;
                         renderMediaStep();
-                    });
-                    vid.addEventListener("timeupdate", () => {
-                        const pct = vid.duration > 0 ? Math.round((vid.currentTime / vid.duration) * 100) : 0;
-                        const activeProgressInner = document.querySelector(`.player-episode-item.active .player-episode-progress-bar div`);
-                        if (activeProgressInner) {
-                            activeProgressInner.style.width = `${pct}%`;
-                        }
                     });
                 }
             }
