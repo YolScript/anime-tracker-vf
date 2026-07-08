@@ -1068,36 +1068,39 @@ select option {
 }
 
 .toast {
-    background-color: var(--bg-card);
-    border-left: 4px solid var(--primary);
+    background-color: rgba(20, 21, 25, 0.85) !important;
+    backdrop-filter: blur(18px) saturate(120%);
+    -webkit-backdrop-filter: blur(18px) saturate(120%);
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-left: 4px solid var(--primary) !important;
     color: var(--text-white);
-    padding: 16px 20px;
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-lg);
+    padding: 14px 18px;
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5), 0 0 1px rgba(255, 255, 255, 0.1) !important;
     display: flex;
     align-items: center;
     gap: 12px;
     min-width: 280px;
     max-width: 400px;
-    font-weight: 500;
-    font-size: 14px;
-    animation: toastIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transition: var(--transition-normal);
+    font-weight: 600;
+    font-size: 13.5px;
+    animation: toastIn 0.4s var(--ease-premium) forwards;
+    transition: transform 0.35s var(--ease-premium), opacity 0.3s var(--ease-premium);
 }
 
 @keyframes toastIn {
-    from { transform: translateX(100%); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
+    from { transform: translateY(20px) scale(0.95); opacity: 0; }
+    to { transform: translateY(0) scale(1); opacity: 1; }
 }
 
 .toast.toast-fade-out {
-    transform: translateX(120%);
+    transform: translateY(-20px) scale(0.95);
     opacity: 0;
 }
 
-.toast.toast-success { border-left-color: var(--color-watching); }
-.toast.toast-error { border-left-color: #ef4444; }
-.toast.toast-info { border-left-color: var(--color-plan-to-watch); }
+.toast.toast-success { border-left-color: var(--color-watching) !important; }
+.toast.toast-error { border-left-color: #ef4444 !important; }
+.toast.toast-info { border-left-color: var(--color-plan-to-watch) !important; }
 
 /* ==========================================================================
    MODALS SYSTEM
@@ -2744,6 +2747,19 @@ body {
 @media (max-width: 480px) {
     .hero-actions .hero-details-btn { display: none; }
     .grid-heading { font-size: 16px; }
+    
+    /* Toast notifications responsive */
+    .notification-container {
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        align-items: center;
+    }
+    .toast {
+        min-width: 0;
+        width: 100%;
+        max-width: 100%;
+    }
 }
 
 
