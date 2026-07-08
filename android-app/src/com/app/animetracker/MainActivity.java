@@ -12,8 +12,8 @@ import android.webkit.WebViewClient;
 
 public class MainActivity extends Activity {
 
-    private static final String APP_URL = "https://energiecraftonline-afk.github.io/anime-tracker-vf/";
-    private static final String APP_HOST = "energiecraftonline-afk.github.io";
+    private static final String APP_URL = "https://yolscript.github.io/anime-tracker-vf/";
+    private static final String APP_HOST = "yolscript.github.io";
 
     private WebView webView;
 
@@ -36,7 +36,7 @@ public class MainActivity extends Activity {
         settings.setUseWideViewPort(true);
         // Marqueur fiable pour que le site détecte l'application
         // (le "; wv)" du user-agent n'est pas garanti sur tous les appareils)
-        settings.setUserAgentString(settings.getUserAgentString() + " AnimeTrackerApp/1.6");
+        settings.setUserAgentString(settings.getUserAgentString() + " AnimeTrackerApp/1.7");
 
         webView.setWebViewClient(new WebViewClient() {
             @Override

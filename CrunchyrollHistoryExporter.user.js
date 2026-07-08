@@ -15,7 +15,7 @@
 (function () {
     'use strict';
 
-    const TRACKER_ORIGIN = "https://energiecraftonline-afk.github.io";
+    const TRACKER_ORIGIN = "https://yolscript.github.io";
     const TRACKER_STORAGE_KEY = "crunchy_tracker_cr_sync";
 
     // =====================================================================
@@ -356,7 +356,7 @@
             // Redirection pour synchronisation automatique
             try {
                 const b64Data = btoa(unescape(encodeURIComponent(JSON.stringify(trackerData))));
-                const trackerUrl = `https://energiecraftonline-afk.github.io/anime-tracker-vf/#sync-data=${b64Data}`;
+                const trackerUrl = `https://yolscript.github.io/anime-tracker-vf/#sync-data=${b64Data}`;
                 window.open(trackerUrl, "_blank");
             } catch (e) {
                 console.error("[CR Sync] Erreur redirection auto-sync:", e);

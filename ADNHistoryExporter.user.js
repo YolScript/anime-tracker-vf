@@ -364,7 +364,7 @@
             // Redirection pour synchronisation automatique
             try {
                 const b64Data = btoa(unescape(encodeURIComponent(JSON.stringify(trackerData))));
-                const trackerUrl = `https://energiecraftonline-afk.github.io/anime-tracker-vf/#sync-data=${b64Data}`;
+                const trackerUrl = `https://yolscript.github.io/anime-tracker-vf/#sync-data=${b64Data}`;
                 window.open(trackerUrl, "_blank");
             } catch (e) {
                 console.error("[ADN Sync] Erreur redirection auto-sync:", e);
