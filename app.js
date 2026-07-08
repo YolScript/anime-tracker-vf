@@ -1302,16 +1302,18 @@ const VF_TRAILER_MAP = {
     "franchise-101347": "TGaDwEYqLfm1"  // Dororo
 };
 
-function getTrailerId(anime) {
+// Chaîne de lecture : trailer VF d'abord, sinon trailer VO (AniList).
+// Si aucun ne fonctionne, le lecteur est masqué (pas de vidéo de remplacement).
+function getTrailerCandidates(anime) {
+    const isValidYoutubeId = (id) => /^[A-Za-z0-9_-]{11}$/.test(id);
+    const candidates = [];
     if (VF_TRAILER_MAP[anime.id]) {
-        return VF_TRAILER_MAP[anime.id];
+        candidates.push(VF_TRAILER_MAP[anime.id].trim());
     }
     if (anime.trailerId) {
-        const trimmed = anime.trailerId.trim();
-        if (trimmed) return trimmed;
+        candidates.push(anime.trailerId.trim());
     }
-    // Fallback à l'opening d'animé le plus célèbre au monde (ouvert mondialement) : Naruto Shippuden OP 16 (Silhouette)
-    return "S0M7f4G46F4";
+    return candidates.filter((id, i) => id && isValidYoutubeId(id) && candidates.indexOf(id) === i);
 }
 
 // Détecteur automatique d'erreur de lecture YouTube (bloquée, privée, supprimée...) pour basculer sur l'opening de secours
@@ -1494,8 +1496,10 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
             };
         }
         
-        const trailerId = getTrailerId(anime);
-        
+        const trailerCandidates = getTrailerCandidates(anime);
+        let trailerIndex = 0;
+        const trailerId = trailerCandidates.length > 0 ? trailerCandidates[0] : null;
+
         videoPlayerWrapper.innerHTML = `
             <div class="crunchy-mock-player" style="position: relative; overflow: hidden; background: #000; width: 100%; height: 100%;">
                 <div class="player-placeholder" style="position: relative; overflow: hidden; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #0c0d10; padding: 0;">
@@ -1688,28 +1692,33 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                 });
             }
         }
-        // Setup Fallback Video click logic
+        // Setup Fallback Video click logic : essayer le trailer suivant
+        // (VF -> VO), et masquer le lecteur quand plus rien ne fonctionne.
         if (trailerId) {
             const fallbackBtn = document.getElementById("player-fallback-btn");
             if (fallbackBtn) {
                 fallbackBtn.addEventListener("click", () => {
                     const iframe = document.getElementById("player-trailer-iframe");
-                    if (iframe) {
-                        const fallbackId = "S0M7f4G46F4"; // Naruto Silhouette fan OP
-                        iframe.src = `https://www.youtube.com/embed/${fallbackId}?autoplay=1&mute=0&loop=1&playlist=${fallbackId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0&enablejsapi=1&cc_load_policy=3&origin=${encodeURIComponent(window.location.origin)}`;
-                        
-                        // Automatically update mute icon to unmuted state
-                        const svg = document.getElementById("mute-icon-svg");
-                        if (svg) {
-                            svg.innerHTML = `
-                                <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
-                                <path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14"></path>
-                            `;
-                        }
+                    trailerIndex++;
+
+                    if (iframe && trailerIndex < trailerCandidates.length) {
+                        // Candidat suivant (trailer VO après le VF)
+                        const nextId = trailerCandidates[trailerIndex];
+                        iframe.src = `https://www.youtube.com/embed/${nextId}?autoplay=1&mute=1&loop=1&playlist=${nextId}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0&enablejsapi=1&cc_load_policy=3&origin=${encodeURIComponent(window.location.origin)}`;
+                        return;
                     }
-                    
-                    // Hide the fallback button after clicking to keep UI clean
-                    fallbackBtn.style.display = "none";
+
+                    // Plus aucun trailer valide : masquer le lecteur proprement
+                    const placeholder = videoPlayerWrapper.querySelector(".player-placeholder");
+                    if (placeholder) {
+                        placeholder.innerHTML = `
+                            <div class="player-placeholder-icon-wrapper" style="text-align: center; padding: 24px;">
+                                <svg class="player-placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width: 48px; height: 48px; color: var(--text-muted); margin-bottom: 12px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                                <h4 style="font-size: 16px; margin-bottom: 4px;">Bande-annonce non disponible</h4>
+                                <p style="font-size: 13px; color: var(--text-muted);">Aucune vidéo lisible pour cet animé.</p>
+                            </div>
+                        `;
+                    }
                 });
             }
         }
