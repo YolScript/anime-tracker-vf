@@ -1532,9 +1532,10 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
         if (anime.seasons && Array.isArray(anime.seasons) && anime.seasons.length > 0) {
             let globalIndex = 0;
             anime.seasons.forEach((season, seasonIdx) => {
+                const seasonWatched = Math.max(0, Math.min(season.episodesCount, currentWatched - globalIndex));
                 const seasonHeader = document.createElement("div");
-                seasonHeader.style.cssText = "font-size: 12px; font-weight: 700; color: var(--text-muted); margin: 12px 0 6px 0; text-transform: uppercase; letter-spacing: 0.5px;";
-                seasonHeader.textContent = season.name;
+                seasonHeader.style.cssText = "font-size: 12px; font-weight: 700; color: var(--text-muted); margin: 12px 0 6px 0; text-transform: uppercase; letter-spacing: 0.5px; display: flex; justify-content: space-between; align-items: center;";
+                seasonHeader.innerHTML = `<span>${season.name}</span><span style="font-weight: 600; color: var(--primary); font-size: 11px;">${seasonWatched}/${season.episodesCount}</span>`;
                 listContainer.appendChild(seasonHeader);
                 
                 for (let i = 1; i <= season.episodesCount; i++) {
