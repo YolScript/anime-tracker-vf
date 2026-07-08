@@ -57,7 +57,6 @@ async function pullAndMergeFromCloud(showFeedback) {
         .maybeSingle();
     if (error) {
         syncLog("Erreur de lecture cloud: " + error.message);
-        if (showFeedback) showToast("Erreur de synchronisation Discord.", "error");
         return;
     }
     const cloud = (data && data.data) ? data.data : null;
@@ -82,7 +81,6 @@ async function pullAndMergeFromCloud(showFeedback) {
     if (typeof isLeaderboardOpen !== "undefined" && isLeaderboardOpen) {
         fetchAndRenderLeaderboard();
     }
-    if (showFeedback) showToast("Progression synchronisée avec Discord !", "success");
 }
 
 async function pushToCloud() {
@@ -237,7 +235,6 @@ function initDiscordSync() {
         });
         if (error) {
             syncLog("Échec lancement OAuth: " + error.message);
-            showToast("Connexion Discord impossible : " + error.message, "error");
         }
     });
 
@@ -262,12 +259,9 @@ function initDiscordSync() {
         }
     });
 
-    // Toast de confirmation après le rechargement post-login
+    // Nettoyage du flag de rechargement post-login
     if (sessionStorage.getItem("discord_login_reload")) {
         sessionStorage.removeItem("discord_login_reload");
-        if (typeof showToast === "function") {
-            showToast("Connexion Discord réussie, progression synchronisée !", "success");
-        }
     }
 
     // Envoyer les modifications locales vers le cloud après chaque sauvegarde

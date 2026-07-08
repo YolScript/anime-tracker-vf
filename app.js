@@ -75,7 +75,6 @@ const exportBtn = document.getElementById("export-btn");
 const importTriggerBtn = document.getElementById("import-trigger-btn");
 const importFileInput = document.getElementById("import-file-input");
 const resetBtn = document.getElementById("reset-btn");
-const notificationContainer = document.getElementById("notification-container");
 
 // Modals
 const detailModal = document.getElementById("detail-modal");
@@ -124,38 +123,7 @@ const countCompleted = document.getElementById("count-completed");
 const countOnHold = document.getElementById("count-on-hold");
 const countHidden = document.getElementById("count-hidden");
 
-// ==========================================================================
-// TOAST NOTIFICATIONS
-// ==========================================================================
-function showToast(message, type = "success") {
-    const toast = document.createElement("div");
-    toast.className = `toast toast-${type}`;
-    
-    // Add appropriate icon based on toast type
-    let iconSvg = '';
-    if (type === 'success') {
-        iconSvg = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 20px; height: 20px;"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
-    } else if (type === 'error') {
-        iconSvg = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 20px; height: 20px;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>`;
-    } else {
-        iconSvg = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 20px; height: 20px;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>`;
-    }
-    
-    toast.innerHTML = `
-        ${iconSvg}
-        <span>${message}</span>
-    `;
-    
-    notificationContainer.appendChild(toast);
-    
-    // Remove after 3s
-    setTimeout(() => {
-        toast.classList.add("toast-fade-out");
-        toast.addEventListener("transitionend", () => {
-            toast.remove();
-        });
-    }, 3000);
-}
+// Toast notification system removed
 
 // ==========================================================================
 // IMAGE FALLBACK GENERATOR
@@ -383,7 +351,6 @@ function saveData() {
         localStorage.setItem("crunchy_tracker_progress_v2", JSON.stringify(progressData));
     } catch (e) {
         console.error("Failed to save progress to localStorage", e);
-        showToast("Impossible de sauvegarder votre progression (espace insuffisant).", "error");
     }
 }
 
@@ -818,10 +785,8 @@ function changeEpisodeCount(id, newCount) {
     // Automatically change status on thresholds
     if (finalCount === total && total > 0 && anime.status !== "completed") {
         anime.status = "completed";
-        showToast(`Félicitations ! Vous avez terminé "${anime.titleFr}" !`, "info");
     } else if (finalCount > 0 && finalCount < total && (anime.status === "plan-to-watch" || anime.status === "on-hold")) {
         anime.status = "watching";
-        showToast(`Début du visionnage de "${anime.titleFr}"`, "info");
     } else if (finalCount === 0 && (anime.status === "completed" || anime.status === "watching")) {
         anime.status = "plan-to-watch";
     }
@@ -1029,10 +994,8 @@ function showAnimeDetails(id) {
     document.getElementById("detail-hide-btn").addEventListener("click", () => {
         if (anime.status === "hidden") {
             anime.status = "plan-to-watch";
-            showToast(`"${anime.titleFr}" est de nouveau visible.`, "success");
         } else {
             anime.status = "hidden";
-            showToast(`"${anime.titleFr}" a été masqué.`, "info");
         }
         saveData();
         updateStats();
@@ -1124,7 +1087,6 @@ function handleFormSubmit(e) {
     
     // Validation
     if (episodesWatched > episodesTotal) {
-        showToast("Le nombre d'épisodes vus ne peut pas dépasser le total !", "error");
         return;
     }
     
@@ -1161,7 +1123,7 @@ function handleFormSubmit(e) {
                 synopsis,
                 cast
             };
-            showToast(`"${titleFr}" mis à jour avec succès.`);
+
         }
     } else {
         // Create mode
@@ -1186,7 +1148,7 @@ function handleFormSubmit(e) {
         };
         
         animeList.push(newAnime);
-        showToast(`"${titleFr}" ajouté à votre liste.`);
+
     }
     
     saveData();
@@ -1203,7 +1165,7 @@ function deleteAnime(id) {
         saveData();
         updateStats();
         renderGrid();
-        showToast(`"${title}" supprimé de votre liste.`, "info");
+
     }
 }
 
@@ -1233,7 +1195,7 @@ function exportToJSON() {
     linkElement.setAttribute('href', dataUri);
     linkElement.setAttribute('download', exportFileDefaultName);
     linkElement.click();
-    showToast("Données exportées avec succès !");
+
 }
 
 function importFromJSON(e) {
@@ -1247,7 +1209,7 @@ function importFromJSON(e) {
             importDataList(importedData);
         } catch (err) {
             console.error(err);
-            showToast("Erreur lors de la lecture du fichier.", "error");
+
         }
     };
     reader.readAsText(file);
@@ -1267,7 +1229,7 @@ function importDataList(importedData) {
             saveData();
             updateStats();
             renderGrid();
-            showToast("Données restaurées avec succès !", "success");
+
         } else if (isPartialHistory) {
             // Mode Fusion Historique (Crunchyroll / ADN / autre)
             const source = importedData[0].source || "inconnu";
@@ -1331,18 +1293,18 @@ function importDataList(importedData) {
                     msg += ` (${notFoundTitles.length} non trouvés)`;
                     console.log("[Import] Titres non trouvés:", notFoundTitles);
                 }
-                showToast(msg, "success");
+
             } else {
-                showToast("Aucune correspondance trouvée entre votre historique et les animés du catalogue.", "warning");
+
                 if (notFoundTitles.length > 0) {
                     console.log("[Import] Titres non trouvés:", notFoundTitles);
                 }
             }
         } else {
-            showToast("Le fichier JSON ne respecte pas le format attendu.", "error");
+
         }
     } else {
-        showToast("Format de fichier JSON non valide ou vide.", "error");
+
     }
 }
 
@@ -1426,7 +1388,7 @@ function resetToDefault() {
         loadData();
         updateStats();
         renderGrid();
-        showToast("Application réinitialisée par défaut.", "info");
+
     }
 }
 
