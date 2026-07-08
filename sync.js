@@ -79,6 +79,9 @@ async function pullAndMergeFromCloud(showFeedback) {
         if (typeof updateStats === "function") updateStats();
         if (typeof renderGrid === "function") renderGrid();
     }
+    if (typeof isLeaderboardOpen !== "undefined" && isLeaderboardOpen) {
+        fetchAndRenderLeaderboard();
+    }
     if (showFeedback) showToast("Progression synchronisée avec Discord !", "success");
 }
 
@@ -86,15 +89,40 @@ async function pushToCloud() {
     if (!sbClient || !syncUser) return;
     const json = localStorage.getItem(SYNC_STORAGE_KEY) || "{}";
     if (json === lastPushedJson) return;
+    
+    let progressData = {};
+    try {
+        progressData = JSON.parse(json);
+    } catch(e) {
+        console.error("Error parsing progress for pushToCloud", e);
+        progressData = {};
+    }
+    
+    // Inject user profile for the leaderboard
+    if (syncUser && syncUser.user_metadata) {
+        const meta = syncUser.user_metadata;
+        const name = meta.custom_claims && meta.custom_claims.global_name
+            ? meta.custom_claims.global_name
+            : (meta.full_name || meta.name || "Utilisateur Discord");
+            
+        progressData.__user_profile = {
+            name: name,
+            avatar_url: meta.avatar_url || ""
+        };
+    }
+    
     const { error } = await sbClient.from(SYNC_TABLE).upsert({
         user_id: syncUser.id,
-        data: JSON.parse(json),
+        data: progressData,
         updated_at: new Date().toISOString()
     });
     if (error) {
         console.error("[Sync] Erreur d'écriture cloud:", error);
     } else {
         lastPushedJson = json;
+        if (typeof isLeaderboardOpen !== "undefined" && isLeaderboardOpen) {
+            fetchAndRenderLeaderboard();
+        }
     }
 }
 
@@ -219,6 +247,9 @@ function initDiscordSync() {
         syncUser = session ? session.user : null;
         lastPushedJson = null;
         updateDiscordUi();
+        if (typeof isLeaderboardOpen !== "undefined" && isLeaderboardOpen) {
+            fetchAndRenderLeaderboard();
+        }
         if (syncUser && !wasConnected) {
             pullAndMergeFromCloud(!CAME_FROM_OAUTH).then(() => {
                 if (CAME_FROM_OAUTH) {
@@ -264,7 +295,167 @@ function initDiscordSync() {
     // Appelé par MainActivity (APK) à chaque retour au premier plan
     window.__animeSyncPull = pullIfConnected;
 
+    initLeaderboardEvents();
     updateDiscordUi();
+}
+
+// ==========================================================================
+// LEADERBOARD DISCORD LOGIC
+// ==========================================================================
+let isLeaderboardOpen = false;
+
+async function fetchAndRenderLeaderboard() {
+    const contentEl = document.getElementById("leaderboard-content");
+    if (!contentEl) return;
+    
+    contentEl.innerHTML = `
+        <div class="leaderboard-loading">
+            <div class="spinner"></div>
+            <span>Chargement du classement...</span>
+        </div>
+    `;
+    
+    if (!sbClient) {
+        contentEl.innerHTML = `
+            <div class="leaderboard-empty">
+                <p>La synchronisation Discord n'est pas activée.</p>
+            </div>
+        `;
+        return;
+    }
+    
+    try {
+        const { data, error } = await sbClient
+            .from(SYNC_TABLE)
+            .select("user_id, data, updated_at");
+            
+        if (error) throw error;
+        
+        if (!data || data.length === 0) {
+            contentEl.innerHTML = `
+                <div class="leaderboard-empty">
+                    <p>Aucun utilisateur connecté pour le moment.</p>
+                </div>
+            `;
+            return;
+        }
+        
+        const users = data.map(row => {
+            const progress = row.data || {};
+            const profile = progress.__user_profile || {};
+            
+            let totalEps = 0;
+            Object.keys(progress).forEach(key => {
+                if (key !== "__user_profile" && progress[key] && typeof progress[key] === "object") {
+                    totalEps += parseInt(progress[key].episodesWatched || 0);
+                }
+            });
+            
+            const totalMins = totalEps * 24;
+            const hours = Math.round(totalMins / 60);
+            const name = profile.name || `Utilisateur ${row.user_id.substring(0, 5)}`;
+            const avatarUrl = profile.avatar_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=ff6400&color=fff&bold=true`;
+            
+            return {
+                userId: row.user_id,
+                name: name,
+                avatarUrl: avatarUrl,
+                episodesCount: totalEps,
+                hours: hours,
+                updatedAt: new Date(row.updated_at)
+            };
+        });
+        
+        // Filter out users with 0 hours to make the leaderboard cleaner
+        const activeUsers = users.filter(u => u.hours > 0 || u.episodesCount > 0);
+        
+        if (activeUsers.length === 0) {
+            contentEl.innerHTML = `
+                <div class="leaderboard-empty">
+                    <p>Aucun utilisateur avec du temps de visionnage.</p>
+                </div>
+            `;
+            return;
+        }
+        
+        activeUsers.sort((a, b) => {
+            if (b.hours !== a.hours) return b.hours - a.hours;
+            if (b.episodesCount !== a.episodesCount) return b.episodesCount - a.episodesCount;
+            return a.name.localeCompare(b.name, "fr");
+        });
+        
+        contentEl.innerHTML = "";
+        
+        activeUsers.forEach((user, index) => {
+            const rank = index + 1;
+            const isMe = syncUser && syncUser.id === user.userId;
+            const rankClass = rank <= 3 ? `rank-${rank}` : "";
+            const meClass = isMe ? "current-user" : "";
+            
+            const item = document.createElement("div");
+            item.className = `leaderboard-item ${rankClass} ${meClass}`;
+            
+            item.innerHTML = `
+                <div class="leaderboard-rank">${rank}</div>
+                <img class="leaderboard-avatar" src="${user.avatarUrl}" alt="${user.name}" onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(user.name)}&background=ff6400&color=fff&bold=true'">
+                <div class="leaderboard-info">
+                    <div class="leaderboard-name">${user.name} ${isMe ? "(Vous)" : ""}</div>
+                    <div class="leaderboard-stats">${user.episodesCount} épisode${user.episodesCount > 1 ? 's' : ''} vu${user.episodesCount > 1 ? 's' : ''}</div>
+                </div>
+                <div class="leaderboard-hours">
+                    <span>${user.hours}</span>
+                    <span class="leaderboard-hours-label">Heures</span>
+                </div>
+            `;
+            
+            contentEl.appendChild(item);
+        });
+        
+        if (syncUser && !activeUsers.some(u => u.userId === syncUser.id)) {
+            const notice = document.createElement("div");
+            notice.className = "leaderboard-empty";
+            notice.style.borderTop = "1px solid rgba(255, 255, 255, 0.08)";
+            notice.style.marginTop = "16px";
+            notice.innerHTML = `
+                <p style="font-size: 0.8rem;">Votre progression n'apparaît pas encore dans le classement car vous n'avez pas d'heures de visionnage enregistrées.</p>
+            `;
+            contentEl.appendChild(notice);
+        }
+        
+    } catch (err) {
+        console.error("Error fetching leaderboard:", err);
+        contentEl.innerHTML = `
+            <div class="leaderboard-empty">
+                <p style="color: var(--color-on-hold);">⚠️ Erreur de chargement.</p>
+                <p style="font-size: 0.75rem; margin-top: 8px;">Vérifiez que la table <code>anime_progress</code> est lisible publiquement (RLS SELECT) dans Supabase.</p>
+            </div>
+        `;
+    }
+}
+
+function initLeaderboardEvents() {
+    const drawer = document.getElementById("discord-leaderboard-drawer");
+    const toggleBtn = document.getElementById("leaderboard-toggle-btn");
+    
+    if (!drawer || !toggleBtn) return;
+    
+    toggleBtn.addEventListener("click", () => {
+        isLeaderboardOpen = !isLeaderboardOpen;
+        if (isLeaderboardOpen) {
+            drawer.classList.add("open");
+            fetchAndRenderLeaderboard();
+        } else {
+            drawer.classList.remove("open");
+        }
+    });
+    
+    // Close drawer when clicking outside it
+    document.addEventListener("click", (e) => {
+        if (isLeaderboardOpen && !drawer.contains(e.target) && e.target !== toggleBtn && !toggleBtn.contains(e.target)) {
+            isLeaderboardOpen = false;
+            drawer.classList.remove("open");
+        }
+    });
 }
 
 window.addEventListener("load", initDiscordSync);

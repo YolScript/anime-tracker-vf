@@ -1,5 +1,5 @@
 // Service Worker for Anime Tracker VF - Offline Caching
-const CACHE_NAME = 'anime-tracker-vf-v16';
+const CACHE_NAME = 'anime-tracker-vf-v17';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',

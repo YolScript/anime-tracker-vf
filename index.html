@@ -389,6 +389,25 @@
     <!-- Notification Container -->
     <div id="notification-container" class="notification-container"></div>
 
+    <!-- Discord Leaderboard Drawer -->
+    <div id="discord-leaderboard-drawer" class="leaderboard-drawer">
+        <button id="leaderboard-toggle-btn" class="leaderboard-toggle-btn" aria-label="Classement Discord">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
+        <div class="leaderboard-header">
+            <h3>Classement Visionnage</h3>
+            <p class="leaderboard-subtitle">Par heures de doublage VF vues</p>
+        </div>
+        <div id="leaderboard-content" class="leaderboard-content">
+            <div class="leaderboard-loading">
+                <div class="spinner"></div>
+                <span>Chargement...</span>
+            </div>
+        </div>
+    </div>
+
     <!-- Link to app logic -->
     <script src="catalog.js"></script>
     <script src="app.js"></script>
