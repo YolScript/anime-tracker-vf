@@ -320,7 +320,7 @@
                 </div>
 
                 <div class="form-row">
-                    <div class="form-group" style="flex: 2;">
+                    <div class="form-group">
                         <label for="form-image-url">URL de l'affiche (Image)</label>
                         <input type="url" id="form-image-url" placeholder="https://exemple.com/image.jpg">
                     </div>
@@ -337,7 +337,7 @@
                     </div>
                 </div>
 
-                <div class="form-row">
+                <div class="form-row form-row-3col">
                     <div class="form-group">
                         <label for="form-netflix-url">URL Netflix</label>
                         <input type="url" id="form-netflix-url" placeholder="https://www.netflix.com/title/...">
@@ -519,7 +519,10 @@
         const apkPreviewWrapper = document.querySelector('.apk-preview-wrapper');
         const apkPreviewBackdrop = document.getElementById('apk-preview-backdrop');
         const apkPreviewVideo = document.getElementById('apk-preview-video');
-        if (apkPreviewWrapper && apkPreviewBackdrop && apkPreviewVideo) {
+        // mouseenter/mouseleave ne se declenchent jamais au tactile : inutile
+        // d'attacher ces listeners sur les appareils qui n'ont pas de survol.
+        const supportsHover = window.matchMedia && window.matchMedia('(hover: hover)').matches;
+        if (supportsHover && apkPreviewWrapper && apkPreviewBackdrop && apkPreviewVideo) {
             let previewLoaded = false;
             apkPreviewWrapper.addEventListener('mouseenter', () => {
                 if (!previewLoaded) {

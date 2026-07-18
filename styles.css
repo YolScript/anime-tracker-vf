@@ -1464,6 +1464,12 @@ select option {
     gap: 16px;
 }
 
+/* Rangee Netflix/Disney+/Prime Video : 3 champs, pas 2 (la regle generique
+   ci-dessus laissait le 3eme champ seul avec une colonne vide a cote). */
+.form-row.form-row-3col {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
 .form-group {
     display: flex;
     flex-direction: column;
@@ -1549,6 +1555,14 @@ select option {
         justify-content: flex-start;
     }
 
+    /* Meme garde-fou anti-debordement que sous 480px (voir plus bas) : entre
+       481 et 768px le menu Filtres tient deja dans l'ecran avec sa largeur
+       fixe de 320px, mais couvrir la plage entiere evite une regression
+       silencieuse si son contenu s'elargit un jour. */
+    .filters-menu {
+        max-width: calc(100vw - 24px);
+    }
+
     /* "Deplie" le groupe d'actions : ses enfants redeviennent des items flex
        directs de .app-header, pour pouvoir placer Filtres/Discord juste a
        cote du logo (1re ligne) et renvoyer recherche/app sur une 2e ligne. */
@@ -1579,10 +1593,15 @@ select option {
         padding: 24px;
     }
     
+    .detail-header-hero {
+        height: 220px;
+    }
+
     .detail-poster-img {
+        width: 108px;
         margin-bottom: -60px;
     }
-    
+
     .detail-main-layout {
         grid-template-columns: 1fr;
         padding: 80px 24px 24px 24px;
@@ -1608,7 +1627,8 @@ select option {
         justify-content: center;
     }
 
-    .form-row {
+    .form-row,
+    .form-row.form-row-3col {
         grid-template-columns: 1fr;
         gap: 16px;
     }
@@ -1652,8 +1672,19 @@ select option {
     .btn-primary span {
         display: none; /* Icon-only on very small screens */
     }
-    
+
     .btn-primary {
+        padding: 10px;
+    }
+
+    /* .btn-play etait le seul bouton de la rangee d'actions a ne jamais
+       reduire son texte (white-space: nowrap le protege du retour a la
+       ligne mais pas du debordement sur les tres petits ecrans). */
+    .btn-play span {
+        display: none;
+    }
+
+    .btn-play {
         padding: 10px;
     }
 
