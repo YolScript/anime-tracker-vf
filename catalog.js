@@ -14003,7 +14003,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "netflixUrl": null,
+    "netflixUrl": "https://www.netflix.com/title/80152538",
     "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.0ab6a7ab-1804-c22a-ec45-a45654c26263"
   },
   {
@@ -19630,9 +19630,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "netflixUrl": null,
-    "unavailable": true,
-    "noVf": true
+    "netflixUrl": "https://www.netflix.com/title/81024452"
   },
   {
     "id": "franchise-1030",
@@ -25493,7 +25491,9 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "netflixUrl": "https://www.netflix.com/title/81602834",
+    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ac388135-ac50-4c7b-9116-df2bf4a0b2f3"
   },
   {
     "id": "franchise-5114",
@@ -25899,5 +25899,167 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [],
     "netflixUrl": "https://www.netflix.com/title/82736186"
+  },
+  {
+    "id": "franchise-7711",
+    "titleFr": "Arrietty, le petit monde des chapardeurs",
+    "titleOrig": "Karigurashi no Arrietty",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx7711-IDDzqp6d3tQz.jpg",
+    "crunchyrollUrl": null,
+    "adnUrl": null,
+    "episodesTotal": 1,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "3.9",
+    "trailerId": "9CtIXPhPo0g",
+    "genres": "Adventure, Drama, Fantasy",
+    "synopsis": "Arrietty, a tiny but tenacious 14-year-old, lives with her parents in the recesses of a suburban garden home, unbeknownst to the homeowner and her housekeeper. Like all little people, Arrietty remains hidden from view, except during occasional covert ventures beyond the floorboards to \"borrow\" scrap supplies like sugar cubes from her human hosts. But when 12-year-old Shou, a human boy who comes to stay in the home, discovers his mysterious housemate one evening, a secret friendship blossoms. If discovered, their relationship could drive Arrietty's family from the home and straight into danger.\n(Source: Disney)",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "17/07/2010",
+    "lastEpisodeDate": "17/07/2010",
+    "rawStartDate": {
+      "year": 2010,
+      "month": 7,
+      "day": 17
+    },
+    "rawEndDate": {
+      "year": 2010,
+      "month": 7,
+      "day": 17
+    },
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [],
+    "netflixUrl": "https://www.netflix.com/title/70216227"
+  },
+  {
+    "id": "franchise-103047",
+    "titleFr": "Violet Evergarden, le film",
+    "titleOrig": "Violet Evergarden Movie",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx103047-odblDHHEdehK.jpg",
+    "crunchyrollUrl": null,
+    "adnUrl": null,
+    "episodesTotal": 1,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "4.3",
+    "trailerId": "BUfSen2rYQs",
+    "genres": "Drama, Fantasy, Slice of Life",
+    "synopsis": "While writing other people’s emotions, she may have neglected her own. Violet Evergarden, the child soldier turned Auto Memory Doll, writes letters that evoke the words her clients can’t. But when a terminally ill boy requests her services for his family, her own feelings about love and loss resurface. Now she must confront her past and the death of the Major.\n\n(Source: Funimation)",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "18/09/2020",
+    "lastEpisodeDate": "18/09/2020",
+    "rawStartDate": {
+      "year": 2020,
+      "month": 9,
+      "day": 18
+    },
+    "rawEndDate": {
+      "year": 2020,
+      "month": 9,
+      "day": 18
+    },
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [],
+    "netflixUrl": "https://www.netflix.com/title/81193214"
+  },
+  {
+    "id": "franchise-134761",
+    "titleFr": "Mobile Suit Gundam SEED Freedom",
+    "titleOrig": "Kidou Senshi Gundam SEED FREEDOM",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx134761-UCVG3V6t6gJq.jpg",
+    "crunchyrollUrl": null,
+    "adnUrl": null,
+    "episodesTotal": 1,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "3.6",
+    "trailerId": "Gsj6ToFTGgc",
+    "genres": "Action, Drama, Mecha, Romance, Sci-Fi",
+    "synopsis": "A new Gundam SEED Movie announced as part of the project \"Mobile Suit Gundam SEED PROJECT Ignited\" in celebration of Gundam SEED's upcoming 20th anniversary in 2022.\n\nIt is now Cosmic Era (C.E.) 75, two years after the dismantlement of the Destiny Plan, but warfare still continues to rage on between Naturals and Coordinators.\nIndependence movements are now sprouting up across Earth, and invasions by Blue Cosmos grow exponentially stronger...\nTo deal with these predicaments, a World Peace Supervision Organization known as COMPASS has been established, with PLANT Chairwoman Lacus Clyne as the founding leader.\nKira Yamato and the others, as its new members, intervene into various battles for the sake of this peace.\nHowever, as these battles take place, an emergent nation known as 'FOUNDATION' appears, and they propose a joint operation to attack the Blue Cosmos Headquarters.\n\nWill Destiny run its course, or will Kira still have the Freedom to resist against impossible odds?",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "26/01/2024",
+    "lastEpisodeDate": "26/01/2024",
+    "rawStartDate": {
+      "year": 2024,
+      "month": 1,
+      "day": 26
+    },
+    "rawEndDate": {
+      "year": 2024,
+      "month": 1,
+      "day": 26
+    },
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [],
+    "netflixUrl": "https://www.netflix.com/title/81747912"
+  },
+  {
+    "id": "franchise-597",
+    "titleFr": "Le Royaume des chats",
+    "titleOrig": "Neko no Ongaeshi",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx597-Prw5pUyYwcFO.png",
+    "crunchyrollUrl": null,
+    "adnUrl": null,
+    "episodesTotal": 1,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "3.8",
+    "trailerId": "Gp-H_YOcYTM",
+    "genres": "Adventure, Comedy, Drama, Fantasy",
+    "synopsis": "The Cat Returns is something of a loose spin-off of \"Whisper of the Heart\" as it features two characters from that film: Muta (the cat from \"Whisper\") and the Baron (the cat statue from \"Whisper\"). There is no other connection between the two movies and this is not a sequel. The story is based on Neko no Danshaku (Baron of Cat) by Hiiragi Aoi. \nThe main character of the story, Haru, is a clueless, ordinary 17-year-old girl. She has no special abilities and neither is she an extraordinary beauty. When faced with reality, she is unable to make decisions for herself, thus often sways to others' opinions to avoid challenge. One day, Haru saves the life of a cat without considering her own safety. The cat turns out to be the Cat Prince from the Kingdom of Cats, however as a result, Haru is trapped in the world of cats. Can Baron and Muta rescue Haru who has wandered into the world of cats? \n(Source: AniDB, edited)",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "20/07/2002",
+    "lastEpisodeDate": "20/07/2002",
+    "rawStartDate": {
+      "year": 2002,
+      "month": 7,
+      "day": 20
+    },
+    "rawEndDate": {
+      "year": 2002,
+      "month": 7,
+      "day": 20
+    },
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [],
+    "netflixUrl": "https://www.netflix.com/title/70019058"
+  },
+  {
+    "id": "franchise-5415",
+    "titleFr": "La Rose de Versailles",
+    "titleOrig": "Versailles no Bara (2007)",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b5415-jxHKhvnHzEGs.jpg",
+    "crunchyrollUrl": null,
+    "adnUrl": null,
+    "episodesTotal": 1,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "2.5",
+    "trailerId": null,
+    "genres": "Drama, Romance, Slice of Life",
+    "synopsis": "Toei Animation announced the new movie based on the classic Anime and Manga. Toei Animation previewed pilot footage of the film at the Tokyo International Anime Fair in January 2007, but has yet to make an official announcement of its release date in Japan. This project is most likely cancelled and a trailer is all that remains.",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": null,
+    "lastEpisodeDate": null,
+    "rawStartDate": null,
+    "rawEndDate": null,
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [],
+    "netflixUrl": "https://www.netflix.com/title/81177638"
   }
 ];

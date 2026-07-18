@@ -43,6 +43,19 @@ jobs:
         continue-on-error: true
         run: node scripts/check-platform-links.js
 
+      # Netflix/Disney+/Prime Video n'ont pas d'API de catalogue publique
+      # comme Crunchyroll/ADN : JustWatch (agregateur) est la seule source
+      # exploitable pour decouvrir de nouveaux liens/animes sur ces 3
+      # plateformes. continue-on-error par prudence (dependance a un service
+      # tiers), chaque passe (series/films) peut prendre plusieurs minutes.
+      - name: Scanne Netflix/Disney+/Prime Video via JustWatch (séries)
+        continue-on-error: true
+        run: node scripts/justwatch-merge.js SHOW
+
+      - name: Scanne Netflix/Disney+/Prime Video via JustWatch (films)
+        continue-on-error: true
+        run: node scripts/justwatch-merge.js MOVIE
+
       - name: Commit et push si le catalogue a change
         run: |
           if git diff --quiet -- catalog.js; then

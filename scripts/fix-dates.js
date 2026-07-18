@@ -18,7 +18,8 @@ const QUERY = `query($search:String){Media(search:$search,type:ANIME){
 id countryOfOrigin averageScore genres
 title{romaji english native}
 startDate{year month day} endDate{year month day}
-trailer{id site} episodes status}}`;
+trailer{id site} episodes status
+nextAiringEpisode{airingAt episode}}}`;
 
 const { normTitle } = require("./lib/norm-title");
 
@@ -53,9 +54,25 @@ async function anilistLookup(title) {
     const targets = catalog.filter(a => /^(adn|cr)-/.test(a.id));
     console.log("Fiches plateformes à corriger:", targets.length);
 
-    let fixed = 0, noMatch = 0, done = 0;
+    let fixed = 0, noMatch = 0, done = 0, backfilled = 0;
     for (const anime of targets) {
         done++;
+
+        // Rattrapage local (sans reseau) : rawStartDate/rawEndDate deja
+        // present mais releaseDate/lastEpisodeDate jamais calcules depuis
+        // (cas des fiches creees par cr-vf-scan.js avant que ce calcul y soit
+        // ajoute). Fait AVANT le lookup AniList, donc s'applique meme si le
+        // titre francais compose ne matche jamais strictement (ex: "X Saison
+        // 2, Junior Youth Arc").
+        if (!anime.releaseDate && anime.rawStartDate && anime.rawStartDate.year) {
+            anime.releaseDate = toFrDate(anime.rawStartDate);
+            backfilled++;
+        }
+        if (!anime.lastEpisodeDate && anime.rawEndDate && anime.rawEndDate.year) {
+            anime.lastEpisodeDate = toFrDate(anime.rawEndDate);
+            backfilled++;
+        }
+
         const media = await anilistLookup(anime.titleOrig || anime.titleFr);
         await sleep(700);
         if (!media || media.countryOfOrigin !== "JP") { noMatch++; continue; }
@@ -80,10 +97,22 @@ async function anilistLookup(title) {
         if (!anime.siteRating && media.averageScore) {
             anime.siteRating = (media.averageScore / 20).toFixed(1);
         }
+        // Prochain episode connu (Crunchyroll ne l'expose pas dans le
+        // catalogue de scan, seul AniList le fournit) : sans ca, les fiches
+        // creees via cr-vf-scan.js (id "cr-...") ne recevaient jamais de
+        // nextAiringAt, y compris cote sync client (qui ne cible que les
+        // ids "franchise-<id numerique AniList>").
+        if (media.status === "RELEASING" && media.nextAiringEpisode) {
+            anime.nextAiringEpisode = media.nextAiringEpisode.episode;
+            anime.nextAiringAt = media.nextAiringEpisode.airingAt;
+        } else if (media.status !== "RELEASING" && anime.nextAiringAt) {
+            anime.nextAiringEpisode = null;
+            anime.nextAiringAt = null;
+        }
         fixed++;
 
         if (done % 50 === 0) {
-            console.log(`${done}/${targets.length} — corrigées: ${fixed}`);
+            console.log(`${done}/${targets.length} — corrigées: ${fixed}, rattrapees localement: ${backfilled}`);
             writeAtomic(path, "const DEFAULT_ANIME_DATA = " + JSON.stringify(catalog, null, 2) + ";\n");
         }
     }
