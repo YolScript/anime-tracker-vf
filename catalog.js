@@ -12920,14 +12920,18 @@ const DEFAULT_ANIME_DATA = [
     "synopsis": "La planète Euphor était un lieu de villégiature paisible jusqu’à ce que L’Empire Galactique de Véga asservisse sa population et la réduise à néant. Seul son prince, Duke Fleed, a pu échapper à une mort certaine en arrimant à son vaisseau le robot Grendizer, capable de voyager à travers l’espace. Le pilote finit par trouver refuge sur Terre et est adopté par le professeur Genzô Umon, un scientifique humaniste et directeur d’un centre de recherches spatiales localisé au pied des monts Yatsugatake. \nDésormais baptisé Daisuke Umon, ce dernier aspire à une vie de citoyen ordinaire, loin des tumultes de la galaxie. Mais l’empire Véga continue son expansion belliqueuse vers la Terre et établit dans ce but une base militaire sur la face cachée de la Lune. Afin que les envahisseurs de l’espace ne détruisent pas sa nouvelle patrie, Daisuke est prête à la défendre vaillamment à l’aide de Grendizer. Parviendra-t-il à les faire renoncer à leur vil projet, tout en gardant son identité originelle secrète ?",
     "cast": "",
     "airingStatus": "FINISHED",
-    "releaseDate": "20/07/2021",
-    "lastEpisodeDate": null,
+    "releaseDate": "05/10/1975",
+    "lastEpisodeDate": "27/02/1977",
     "rawStartDate": {
-      "year": 2021,
-      "month": 7,
-      "day": 20
+      "year": 1975,
+      "month": 10,
+      "day": 5
     },
-    "rawEndDate": null,
+    "rawEndDate": {
+      "year": 1977,
+      "month": 2,
+      "day": 27
+    },
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
@@ -21266,20 +21270,24 @@ const DEFAULT_ANIME_DATA = [
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
-    "siteRating": null,
-    "trailerId": null,
+    "siteRating": "3.5",
+    "trailerId": "7hGPia1E6pg",
     "genres": "Action, Drama, Mecha, Sci-Fi",
     "synopsis": "An 2017 du calendrier impérial. Dans l’Area 11, ancien Japon, pendant la « Révolution noire », Zéro et ses principaux chevaliers sont arrêtés. Pendant ce temps, en Europe, le Saint Empire de Britannia tout-puissant continue d’étendre son territoire. Les derniers remparts de la République Unie d’Europia sont prêts à tomber. Au bord de la défaite, la République Unie d’Europia forme une unité de la dernière chance composée uniquement d’Elevens, l’unité wZERO. Afin d’augmenter le taux de survie des soldats europiens, ce sont les Japonais, maintenant nommés « Elevens », qui sont envoyés sur les batailles les plus risquées. L’un d’eux, Akito Hyûga, est pilote de Knightmare Frame dans l’unité wZERO. Mais pour quelles raisons se bat-il ?",
     "cast": "",
     "airingStatus": "FINISHED",
-    "releaseDate": null,
-    "lastEpisodeDate": null,
+    "releaseDate": "04/08/2012",
+    "lastEpisodeDate": "04/08/2012",
     "rawStartDate": {
-      "year": 2022,
-      "month": 1,
-      "day": 1
+      "year": 2012,
+      "month": 8,
+      "day": 4
     },
-    "rawEndDate": null,
+    "rawEndDate": {
+      "year": 2012,
+      "month": 8,
+      "day": 4
+    },
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [
@@ -23436,20 +23444,24 @@ const DEFAULT_ANIME_DATA = [
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
-    "siteRating": null,
-    "trailerId": null,
+    "siteRating": "3.3",
+    "trailerId": "Eks6OyQNoEU",
     "genres": "Fantasy",
     "synopsis": "Après une mort prématurée, Tomokui Kanata s'est réincarné en un simple gobelin, mais il a développé un appétit monstrueux. Grâce à sa nouvelle capacité qui lui permet de devenir plus fort au fur et à mesure qu'il se nourrit, son statut de faible change rapidement et il devient peu à peu le chef des gobelins. Grâce à ses souvenirs, à son nouveau corps et à son estomac, il ne fait qu'une bouchée de ce nouveau monde fantastique où prévaut la loi du plus fort et qu'il compte bien changer !",
     "cast": "",
     "airingStatus": "FINISHED",
-    "releaseDate": null,
-    "lastEpisodeDate": null,
+    "releaseDate": "02/04/2024",
+    "lastEpisodeDate": "18/06/2024",
     "rawStartDate": {
       "year": 2024,
-      "month": 1,
-      "day": 1
+      "month": 4,
+      "day": 2
     },
-    "rawEndDate": null,
+    "rawEndDate": {
+      "year": 2024,
+      "month": 6,
+      "day": 18
+    },
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [
@@ -23471,20 +23483,24 @@ const DEFAULT_ANIME_DATA = [
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
-    "siteRating": null,
-    "trailerId": null,
+    "siteRating": "3.1",
+    "trailerId": "yxuq6FS2jz4",
     "genres": "Fantasy, Comedy, Shonen",
     "synopsis": "Après être mort dans un accident de la route, un jeune homme se réveille près d’un lac, transformé en… distributeur automatique ! Impossible pour lui de se déplacer seul, pas moyen d’avoir une conversation sérieuse, comment survivra-t-il dans un tel monde fantastique ?",
     "cast": "",
     "airingStatus": "FINISHED",
-    "releaseDate": null,
-    "lastEpisodeDate": null,
+    "releaseDate": "05/07/2023",
+    "lastEpisodeDate": "20/09/2023",
     "rawStartDate": {
       "year": 2023,
-      "month": 1,
-      "day": 1
+      "month": 7,
+      "day": 5
     },
-    "rawEndDate": null,
+    "rawEndDate": {
+      "year": 2023,
+      "month": 9,
+      "day": 20
+    },
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [
