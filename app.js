@@ -621,15 +621,15 @@ function renderGrid() {
             // regroupait alors par ordre ALPHABETIQUE entre elles, sans aucun
             // rapport avec une vraie date. On utilise la meilleure info
             // disponible : le prochain episode connu (cadence hebdo -7j pour
-            // approximer le dernier deja diffuse), sinon la derniere date
-            // connue en catalogue (souvent renseignee malgre le statut "en
-            // cours"), et seulement en dernier recours la valeur par defaut
-            // qui garde la fiche en tete faute de toute information.
+            // approximer le dernier deja diffuse), sinon la date de sortie
+            // (rawEndDate n'a de toute facon jamais de sens pour une serie
+            // encore en cours), et seulement en dernier recours la valeur par
+            // defaut qui garde la fiche en tete faute de toute information.
             if (anime.nextAiringAt) return anime.nextAiringAt * 1000 - (7 * 86400000);
-            if (anime.rawEndDate && anime.rawEndDate.year) {
-                const y = anime.rawEndDate.year;
-                const m = (anime.rawEndDate.month || 1) - 1;
-                const d = anime.rawEndDate.day || 1;
+            if (anime.rawStartDate && anime.rawStartDate.year) {
+                const y = anime.rawStartDate.year;
+                const m = (anime.rawStartDate.month || 1) - 1;
+                const d = anime.rawStartDate.day || 1;
                 return new Date(y, m, d).getTime();
             }
             return Date.now() + 10000000000; // aucune info : garder en tete par defaut
