@@ -2,7 +2,7 @@
 // série du catalogue propose encore des épisodes. total=0 saison => lien retiré.
 const fs = require("fs");
 const { execFile } = require("child_process");
-const path = "c:/Users/agora/Documents/Crunchyroll/catalog.js";
+const path = require("path").join(__dirname, "..", "catalog.js");
 
 const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36";
 

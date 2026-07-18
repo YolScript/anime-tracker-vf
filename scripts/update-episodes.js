@@ -3,17 +3,26 @@
 // (episodeCount du catalogue). Total retenu = max des plateformes trouvées.
 const fs = require("fs");
 const { execFile } = require("child_process");
-const path = "c:/Users/agora/Documents/Crunchyroll/catalog.js";
+const path = require("path").join(__dirname, "..", "catalog.js");
 
 const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36";
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 function curl(args) {
     return new Promise((resolve) => {
-        execFile("curl", ["-s", "-A", UA, ...args], { maxBuffer: 20 * 1024 * 1024 }, (err, stdout) => {
+        execFile("curl", ["-s", "--max-time", "20", "-A", UA, ...args], { maxBuffer: 20 * 1024 * 1024 }, (err, stdout) => {
             resolve(err ? null : stdout);
         });
     });
+}
+
+// Ecriture atomique : evite un catalog.js tronque/invalide (qui casserait le
+// site entier, charge en <script> bloquant) si le process est tue en cours
+// d'ecriture (timeout CI, kill manuel...).
+function writeAtomic(filePath, content) {
+    const tmp = filePath + ".tmp";
+    fs.writeFileSync(tmp, content, "utf8");
+    fs.renameSync(tmp, filePath);
 }
 
 async function getAnonToken() {
@@ -119,7 +128,7 @@ async function fetchAdnCounts() {
 
         if (done % 50 === 0) {
             console.log(`${done}/${catalog.length} traités — totaux corrigés: ${updated}`);
-            fs.writeFileSync(path, "const DEFAULT_ANIME_DATA = " + JSON.stringify(catalog, null, 2) + ";\n", "utf8");
+            writeAtomic(path, "const DEFAULT_ANIME_DATA = " + JSON.stringify(catalog, null, 2) + ";\n");
         }
     }
 

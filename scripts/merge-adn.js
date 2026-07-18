@@ -1,6 +1,6 @@
 // Fusionne le catalogue ADN (doublage VF) dans catalog.js
 const fs = require("fs");
-const path = "c:/Users/agora/Documents/Crunchyroll/catalog.js";
+const path = require("path").join(__dirname, "..", "catalog.js");
 
 function normTitle(s) {
     return (s || "")

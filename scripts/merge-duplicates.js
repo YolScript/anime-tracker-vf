@@ -2,7 +2,7 @@
 // suffixe de saison/partie/film dans le titre. La fiche au titre le plus
 // court (la franchise) absorbe les URLs de plateformes et le max d'épisodes.
 const fs = require("fs");
-const path = "c:/Users/agora/Documents/Crunchyroll/catalog.js";
+const path = require("path").join(__dirname, "..", "catalog.js");
 
 function normTitle(s) {
     return (s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, " ").trim();

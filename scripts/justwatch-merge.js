@@ -4,7 +4,7 @@
 //   les fiches exclues noVf/unavailable si une plateforme VF est trouvée)
 // - Nouveau titre => entrée catalogue complète (id franchise-<anilistId>)
 const fs = require("fs");
-const path = "c:/Users/agora/Documents/Crunchyroll/catalog.js";
+const path = require("path").join(__dirname, "..", "catalog.js");
 
 // Type d'objet à scanner : SHOW (défaut) ou MOVIE (passe 2 pour les films)
 const OBJECT_TYPE = (process.argv[2] || "SHOW").toUpperCase();

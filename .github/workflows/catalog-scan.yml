@@ -1,0 +1,43 @@
+name: Scan catalogue (episodes, saisons, nouveaux animes VF)
+
+on:
+  schedule:
+    # Une fois par jour a 4h UTC. Frequence volontairement moderee (pas
+    # horaire) : ce scan interroge l'API interne Crunchyroll (protegee par
+    # Cloudflare, deja documentee comme fragile dans les scripts) et pagine
+    # tout le catalogue ADN/Crunchyroll ; un scan trop frequent augmente le
+    # risque de blocage. Le rafraichissement horaire des dates "prochain
+    # episode" reste gere cote client par app.js (syncWithAniList).
+    - cron: "0 4 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Met a jour les totaux d'episodes et les saisons reelles (Crunchyroll + ADN)
+        run: node scripts/update-episodes.js
+
+      - name: Scanne les nouveaux animes doubles en VF sur Crunchyroll
+        run: node scripts/cr-vf-scan.js
+
+      - name: Commit et push si le catalogue a change
+        run: |
+          if git diff --quiet -- catalog.js; then
+            echo "Aucun changement detecte dans catalog.js."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add catalog.js
+          git commit -m "chore: scan automatique du catalogue (episodes, saisons, nouveaux animes VF)"
+          git push

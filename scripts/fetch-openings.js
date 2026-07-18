@@ -1,7 +1,7 @@
 // Récupère l'opening vidéo (creditless, animethemes.moe) de chaque animé
 // du catalogue et l'enregistre dans le champ "openingUrl".
 const fs = require("fs");
-const path = "c:/Users/agora/Documents/Crunchyroll/catalog.js";
+const path = require("path").join(__dirname, "..", "catalog.js");
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 

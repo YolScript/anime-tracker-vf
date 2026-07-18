@@ -2,7 +2,7 @@
 // dates de diffusion originale (AniList), pour les entrées adn-* et cr-*.
 // Complète aussi trailer/note/genres quand absents.
 const fs = require("fs");
-const path = "c:/Users/agora/Documents/Crunchyroll/catalog.js";
+const path = require("path").join(__dirname, "..", "catalog.js");
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
