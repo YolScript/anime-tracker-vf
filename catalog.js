@@ -11,7 +11,7 @@ const DEFAULT_ANIME_DATA = [
     "status": "plan-to-watch",
     "rating": 0,
     "siteRating": "4.3",
-    "trailerId": "LHtdKWJdif4\t",
+    "trailerId": "LHtdKWJdif4",
     "genres": "Action, Drama, Fantasy, Mystery, Psychological",
     "synopsis": "Several hundred years ago, humans were nearly exterminated by titans. Titans are typically several stories tall, seem to have no intelligence, devour human beings and, worst of all, seem to do it for the pleasure rather than as a food source. A small percentage of humanity survived by walling themselves in a city protected by extremely high walls, even taller than the biggest of titans.\n\n\r\nFlash forward to the present and the city has not seen a titan in over 100 years. Teenage boy Eren and his foster sister Mikasa witness something horrific as the city walls are destroyed by a colossal titan that appears out of thin air. As the smaller titans flood the city, the two kids watch in horror as their mother is eaten alive. Eren vows that he will murder every single titan and take revenge for all of mankind.\n\n\r\n(Source: MangaHelpers)",
     "cast": "Nathalie Bienaimé (Mikasa Ackerman), Bastien Bourlé (Eren Yeager), Adrien Solis (Armin Arlert), Marie Nonnenmacher (Sasha Blouse), Caroline Combes (Petra Ral), Bérangère Jean (Ymir), Emmanuel Rausenberger (Reiner Braun), Christophe Seugnet (Erwin Smith), Victor Niverd (Armin Arlert), Bruno Méyère (Levi), Caroline Combes (Krista Lenz), Charles Mendiant (Zeke), Enzo Ratsito (Falco Grice), Lilly Caruso (Gabi Braun), Arnaud Laurent (Bertolt Hoover), Benjamin Pascal (Jean Kirstein), Grégory Laisné (Connie Springer)",
@@ -5729,7 +5729,7 @@ const DEFAULT_ANIME_DATA = [
     "titleFr": "The Irregular at Magic High School",
     "titleOrig": "Mahouka Koukou no Rettousei",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20458-tGh343Ew10yU.jpg",
-    "crunchyrollUrl": "http://www.crunchyroll.com/the-irregular-at-magic-high-school ",
+    "crunchyrollUrl": "https://www.crunchyroll.com/the-irregular-at-magic-high-school",
     "adnUrl": null,
     "episodesTotal": 26,
     "episodesWatched": 0,
@@ -7952,7 +7952,7 @@ const DEFAULT_ANIME_DATA = [
     "titleFr": "NANA",
     "titleOrig": "NANA",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx877-6BUYEWp8By8j.png",
-    "crunchyrollUrl": "https://www.google.com/url?sa=t&source=web&rct=j&url=https://www.crunchyroll.com/series/GVDHX8QGP/nana&ved=2ahUKEwifi8P_yuj9AhUgVqQEHZuMD9gQFnoECA0QAQ&usg=AOvVaw3qlL5BTTbccRkl1ygyWy9T",
+    "crunchyrollUrl": "https://www.crunchyroll.com/series/GVDHX8QGP/nana",
     "adnUrl": null,
     "episodesTotal": 50,
     "episodesWatched": 0,
@@ -9477,7 +9477,7 @@ const DEFAULT_ANIME_DATA = [
     "status": "plan-to-watch",
     "rating": 0,
     "siteRating": "3.2",
-    "trailerId": "8TXDk-isqLE ",
+    "trailerId": "8TXDk-isqLE",
     "genres": "Action, Comedy, Fantasy, Romance",
     "synopsis": "A young man is reborn in another world where he is adopted as a baby by the hero Merlin Wolford and named Shin. By his 15th birthday, Shin has accumulated all kinds of power by studying under Merlin, but one thing his adoptive grandfather didn't give him was a lick of common sense. \n\n\n(Source: Anime News Network)",
     "cast": "",
@@ -21712,44 +21712,6 @@ const DEFAULT_ANIME_DATA = [
       {
         "name": "GTO - The Animation",
         "episodesCount": 43
-      }
-    ]
-  },
-  {
-    "id": "cr-GXYZ123",
-    "titleFr": "GXYZ123",
-    "titleOrig": "GXYZ123",
-    "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/7d3823cebc14cf9fad34bf9334c56964.jpg",
-    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GXYZ123/gxyz123",
-    "adnUrl": null,
-    "episodesTotal": 2,
-    "episodesWatched": 0,
-    "status": "plan-to-watch",
-    "rating": 0,
-    "siteRating": null,
-    "trailerId": null,
-    "genres": "",
-    "synopsis": "GXYZ123",
-    "cast": "",
-    "airingStatus": "FINISHED",
-    "releaseDate": null,
-    "lastEpisodeDate": null,
-    "rawStartDate": {
-      "year": 2023,
-      "month": 1,
-      "day": 1
-    },
-    "rawEndDate": null,
-    "nextAiringEpisode": null,
-    "nextAiringAt": null,
-    "seasons": [
-      {
-        "name": "GXYZ123S1",
-        "episodesCount": 1
-      },
-      {
-        "name": "GXYZ123S3",
-        "episodesCount": 1
       }
     ]
   },
