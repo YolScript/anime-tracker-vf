@@ -9903,7 +9903,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://image.animationdigitalnetwork.com/license/doremi/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
     "adnUrl": "https://animationdigitalnetwork.fr/video/1343-magical-doremi",
-    "episodesTotal": 100,
+    "episodesTotal": 150,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
