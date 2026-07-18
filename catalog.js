@@ -549,7 +549,7 @@ const DEFAULT_ANIME_DATA = [
       }
     ],
     "openingUrl": "https://v.animethemes.moe/TokyoGhoul-OP1.webm",
-    "netflixUrl": null
+    "netflixUrl": "https://www.netflix.com/title/80023687"
   },
   {
     "id": "franchise-20",
@@ -654,7 +654,7 @@ const DEFAULT_ANIME_DATA = [
     ],
     "openingUrl": "https://v.animethemes.moe/Naruto-OP1.webm",
     "netflixUrl": "https://www.netflix.com/title/70205012",
-    "primeUrl": null
+    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.5eb6f772-ac40-3165-11cf-4eaaa6925a0d"
   },
   {
     "id": "franchise-11757",
@@ -1755,7 +1755,7 @@ const DEFAULT_ANIME_DATA = [
       }
     ],
     "openingUrl": "https://v.animethemes.moe/Horimiya-OP1-BD1080.webm",
-    "netflixUrl": null
+    "netflixUrl": "https://www.netflix.com/title/81020819"
   },
   {
     "id": "franchise-21202",
@@ -2443,7 +2443,7 @@ const DEFAULT_ANIME_DATA = [
         }
       }
     ],
-    "netflixUrl": null
+    "netflixUrl": "https://www.netflix.com/title/80987039"
   },
   {
     "id": "franchise-120120",
@@ -3375,7 +3375,7 @@ const DEFAULT_ANIME_DATA = [
       }
     ],
     "openingUrl": "https://v.animethemes.moe/FairyTail-OP1.webm",
-    "primeUrl": null,
+    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.feb85fea-a45d-f8af-423a-9d7843d1cbe1",
     "netflixUrl": "https://www.netflix.com/title/70266998"
   },
   {
@@ -7347,8 +7347,8 @@ const DEFAULT_ANIME_DATA = [
       }
     ],
     "openingUrl": "https://v.animethemes.moe/Boruto-OP1-BD1080.webm",
-    "primeUrl": null,
-    "netflixUrl": null
+    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.58b69cc5-3950-9951-0002-325a5d14e6dc",
+    "netflixUrl": "https://www.netflix.com/title/81080523"
   },
   {
     "id": "franchise-108489",
@@ -10099,7 +10099,8 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [],
     "openingUrl": "https://v.animethemes.moe/SailorMoon-OP1.webm",
-    "netflixUrl": "https://www.netflix.com/title/80992787"
+    "netflixUrl": "https://www.netflix.com/title/80992787",
+    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.31375807-c6a9-485d-bff3-460920f8cc40"
   },
   {
     "id": "adn-1393",
@@ -10851,7 +10852,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [],
     "openingUrl": "https://v.animethemes.moe/X-OP1.webm",
-    "primeUrl": null
+    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.dd767ebc-2050-41ab-9289-eb38f11c7104"
   },
   {
     "id": "adn-1187",
@@ -10882,7 +10883,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [],
     "openingUrl": "https://v.animethemes.moe/FairyTail100NenQuest-OP1.webm",
-    "netflixUrl": null,
+    "netflixUrl": "https://www.netflix.com/title/81910168",
     "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.f0264417-5fbc-429e-a7f3-3152c9cfb882"
   },
   {
@@ -11158,7 +11159,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [],
     "openingUrl": "https://v.animethemes.moe/UruseiYatsura-OP1.webm",
-    "netflixUrl": null,
+    "netflixUrl": "https://www.netflix.com/title/81642888",
     "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.b1895ccc-20b4-4b19-94bc-9f8db9ddfc5f"
   },
   {
@@ -11509,7 +11510,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [],
     "openingUrl": "https://v.animethemes.moe/Bokuyaba-OP1-NCBD1080.webm",
-    "netflixUrl": null
+    "netflixUrl": "https://www.netflix.com/title/81788312"
   },
   {
     "id": "adn-1122",
@@ -11661,7 +11662,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [],
     "openingUrl": "https://v.animethemes.moe/ShadowGarden-OP1-NCBD1080.webm",
-    "netflixUrl": null,
+    "netflixUrl": "https://www.netflix.com/title/81642096",
     "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ff3d02a7-4f3f-4eb6-84dc-63eb0d2e7466"
   },
   {
@@ -12190,7 +12191,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [],
     "openingUrl": "https://v.animethemes.moe/Berserk-OP1.webm",
-    "netflixUrl": null,
+    "netflixUrl": "https://www.netflix.com/title/80243876",
     "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.1a64d1d8-3d04-44d7-822d-95b5aa75b220"
   },
   {
@@ -12965,7 +12966,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "primeUrl": null
+    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.dc30a333-0aa6-4196-a55d-665b93dba8f9"
   },
   {
     "id": "adn-704",
@@ -14208,7 +14209,7 @@ const DEFAULT_ANIME_DATA = [
     "titleFr": "Time Shadow (Summer Time Rendering)",
     "titleOrig": "Summer Time Render",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx129201-HJBauga2be8I.png",
-    "disneyUrl": null,
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-ad803e91-b02a-42c9-a6f8-29f6468a74fd",
     "episodesTotal": 25,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -14224,16 +14225,14 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 25
       }
     ],
-    "openingUrl": "https://v.animethemes.moe/SummertimeRender-OP1-NCBD1080.webm",
-    "noVf": true,
-    "unavailable": true
+    "openingUrl": "https://v.animethemes.moe/SummertimeRender-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-155783",
     "titleFr": "Tengoku Daimakyo (Heavenly Delusion)",
     "titleOrig": "Tengoku Daimakyou",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx155783-YosKbsmZzuDE.jpg",
-    "disneyUrl": null,
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-227fed4d-6671-4675-8448-f4f75741c1b9",
     "episodesTotal": 13,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -14249,9 +14248,7 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 13
       }
     ],
-    "openingUrl": "https://v.animethemes.moe/TengokuDaimakyou-OP1-NCBD1080.webm",
-    "noVf": true,
-    "unavailable": true
+    "openingUrl": "https://v.animethemes.moe/TengokuDaimakyou-OP1-NCBD1080.webm"
   },
   {
     "id": "franchise-100388",
@@ -14788,10 +14785,8 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "netflixUrl": null,
-    "openingUrl": "https://v.animethemes.moe/Kingdom-OP1.webm",
-    "unavailable": true,
-    "noVf": true
+    "netflixUrl": "https://www.netflix.com/title/80172949",
+    "openingUrl": "https://v.animethemes.moe/Kingdom-OP1.webm"
   },
   {
     "id": "franchise-170083",
@@ -15000,7 +14995,8 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [],
     "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.9aa9f7a8-5b9b-bf07-9123-9d6491b6f60b",
-    "openingUrl": "https://v.animethemes.moe/DevilMayCry-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/DevilMayCry-OP1.webm",
+    "netflixUrl": "https://www.netflix.com/title/81506915"
   },
   {
     "id": "franchise-177709",
@@ -16189,10 +16185,8 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "primeUrl": null,
-    "openingUrl": "https://v.animethemes.moe/SakamichiNoApollon-OP1.webm",
-    "unavailable": true,
-    "noVf": true
+    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.8335a45b-61e6-4a8c-9c17-81ffbaf74b9b",
+    "openingUrl": "https://v.animethemes.moe/SakamichiNoApollon-OP1.webm"
   },
   {
     "id": "franchise-20946",
@@ -16226,10 +16220,8 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "netflixUrl": null,
-    "openingUrl": "https://v.animethemes.moe/OreMonogatari-OP1.webm",
-    "unavailable": true,
-    "noVf": true
+    "netflixUrl": "https://www.netflix.com/title/81409988",
+    "openingUrl": "https://v.animethemes.moe/OreMonogatari-OP1.webm"
   },
   {
     "id": "franchise-151799",
@@ -16999,10 +16991,8 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "primeUrl": null,
-    "openingUrl": "https://v.animethemes.moe/BloodLad-OP1.webm",
-    "unavailable": true,
-    "noVf": true
+    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.83b7632a-4038-43ab-9404-41cb6d42612b",
+    "openingUrl": "https://v.animethemes.moe/BloodLad-OP1.webm"
   },
   {
     "id": "franchise-181841",
@@ -17419,10 +17409,8 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "netflixUrl": null,
-    "openingUrl": "https://v.animethemes.moe/AhiruNoSora-OP1.webm",
-    "unavailable": true,
-    "noVf": true
+    "netflixUrl": "https://www.netflix.com/title/80245713",
+    "openingUrl": "https://v.animethemes.moe/AhiruNoSora-OP1.webm"
   },
   {
     "id": "franchise-109946",
@@ -17973,10 +17961,8 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "primeUrl": null,
-    "openingUrl": "https://v.animethemes.moe/RahXephon-OP1.webm",
-    "unavailable": true,
-    "noVf": true
+    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.5c1aa57c-6194-4419-a7cd-1a47f3d290c5",
+    "openingUrl": "https://v.animethemes.moe/RahXephon-OP1.webm"
   },
   {
     "id": "franchise-154643",
@@ -20202,7 +20188,8 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "disneyUrl": "https://www.disneyplus.com/browse/entity-d92a1129-a511-4f89-99a0-d7f8cb40caf7"
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-d92a1129-a511-4f89-99a0-d7f8cb40caf7",
+    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.06b86c42-dfe4-eb9d-3f1f-46c909b16947"
   },
   {
     "id": "franchise-128740",
@@ -25200,7 +25187,9 @@ const DEFAULT_ANIME_DATA = [
         "name": "Tsugai - Daemons of the Shadow Realm",
         "episodesCount": 13
       }
-    ]
+    ],
+    "netflixUrl": "https://www.netflix.com/title/82719204",
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-8cc06990-0faf-4a7e-ac1f-fb74cb4b9286"
   },
   {
     "id": "cr-G24H1NWJ0",
@@ -25505,5 +25494,410 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": []
+  },
+  {
+    "id": "franchise-5114",
+    "titleFr": "Fullmetal Alchemist : Brotherhood",
+    "titleOrig": "Hagane no Renkinjutsushi: FULLMETAL ALCHEMIST",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx5114-nSWCgQlmOMtj.jpg",
+    "crunchyrollUrl": null,
+    "adnUrl": null,
+    "episodesTotal": 64,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "4.5",
+    "trailerId": null,
+    "genres": "Action, Adventure, Drama, Fantasy",
+    "synopsis": "\"In order for something to be obtained, something of equal value must be lost.\"\n\nAlchemy is bound by this Law of Equivalent Exchange—something the young brothers Edward and Alphonse Elric only realize after attempting human transmutation: the one forbidden act of alchemy. They pay a terrible price for their transgression—Edward loses his left leg, Alphonse his physical body. It is only by the desperate sacrifice of Edward's right arm that he is able to affix Alphonse's soul to a suit of armor. Devastated and alone, it is the hope that they would both eventually return to their original bodies that gives Edward the inspiration to obtain metal limbs called \"automail\" and become a state alchemist, the Fullmetal Alchemist.\n\nThree years of searching later, the brothers seek the Philosopher's Stone, a mythical relic that allows an alchemist to overcome the Law of Equivalent Exchange. Even with military allies Colonel Roy Mustang, Lieutenant Riza Hawkeye, and Lieutenant Colonel Maes Hughes on their side, the brothers find themselves caught up in a nationwide conspiracy that leads them not only to the true nature of the elusive Philosopher's Stone, but their country's murky history as well. In between finding a serial killer and racing against time, Edward and Alphonse must ask themselves if what they are doing will make them human again... or take away their humanity.\n\n(Source: MAL Rewrite)",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "05/04/2009",
+    "lastEpisodeDate": "04/07/2010",
+    "rawStartDate": {
+      "year": 2009,
+      "month": 4,
+      "day": 5
+    },
+    "rawEndDate": {
+      "year": 2010,
+      "month": 7,
+      "day": 4
+    },
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [],
+    "netflixUrl": "https://www.netflix.com/title/70204981"
+  },
+  {
+    "id": "franchise-1735",
+    "titleFr": "Naruto Shippuden",
+    "titleOrig": "NARUTO: Shippuuden",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx1735-kGfVm0YqCPcu.png",
+    "crunchyrollUrl": null,
+    "adnUrl": null,
+    "episodesTotal": 500,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "4.1",
+    "trailerId": null,
+    "genres": "Action, Adventure, Comedy, Drama, Fantasy, Supernatural",
+    "synopsis": "Naruto: Shippuuden is the continuation of the original animated TV series Naruto. The story revolves around an older and slightly more matured Uzumaki Naruto and his quest to save his friend Uchiha Sasuke from the grips of the snake-like Shinobi, Orochimaru. After 2 and a half years Naruto finally returns to his village of Konoha, and sets about putting his ambitions to work, though it will not be easy, as he has amassed a few (more dangerous) enemies, in the likes of the shinobi organization; Akatsuki. \n(Source: Anime News Network)",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "15/02/2007",
+    "lastEpisodeDate": "23/03/2017",
+    "rawStartDate": {
+      "year": 2007,
+      "month": 2,
+      "day": 15
+    },
+    "rawEndDate": {
+      "year": 2017,
+      "month": 3,
+      "day": 23
+    },
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [],
+    "netflixUrl": "https://www.netflix.com/title/80000603",
+    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.8ab85087-71a9-836e-90c9-e08ac5eb0f0a"
+  },
+  {
+    "id": "franchise-153518",
+    "titleFr": "Gloutons & Dragons",
+    "titleOrig": "Dungeon Meshi",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx153518-IVXPDY5ph3kO.jpg",
+    "crunchyrollUrl": null,
+    "adnUrl": null,
+    "episodesTotal": 24,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "4.3",
+    "trailerId": "RtpYObV4c1Y",
+    "genres": "Adventure, Comedy, Fantasy",
+    "synopsis": "When young adventurer Laios and his company are attacked and soundly thrashed by a dragon deep in a dungeon, the party loses all its money and provisions...and a member! They're eager to go back and save her, but there is just one problem: If they set out with no food or coin to speak of, they're sure to starve on the way! But Laios comes up with a brilliant idea: \"Let's eat the monsters!\" Slimes, basilisks, and even dragons...none are safe from the appetites of these dungeon-crawling gourmands! \n\n(Source: Yen Press)\n\nNote: A world premiere screening of Episode 1 was shown in the Studio TRIGGER panel at Anime Expo on July 1, 2023.",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "04/01/2024",
+    "lastEpisodeDate": "13/06/2024",
+    "rawStartDate": {
+      "year": 2024,
+      "month": 1,
+      "day": 4
+    },
+    "rawEndDate": {
+      "year": 2024,
+      "month": 6,
+      "day": 13
+    },
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [],
+    "netflixUrl": "https://www.netflix.com/title/81564899"
+  },
+  {
+    "id": "franchise-1592",
+    "titleFr": "Hataraki Man",
+    "titleOrig": "Hataraki Man",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx1592-UllYOk5RyPic.png",
+    "crunchyrollUrl": null,
+    "adnUrl": null,
+    "episodesTotal": 11,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "3.3",
+    "trailerId": null,
+    "genres": "Comedy, Drama, Romance, Slice of Life",
+    "synopsis": "Hiroko Matsukata is a woman who works for a magazine company. She puts all she has into her work, and is known as a strong, straight-forward working girl, who can at will turn herself into Hataraki man (working man) mode. Despite Hiroko's success at work, her life lacks romance. Even though a hard worker, she'd leave early anytime to go on a date. Too bad her boyfriend is even bigger a workaholic than Hiroko.\n\n(Source: Anime News Network)",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "13/10/2006",
+    "lastEpisodeDate": "22/12/2006",
+    "rawStartDate": {
+      "year": 2006,
+      "month": 10,
+      "day": 13
+    },
+    "rawEndDate": {
+      "year": 2006,
+      "month": 12,
+      "day": 22
+    },
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [],
+    "netflixUrl": "https://www.netflix.com/title/82119616"
+  },
+  {
+    "id": "franchise-186914",
+    "titleFr": "Ninja vs. Gokudo",
+    "titleOrig": "Ninja to Gokudou",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx186914-8fVK9eu1ZOKa.jpg",
+    "crunchyrollUrl": null,
+    "adnUrl": null,
+    "episodesTotal": 12,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "3.0",
+    "trailerId": "CQgWUYsmbrE",
+    "genres": "Action, Drama",
+    "synopsis": "The ninja banish evil from the shadows. The gokudo gather lonely outcasts and commit crimes. The grudge they forged centuries ago is rekindled in the present day. The ninja Shinoha meets Kiwami, a gokudo with the face of a businessman. Unknowing of the other's identity, they bond over anime, but the war between ninja and gokudo intensifies. Who will survive and who will perish, ninja or gokudo?\n\n(Source: Amazon Prime Video)",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "08/10/2025",
+    "lastEpisodeDate": "24/12/2025",
+    "rawStartDate": {
+      "year": 2025,
+      "month": 10,
+      "day": 8
+    },
+    "rawEndDate": {
+      "year": 2025,
+      "month": 12,
+      "day": 24
+    },
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [],
+    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.b9be4cd5-7997-434e-87a0-cb260850152d"
+  },
+  {
+    "id": "franchise-6747",
+    "titleFr": "Dance in the Vampire Bund",
+    "titleOrig": "Dance in the Vampire Bund",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx6747-GEGb8Pwg8X7a.png",
+    "crunchyrollUrl": null,
+    "adnUrl": null,
+    "episodesTotal": 12,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "3.3",
+    "trailerId": "rI3lJ_URn1g",
+    "genres": "Action, Ecchi, Romance, Supernatural",
+    "synopsis": "When Mina Tepes—queen of the vampires—suddenly appears in Japan to establish a colony for her blood-sucking brethren, Akira Kaburagi’s world will never be the same. As a boy, Akira vowed to serve the ruler of the night, and now he must fulfill his destiny by protecting Mina from those who would dethrone her!\n\n(Source: Crunchyroll)",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "07/01/2010",
+    "lastEpisodeDate": "01/04/2010",
+    "rawStartDate": {
+      "year": 2010,
+      "month": 1,
+      "day": 7
+    },
+    "rawEndDate": {
+      "year": 2010,
+      "month": 4,
+      "day": 1
+    },
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [],
+    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.58b673f0-3611-4383-af27-60ce38258bd7"
+  },
+  {
+    "id": "franchise-133965",
+    "titleFr": "Komi cherche ses mots",
+    "titleOrig": "Komi-san wa, Komyushou desu.",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx133965-9TZBS4m4yvED.png",
+    "crunchyrollUrl": null,
+    "adnUrl": null,
+    "episodesTotal": 12,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "3.8",
+    "trailerId": "QpyQ_0i2NU8",
+    "genres": "Comedy, Romance, Slice of Life",
+    "synopsis": "Timid Tadano is a total wallflower, and that’s just the way he likes it. But all that changes when he finds himself alone in a classroom on the first day of high school with the legendary Komi. He quickly realizes she isn’t aloof—she’s just super awkward. Now he’s made it his mission to help her on her quest to make 100 friends!\n\n(Source: VIZ Media)",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "07/10/2021",
+    "lastEpisodeDate": "23/12/2021",
+    "rawStartDate": {
+      "year": 2021,
+      "month": 10,
+      "day": 7
+    },
+    "rawEndDate": {
+      "year": 2021,
+      "month": 12,
+      "day": 23
+    },
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [],
+    "netflixUrl": "https://www.netflix.com/title/81228573"
+  },
+  {
+    "id": "franchise-104307",
+    "titleFr": "High Score Girl",
+    "titleOrig": "Hi Score Girl: EXTRA STAGE",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx104307-gbPLgyF1veUJ.jpg",
+    "crunchyrollUrl": null,
+    "adnUrl": null,
+    "episodesTotal": 3,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "3.9",
+    "trailerId": "_N-BnjZnJWk",
+    "genres": "Comedy, Drama, Romance, Slice of Life",
+    "synopsis": "Episodes 13-15 of High Score Girl.\n\nEpisodes 13-15 had its televised debut starting October 4th, 2019.",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "20/03/2019",
+    "lastEpisodeDate": "20/03/2019",
+    "rawStartDate": {
+      "year": 2019,
+      "month": 3,
+      "day": 20
+    },
+    "rawEndDate": {
+      "year": 2019,
+      "month": 3,
+      "day": 20
+    },
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [],
+    "netflixUrl": "https://www.netflix.com/title/80997338"
+  },
+  {
+    "id": "franchise-20875",
+    "titleFr": "SWORDGAI The Animation",
+    "titleOrig": "Sword Gai The Animation",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx20875-aPXVfFJ7eYxz.jpg",
+    "crunchyrollUrl": null,
+    "adnUrl": null,
+    "episodesTotal": 12,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "2.8",
+    "trailerId": null,
+    "genres": "Action, Supernatural",
+    "synopsis": "The story revolves around Gai, who was born beside a woman who met her death in a forest. He was adopted by the swordsmith Amon. A few years later, Gai becomes Amon's apprentice, and during the forging of a sword, he loses his right arm. To help him, Amon crushes the demon sword Shiryuu (lit. Death Dragon) to form it into Gai's replacement right arm. Gai then is able to fuse with the weapon on his arm, and fights against his enemies.\n\n(Source: Anime News Network)",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "23/03/2018",
+    "lastEpisodeDate": "23/03/2018",
+    "rawStartDate": {
+      "year": 2018,
+      "month": 3,
+      "day": 23
+    },
+    "rawEndDate": {
+      "year": 2018,
+      "month": 3,
+      "day": 23
+    },
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [],
+    "netflixUrl": "https://www.netflix.com/title/80175350"
+  },
+  {
+    "id": "franchise-171115",
+    "titleFr": "Rising Impact",
+    "titleOrig": "Rising Impact",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx171115-IApjErPwc7oV.jpg",
+    "crunchyrollUrl": null,
+    "adnUrl": null,
+    "episodesTotal": 12,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "3.8",
+    "trailerId": "1kqGvUCFVfQ",
+    "genres": "Comedy, Drama, Sports",
+    "synopsis": "A young boy, Gawain, lives in a mountainous, rural area with an incredible love for baseball and making the ball really fly. One day he runs into a visitor to the small area and she introduces him to a sport that can really make a ball take to flight: golf! It just takes one shot and Gawain is hooked. With his grandpa's approval he sets off to Tokyo with this mysterious woman to learn all he can about golf, encountering many colorful characters and obstacles along the way.",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "22/06/2024",
+    "lastEpisodeDate": "22/06/2024",
+    "rawStartDate": {
+      "year": 2024,
+      "month": 6,
+      "day": 22
+    },
+    "rawEndDate": {
+      "year": 2024,
+      "month": 6,
+      "day": 22
+    },
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [],
+    "netflixUrl": "https://www.netflix.com/title/81563026"
+  },
+  {
+    "id": "franchise-139303",
+    "titleFr": "Black ★★ Rock Shooter : Dawn Fall",
+    "titleOrig": "Black★★Rock Shooter: DAWN FALL",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx139303-8IeaAGasu2Bc.jpg",
+    "crunchyrollUrl": null,
+    "adnUrl": null,
+    "episodesTotal": 12,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "2.8",
+    "trailerId": "Wpc2hEdJj6M",
+    "genres": "Action, Sci-Fi",
+    "synopsis": "The year is 2062. Earth has been left in ruin after the failure of a labor automation project when the AI called Artemis waged war against humanity. A girl, Empress, awakens in a research lab. As one of the three surviving guardians, she must destroy the Orbital Elevator before Artemis can complete its construction. Failure will result in a machine army overrunning Earth. However, Artemis' Unmanned Forces and a cult may have motives of their own.\n\n(Source: Disney+)",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "03/04/2022",
+    "lastEpisodeDate": "19/06/2022",
+    "rawStartDate": {
+      "year": 2022,
+      "month": 4,
+      "day": 3
+    },
+    "rawEndDate": {
+      "year": 2022,
+      "month": 6,
+      "day": 19
+    },
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [],
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-9d2ab176-0b3c-476f-a989-0578876b018d"
+  },
+  {
+    "id": "franchise-207254",
+    "titleFr": "Thunder 3",
+    "titleOrig": "Thunder 3",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx207254-StcuNpmZTDCL.jpg",
+    "crunchyrollUrl": null,
+    "adnUrl": null,
+    "episodesTotal": 0,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "2.6",
+    "trailerId": "wsb07srXk_M",
+    "genres": "Adventure, Drama, Sci-Fi",
+    "synopsis": "Three ordinary schoolboys come into possession of a DVD that supposedly opens a gateway to a parallel universe, but when their backs are turned Pyontaro's little sister Futaba passes through and gets kidnapped by the aliens that have overrun that version of Earth! Discovering that their cartoonish bodies make them supermen in the hyper-realistic parallel universe, the boys set out to rescue Futaba.\n\n(Source: Kodansha USA)",
+    "cast": "",
+    "airingStatus": "RELEASING",
+    "releaseDate": "09/07/2026",
+    "lastEpisodeDate": null,
+    "rawStartDate": {
+      "year": 2026,
+      "month": 7,
+      "day": 9
+    },
+    "rawEndDate": null,
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [],
+    "netflixUrl": "https://www.netflix.com/title/82736186"
   }
 ];
