@@ -770,7 +770,7 @@ function createAnimeCard(anime) {
         const isVf = detectIfVf(anime);
         
         card.innerHTML = `
-            <div class="card-image-wrapper js-open-details">
+            <div class="card-image-wrapper js-open-details" role="button" tabindex="0" aria-label="Voir les détails de ${safeTitleFr}">
                 <img class="card-image" src="${coverSrc}" alt="Affiche de ${safeTitleFr}" loading="lazy">
                 <div class="card-overlay"></div>
                 <span class="card-badge-vf ${isVf ? 'vf' : 'vostfr'}">${isVf ? 'VF' : 'VOSTFR'}</span>
@@ -878,6 +878,17 @@ function createAnimeCard(anime) {
         // Detail Trigger elements
         card.querySelectorAll(".js-open-details").forEach(elem => {
             elem.addEventListener("click", () => showAnimeDetails(anime.id));
+            // Support clavier (Enter/Espace) sur l'element focusable
+            // (role="button" tabindex="0") : sans ca, toute la grille n'etait
+            // utilisable qu'a la souris/au tactile.
+            if (elem.getAttribute("role") === "button") {
+                elem.addEventListener("keydown", (e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        showAnimeDetails(anime.id);
+                    }
+                });
+            }
         });
 
         return card;
@@ -1861,20 +1872,28 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
         playerWatchedBtn.disabled = false;
         playerWatchedBtn.style.opacity = "1";
 
+        // .btn-primary span est masque sous 480px (icone seule) : sans
+        // aria-label synchronise, ce bouton devient totalement anonyme pour
+        // un lecteur d'ecran sur mobile puisque son texte change dynamiquement.
+        const setWatchedBtnLabel = (text) => {
+            playerWatchedBtn.querySelector("span").textContent = text;
+            playerWatchedBtn.setAttribute("aria-label", text);
+        };
+
         if (epNum === currentWatched) {
-            playerWatchedBtn.querySelector("span").textContent = `Marquer l'épisode ${epNum} comme NON vu`;
+            setWatchedBtnLabel(`Marquer l'épisode ${epNum} comme NON vu`);
             playerWatchedBtn.onclick = () => {
                 changeEpisodeCount(anime.id, epNum - 1);
                 loadEpisode(epNum);
             };
         } else if (epNum < currentWatched) {
-            playerWatchedBtn.querySelector("span").textContent = `Définir comme dernier vu (Ép. ${epNum})`;
+            setWatchedBtnLabel(`Définir comme dernier vu (Ép. ${epNum})`);
             playerWatchedBtn.onclick = () => {
                 changeEpisodeCount(anime.id, epNum);
                 loadEpisode(epNum);
             };
         } else {
-            playerWatchedBtn.querySelector("span").textContent = `Marquer l'épisode ${epNum} comme vu`;
+            setWatchedBtnLabel(`Marquer l'épisode ${epNum} comme vu`);
             playerWatchedBtn.onclick = () => {
                 changeEpisodeCount(anime.id, epNum);
                 renderPlaylist();

@@ -189,11 +189,13 @@ function updateDiscordUi() {
         }
         btn.classList.add("connected");
         btn.title = "Synchronisation Discord active — cliquer pour se déconnecter";
+        btn.setAttribute("aria-label", btn.title);
     } else {
         if (label) label.textContent = "Discord";
         if (avatar) avatar.style.display = "none";
         btn.classList.remove("connected");
         btn.title = "Connecter Discord pour synchroniser PC et téléphone";
+        btn.setAttribute("aria-label", btn.title);
     }
 }
 

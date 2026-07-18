@@ -61,6 +61,18 @@ body {
     overflow-x: hidden;
 }
 
+/* Focus clavier visible : ces boutons/select suppriment l'outline natif
+   (voir plus bas) sans jamais le remplacer, ce qui rendait la navigation au
+   clavier invisible (violation WCAG 2.4.7). */
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible,
+.btn-filters:focus-visible,
+.btn-discord:focus-visible,
+.select-wrapper select:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
 /* Video d'arriere-plan plein ecran, fixe derriere tout le contenu.
    Assombrie + legerement desaturee pour garder le texte lisible partout,
    pas seulement sur les zones avec un fond de carte opaque. */
@@ -224,14 +236,19 @@ body::before {
 
 .clear-search-btn {
     position: absolute;
-    right: 10px;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    /* Zone tactile agrandie (etait ~22px, glyphe 18px + 2px de padding) sans
+       deborder de la hauteur du search-box (~40px). */
+    width: 32px;
+    height: 32px;
     background: transparent;
     border: none;
     color: var(--text-muted);
     font-size: 18px;
     cursor: pointer;
     line-height: 1;
-    padding: 2px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -825,6 +842,11 @@ select option {
     cursor: pointer;
 }
 
+.card-image-wrapper:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
 .card-image {
     position: absolute;
     top: 0;
@@ -1038,116 +1060,6 @@ select option {
     z-index: 2;
 }
 .anime-card[data-status="plan-to-watch"] .card-progress-bar-fill { background-color: var(--color-plan-to-watch); }
-
-/* Quick Episode Adjuster */
-.episode-adjuster {
-    display: flex;
-    align-items: center;
-    background-color: var(--bg-darker);
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    margin-top: 4px;
-    border: 1px solid var(--border-color);
-}
-
-.adjust-btn {
-    background: transparent;
-    border: none;
-    color: var(--text-white);
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    width: 36px;
-    height: 34px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition-fast);
-}
-
-.adjust-btn:hover:not(:disabled) {
-    background-color: var(--bg-card-hover);
-    color: var(--primary);
-}
-
-.adjust-btn:disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
-}
-
-.episode-input-display {
-    flex-grow: 1;
-    background: transparent;
-    border: none;
-    color: var(--text-white);
-    font-family: var(--font-sans);
-    font-size: 13px;
-    font-weight: 600;
-    text-align: center;
-    outline: none;
-    width: 40px;
-    padding: 0;
-}
-
-/* Remove spin buttons from number input */
-.episode-input-display::-webkit-outer-spin-button,
-.episode-input-display::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-/* Card Actions */
-.card-actions {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 12px;
-    padding-top: 12px;
-    border-top: 1px solid var(--border-color);
-    gap: 8px;
-}
-
-.card-link-crunchy {
-    color: var(--text-muted);
-    transition: var(--transition-fast);
-    display: flex;
-    align-items: center;
-}
-
-.card-link-crunchy:hover {
-    color: var(--primary);
-}
-
-.card-link-crunchy svg {
-    width: 18px;
-    height: 18px;
-}
-
-.card-btn-details {
-    background: transparent;
-    border: none;
-    color: var(--text-muted);
-    font-family: var(--font-sans);
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    transition: var(--transition-fast);
-    padding: 4px 8px;
-    border-radius: var(--radius-sm);
-}
-
-.card-btn-details:hover {
-    color: var(--text-white);
-    background-color: var(--bg-card-hover);
-}
-
-.card-btn-details svg {
-    width: 14px;
-    height: 14px;
-}
 
 /* ==========================================================================
    EMPTY STATE & NOTIFICATIONS
@@ -1533,7 +1445,10 @@ select option {
 
 .footer-disclaimer {
     font-size: 11px;
-    opacity: 0.7;
+    /* opacity retiree : combinee a --text-muted (deja une couleur attenuee),
+       le contraste effectif tombait sous le seuil WCAG AA (4.5:1) pour un
+       texte de cette taille. */
+    color: var(--text-muted);
 }
 
 .privacy-link {
@@ -1708,16 +1623,6 @@ select option {
     }
 
     .progress-info-row {
-        font-size: 11px;
-    }
-
-    .card-actions {
-        margin-top: 8px;
-        padding-top: 8px;
-        flex-wrap: wrap;
-    }
-
-    .card-btn-details {
         font-size: 11px;
     }
 
@@ -2506,6 +2411,17 @@ body {
    dans la grille (jusqu'a 5 par carte) et le flou de fond est tres couteux
    au scroll pour un effet a peine visible sur un badge de quelques pixels.
    L'alpha est remontee pour garder la lisibilite du texte sans le flou. */
+/* Fonds semi-transparents poses sur des affiches d'anime imprevisibles :
+   backdrop-filter + text-shadow garantissent la lisibilite du texte meme
+   sur un poster tres clair, que le contraste texte/fond seul ne peut pas
+   assurer a lui seul. */
+.card-badge-vf,
+.card-badge-airing {
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
+}
+
 .card-badge-vf {
     background: rgba(255, 100, 0, 0.55);
     color: #ffe4d2;
@@ -3005,7 +2921,7 @@ body {
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    width: 36px;
+    width: 44px; /* minimum recommande pour une cible tactile (etait 36px) */
     height: 64px;
     background: rgba(12, 13, 16, 0.88);
     backdrop-filter: blur(20px);
