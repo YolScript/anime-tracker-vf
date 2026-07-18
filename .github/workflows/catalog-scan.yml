@@ -51,6 +51,22 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add catalog.js
-          git commit -m "chore: scan automatique du catalogue (episodes, saisons, nouveaux animes VF)"
-          git push
+          cp catalog.js /tmp/catalog.scan.js
+          # Retry avec re-application du resultat du scan sur le HEAD distant
+          # a jour : si quelqu'un pousse d'autres commits pendant que ce job
+          # tourne (build long, plusieurs minutes), le push simple est rejete
+          # (non-fast-forward) et le resultat du scan est perdu sans ca.
+          for attempt in 1 2 3; do
+            git add catalog.js
+            git commit -m "chore: scan automatique du catalogue (episodes, saisons, nouveaux animes VF)"
+            if git push; then
+              echo "Push reussi (tentative $attempt)."
+              exit 0
+            fi
+            echo "Push rejete (tentative $attempt/3), re-application sur le HEAD distant a jour..."
+            git fetch origin master
+            git reset --soft origin/master
+            cp /tmp/catalog.scan.js catalog.js
+          done
+          echo "::error::Echec du push apres 3 tentatives, le prochain scan planifie reessaiera."
+          exit 1
