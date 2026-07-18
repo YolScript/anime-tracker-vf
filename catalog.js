@@ -20548,7 +20548,7 @@ const DEFAULT_ANIME_DATA = [
     "synopsis": "Depuis 2017, les Crunchyroll Anime Awards ® ont célébré le meilleur de l'anime, regroupant des millions de fans, stars, créateurs et professionnels pour rendre hommage à l'animation japonaise. En tant que prix le plus prestigieux, cet événement récompense tous les genres : shounen, shoujo, isekai, slice-of-life et bien plus. Chaque année, les fans et un jury d'experts récompensent les créateurs...",
     "cast": "",
     "airingStatus": "FINISHED",
-    "releaseDate": null,
+    "releaseDate": "01/01/2019",
     "lastEpisodeDate": null,
     "rawStartDate": {
       "year": 2019,
@@ -20602,7 +20602,7 @@ const DEFAULT_ANIME_DATA = [
     "synopsis": "Ashito Aoi vit dans la préfecture d’Ehime, dans le sud du Japon. Il est le meilleur joueur d'un club de football ordinaire. Le jour où ils perdent le tournoi intercollèges, Ashito croise la route d’un homme qui l’a observé. C’est Tatsuya Fukuda, l'entraîneur des jeunes de la J-League du Tokyo City Esperion FC. À la recherche de talents pour constituer la meilleure équipe du monde, il propose à...",
     "cast": "",
     "airingStatus": "FINISHED",
-    "releaseDate": null,
+    "releaseDate": "01/01/2022",
     "lastEpisodeDate": null,
     "rawStartDate": {
       "year": 2022,
@@ -20753,7 +20753,7 @@ const DEFAULT_ANIME_DATA = [
     "synopsis": "Il n'a confiance qu'en sa propre épée. Il n'a pas d'endroit où se sentir chez lui. Le mercenaire solitaire Guts parcourt un pays ravagé par une guerre de cent ans. Passant d'un champ de bataille à l'autre, ses compétences et sa férocité finissent par attirer l'attention de Griffith, le chef d'un groupe de mercenaires appelé “La Troupe du Faucon\". Désirant la puissance de Guts pour l'aider à atteindre ses objectifs, Griffith réussit à le recruter en le battant en duel. Dès lors, leurs liens se renforcent. Grâce à leurs incessantes victoires, la bande de mercenaires est reconnue comme une armée à part entière au sein du royaume du Midland. Mais malgré tous leurs succès, Guts s'interroge sur ses raisons de se battre pour Griffith, qui, à son insu, est destiné à leur réserver à tous deux un sort monstrueux…",
     "cast": "",
     "airingStatus": "FINISHED",
-    "releaseDate": null,
+    "releaseDate": "01/01/2022",
     "lastEpisodeDate": null,
     "rawStartDate": {
       "year": 2022,
@@ -20795,8 +20795,8 @@ const DEFAULT_ANIME_DATA = [
       "day": 4
     },
     "rawEndDate": null,
-    "nextAiringEpisode": null,
-    "nextAiringAt": null,
+    "nextAiringEpisode": 3,
+    "nextAiringAt": 1784379600,
     "seasons": [
       {
         "name": "Saison 1",
@@ -20860,7 +20860,7 @@ const DEFAULT_ANIME_DATA = [
     "synopsis": "De la création de BONES à la production de ses séries les plus emblématiques, BONES 25 : DREAMING FORWARD explore son histoire et ses réalisations, qu'il s'agisse d'adaptations de mangas populaires ou d'histoires uniques et originales.",
     "cast": "",
     "airingStatus": "FINISHED",
-    "releaseDate": null,
+    "releaseDate": "01/01/2024",
     "lastEpisodeDate": null,
     "rawStartDate": {
       "year": 2024,
@@ -21056,7 +21056,7 @@ const DEFAULT_ANIME_DATA = [
     "synopsis": "En vue de participer au tournoi international Junior, le Japon sélectionne des joueurs parmi les équipes des lycées de Nankatsu et de Toho : Tsubasa, Taro, Genzo, Kojiro et Ken. Les voici en route pour Paris avec d’autres joueurs japonais où ils vont affronter les meilleures équipes du monde entier. La compétition s’annonce féroce. Que le tournoi commence !",
     "cast": "",
     "airingStatus": "RELEASING",
-    "releaseDate": null,
+    "releaseDate": "01/01/2023",
     "lastEpisodeDate": null,
     "rawStartDate": {
       "year": 2023,
@@ -21090,7 +21090,7 @@ const DEFAULT_ANIME_DATA = [
     "synopsis": "Un garçon qui a toujours été victime de harcèlement scolaire découvre un jour chez son grand-père un portail s’ouvrant sur un autre monde. Dans cet univers de fantasy, il a accès à toutes sortes de choses, comme des compétences de tricheur, mais aussi la possibilité de voyager entre ces deux dimensions ! Pourra-t-il changer le sens de sa vie lorsqu’il retournera chez lui ?",
     "cast": "",
     "airingStatus": "FINISHED",
-    "releaseDate": null,
+    "releaseDate": "01/01/2023",
     "lastEpisodeDate": null,
     "rawStartDate": {
       "year": 2023,
@@ -21328,7 +21328,7 @@ const DEFAULT_ANIME_DATA = [
     "synopsis": "Eunha Park pensait avoir une nouvelle chance dans la vie lorsqu'elle s'est réveillée dans le monde d'un roman après son décès. Mais Raeliana McMillan, le personnage en lequel elle s'est réincarnée, est destinée à être empoisonnée par son fiancé dans l'histoire du récit ! Pour empêcher cette fin tragique, elle a une idée : réaliser un faux mariage avec un homme plus puissant que son futur époux. Elle se rapproche ainsi de plusieurs protagonistes : le duc Noah Wynknight au sourire chaleureux et au cœur froid. Parviendra-t-elle à changer le dénouement de son histoire ? Et qui Raeliana épousera-t-elle à la fin ?",
     "cast": "",
     "airingStatus": "FINISHED",
-    "releaseDate": null,
+    "releaseDate": "01/01/2023",
     "lastEpisodeDate": null,
     "rawStartDate": {
       "year": 2023,
@@ -22174,7 +22174,7 @@ const DEFAULT_ANIME_DATA = [
     "synopsis": "Mitsuha est une jeune fille de 18 ans que l'on prend souvent pour une collégienne en raison de son visage enfantin et de sa petite taille. L'histoire commence lorsqu'elle perd ses parents et son frère aîné dans un accident et se retrouve alors seule au monde.\r\nÀ cause du choc, elle échoue à ses examens d'entrée à l'université tandis que des personnes cherchent à s’emparer de l’argent de l'assurance-vie de ses parents.\r\nUn peu perdue et alors qu'elle se demande comment elle va survivre, elle reçoit un mystérieux pouvoir lui permettant d'aller et venir entre « notre monde » et un « isekai » ! À présent, elle élabore un plan astucieux pour préparer son avenir dans lequel elle prévoit d’économiser 1 milliard de yens dans chaque monde, soit un total de 2 milliards de yens (80 000 pièces d'or) !",
     "cast": "",
     "airingStatus": "FINISHED",
-    "releaseDate": null,
+    "releaseDate": "01/01/2023",
     "lastEpisodeDate": null,
     "rawStartDate": {
       "year": 2023,
@@ -22247,7 +22247,7 @@ const DEFAULT_ANIME_DATA = [
     "synopsis": "Fils héritier du chef d’une secte, Yukito mène une vie centrée autour de la mystérieuse déesse Mitama. Mais lorsqu'il meurt au cours d'un rituel qui a mal tourné, Yukito renaît dans un monde où la notion de dieu n'existe pas ! Ici, la vie et la mort sont décidées par l'État impérial. Tandis que Yukito se bat pour protéger le village où il vit désormais, sa vie passée le rattrape…",
     "cast": "",
     "airingStatus": "FINISHED",
-    "releaseDate": null,
+    "releaseDate": "01/01/2023",
     "lastEpisodeDate": null,
     "rawStartDate": {
       "year": 2023,
@@ -22281,7 +22281,7 @@ const DEFAULT_ANIME_DATA = [
     "synopsis": "1945 : après sa défaite, le peuple japonais vit dans la crainte des Forces américaines. Au nord du pays, dans la minuscule île de Shikotan, la vie d’après-guerre s’organise dans la peur de l’invasion. Ce petit lot de terre, éloigné de tout, va finalement être annexé par l’armée soviétique. Commence alors une étrange cohabitation entre les familles des soldats soviétiques et les habitants de l’île que tout oppose, mais l’espoir renaît à travers l’innocence de deux enfants, Tanya et Junpei...",
     "cast": "",
     "airingStatus": "FINISHED",
-    "releaseDate": null,
+    "releaseDate": "01/01/2023",
     "lastEpisodeDate": null,
     "rawStartDate": {
       "year": 2023,
@@ -22315,7 +22315,7 @@ const DEFAULT_ANIME_DATA = [
     "synopsis": "Après s'être tuée au travail dans le monde réel, Azusa Aizawa s'est réincarnée en sorcière immortelle dans un autre monde où elle a passé 300 ans à profiter d'une vie paisible. Elle a pourtant tué des tas de slimes pour payer ses factures et gagné de l'expérience, jusqu'à atteindre le niveau 99 ! Désormais, elle traîne une solide réputation et attire aventuriers curieux, dragons duellistes et même un monstre qui la prend pour sa mère ! Tout ceci ne fait pas ses affaires, elle qui aspire toujours à se la couler douce...",
     "cast": "",
     "airingStatus": "RELEASING",
-    "releaseDate": null,
+    "releaseDate": "01/01/2021",
     "lastEpisodeDate": null,
     "rawStartDate": {
       "year": 2021,
@@ -22353,7 +22353,7 @@ const DEFAULT_ANIME_DATA = [
     "synopsis": "Il était une fois... l'histoire de votre corps. Les hématies ont une mission : transporter de l'oxygène dans le corps, jour après jour. Malheureusement pour lui, notre héros du jour vit un enfer quotidien dans un corps où les conditions de travail sont épouvantables. Alcool, clopes, stress, manque de sommeil, rien ne lui est épargné, mais comment les cellules vivent-elles leur labeur dans un environnement aussi détérioré ?",
     "cast": "",
     "airingStatus": "FINISHED",
-    "releaseDate": null,
+    "releaseDate": "01/01/2021",
     "lastEpisodeDate": null,
     "rawStartDate": {
       "year": 2021,
@@ -22387,7 +22387,7 @@ const DEFAULT_ANIME_DATA = [
     "synopsis": "La société secrète Kisaragi. La célèbre et grande entreprise s’est fait un nom en tant qu’organisation criminelle en se salissant les mains de nombreux méfaits, que ce soit en terrassant les héros ou en menant une quête pour gouverner le monde. Cependant, une fois le monde sous son joug, bon nombre de ses combattants seront renvoyés. Afin de pallier ce problème imminent de licenciement pour restructuration, les plus grands officiers de Kisaragi décident donc de conquérir l’espace !",
     "cast": "",
     "airingStatus": "FINISHED",
-    "releaseDate": null,
+    "releaseDate": "01/01/2022",
     "lastEpisodeDate": null,
     "rawStartDate": {
       "year": 2022,
@@ -22421,7 +22421,7 @@ const DEFAULT_ANIME_DATA = [
     "synopsis": "Lorsque décède Toyotaka Kanzaki, critique œnologique de renommée mondiale, il laisse en héritage une fabuleuse collection de vins. Mais son testament stipule qu’elle reviendra à celui qui parviendra à identifier une série de crus exceptionnels. Les prétendants au titre sont son fils, Shizuku, et Issei Tomine, un jeune critique qu’il a adopté.",
     "cast": "",
     "airingStatus": "FINISHED",
-    "releaseDate": null,
+    "releaseDate": "01/01/2026",
     "lastEpisodeDate": null,
     "rawStartDate": {
       "year": 2026,
@@ -22455,7 +22455,7 @@ const DEFAULT_ANIME_DATA = [
     "synopsis": "Développeuse à Los Angeles, Samara “Sam“ Young est sur le point de réaliser son rêve de créer son premier jeu vidéo, Ruminate. Du moins, jusqu'à ce qu'un streamer populaire publie une critique cinglante du jeu. Pire encore, Sam découvre que ce critique est désormais son nouveau voisin ! Une histoire drôle et romantique, très réaliste sur l'univers des jeux vidéos, les mèmes et la pression sociale.",
     "cast": "",
     "airingStatus": "FINISHED",
-    "releaseDate": null,
+    "releaseDate": "01/01/2025",
     "lastEpisodeDate": null,
     "rawStartDate": {
       "year": 2025,
@@ -22490,7 +22490,7 @@ const DEFAULT_ANIME_DATA = [
     "synopsis": "Dans un coin d'une ville prospère, il y a un petit magasin appelé \"Time Photo Studio\" qui est toujours ouvert comme d'habitude. Bien que la boutique soit déserte, elle est en fait gérée par deux hommes aux super pouvoirs - Cheng Xiaoshi et Lu Guang. Afin de mener à bien la commande du client, Lu Guang et Cheng Xiaoshi font équipe pour utiliser leurs super pouvoirs pour accéder aux photos, mais...",
     "cast": "",
     "airingStatus": "FINISHED",
-    "releaseDate": null,
+    "releaseDate": "01/01/2021",
     "lastEpisodeDate": null,
     "rawStartDate": {
       "year": 2021,
@@ -22536,7 +22536,7 @@ const DEFAULT_ANIME_DATA = [
     "synopsis": "Dans un monde steampunk de l’ère victorienne, Zhou Mingrui se réveille sous le nom de Klein Moretti. Il se retrouve confronté à une mystérieuse organisation mêlée à une guerre entre plusieurs églises. Il découvre également qu’il peut utiliser un pouvoir, mais ce dernier n’est pas sans risque…",
     "cast": "",
     "airingStatus": "FINISHED",
-    "releaseDate": null,
+    "releaseDate": "01/01/2025",
     "lastEpisodeDate": null,
     "rawStartDate": {
       "year": 2025,
@@ -23088,7 +23088,7 @@ const DEFAULT_ANIME_DATA = [
     "synopsis": "Kazuya Shiina a été tué en protégeant une jeune fille dans un commerce où il se trouvait par hasard, au mauvais moment. En un instant, il s’est retrouvé dans un monde de magie et d'épées ! Réincarné en Cain von Silford, troisième fils d'une famille aristocratique, il s'intéresse rapidement à son nouveau quotidien. Puis, le jour de son cinquième anniversaire, il est baptisé dans une église, selon la tradition. Contre toute attente, les dieux lui accordent plusieurs bénédictions divines, ainsi que des capacités que l'on ne peut décrire que comme extraordinaires ! Sa mission est désormais de faire progresser ce monde en se basant sur les connaissances de sa vie antérieure. Pourtant, lorsqu'il tente de faire les choses correctement, il ne fait que s'attirer des ennuis…",
     "cast": "",
     "airingStatus": "FINISHED",
-    "releaseDate": null,
+    "releaseDate": "01/01/2023",
     "lastEpisodeDate": null,
     "rawStartDate": {
       "year": 2023,
@@ -23200,7 +23200,7 @@ const DEFAULT_ANIME_DATA = [
     "synopsis": "Les dieux sont sur le pied de guerre pour décider de l'avenir de l'humanité. Un jeune garçon aztèque, Izel, se retrouve pris dans leur jeu dangereux. Afin de sauver les siens, il doit accomplir une tâche impossible : fermer les cinq portes des enfers. Izel n'a d'autre choix que d'accepter sa mission, mais ce n'est qu'une fois celle-ci terminée qu'il pourra également réparer une terrible tragédie.",
     "cast": "",
     "airingStatus": "FINISHED",
-    "releaseDate": null,
+    "releaseDate": "01/01/2020",
     "lastEpisodeDate": null,
     "rawStartDate": {
       "year": 2020,
@@ -23277,7 +23277,7 @@ const DEFAULT_ANIME_DATA = [
     "synopsis": "Mizuki Ashiya a une mission : se faire passer pour un garçon afin d’intégrer un lycée japonais entièrement masculin pour rencontrer son idôle, le champion de saut en hauteur Izumi Sano. Malgré son infiltration réussie, elle découvre qu’il a soudainement abandonné le sport ! Maintenant, Mizuki doit éviter les soupçons, protéger sa couverture et, d’une manière ou d’une autre, se rapprocher de Sano !",
     "cast": "",
     "airingStatus": "FINISHED",
-    "releaseDate": null,
+    "releaseDate": "01/01/2026",
     "lastEpisodeDate": null,
     "rawStartDate": {
       "year": 2026,
@@ -23354,7 +23354,7 @@ const DEFAULT_ANIME_DATA = [
     "synopsis": "Dans une classe de lycée, un projet est lancé pour éduquer les élèves aux bonnes pratiques du mariage. C’est ainsi que Jirô Yakuin, célibataire, se retrouve pseudo-marié à une fille de sa classe assez extravagante, Akari Watanabe. Tout les oppose, mais peu importe : ils pensent chacun que cette expérience va leur permettre de se rapprocher de leur crush respectif. En attendant, ils doivent tout...",
     "cast": "",
     "airingStatus": "FINISHED",
-    "releaseDate": null,
+    "releaseDate": "01/01/2022",
     "lastEpisodeDate": null,
     "rawStartDate": {
       "year": 2022,
@@ -23864,7 +23864,7 @@ const DEFAULT_ANIME_DATA = [
     "synopsis": "Les plans de mariage d'Aileen Lauren d'Autriche ont été soudainement rompus par son propre fiancé ! Sous le choc, elle se rappelle qu'elle s'est réincarnée en méchante dans un jeu de drague pour fille. Elle se souvient que son destin est funeste, mais qu'elle pourrait l'éviter en épousant le boss final, le roi démon Claude. Son nouveau plan : le séduire et vivre heureuse pour toujours.",
     "cast": "",
     "airingStatus": "FINISHED",
-    "releaseDate": null,
+    "releaseDate": "01/01/2022",
     "lastEpisodeDate": null,
     "rawStartDate": {
       "year": 2022,
@@ -24594,7 +24594,7 @@ const DEFAULT_ANIME_DATA = [
     "synopsis": "Shûhei Amamiya est un garçon de bonne famille dont le rêve est de devenir un grand pianiste, comme son père. Un jour, il déménage de Tokyo pour aller vivre quelque temps chez sa grand-mère malade.",
     "cast": "",
     "airingStatus": "FINISHED",
-    "releaseDate": null,
+    "releaseDate": "01/01/2023",
     "lastEpisodeDate": null,
     "rawStartDate": {
       "year": 2023,
@@ -24666,7 +24666,7 @@ const DEFAULT_ANIME_DATA = [
     "synopsis": "À l’aube de la diffusion de la saison 3, voyons comment un manga phénomène donne naissance à un animé culte.",
     "cast": "",
     "airingStatus": "FINISHED",
-    "releaseDate": null,
+    "releaseDate": "01/01/2025",
     "lastEpisodeDate": null,
     "rawStartDate": {
       "year": 2025,
@@ -24890,7 +24890,7 @@ const DEFAULT_ANIME_DATA = [
     "synopsis": "Dans ce monde, la confiance créé les super-héros. S'ils perdent la confiance du public, ils peuvent perdre leurs pouvoirs spéciaux. Le taux de confiance collecté, quantifié sur leur poignet, détermine leur classement et tous les deux ans, les meilleurs d'entre eux s'affrontent dans un tournoi durant lequel le classement et les niveaux de confiance évoluent. Le gagnant obtient le titre de « X ».",
     "cast": "",
     "airingStatus": "FINISHED",
-    "releaseDate": null,
+    "releaseDate": "01/01/2025",
     "lastEpisodeDate": null,
     "rawStartDate": {
       "year": 2025,
@@ -24962,7 +24962,7 @@ const DEFAULT_ANIME_DATA = [
     "synopsis": "Tomo Aizawa est un vrai garçon manqué ! Pourtant, cette lycéenne aimerait bien que son ami d'enfance, Jun’ichirô Kubota, la voie comme une fille, mais toutes ses tentatives sont vaines. Toujours à l'ouest, le jeune homme se rendra-t-il compte un jour des sentiments de Tomo à son égard ?",
     "cast": "",
     "airingStatus": "FINISHED",
-    "releaseDate": null,
+    "releaseDate": "01/01/2023",
     "lastEpisodeDate": null,
     "rawStartDate": {
       "year": 2023,
@@ -25151,7 +25151,7 @@ const DEFAULT_ANIME_DATA = [
     "synopsis": "Jugyeong, autrefois harcelée pour son apparence, se transforme grâce au maquillage. Dans sa nouvelle école, elle devient favorite d'un concours de beauté offrant des opportunités dans le divertissement. Cependant, sa nouvelle identité est menacée lorsque Suho Lee, le bourreau des cœurs, découvre son vrai visage par hasard.",
     "cast": "",
     "airingStatus": "FINISHED",
-    "releaseDate": null,
+    "releaseDate": "01/01/2024",
     "lastEpisodeDate": null,
     "rawStartDate": {
       "year": 2024,
@@ -25185,7 +25185,7 @@ const DEFAULT_ANIME_DATA = [
     "synopsis": "Yuru, le chasseur, vit séparé de sa sœur jumelle Asa, enfermée dans une prison pour satisfaire un rituel. Tous deux ignorent la vérité sur leur naissance et lorsque leur paisible village est attaqué par de mystérieux ennemis, Yuru découvre qu’il peut commander un puissant duo de créatures appelé “Tsugai”.",
     "cast": "",
     "airingStatus": "FINISHED",
-    "releaseDate": null,
+    "releaseDate": "01/01/2026",
     "lastEpisodeDate": null,
     "rawStartDate": {
       "year": 2026,
@@ -25379,7 +25379,7 @@ const DEFAULT_ANIME_DATA = [
     "synopsis": "L'organisation secrète de \"Humarise\", qui souhaite restaurer la pureté de l'humanité en supprimant les porteurs d'Alters, a secrètement placé en différents points du globe des bombes d'un nouveau genre.",
     "cast": "",
     "airingStatus": "FINISHED",
-    "releaseDate": null,
+    "releaseDate": "01/01/2021",
     "lastEpisodeDate": null,
     "rawStartDate": {
       "year": 2021,
