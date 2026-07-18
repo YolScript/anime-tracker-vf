@@ -16,7 +16,7 @@ function curl(args) {
 }
 
 async function getAnonToken() {
-    const basic = Buffer.from("noaihdevm_6iyg0a8l0q:").toString("base64");
+    const basic = Buffer.from((process.env.CR_CLIENT_ID || "noaihdevm_6iyg0a8l0q") + ":").toString("base64");
     const out = await curl([
         "-X", "POST", "https://www.crunchyroll.com/auth/v1/token",
         "-H", "Authorization: Basic " + basic,

@@ -49,10 +49,18 @@ Set-Location $proj
 if ($LASTEXITCODE -ne 0) { throw "zipalign a echoue" }
 
 # 7. Signer (mot de passe lu depuis keystore-info.txt, jamais commite)
+# Passe par une variable d'environnement (env:) plutot qu'un argument CLI en
+# clair (pass:) : un argument de ligne de commande reste visible dans la
+# liste des processus (Get-Process / Gestionnaire des taches) pendant toute
+# la duree de l'appel, une variable d'env de ce seul processus ne l'est pas.
 $passLine = (Get-Content "$repo\keystore-info.txt" | Select-String "Password").Line
-$pass = $passLine.Split(":")[1].Trim()
-& "$buildTools\apksigner.bat" sign --ks "$repo\release.keystore" --ks-key-alias animetrackervf --ks-pass "pass:$pass" --key-pass "pass:$pass" --out "$repo\anime-tracker-vf.apk" "$proj\out\app.aligned.apk"
-if ($LASTEXITCODE -ne 0) { throw "apksigner a echoue" }
+$env:AT_KS_PASS = $passLine.Split(":")[1].Trim()
+try {
+    & "$buildTools\apksigner.bat" sign --ks "$repo\release.keystore" --ks-key-alias animetrackervf --ks-pass "env:AT_KS_PASS" --key-pass "env:AT_KS_PASS" --out "$repo\anime-tracker-vf.apk" "$proj\out\app.aligned.apk"
+    if ($LASTEXITCODE -ne 0) { throw "apksigner a echoue" }
+} finally {
+    Remove-Item Env:\AT_KS_PASS -ErrorAction SilentlyContinue
+}
 
 # 8. Verifier la signature
 & "$buildTools\apksigner.bat" verify --print-certs "$repo\anime-tracker-vf.apk"

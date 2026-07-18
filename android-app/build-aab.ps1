@@ -52,10 +52,17 @@ Pop-Location
 if ($LASTEXITCODE -ne 0) { throw "bundletool build-bundle a echoue" }
 
 # 7. Signer (les AAB se signent avec jarsigner, meme keystore que l'APK)
+# -storepass:env / -keypass:env lisent le mot de passe depuis une variable
+# d'environnement du processus au lieu d'un argument CLI en clair (visible
+# dans la liste des processus pendant toute la duree de l'appel).
 $passLine = (Get-Content "$repo\keystore-info.txt" | Select-String "Password").Line
-$pass = $passLine.Split(":")[1].Trim()
-& jarsigner -keystore "$repo\release.keystore" -storepass $pass -keypass $pass -digestalg SHA-256 -sigalg SHA256withRSA "$out\anime-tracker-vf.aab" animetrackervf
-if ($LASTEXITCODE -ne 0) { throw "jarsigner a echoue" }
+$env:AT_KS_PASS = $passLine.Split(":")[1].Trim()
+try {
+    & jarsigner -keystore "$repo\release.keystore" -storepass:env AT_KS_PASS -keypass:env AT_KS_PASS -digestalg SHA-256 -sigalg SHA256withRSA "$out\anime-tracker-vf.aab" animetrackervf
+    if ($LASTEXITCODE -ne 0) { throw "jarsigner a echoue" }
+} finally {
+    Remove-Item Env:\AT_KS_PASS -ErrorAction SilentlyContinue
+}
 
 # 8. Valider
 & java -jar $bundletool validate --bundle "$out\anime-tracker-vf.aab" | Select-Object -First 15

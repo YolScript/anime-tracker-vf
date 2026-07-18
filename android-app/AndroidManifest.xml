@@ -13,7 +13,8 @@
         android:label="Anime Tracker VF"
         android:icon="@mipmap/ic_launcher"
         android:theme="@android:style/Theme.DeviceDefault.NoActionBar"
-        android:supportsRtl="false">
+        android:supportsRtl="false"
+        android:allowBackup="false">
 
         <activity
             android:name=".MainActivity"

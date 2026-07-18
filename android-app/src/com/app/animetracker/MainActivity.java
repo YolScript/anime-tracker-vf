@@ -73,11 +73,18 @@ public class MainActivity extends Activity {
                     return true;
                 }
 
+                // Discord n'est autorise dans le WebView que sur les chemins du
+                // flux OAuth lui-meme (pas tout discord.com) : reduit la surface
+                // de confiance du WebView exporte au strict necessaire pour que
+                // la connexion aboutisse.
+                boolean isDiscordAuthFlow = host != null
+                        && (host.equals("discord.com") || host.endsWith(".discord.com"))
+                        && (path.startsWith("/oauth2/") || path.startsWith("/api/oauth2/") || path.startsWith("/login"));
+
                 if (host != null && (host.equals(APP_HOST)
-                        // Reste du flux Supabase / Discord : rester dans le WebView
+                        // Reste du flux Supabase (callback OAuth) : rester dans le WebView
                         || host.endsWith(".supabase.co")
-                        || host.equals("discord.com")
-                        || host.endsWith(".discord.com"))) {
+                        || isDiscordAuthFlow)) {
                     return false; // navigation interne dans le WebView
                 }
                 // Liens externes (Crunchyroll, ADN...) -> navigateur / app dédiée

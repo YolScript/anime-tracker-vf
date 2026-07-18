@@ -5,18 +5,12 @@
 // @description  Synchronise automatiquement votre historique Crunchyroll vers Anime Tracker VF. Récupère vos épisodes vus via l'API interne de Crunchyroll.
 // @author       Anime Tracker VF
 // @match        https://www.crunchyroll.com/*
-// @grant        GM_xmlhttpRequest
-// @grant        GM_setValue
-// @grant        GM_getValue
-// @connect      www.crunchyroll.com
+// @grant        none
 // @run-at       document-idle
 // ==/UserScript==
 
 (function () {
     'use strict';
-
-    const TRACKER_ORIGIN = "https://yolscript.github.io";
-    const TRACKER_STORAGE_KEY = "crunchy_tracker_cr_sync";
 
     // =====================================================================
     // 1. Récupérer le Bearer Token depuis les cookies/session Crunchyroll
@@ -36,22 +30,6 @@
                 }
             } catch (e) { /* ignore */ }
         }
-
-        // Méthode 2 : Essayer de récupérer depuis les cookies de session
-        // Le cookie etp_rt contient le refresh token
-        try {
-            const indexResp = await fetch("https://www.crunchyroll.com/index/v2", {
-                credentials: "include",
-                headers: { "Accept": "application/json" }
-            });
-            if (indexResp.ok) {
-                const indexData = await indexResp.json();
-                if (indexData.cms_web && indexData.cms_web.bucket) {
-                    // On a les infos CMS, on peut tenter de récupérer le token
-                    // depuis les en-têtes de la réponse
-                }
-            }
-        } catch (e) { /* ignore */ }
 
         // Méthode 3 : Récupérer via l'endpoint token
         try {

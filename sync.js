@@ -32,7 +32,24 @@ const CAME_FROM_OAUTH = window.location.hash.indexOf("access_token") !== -1
 let sbClient = null;
 let syncUser = null;
 let syncPushTimer = null;
+let pushRetryTimer = null;
 let lastPushedJson = null;
+
+// Validation minimale des donnees cloud avant de les appliquer en local ou
+// de les afficher publiquement (classement) : rejette les entrees qui ne
+// sont pas des objets simples (une ligne Supabase corrompue ou d'un ancien
+// format ne doit pas se propager telle quelle).
+function sanitizeCloudProgress(cloud) {
+    const clean = {};
+    if (!cloud || typeof cloud !== "object") return clean;
+    Object.keys(cloud).forEach(key => {
+        const val = cloud[key];
+        if (val && typeof val === "object" && !Array.isArray(val)) {
+            clean[key] = val;
+        }
+    });
+    return clean;
+}
 
 function isSyncConfigured() {
     return SUPABASE_URL !== "" && SUPABASE_ANON_KEY !== "" && typeof supabase !== "undefined";
@@ -50,6 +67,17 @@ function syncLog(msg) {
 // (première connexion), il est initialisé avec les données locales.
 async function pullAndMergeFromCloud(showFeedback) {
     if (!sbClient || !syncUser) return;
+
+    // Une modification locale attend encore son envoi (schedulePush pas
+    // encore declenche) : l'envoyer d'abord plutot que de laisser ce pull
+    // ecraser le changement tout juste fait avec d'anciennes donnees cloud.
+    if (syncPushTimer) {
+        clearTimeout(syncPushTimer);
+        syncPushTimer = null;
+        await pushToCloud();
+        return;
+    }
+
     const { data, error } = await sbClient
         .from(SYNC_TABLE)
         .select("data")
@@ -59,7 +87,7 @@ async function pullAndMergeFromCloud(showFeedback) {
         syncLog("Erreur de lecture cloud: " + error.message);
         return;
     }
-    const cloud = (data && data.data) ? data.data : null;
+    const cloud = (data && data.data) ? sanitizeCloudProgress(data.data) : null;
 
     if (cloud && Object.keys(cloud).length > 0) {
         const json = JSON.stringify(cloud);
@@ -116,7 +144,19 @@ async function pushToCloud() {
     });
     if (error) {
         console.error("[Sync] Erreur d'écriture cloud:", error);
+        // Retente automatiquement (erreur transitoire / perte de connexion)
+        // au lieu d'abandonner en silence : sans ca, une modification faite
+        // hors-ligne pouvait rester bloquee en local indefiniment si aucune
+        // autre modification ne relance schedulePush() par la suite.
+        if (!pushRetryTimer) {
+            pushRetryTimer = setTimeout(() => {
+                pushRetryTimer = null;
+                if (syncUser) pushToCloud();
+            }, 5000);
+        }
     } else {
+        clearTimeout(pushRetryTimer);
+        pushRetryTimer = null;
         lastPushedJson = json;
         if (typeof isLeaderboardOpen !== "undefined" && isLeaderboardOpen) {
             fetchAndRenderLeaderboard();
@@ -240,6 +280,13 @@ function initDiscordSync() {
 
     sbClient.auth.onAuthStateChange((event, session) => {
         syncLog("Événement auth: " + event + " | session: " + (session ? "OUI" : "non"));
+        if (event === "TOKEN_REFRESHED") {
+            // Rafraichissement silencieux du token : meme utilisateur, ne pas
+            // reinitialiser l'etat de sync (lastPushedJson) ni redeclencher
+            // un pull qui pourrait courir en meme temps qu'un push en cours.
+            if (session) syncUser = session.user;
+            return;
+        }
         const wasConnected = !!syncUser;
         syncUser = session ? session.user : null;
         lastPushedJson = null;
@@ -280,11 +327,30 @@ function initDiscordSync() {
     const pullIfConnected = () => {
         if (syncUser) pullAndMergeFromCloud(false);
     };
+    // Envoie immediatement une modification encore en attente (schedulePush)
+    // au lieu de laisser son delai de 2s courir : sans ca, cocher un episode
+    // puis fermer l'onglet/l'app aussitot perdait le push cloud.
+    const flushPendingPush = () => {
+        if (syncPushTimer) {
+            clearTimeout(syncPushTimer);
+            syncPushTimer = null;
+            pushToCloud();
+        }
+    };
     document.addEventListener("visibilitychange", () => {
-        if (!document.hidden) pullIfConnected();
+        if (document.hidden) {
+            flushPendingPush();
+        } else {
+            pullIfConnected();
+        }
     });
+    window.addEventListener("pagehide", flushPendingPush);
     window.addEventListener("focus", pullIfConnected);
     window.addEventListener("pageshow", pullIfConnected);
+    // Retente un push reste en echec (hors-ligne) des que la connexion revient.
+    window.addEventListener("online", () => {
+        if (syncUser) pushToCloud();
+    });
     setInterval(pullIfConnected, 60000);
     // Appelé par MainActivity (APK) à chaque retour au premier plan
     window.__animeSyncPull = pullIfConnected;
@@ -347,8 +413,8 @@ async function fetchAndRenderLeaderboard() {
             let topAnimeId = null;
             let topAnimeEps = 0;
             Object.keys(progress).forEach(key => {
-                if (key !== "__user_profile" && progress[key] && typeof progress[key] === "object") {
-                    const eps = parseInt(progress[key].episodesWatched || 0);
+                if (key !== "__user_profile" && progress[key] && typeof progress[key] === "object" && !Array.isArray(progress[key])) {
+                    const eps = Math.max(0, parseInt(progress[key].episodesWatched, 10) || 0);
                     totalEps += eps;
                     if (progress[key].status === "completed") completedCount++;
                     if (eps > topAnimeEps) { topAnimeEps = eps; topAnimeId = key; }

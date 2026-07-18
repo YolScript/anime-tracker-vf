@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Defense en profondeur contre l'injection HTML stockee (titres/synopsis
+         de sources tierces AniList/Crunchyroll/ADN/JustWatch dans catalog.js) :
+         aucun script inline/on*= n'est utilise sur ce site, bloquer script-src
+         inline neutralise l'execution d'un payload injecte meme si un champ
+         venait a manquer d'echappement. img-src reste large (*) car les
+         affiches viennent de CDN multiples et imprevisibles. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://storage.ko-fi.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://storage.ko-fi.com; font-src 'self' https://fonts.gstatic.com; img-src * data: blob:; media-src 'self' https://v.animethemes.moe blob:; frame-src https://www.youtube.com https://ko-fi.com https://storage.ko-fi.com; connect-src 'self' https://graphql.anilist.co https://translate.googleapis.com https://*.supabase.co wss://*.supabase.co https://gw.api.animationdigitalnetwork.fr; object-src 'none'; base-uri 'self';">
 
     <meta name="description" content="Suivez et gérez vos animés doublés en français (VF) sur Crunchyroll. Suivi d'épisodes, notes, statistiques en temps réel et base de données personnalisable.">
     <meta name="theme-color" content="#ff6400">

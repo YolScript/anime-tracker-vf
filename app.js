@@ -132,9 +132,24 @@ const countHidden = document.getElementById("count-hidden");
 // Toast notification system removed
 
 // ==========================================================================
+// HTML ESCAPING (donnees tierces AniList/Crunchyroll/ADN/JustWatch injectees
+// dans innerHTML : jamais dignes de confiance telles quelles)
+// ==========================================================================
+function escapeHtml(str) {
+    if (str === null || str === undefined) return "";
+    return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+}
+
+// ==========================================================================
 // IMAGE FALLBACK GENERATOR
 // ==========================================================================
 function getFallbackImage(title) {
+    title = title || "Anime";
     const fillStyle = "%2323252b";
     const accentStyle = "%23ff6400";
     const textStyle = "%23a0a0a5";
@@ -145,9 +160,22 @@ function getFallbackImage(title) {
 // ==========================================================================
 // DATA CORE OPERATIONS (LOCAL STORAGE)
 // ==========================================================================
+// Champs catalogue mis a jour par syncWithAniList() (jamais par l'utilisateur)
+// qu'il faut persister a part de la progression pour ne pas les perdre au
+// prochain chargement, quand ils different de la valeur d'origine catalog.js.
+const SYNC_PERSISTED_FIELDS = [
+    "episodesTotal", "seasons", "airingStatus",
+    "nextAiringEpisode", "nextAiringAt", "crunchyrollUrl", "adnUrl"
+];
+
 function loadData() {
-    // 1. Initialize merged list with a deep copy of DEFAULT_ANIME_DATA
-    const mergedList = DEFAULT_ANIME_DATA.map(item => ({ ...item }));
+    // 1. Initialize merged list with a real deep copy of DEFAULT_ANIME_DATA :
+    // un spread {...item} est superficiel, anime.seasons (et les objets
+    // saison qu'il contient) restait une reference partagee avec les
+    // donnees par defaut — une correction de saison (plus bas, ou via un
+    // sync AniList) mutait alors l'objet source partage et s'accumulait
+    // d'un chargement a l'autre dans la meme session.
+    const mergedList = DEFAULT_ANIME_DATA.map(item => structuredClone(item));
     
     // Auto-backfill ADN URLs for popular shows available on ADN in France
     const getAdnUrlForShow = (titleFr) => {
@@ -314,6 +342,13 @@ function loadData() {
                 updated.episodesWatched = record.episodesWatched || 0;
                 updated.status = record.status || "plan-to-watch";
                 updated.rating = record.rating || 0;
+                // Reapplique les champs mis a jour par un sync AniList precedent
+                // (total d'episodes reel, saisons, prochain episode, liens...) :
+                // sans ca, loadData() les regenererait depuis catalog.js statique
+                // et perdrait la mise a jour a chaque rechargement de page.
+                SYNC_PERSISTED_FIELDS.forEach(key => {
+                    if (record[key] !== undefined) updated[key] = record[key];
+                });
                 finalActiveList.push(updated);
             }
         }
@@ -348,7 +383,8 @@ function loadData() {
 function saveData() {
     const progressData = {};
     animeList.forEach(anime => {
-        const isCustom = !DEFAULT_ANIME_DATA.some(d => d.id === anime.id);
+        const defaultAnime = DEFAULT_ANIME_DATA.find(d => d.id === anime.id);
+        const isCustom = !defaultAnime;
         if (isCustom) {
             // For custom shows, save the full object
             progressData[anime.id] = {
@@ -356,12 +392,24 @@ function saveData() {
                 isCustom: true
             };
         } else {
-            // For catalog shows, only save user progress fields
-            if (anime.episodesWatched > 0 || anime.status !== "plan-to-watch" || anime.rating > 0) {
+            // Champs mis a jour par un sync AniList (total reel, saisons,
+            // prochain episode, liens...) : a persister des qu'ils different
+            // du catalogue statique, sinon perdus au prochain chargement.
+            const syncFields = {};
+            let hasSyncDrift = false;
+            SYNC_PERSISTED_FIELDS.forEach(key => {
+                if (JSON.stringify(anime[key]) !== JSON.stringify(defaultAnime[key])) {
+                    syncFields[key] = anime[key];
+                    hasSyncDrift = true;
+                }
+            });
+            // For catalog shows, save user progress fields (+ sync drift if any)
+            if (anime.episodesWatched > 0 || anime.status !== "plan-to-watch" || anime.rating > 0 || hasSyncDrift) {
                 progressData[anime.id] = {
                     episodesWatched: anime.episodesWatched,
                     status: anime.status,
-                    rating: anime.rating
+                    rating: anime.rating,
+                    ...syncFields
                 };
             }
         }
@@ -442,9 +490,14 @@ function renderHero() {
 
     // Auto-translate hero synopsis in background if in English
     if (pick.synopsis && isEnglishText(pick.synopsis)) {
+        const pickId = pick.id;
         translateTextToFrench(pick.synopsis).then(translated => {
-            if (translated && translated !== pick.synopsis) {
-                pick.synopsis = translated;
+            // Retrouve l'objet courant par id : si loadData() a relance entre
+            // temps (pull cloud), "pick" reference un objet qui n'est plus
+            // dans animeList et la mutation ne serait jamais persistee.
+            const current = animeList.find(a => a.id === pickId);
+            if (current && translated && translated !== current.synopsis) {
+                current.synopsis = translated;
                 saveData();
                 const heroSynEl = hero.querySelector(".hero-synopsis");
                 if (heroSynEl) {
@@ -540,9 +593,9 @@ function renderGrid() {
         }
         
         // Search filter
-        if (currentSearch) {
-            const query = currentSearch.toLowerCase();
-            const matchTitleFr = anime.titleFr.toLowerCase().includes(query);
+        if (currentSearch && currentSearch.trim() !== "") {
+            const query = currentSearch.toLowerCase().trim();
+            const matchTitleFr = (anime.titleFr || "").toLowerCase().includes(query);
             const matchTitleOrig = anime.titleOrig ? anime.titleOrig.toLowerCase().includes(query) : false;
             const matchGenres = anime.genres ? anime.genres.toLowerCase().includes(query) : false;
             const matchCast = anime.cast ? anime.cast.toLowerCase().includes(query) : false;
@@ -573,7 +626,7 @@ function renderGrid() {
     // 2. Sort
     filteredList.sort((a, b) => {
         if (currentSort === "alphabetical") {
-            return a.titleFr.localeCompare(b.titleFr, "fr", { sensitivity: "base" });
+            return (a.titleFr || "").localeCompare(b.titleFr || "", "fr", { sensitivity: "base" });
         }
         
         if (currentSort === "rating") {
@@ -581,42 +634,42 @@ function renderGrid() {
             const rA = a.rating || 0;
             const rB = b.rating || 0;
             if (rA !== rB) return rB - rA;
-            return a.titleFr.localeCompare(b.titleFr, "fr", { sensitivity: "base" });
+            return (a.titleFr || "").localeCompare(b.titleFr || "", "fr", { sensitivity: "base" });
         }
         
         if (currentSort === "episodes-left") {
             const leftA = Math.max(0, (a.episodesTotal || 0) - (a.episodesWatched || 0));
             const leftB = Math.max(0, (b.episodesTotal || 0) - (b.episodesWatched || 0));
             if (leftA !== leftB) return leftA - leftB; // Lesser episodes left first
-            return a.titleFr.localeCompare(b.titleFr, "fr", { sensitivity: "base" });
+            return (a.titleFr || "").localeCompare(b.titleFr || "", "fr", { sensitivity: "base" });
         }
         
         if (currentSort === "progress-pct") {
             const pctA = (a.episodesTotal || 1) > 0 ? (a.episodesWatched || 0) / (a.episodesTotal || 1) : 0;
             const pctB = (b.episodesTotal || 1) > 0 ? (b.episodesWatched || 0) / (b.episodesTotal || 1) : 0;
             if (pctA !== pctB) return pctB - pctA; // Highest progress first
-            return a.titleFr.localeCompare(b.titleFr, "fr", { sensitivity: "base" });
+            return (a.titleFr || "").localeCompare(b.titleFr || "", "fr", { sensitivity: "base" });
         }
 
         if (currentSort === "release-date-desc") {
             const tA = getStartDateMs(a);
             const tB = getStartDateMs(b);
             if (tA !== tB) return tB - tA; // Newest first
-            return a.titleFr.localeCompare(b.titleFr, "fr", { sensitivity: "base" });
+            return (a.titleFr || "").localeCompare(b.titleFr || "", "fr", { sensitivity: "base" });
         }
 
         if (currentSort === "release-date-asc") {
             const tA = getStartDateMs(a);
             const tB = getStartDateMs(b);
             if (tA !== tB) return tA - tB; // Oldest first
-            return a.titleFr.localeCompare(b.titleFr, "fr", { sensitivity: "base" });
+            return (a.titleFr || "").localeCompare(b.titleFr || "", "fr", { sensitivity: "base" });
         }
 
         if (currentSort === "last-episode-desc") {
             const tA = getEndDateMs(a);
             const tB = getEndDateMs(b);
             if (tA !== tB) return tB - tA; // Latest first
-            return a.titleFr.localeCompare(b.titleFr, "fr", { sensitivity: "base" });
+            return (a.titleFr || "").localeCompare(b.titleFr || "", "fr", { sensitivity: "base" });
         }
         
         return 0;
@@ -688,6 +741,9 @@ function createAnimeCard(anime) {
         
         // Image URL handling
         const coverSrc = anime.imageUrl ? anime.imageUrl : getFallbackImage(anime.titleFr);
+        const safeTitleFr = escapeHtml(anime.titleFr || "Sans titre");
+        const safeTitleOrig = escapeHtml(anime.titleOrig || "");
+        const safeCast = escapeHtml(anime.cast || "");
         
         // Stars rendering
         const starsText = anime.rating > 0 ? `★ ${anime.rating}` : "Pas noté";
@@ -697,7 +753,7 @@ function createAnimeCard(anime) {
         
         card.innerHTML = `
             <div class="card-image-wrapper js-open-details">
-                <img class="card-image" src="${coverSrc}" alt="Affiche de ${anime.titleFr}" loading="lazy">
+                <img class="card-image" src="${coverSrc}" alt="Affiche de ${safeTitleFr}" loading="lazy">
                 <div class="card-overlay"></div>
                 <span class="card-badge-vf ${isVf ? 'vf' : 'vostfr'}">${isVf ? 'VF' : 'VOSTFR'}</span>
                 <div class="card-platform-badges">
@@ -751,7 +807,7 @@ function createAnimeCard(anime) {
                 ` : ''}
                 <div class="card-hover-meta">
                     <span class="hover-line"><span class="star">★</span> ${anime.siteRating || "—"} &nbsp;•&nbsp; ${total} épisode${total > 1 ? 's' : ''}</span>
-                    ${anime.genres ? `<span class="hover-line">${anime.genres.split(',').slice(0, 3).join(' · ')}</span>` : ''}
+                    ${anime.genres ? `<span class="hover-line">${escapeHtml(anime.genres.split(',').slice(0, 3).join(' · '))}</span>` : ''}
                     <span class="hover-line">${total - watched > 0 ? `${total - watched} épisode${total - watched > 1 ? 's' : ''} restant${total - watched > 1 ? 's' : ''}` : 'Terminé ✓'}</span>
                 </div>
                 <span class="card-rating-overlay" title="Note officielle de la communauté (Crunchyroll / AniList)">
@@ -762,21 +818,21 @@ function createAnimeCard(anime) {
             
             <div class="card-content">
                 <div class="card-header-info js-open-details">
-                    <h3 class="card-title-fr">${anime.titleFr}</h3>
+                    <h3 class="card-title-fr">${safeTitleFr}</h3>
                     <div class="card-title-orig">
                         ${anime.seasons && Array.isArray(anime.seasons) && anime.seasons.length > 0
-                            ? `${anime.seasons.length} Saison${anime.seasons.length > 1 ? 's' : ''}${anime.titleOrig ? ' • ' + anime.titleOrig : ''}`
-                            : `${anime.season ? anime.season + ' • ' : ''}${anime.titleOrig || ""}`
+                            ? `${anime.seasons.length} Saison${anime.seasons.length > 1 ? 's' : ''}${anime.titleOrig ? ' • ' + safeTitleOrig : ''}`
+                            : `${anime.season ? escapeHtml(anime.season) + ' • ' : ''}${safeTitleOrig}`
                         }
                     </div>
                     ${anime.cast ? `
-                        <div class="card-cast" title="${anime.cast.replace(/"/g, '&quot;')}">
+                        <div class="card-cast" title="${safeCast}">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
                                 <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
                                 <line x1="12" y1="19" x2="12" y2="22"></line>
                             </svg>
-                            <span>VF : ${anime.cast}</span>
+                            <span>VF : ${safeCast}</span>
                         </div>
                     ` : ''}
                 </div>
@@ -796,6 +852,7 @@ function createAnimeCard(anime) {
         // Add onerror handler to the image element
         const cardImg = card.querySelector(".card-image");
         cardImg.onerror = () => {
+            cardImg.onerror = null; // evite une boucle si le repli echoue aussi
             cardImg.src = getFallbackImage(anime.titleFr);
         };
         
@@ -911,13 +968,15 @@ function showAnimeDetails(id) {
     }
     
     // Build hero banner (we can use the poster image with custom styles or a blurred fallback)
+    const safeDetailTitleFr = escapeHtml(anime.titleFr || "Sans titre");
+    const safeDetailTitleOrig = escapeHtml(anime.titleOrig || "");
     detailModalBody.innerHTML = `
         <div class="detail-header-hero" style="background-image: linear-gradient(rgba(20, 21, 25, 0.5), rgba(20, 21, 25, 1)), url('${coverSrc}');">
             <div class="detail-hero-content">
-                <img class="detail-poster-img" src="${coverSrc}" alt="Affiche" onerror="this.src=getFallbackImage('${anime.titleFr.replace(/'/g, "\\'")}')">
+                <img class="detail-poster-img" src="${coverSrc}" alt="Affiche">
                 <div class="detail-title-block">
-                    <h2 class="detail-title-fr">${anime.titleFr}</h2>
-                    <div class="detail-title-orig">${anime.titleOrig || ""}</div>
+                    <h2 class="detail-title-fr">${safeDetailTitleFr}</h2>
+                    <div class="detail-title-orig">${safeDetailTitleOrig}</div>
                 </div>
             </div>
         </div>
@@ -990,13 +1049,13 @@ function showAnimeDetails(id) {
                 
                 <div>
                     <h3 class="detail-section-title">Synopsis</h3>
-                    <p class="detail-synopsis-text">${anime.synopsis || "Aucun synopsis disponible pour cet animé."}</p>
+                    <p class="detail-synopsis-text">${escapeHtml(anime.synopsis) || "Aucun synopsis disponible pour cet animé."}</p>
                 </div>
-                
+
                 ${anime.cast ? `
                 <div>
                     <h3 class="detail-section-title">Doublage VF</h3>
-                    <p class="detail-cast-list">${anime.cast}</p>
+                    <p class="detail-cast-list">${escapeHtml(anime.cast)}</p>
                 </div>
                 ` : ''}
                 
@@ -1042,17 +1101,36 @@ function showAnimeDetails(id) {
         closeModal(detailModal);
     });
     
+    // Repli image poster + fond du bandeau hero si l'URL de couverture est
+    // cassee/bloquee (attache en JS plutot qu'en attribut onerror inline,
+    // qui obligeait a un echappement JS-dans-attribut fragile)
+    const detailPosterImg = detailModalBody.querySelector(".detail-poster-img");
+    const detailHeroEl = detailModalBody.querySelector(".detail-header-hero");
+    if (detailPosterImg) {
+        detailPosterImg.addEventListener("error", () => {
+            const fallback = getFallbackImage(anime.titleFr);
+            detailPosterImg.src = fallback;
+            if (detailHeroEl) {
+                detailHeroEl.style.backgroundImage = `linear-gradient(rgba(20, 21, 25, 0.5), rgba(20, 21, 25, 1)), url('${fallback}')`;
+            }
+        }, { once: true });
+    }
+
     openModal(detailModal);
 
     // Auto-translate detail synopsis in background if in English
     if (anime.synopsis && isEnglishText(anime.synopsis)) {
+        const animeId = anime.id;
         translateTextToFrench(anime.synopsis).then(translated => {
-            if (translated && translated !== anime.synopsis) {
+            // Retrouve l'objet courant par id (voir showRecommendedHero) : evite
+            // de muter un objet orphelin si loadData() a relance entre-temps.
+            const current = animeList.find(a => a.id === animeId);
+            if (current && translated && translated !== current.synopsis) {
                 const synTextEl = detailModal.querySelector(".detail-synopsis-text");
                 if (synTextEl) {
-                    synTextEl.innerHTML = `${translated} <span style="font-size: 10px; color: var(--primary); display: block; margin-top: 6px; font-style: italic;">(Traduit automatiquement par l'IA)</span>`;
+                    synTextEl.innerHTML = `${escapeHtml(translated)} <span style="font-size: 10px; color: var(--primary); display: block; margin-top: 6px; font-style: italic;">(Traduit automatiquement par l'IA)</span>`;
                 }
-                anime.synopsis = translated;
+                current.synopsis = translated;
                 saveData();
             }
         });
@@ -1425,9 +1503,12 @@ function resetToDefault() {
         localStorage.removeItem("crunchy_tracker_progress_v2");
         localStorage.removeItem("crunchy_tracker_animes");
         loadData();
+        // Persiste (et propage au cloud si connecte) l'etat vierge : sans ca,
+        // le prochain pull automatique (focus, intervalle) restaurait
+        // silencieusement toute la progression soi-disant reinitialisee.
+        saveData();
         updateStats();
         renderGrid();
-
     }
 }
 
@@ -1538,12 +1619,23 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
     }
     
     let currentPlayingEp = Math.max(1, Math.min(activeEpisodeNum, total));
-    
+
+    // Si loadData() remplace animeList pendant que le lecteur reste ouvert
+    // (pull cloud sur focus/intervalle, sync AniList...), "anime" reste sinon
+    // fige sur l'ancien objet orphelin : on le rafraichit en place (meme
+    // reference, donc tout le reste de cette fonction continue de marcher)
+    // avant chaque rendu/chargement d'episode.
+    const refreshAnimeFromList = () => {
+        const fresh = animeList.find(a => a.id === animeId);
+        if (fresh && fresh !== anime) Object.assign(anime, fresh);
+    };
+
     // Function to render the list of episodes in the sidebar
     const renderPlaylist = () => {
+        refreshAnimeFromList();
         const listContainer = document.getElementById("player-episodes-list");
         if (!listContainer) return;
-        
+
         listContainer.innerHTML = "";
         const currentWatched = parseInt(anime.episodesWatched || 0);
         
@@ -1638,6 +1730,7 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
     };
     
     const loadEpisode = (epNum) => {
+        refreshAnimeFromList();
         currentPlayingEp = epNum;
         const currentWatched = parseInt(anime.episodesWatched || 0);
         
@@ -2115,9 +2208,25 @@ document.addEventListener("DOMContentLoaded", () => {
                 try {
                     const base64Data = hash.substring("#sync-data=".length);
                     const jsonStr = decodeURIComponent(escape(atob(base64Data)));
-                    const importedData = JSON.parse(jsonStr);
-                    
-                    if (Array.isArray(importedData) && importedData.length > 0) {
+                    const rawImported = JSON.parse(jsonStr);
+
+                    // N'importe quelle page peut fabriquer une URL #sync-data= : on ne
+                    // fait confiance a aucun champ hors de la forme "historique partiel"
+                    // attendue des userscripts ADN/Crunchyroll. En particulier on retire
+                    // tout episodesTotal pour empecher un declenchement du mode "backup
+                    // complet" (qui remplacerait tout animeList) via une simple URL.
+                    const importedData = Array.isArray(rawImported)
+                        ? rawImported
+                            .filter(item => item && typeof item === "object" && typeof item.titleFr === "string" && item.titleFr.trim() !== "")
+                            .slice(0, 2000)
+                            .map(item => ({
+                                titleFr: item.titleFr,
+                                episodesWatched: Math.max(0, parseInt(item.episodesWatched, 10) || 0),
+                                source: typeof item.source === "string" ? item.source : "inconnu"
+                            }))
+                        : [];
+
+                    if (importedData.length > 0) {
                         importDataList(importedData);
                     }
                     // Clear the hash from URL without reloading
@@ -2445,12 +2554,12 @@ async function syncWithAniList() {
                 
                 if (vfActors.length > 0) {
                     const localId = `franchise-${item.id}`;
-                    const titleFr = item.title.english || item.title.romaji;
-                    
-                    const exists = animeList.some(a => 
-                        a.id === localId || 
-                        a.id === `franchise-anilist-${item.id}` || 
-                        a.titleFr.toLowerCase() === titleFr.toLowerCase()
+                    const titleFr = item.title.english || item.title.romaji || item.title.native || "Titre inconnu";
+
+                    const exists = animeList.some(a =>
+                        a.id === localId ||
+                        a.id === `franchise-anilist-${item.id}` ||
+                        (a.titleFr || "").toLowerCase() === titleFr.toLowerCase()
                     );
                     
                     if (!exists) {

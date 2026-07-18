@@ -26,7 +26,7 @@ function writeAtomic(filePath, content) {
 }
 
 async function getAnonToken() {
-    const basic = Buffer.from("noaihdevm_6iyg0a8l0q:").toString("base64");
+    const basic = Buffer.from((process.env.CR_CLIENT_ID || "noaihdevm_6iyg0a8l0q") + ":").toString("base64");
     const out = await curl([
         "-X", "POST", "https://www.crunchyroll.com/auth/v1/token",
         "-H", "Authorization: Basic " + basic,
@@ -150,6 +150,6 @@ async function fetchAdnCounts() {
         }
     }
 
-    fs.writeFileSync(path, "const DEFAULT_ANIME_DATA = " + JSON.stringify(catalog, null, 2) + ";\n", "utf8");
+    writeAtomic(path, "const DEFAULT_ANIME_DATA = " + JSON.stringify(catalog, null, 2) + ";\n");
     console.log(`TERMINÉ — totaux corrigés: ${updated}, saisons mises à jour: ${seasonsSet}, échecs CR: ${crFails}`);
 })();
