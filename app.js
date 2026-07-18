@@ -615,7 +615,25 @@ function renderGrid() {
     };
 
     const getEndDateMs = (anime) => {
-        if (anime.airingStatus === 'RELEASING') return Date.now() + 10000000000; // ongoing shows at the top of latest episodes
+        if (anime.airingStatus === 'RELEASING') {
+            // Toutes les series en cours recevaient exactement la meme valeur
+            // (Date.now() + constante) : le tri "Dernier episode (Recent)" les
+            // regroupait alors par ordre ALPHABETIQUE entre elles, sans aucun
+            // rapport avec une vraie date. On utilise la meilleure info
+            // disponible : le prochain episode connu (cadence hebdo -7j pour
+            // approximer le dernier deja diffuse), sinon la derniere date
+            // connue en catalogue (souvent renseignee malgre le statut "en
+            // cours"), et seulement en dernier recours la valeur par defaut
+            // qui garde la fiche en tete faute de toute information.
+            if (anime.nextAiringAt) return anime.nextAiringAt * 1000 - (7 * 86400000);
+            if (anime.rawEndDate && anime.rawEndDate.year) {
+                const y = anime.rawEndDate.year;
+                const m = (anime.rawEndDate.month || 1) - 1;
+                const d = anime.rawEndDate.day || 1;
+                return new Date(y, m, d).getTime();
+            }
+            return Date.now() + 10000000000; // aucune info : garder en tete par defaut
+        }
         if (!anime.rawEndDate || !anime.rawEndDate.year) return 0;
         const y = anime.rawEndDate.year;
         const m = (anime.rawEndDate.month || 1) - 1;
@@ -808,7 +826,7 @@ function createAnimeCard(anime) {
                 <div class="card-hover-meta">
                     <span class="hover-line"><span class="star">★</span> ${anime.siteRating || "—"} &nbsp;•&nbsp; ${total} épisode${total > 1 ? 's' : ''}</span>
                     ${anime.genres ? `<span class="hover-line">${escapeHtml(anime.genres.split(',').slice(0, 3).join(' · '))}</span>` : ''}
-                    <span class="hover-line">${total - watched > 0 ? `${total - watched} épisode${total - watched > 1 ? 's' : ''} restant${total - watched > 1 ? 's' : ''}` : 'Terminé ✓'}</span>
+                    <span class="hover-line">${total === 0 ? 'Total inconnu' : total - watched > 0 ? `${total - watched} épisode${total - watched > 1 ? 's' : ''} restant${total - watched > 1 ? 's' : ''}` : 'Terminé ✓'}</span>
                 </div>
                 <span class="card-rating-overlay" title="Note officielle de la communauté (Crunchyroll / AniList)">
                     <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
@@ -874,8 +892,9 @@ function changeEpisodeCount(id, newCount) {
     
     const anime = animeList[idx];
     const total = parseInt(anime.episodesTotal || 0);
-    let finalCount = Math.max(0, Math.min(newCount, total));
-    
+    const safeNewCount = parseInt(newCount, 10) || 0; // evite un episodesWatched = NaN
+    let finalCount = Math.max(0, Math.min(safeNewCount, total));
+
     anime.episodesWatched = finalCount;
     
     // Automatically change status on thresholds
@@ -1078,17 +1097,23 @@ function showAnimeDetails(id) {
                             <span style="margin-left: 6px;">Masquer</span>
                         `}
                     </button>
+                    ${!DEFAULT_ANIME_DATA.some(d => d.id === anime.id) ? `
+                    <button class="btn-secondary text-danger" id="detail-delete-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px;"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                        <span style="margin-left: 6px;">Supprimer</span>
+                    </button>
+                    ` : ''}
                 </div>
             </div>
         </div>
     `;
-    
+
     // Add Event Listeners for Details actions
     document.getElementById("detail-play-btn").addEventListener("click", () => {
         closeModal(detailModal);
         openPlayerModal(anime.id);
     });
-    
+
     document.getElementById("detail-hide-btn").addEventListener("click", () => {
         if (anime.status === "hidden") {
             anime.status = "plan-to-watch";
@@ -1100,6 +1125,16 @@ function showAnimeDetails(id) {
         renderGrid();
         closeModal(detailModal);
     });
+
+    const detailDeleteBtn = document.getElementById("detail-delete-btn");
+    if (detailDeleteBtn) {
+        detailDeleteBtn.addEventListener("click", () => {
+            if (confirm(`Supprimer définitivement "${anime.titleFr}" ? Cette action est irréversible.`)) {
+                deleteAnime(anime.id);
+                closeModal(detailModal);
+            }
+        });
+    }
     
     // Repli image poster + fond du bandeau hero si l'URL de couverture est
     // cassee/bloquee (attache en JS plutot qu'en attribut onerror inline,
@@ -1193,7 +1228,8 @@ function handleFormSubmit(e) {
     const netflixUrl = formNetflixUrl.value.trim();
     const disneyUrl = formDisneyUrl.value.trim();
     const primeUrl = formPrimeUrl.value.trim();
-    const episodesTotal = parseInt(formEpisodesTotal.value) || 1;
+    const episodesTotalRaw = formEpisodesTotal.value.trim();
+    const episodesTotal = parseInt(episodesTotalRaw, 10);
     const episodesWatched = parseInt(formEpisodesWatched.value) || 0;
     const status = formStatus.value;
     const rating = parseInt(formRating.value) || 0;
@@ -1201,9 +1237,14 @@ function handleFormSubmit(e) {
     const genres = formGenres.value.trim();
     const synopsis = formSynopsis.value.trim();
     const cast = formCast.value.trim();
-    
+
     // Validation
+    if (episodesTotalRaw === "" || isNaN(episodesTotal) || episodesTotal < 1) {
+        alert("Merci de renseigner un nombre total d'épisodes valide (au moins 1).");
+        return;
+    }
     if (episodesWatched > episodesTotal) {
+        alert(`Le nombre d'épisodes vus (${episodesWatched}) ne peut pas dépasser le total d'épisodes (${episodesTotal}).`);
         return;
     }
     
@@ -1245,7 +1286,11 @@ function handleFormSubmit(e) {
     } else {
         // Create mode
         const newAnime = {
-            id: 'anime-' + Date.now(),
+            // Suffixe aleatoire en plus du timestamp : deux soumissions tres
+            // rapprochees (double clic) partageaient sinon le meme id,
+            // rendant la seconde fiche non editable/supprimable (ecrasee
+            // dans progressData au prochain saveData()).
+            id: 'anime-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8),
             titleFr,
             titleOrig,
             season,
@@ -1339,14 +1384,22 @@ function importDataList(importedData) {
     if (Array.isArray(importedData) && importedData.length > 0) {
         // Vérifier si c'est un fichier d'historique partiel (export de compte)
         const isPartialHistory = importedData.every(item => item.titleFr && typeof item.episodesTotal === 'undefined');
-        const isFullBackup = importedData.every(item => item.titleFr && typeof item.episodesTotal === 'number');
-        
+        // Un backup complet doit aussi avoir un id valide et unique par fiche :
+        // sans ca, plusieurs entrees sans id (cle "undefined" dans
+        // progressData) fusionnaient/ecrasaient silencieusement leur
+        // progression respective dans saveData().
+        const hasValidUniqueIds = (() => {
+            const ids = importedData.map(item => item.id).filter(id => typeof id === "string" && id.trim() !== "");
+            return ids.length === importedData.length && new Set(ids).size === ids.length;
+        })();
+        const isFullBackup = importedData.every(item => item.titleFr && typeof item.episodesTotal === 'number') && hasValidUniqueIds;
+
         if (isFullBackup) {
             animeList = importedData;
             saveData();
             updateStats();
             renderGrid();
-
+            alert(`${importedData.length} animés importés (sauvegarde complète restaurée).`);
         } else if (isPartialHistory) {
             // Mode Fusion Historique (Crunchyroll / ADN / autre)
             const source = importedData[0].source || "inconnu";
@@ -1410,18 +1463,18 @@ function importDataList(importedData) {
                     msg += ` (${notFoundTitles.length} non trouvés)`;
                     console.log("[Import] Titres non trouvés:", notFoundTitles);
                 }
-
+                alert(msg);
             } else {
-
                 if (notFoundTitles.length > 0) {
                     console.log("[Import] Titres non trouvés:", notFoundTitles);
                 }
+                alert("Aucun animé correspondant trouvé dans le catalogue pour cet import.");
             }
         } else {
-
+            alert("Format de fichier non reconnu. Vérifiez qu'il s'agit bien d'un export Anime Tracker VF ou d'un historique de plateforme (ADN/Crunchyroll).");
         }
     } else {
-
+        alert("Le fichier importé est vide ou invalide.");
     }
 }
 
@@ -1557,10 +1610,31 @@ const VF_TRAILER_MAP = {
     "franchise-101347": "TGaDwEYqLfm1"  // Dororo
 };
 
+// Memorise les ids YouTube deja constates morts (supprimes/prives/embed
+// interdit) pour ne pas rejouer indefiniment le meme delai d'echec de 3.2s
+// a chaque ouverture du lecteur pour le meme animé.
+const DEAD_TRAILERS_KEY = "crunchy_tracker_dead_trailers";
+function getDeadTrailers() {
+    try {
+        return JSON.parse(localStorage.getItem(DEAD_TRAILERS_KEY) || "{}");
+    } catch (e) {
+        return {};
+    }
+}
+function markTrailerDead(youtubeId) {
+    if (!youtubeId) return;
+    const dead = getDeadTrailers();
+    dead[youtubeId] = true;
+    try {
+        localStorage.setItem(DEAD_TRAILERS_KEY, JSON.stringify(dead));
+    } catch (e) { /* quota depasse : tant pis, retentera cette session */ }
+}
+
 // Chaîne de lecture : trailer VF d'abord, sinon trailer VO (AniList).
 // Si aucun ne fonctionne, le lecteur est masqué (pas de vidéo de remplacement).
 function getTrailerCandidates(anime) {
     const isValidYoutubeId = (id) => /^[A-Za-z0-9_-]{11}$/.test(id);
+    const deadTrailers = getDeadTrailers();
     const candidates = [];
     if (VF_TRAILER_MAP[anime.id]) {
         candidates.push(VF_TRAILER_MAP[anime.id].trim());
@@ -1568,7 +1642,7 @@ function getTrailerCandidates(anime) {
     if (anime.trailerId) {
         candidates.push(anime.trailerId.trim());
     }
-    return candidates.filter((id, i) => id && isValidYoutubeId(id) && candidates.indexOf(id) === i);
+    return candidates.filter((id, i) => id && isValidYoutubeId(id) && candidates.indexOf(id) === i && !deadTrailers[id]);
 }
 
 // Détecteur automatique d'erreur de lecture YouTube (bloquée, privée,
@@ -1606,10 +1680,19 @@ window.addEventListener("message", (event) => {
 // ==========================================================================
 // PLAYER MODAL ENGINE
 // ==========================================================================
+// Le decompte d'autoplay courant (variable de fermeture propre a chaque
+// appel de openPlayerModal) est expose ici pour que le handler de fermeture
+// de la modale, lui, ne soit attache QU'UNE SEULE FOIS (pas a chaque
+// ouverture) : sinon des jeux de listeners identiques s'empilaient sur les
+// memes boutons persistants si le lecteur etait rouvert avant que le
+// precedent { once: true } ne se soit declenche.
+let activeClearCountdown = null;
+let playerCloseListenersAttached = false;
+
 function openPlayerModal(animeId, startEpisodeIndex = null) {
     const anime = animeList.find(a => a.id === animeId);
     if (!anime) return;
-    
+
     const total = parseInt(anime.episodesTotal || 12);
     const watched = parseInt(anime.episodesWatched || 0);
     
@@ -1629,6 +1712,31 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
         const fresh = animeList.find(a => a.id === animeId);
         if (fresh && fresh !== anime) Object.assign(anime, fresh);
     };
+
+    // Declare UNE SEULE fois par ouverture de lecteur (pas a chaque episode) :
+    // sinon chaque loadEpisode() creait une nouvelle fonction, le
+    // removeEventListener suivant ne retirait jamais l'ancien (reference
+    // differente) et les listeners "fullscreenchange" s'accumulaient sur
+    // document a chaque changement d'episode.
+    const fsChangeHandler = () => {
+        const fsIcon = document.getElementById("fullscreen-icon-svg");
+        if (fsIcon) {
+            if (document.fullscreenElement) {
+                fsIcon.innerHTML = `<path d="M4 14h6v6m10-6h-6v6M4 10h6V4m10 6h-6V4"></path>`;
+            } else {
+                fsIcon.innerHTML = `<path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>`;
+                // Unlock screen orientation when leaving fullscreen
+                if (screen.orientation && screen.orientation.unlock) {
+                    try {
+                        screen.orientation.unlock();
+                    } catch (e) {
+                        console.warn("Screen orientation unlock failed:", e);
+                    }
+                }
+            }
+        }
+    };
+    document.addEventListener("fullscreenchange", fsChangeHandler);
 
     // Function to render the list of episodes in the sidebar
     const renderPlaylist = () => {
@@ -1728,8 +1836,15 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
         const overlay = videoPlayerWrapper.querySelector(".player-countdown-overlay");
         if (overlay) overlay.remove();
     };
-    
+    activeClearCountdown = clearCountdown;
+
+
     const loadEpisode = (epNum) => {
+        // Annule tout decompte d'autoplay en cours : loadEpisode() remplace le
+        // DOM (videoPlayerWrapper.innerHTML) sans arreter les timers, un
+        // countdown orphelin pouvait sinon se declencher ~3s plus tard et
+        // ecraser un changement d'episode manuel fait entre-temps.
+        clearCountdown();
         refreshAnimeFromList();
         currentPlayingEp = epNum;
         const currentWatched = parseInt(anime.episodesWatched || 0);
@@ -1883,6 +1998,10 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                 activeYtTimeout = setTimeout(() => {
                     if (!played) {
                         console.warn("YouTube video did not start playing within 3.2s (timeout), auto-triggering fallback...");
+                        // Memorise cet id comme mort : evite de rejouer le meme
+                        // delai d'echec de 3.2s a chaque future ouverture du
+                        // lecteur pour cet anime.
+                        markTrailerDead(step.id);
                         const fallbackBtn = document.getElementById("player-fallback-btn");
                         if (fallbackBtn) {
                             fallbackBtn.click();
@@ -2066,28 +2185,6 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                 });
             }
             
-            // Fullscreen Change Listener for Icons & Mobile Screen Rotation
-            const fsChangeHandler = () => {
-                const fsIcon = document.getElementById("fullscreen-icon-svg");
-                if (fsIcon) {
-                    if (document.fullscreenElement) {
-                        fsIcon.innerHTML = `<path d="M4 14h6v6m10-6h-6v6M4 10h6V4m10 6h-6V4"></path>`;
-                    } else {
-                        fsIcon.innerHTML = `<path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>`;
-                        // Unlock screen orientation when leaving fullscreen
-                        if (screen.orientation && screen.orientation.unlock) {
-                            try {
-                                screen.orientation.unlock();
-                            } catch (e) {
-                                console.warn("Screen orientation unlock failed:", e);
-                            }
-                        }
-                    }
-                }
-            };
-            
-            document.removeEventListener("fullscreenchange", fsChangeHandler);
-            document.addEventListener("fullscreenchange", fsChangeHandler);
         }
 
         // Setup Mute/Unmute click logic
@@ -2180,15 +2277,21 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
     
     loadEpisode(currentPlayingEp);
     openModal(playerModal);
-    
-    const closeBtns = playerModal.querySelectorAll(".close-modal-btn, .modal-overlay");
-    closeBtns.forEach(btn => {
-        btn.addEventListener("click", () => {
-            clearCountdown();
-            clearActiveYtPlayback();
-            videoPlayerWrapper.innerHTML = "";
-        }, { once: true });
-    });
+
+    // Attache une seule fois (voir activeClearCountdown/playerCloseListenersAttached
+    // plus haut) : le handler lit toujours l'etat courant via activeClearCountdown,
+    // pas besoin de le reattacher a chaque ouverture du lecteur.
+    if (!playerCloseListenersAttached) {
+        playerCloseListenersAttached = true;
+        const closeBtns = playerModal.querySelectorAll(".close-modal-btn, .modal-overlay");
+        closeBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                if (activeClearCountdown) activeClearCountdown();
+                clearActiveYtPlayback();
+                videoPlayerWrapper.innerHTML = "";
+            });
+        });
+    }
 }
 
 // ==========================================================================

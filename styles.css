@@ -628,6 +628,16 @@ select option {
     color: #ef4444;
 }
 
+.btn-secondary.text-danger {
+    color: #ef4444;
+    border-color: rgba(239, 68, 68, 0.35);
+}
+
+.btn-secondary.text-danger:hover {
+    border-color: #ef4444;
+    background-color: rgba(239, 68, 68, 0.1);
+}
+
 /* ==========================================================================
    STATS DASHBOARD
    ========================================================================== */
