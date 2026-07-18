@@ -2,18 +2,21 @@
    DESIGN SYSTEM & CUSTOM PROPERTIES
    ========================================================================== */
 :root {
-    /* Color Palette */
-    --bg-darker: #0c0d10;
-    --bg-dark: #141519;
-    --bg-card: #23252b;
-    --bg-card-hover: #2d3037;
-    --bg-input: #1a1c22;
-    --border-color: #32353e;
-    
+    /* Color Palette (valeurs finales : ce bloc fusionne l'ancien theme de
+       base et sa surcharge "Cinematic Dark", qui vivaient avant dans deux
+       :root separes a 2400 lignes d'ecart — meme resultat en cascade, mais
+       impossible de savoir laquelle faisait foi sans chercher les deux) */
+    --bg-darker: #06070a;
+    --bg-dark: #0a0c10;
+    --bg-card: #12151c;
+    --bg-card-hover: #181c25;
+    --bg-input: #10131a;
+    --border-color: #1e222b;
+
     --primary: #ff6400; /* Crunchyroll Orange */
     --primary-hover: #ff7e29;
-    --primary-glow: rgba(255, 100, 0, 0.25);
-    
+    --primary-glow: rgba(255, 100, 0, 0.18);
+
     --text-white: #ffffff;
     --text-muted: #a0a0a5;
     --text-dark: #121212;
@@ -23,20 +26,21 @@
     --color-plan-to-watch: #3b82f6; /* Blue */
     --color-completed: #a855f7;    /* Purple */
     --color-on-hold: #eab308;     /* Yellow */
-    
+
     /* Layout Variables */
     --font-sans: 'Outfit', sans-serif;
     --radius-sm: 6px;
     --radius-md: 10px;
     --radius-lg: 16px;
     --radius-full: 9999px;
-    
+
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
     --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.5);
-    
-    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.65);
+
+    --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-fast: 0.25s var(--ease-premium);
+    --transition-normal: 0.4s var(--ease-premium);
 }
 
 /* ==========================================================================
@@ -658,30 +662,6 @@ select option {
     transition: var(--transition-normal);
 }
 
-.stat-card:hover {
-    transform: translateY(-2px);
-    border-color: rgba(255, 100, 0, 0.15);
-}
-
-.stat-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    border-radius: var(--radius-md);
-    background-color: var(--bg-darker);
-}
-
-.stat-icon svg {
-    width: 24px;
-    height: 24px;
-}
-
-.icon-anime svg { color: var(--primary); }
-.icon-episodes svg { color: var(--color-watching); }
-.icon-hours svg { color: var(--color-on-hold); }
-
 .stat-info {
     display: flex;
     flex-direction: column;
@@ -724,11 +704,12 @@ select option {
 }
 
 .progress-bar-bg {
-    background-color: var(--bg-darker);
-    height: 8px;
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 10px;
     width: 100%;
     border-radius: var(--radius-full);
     overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .progress-bar-fill {
@@ -736,6 +717,7 @@ select option {
     height: 100%;
     border-radius: var(--radius-full);
     transition: width 0.5s ease-out;
+    box-shadow: 0 0 10px rgba(255, 100, 0, 0.55);
 }
 
 /* ==========================================================================
@@ -779,7 +761,8 @@ select option {
 .filter-tab.active {
     background-color: rgba(255, 100, 0, 0.08) !important;
     color: #ff8e42 !important;
-    border-color: rgba(255, 100, 0, 0.3) !important;
+    /* border-color finale : voir plus bas (2eme regle .filter-tab.active),
+       qui a toujours le dernier mot en cas d'egalite de specificite. */
 }
 
 .tab-count {
@@ -830,12 +813,6 @@ select option {
     height: 100%;
     transition: var(--transition-normal);
     position: relative;
-}
-
-.anime-card:hover {
-    transform: translateY(-6px);
-    border-color: var(--primary);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--primary-glow);
 }
 
 /* Image Area */
@@ -1243,21 +1220,21 @@ select option {
 
 .modal-container {
     background-color: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.7);
     width: 100%;
     max-width: 600px;
     max-height: 90vh;
     overflow-y: auto;
     position: relative;
     z-index: 1010;
-    transform: scale(0.95);
-    transition: transform var(--transition-fast);
+    transform: scale(0.96) translateY(10px);
+    transition: transform 0.45s var(--ease-premium), opacity 0.4s var(--ease-premium);
 }
 
 .modal.show .modal-container {
-    transform: scale(1);
+    transform: scale(1) translateY(0);
 }
 
 .close-modal-btn {
@@ -1595,10 +1572,6 @@ select option {
 
     .apk-preview-wrapper { order: 5; }
 
-    .stats-dashboard {
-        grid-template-columns: 1fr 1fr;
-    }
-    
     .detail-hero-content {
         flex-direction: column;
         align-items: center;
@@ -1683,11 +1656,7 @@ select option {
     .btn-primary {
         padding: 10px;
     }
-    
-    .stats-dashboard {
-        grid-template-columns: 1fr;
-    }
-    
+
     .anime-grid {
         grid-template-columns: 1fr 1fr;
         gap: 12px;
@@ -1755,13 +1724,6 @@ select option {
 .player-modal-container {
     max-width: 800px;
     background-color: #0c0d10;
-}
-
-.player-body {
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
 }
 
 .video-container {
@@ -2432,21 +2394,9 @@ select option {
 
 
 /* ==========================================================================
-   REDESIGN « CINEMATIC DARK » — surcharge du thème
+   REDESIGN « CINEMATIC DARK »
+   (variables fusionnees dans le :root unique en tete de fichier)
    ========================================================================== */
-:root {
-    --bg-darker: #06070a;
-    --bg-dark: #0a0c10;
-    --bg-card: #12151c;
-    --bg-card-hover: #181c25;
-    --bg-input: #10131a;
-    --border-color: #1e222b;
-    --primary-glow: rgba(255, 100, 0, 0.18);
-    --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.65);
-    --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
-    --transition-fast: 0.25s var(--ease-premium);
-    --transition-normal: 0.4s var(--ease-premium);
-}
 
 body {
     background:
@@ -2562,10 +2512,6 @@ body {
 .filter-tab {
     border: 1px solid transparent;
     transition: all 0.3s var(--ease-premium);
-}
-
-.filter-tab.active {
-    border-color: rgba(255, 255, 255, 0.14);
 }
 
 /* ---------- HERO IMMERSIF ---------- */
@@ -2833,12 +2779,6 @@ body {
     -webkit-backdrop-filter: blur(10px);
 }
 
-.modal-container {
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.7);
-}
-
 /* Cartes statistiques en verre */
 .stat-card {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 40%), var(--bg-card);
@@ -2901,30 +2841,13 @@ body {
     transform: translateY(-4px) !important;
 }
 
-.progress-bar-bg {
-    background-color: rgba(0, 0, 0, 0.4) !important;
-    height: 10px !important;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
 
-.progress-bar-fill {
-    background: linear-gradient(90deg, #ff6400, #ff8e42) !important;
-    box-shadow: 0 0 10px rgba(255, 100, 0, 0.55);
-}
 
 /* 2. Modales - Animation d'entrée organique et fluide */
 .modal {
     transition: opacity 0.4s var(--ease-premium) !important;
 }
 
-.modal-container {
-    transform: scale(0.96) translateY(10px) !important;
-    transition: transform 0.45s var(--ease-premium), opacity 0.4s var(--ease-premium) !important;
-}
-
-.modal.show .modal-container {
-    transform: scale(1) translateY(0) !important;
-}
 
 /* 3. Micro-interactions de survol - Effet de surbrillance "Shine" */
 .card-image-wrapper {
@@ -2932,23 +2855,28 @@ body {
     overflow: hidden;
 }
 
-.card-image-wrapper::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -150%;
-    width: 60%;
-    height: 100%;
-    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.18) 50%, transparent);
-    transform: skewX(-25deg);
-    pointer-events: none;
-    z-index: 3;
-    transition: none;
-}
+/* (hover: hover) : le survol n'existe pas au tactile, cet effet ne se
+   declenchait donc jamais sur mobile — evite de creer ce pseudo-element
+   sur les appareils qui ne peuvent de toute facon pas le voir. */
+@media (hover: hover) {
+    .card-image-wrapper::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -150%;
+        width: 60%;
+        height: 100%;
+        background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.18) 50%, transparent);
+        transform: skewX(-25deg);
+        pointer-events: none;
+        z-index: 3;
+        transition: none;
+    }
 
-.anime-card:hover .card-image-wrapper::after {
-    left: 150%;
-    transition: left 0.85s var(--ease-premium);
+    .anime-card:hover .card-image-wrapper::after {
+        left: 150%;
+        transition: left 0.85s var(--ease-premium);
+    }
 }
 
 
