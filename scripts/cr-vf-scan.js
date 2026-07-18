@@ -57,7 +57,17 @@ function normTitle(s) {
         }
     }
 
-    const token = await getAnonToken();
+    // Ce scan depend entierement de l'API Crunchyroll (pas d'equivalent ADN
+    // pour decouvrir de nouvelles series) : sa verification anti-bot bloque
+    // systematiquement les IP de datacenter (runners CI), contrairement a une
+    // IP residentielle. On sort proprement plutot que de planter le workflow.
+    let token;
+    try {
+        token = await getAnonToken();
+    } catch (e) {
+        console.warn("Crunchyroll indisponible (" + e.message + ") — scan des nouveaux animes ignore pour ce run.");
+        process.exit(0);
+    }
     console.log("Jeton OK, parcours du catalogue Crunchyroll...");
 
     const vfShows = [];

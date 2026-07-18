@@ -90,8 +90,18 @@ async function fetchAdnCounts() {
 
     const adnCounts = await fetchAdnCounts();
     console.log("Comptes ADN chargés:", adnCounts.size);
-    const token = await getAnonToken();
-    console.log("Jeton Crunchyroll OK");
+
+    // Le token anonyme Crunchyroll passe par une verification Cloudflare qui
+    // bloque systematiquement les IP de datacenter (runners CI) alors qu'il
+    // passe depuis une IP residentielle : on degrade en mode ADN seul plutot
+    // que de faire echouer tout le scan.
+    let token = null;
+    try {
+        token = await getAnonToken();
+        console.log("Jeton Crunchyroll OK");
+    } catch (e) {
+        console.warn("Crunchyroll indisponible (" + e.message + ") — poursuite avec les donnees ADN uniquement.");
+    }
 
     let updated = 0, seasonsSet = 0, crFails = 0, done = 0;
     for (const anime of catalog) {
@@ -99,7 +109,7 @@ async function fetchAdnCounts() {
         let crSum = 0, adnCount = 0;
         let crSeasons = null;
 
-        if (anime.crunchyrollUrl) {
+        if (token && anime.crunchyrollUrl) {
             const m = anime.crunchyrollUrl.match(/\/series\/([A-Z0-9]+)/i);
             if (m) {
                 crSeasons = await getCrSeasons(token, m[1]);
