@@ -30,6 +30,19 @@ jobs:
       - name: Scanne les nouveaux animes doubles en VF sur Crunchyroll
         run: node scripts/cr-vf-scan.js
 
+      # Revérifie les liens de plateforme (y compris pour les animés déjà
+      # terminés, jamais couverts par les 2 etapes ci-dessus qui ne portent
+      # que sur les totaux/nouveautes) : un lien retire sa licence sans que
+      # rien ne le detecte sinon. continue-on-error car ces requetes passent
+      # par les memes protections Cloudflare potentiellement bloquantes en CI.
+      - name: Revérifie les liens Crunchyroll/ADN encore valides
+        continue-on-error: true
+        run: node scripts/check-availability.js
+
+      - name: Revérifie les liens Netflix/Disney+/Prime Video encore valides
+        continue-on-error: true
+        run: node scripts/check-platform-links.js
+
       - name: Commit et push si le catalogue a change
         run: |
           if git diff --quiet -- catalog.js; then

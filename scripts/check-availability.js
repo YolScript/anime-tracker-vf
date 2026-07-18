@@ -10,9 +10,13 @@ async function fetchAdnAvailability() {
     const available = new Set();
     let offset = 0;
     const limit = 100;
-    while (true) {
+    // Plafond de securite : l'API ADN est finie (quelques centaines de shows),
+    // un bug renvoyant toujours "limit" entrees en boucle ne doit pas tourner
+    // indefiniment.
+    for (let page = 0; page < 50; page++) {
         const res = await fetch(`https://gw.api.animationdigitalnetwork.fr/show/catalog?limit=${limit}&offset=${offset}`, {
-            headers: { "X-Target-Distribution": "fr" }
+            headers: { "X-Target-Distribution": "fr" },
+            signal: AbortSignal.timeout(20000)
         });
         if (!res.ok) throw new Error("API ADN: " + res.status);
         const json = await res.json();
@@ -31,7 +35,8 @@ async function checkCrunchyrollUrl(url) {
     try {
         const res = await fetch(url, {
             redirect: "follow",
-            headers: { "User-Agent": UA, "Accept-Language": "fr-FR,fr;q=0.9" }
+            headers: { "User-Agent": UA, "Accept-Language": "fr-FR,fr;q=0.9" },
+            signal: AbortSignal.timeout(20000)
         });
         const finalUrl = res.url || url;
         if (res.status === 404 || res.status === 410) return "dead";
@@ -97,6 +102,13 @@ async function mapLimit(items, limit, fn) {
         }
     }
     console.log("Liens Crunchyroll retirés:", crDead, "| indéterminés (conservés):", crUnknown);
+    // Un taux d'indetermines tres eleve signifie generalement un blocage
+    // Cloudflare systematique (403 sur toutes les requetes) : le scan
+    // "reussit" sans avoir reellement rien verifie, ce qui passait
+    // silencieusement inapercu auparavant.
+    if (withCr.length > 0 && crUnknown / withCr.length > 0.8) {
+        console.warn(`ATTENTION : ${crUnknown}/${withCr.length} liens Crunchyroll indetermines — probable blocage Cloudflare systematique, aucune verification fiable n'a eu lieu ce run.`);
+    }
 
     // --- Marquage indisponible ---
     let unavailable = 0;
@@ -110,6 +122,10 @@ async function mapLimit(items, limit, fn) {
     }
     console.log("Animés sans aucune plateforme (grisés):", unavailable);
 
-    fs.writeFileSync(path, "const DEFAULT_ANIME_DATA = " + JSON.stringify(catalog, null, 2) + ";\n", "utf8");
+    // Ecriture atomique : evite un catalog.js tronque/invalide si le process
+    // est tue en cours d'ecriture (chargé en <script> bloquant sur le site).
+    const tmp = path + ".tmp";
+    fs.writeFileSync(tmp, "const DEFAULT_ANIME_DATA = " + JSON.stringify(catalog, null, 2) + ";\n", "utf8");
+    fs.renameSync(tmp, path);
     console.log("catalog.js mis à jour.");
 })();

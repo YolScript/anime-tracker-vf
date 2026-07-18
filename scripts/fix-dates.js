@@ -6,15 +6,21 @@ const path = require("path").join(__dirname, "..", "catalog.js");
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+// Ecriture atomique : evite un catalog.js tronque/invalide si le process
+// est tue en cours d'ecriture (chargé en <script> bloquant sur le site).
+function writeAtomic(filePath, content) {
+    const tmp = filePath + ".tmp";
+    fs.writeFileSync(tmp, content, "utf8");
+    fs.renameSync(tmp, filePath);
+}
+
 const QUERY = `query($search:String){Media(search:$search,type:ANIME){
 id countryOfOrigin averageScore genres
 title{romaji english native}
 startDate{year month day} endDate{year month day}
 trailer{id site} episodes status}}`;
 
-function normTitle(s) {
-    return (s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
-}
+const { normTitle } = require("./lib/norm-title");
 
 function toFrDate(d) {
     if (!d || !d.year) return null;
@@ -28,7 +34,8 @@ async function anilistLookup(title) {
             const res = await fetch("https://graphql.anilist.co", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ query: QUERY, variables: { search: title } })
+                body: JSON.stringify({ query: QUERY, variables: { search: title } }),
+                signal: AbortSignal.timeout(20000)
             });
             if (res.status === 429) { await sleep(10000); continue; }
             if (!res.ok) return null;
@@ -77,10 +84,10 @@ async function anilistLookup(title) {
 
         if (done % 50 === 0) {
             console.log(`${done}/${targets.length} — corrigées: ${fixed}`);
-            fs.writeFileSync(path, "const DEFAULT_ANIME_DATA = " + JSON.stringify(catalog, null, 2) + ";\n", "utf8");
+            writeAtomic(path, "const DEFAULT_ANIME_DATA = " + JSON.stringify(catalog, null, 2) + ";\n");
         }
     }
 
-    fs.writeFileSync(path, "const DEFAULT_ANIME_DATA = " + JSON.stringify(catalog, null, 2) + ";\n", "utf8");
+    writeAtomic(path, "const DEFAULT_ANIME_DATA = " + JSON.stringify(catalog, null, 2) + ";\n");
     console.log(`TERMINÉ — dates corrigées: ${fixed}, sans correspondance sûre: ${noMatch}`);
 })();

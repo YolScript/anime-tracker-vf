@@ -9,10 +9,18 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 function httpStatus(url) {
     return new Promise((resolve) => {
-        execFile("curl", ["-s", "-o", process.platform === "win32" ? "NUL" : "/dev/null", "-w", "%{http_code}", "-L", "--max-redirs", "5", "-A", UA, "-H", "Accept-Language: fr-FR", url], (err, stdout) => {
+        execFile("curl", ["-s", "--max-time", "20", "-o", process.platform === "win32" ? "NUL" : "/dev/null", "-w", "%{http_code}", "-L", "--max-redirs", "5", "-A", UA, "-H", "Accept-Language: fr-FR", url], (err, stdout) => {
             resolve(err ? null : (stdout || "").trim());
         });
     });
+}
+
+// Ecriture atomique : evite un catalog.js tronque/invalide si le process
+// est tue en cours d'ecriture (chargé en <script> bloquant sur le site).
+function writeAtomic(filePath, content) {
+    const tmp = filePath + ".tmp";
+    fs.writeFileSync(tmp, content, "utf8");
+    fs.renameSync(tmp, filePath);
 }
 
 const FIELDS = ["netflixUrl", "disneyUrl", "primeUrl"];
@@ -48,6 +56,6 @@ const PLATFORM_FIELDS = ["crunchyrollUrl", "adnUrl", "netflixUrl", "disneyUrl", 
     }
 
     console.log(`Liens testés: ${checked} | retirés: ${removed} | fiches nouvellement exclues: ${noVf}`);
-    fs.writeFileSync(path, "const DEFAULT_ANIME_DATA = " + JSON.stringify(catalog, null, 2) + ";\n", "utf8");
+    writeAtomic(path, "const DEFAULT_ANIME_DATA = " + JSON.stringify(catalog, null, 2) + ";\n");
     console.log("catalog.js mis à jour.");
 })();

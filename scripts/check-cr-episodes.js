@@ -9,10 +9,18 @@ const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
 // Node fetch se fait bloquer (403 Cloudflare) ; curl passe.
 function curl(args) {
     return new Promise((resolve) => {
-        execFile("curl", ["-s", "-A", UA, ...args], { maxBuffer: 20 * 1024 * 1024 }, (err, stdout) => {
+        execFile("curl", ["-s", "--max-time", "20", "-A", UA, ...args], { maxBuffer: 20 * 1024 * 1024 }, (err, stdout) => {
             resolve(err ? null : stdout);
         });
     });
+}
+
+// Ecriture atomique : evite un catalog.js tronque/invalide si le process
+// est tue en cours d'ecriture (chargé en <script> bloquant sur le site).
+function writeAtomic(filePath, content) {
+    const tmp = filePath + ".tmp";
+    fs.writeFileSync(tmp, content, "utf8");
+    fs.renameSync(tmp, filePath);
 }
 
 async function getAnonToken() {
@@ -137,6 +145,6 @@ async function mapLimit(items, limit, fn) {
     }
     console.log("Animés grisés (aucune plateforme):", unavailable);
 
-    fs.writeFileSync(path, "const DEFAULT_ANIME_DATA = " + JSON.stringify(catalog, null, 2) + ";\n", "utf8");
+    writeAtomic(path, "const DEFAULT_ANIME_DATA = " + JSON.stringify(catalog, null, 2) + ";\n");
     console.log("catalog.js mis à jour.");
 })();

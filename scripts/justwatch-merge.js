@@ -11,6 +11,14 @@ const OBJECT_TYPE = (process.argv[2] || "SHOW").toUpperCase();
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+// Ecriture atomique : evite un catalog.js tronque/invalide si le process
+// est tue en cours d'ecriture (chargé en <script> bloquant sur le site).
+function writeAtomic(filePath, content) {
+    const tmp = filePath + ".tmp";
+    fs.writeFileSync(tmp, content, "utf8");
+    fs.renameSync(tmp, filePath);
+}
+
 const JW_QUERY = `query($country:Country!,$first:Int!,$after:String,$filter:TitleFilter){
 popularTitles(country:$country,first:$first,after:$after,filter:$filter){
 totalCount pageInfo{hasNextPage endCursor}
@@ -18,19 +26,27 @@ edges{node{id objectType content(country:$country,language:"fr"){title originalR
 ... on MovieOrShow{offers(country:$country,platform:WEB){monetizationType audioLanguages package{shortName} standardWebURL}}}}}}`;
 
 async function jwPage(after) {
-    const res = await fetch("https://apis.justwatch.com/graphql", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "User-Agent": "Mozilla/5.0" },
-        body: JSON.stringify({
-            query: JW_QUERY,
-            variables: {
-                country: "FR", first: 100, after: after || null,
-                filter: { packages: ["nfx", "dnp", "prv", "amp"], genres: ["ani"], objectTypes: [OBJECT_TYPE] }
-            }
-        })
-    });
-    if (!res.ok) throw new Error("justwatch: " + res.status);
-    return (await res.json()).data.popularTitles;
+    // Retry/backoff aligne sur anilistLookup ci-dessous : sans ca, un simple
+    // rate-limit ou 5xx transitoire de JustWatch faisait planter tout le run
+    // alors que la meme classe d'erreur est geree cote AniList dans ce fichier.
+    for (let attempt = 0; attempt < 3; attempt++) {
+        const res = await fetch("https://apis.justwatch.com/graphql", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "User-Agent": "Mozilla/5.0" },
+            body: JSON.stringify({
+                query: JW_QUERY,
+                variables: {
+                    country: "FR", first: 100, after: after || null,
+                    filter: { packages: ["nfx", "dnp", "prv", "amp"], genres: ["ani"], objectTypes: [OBJECT_TYPE] }
+                }
+            }),
+            signal: AbortSignal.timeout(20000)
+        });
+        if (res.status === 429 || res.status >= 500) { await sleep(5000); continue; }
+        if (!res.ok) throw new Error("justwatch: " + res.status);
+        return (await res.json()).data.popularTitles;
+    }
+    throw new Error("justwatch: echec apres 3 tentatives");
 }
 
 // Offres retenues : abonnement, plateforme cible, VF (ou langues non déclarées)
@@ -59,7 +75,8 @@ async function anilistLookup(title) {
         const res = await fetch("https://graphql.anilist.co", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ query: ANILIST_QUERY, variables: { search: title } })
+            body: JSON.stringify({ query: ANILIST_QUERY, variables: { search: title } }),
+            signal: AbortSignal.timeout(20000)
         });
         if (res.status === 429) { await sleep(10000); continue; }
         if (!res.ok) return null;
@@ -69,9 +86,7 @@ async function anilistLookup(title) {
     return null;
 }
 
-function normTitle(s) {
-    return (s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
-}
+const { normTitle } = require("./lib/norm-title");
 
 function toFrDate(d) {
     if (!d || !d.year) return null;
@@ -93,7 +108,10 @@ function toFrDate(d) {
     // 1. Collecter tous les titres JustWatch
     const jwTitles = [];
     let after = null;
-    while (true) {
+    // Plafond de securite (100/page) : le catalogue anime JustWatch ne
+    // depasse pas quelques milliers de titres, une pagination qui ne
+    // termine jamais (bug API) ne doit pas tourner indefiniment.
+    for (let page_i = 0; page_i < 200; page_i++) {
         const page = await jwPage(after);
         for (const e of page.edges) jwTitles.push(e.node);
         if (!page.pageInfo.hasNextPage) break;
@@ -149,7 +167,7 @@ function toFrDate(d) {
             imageUrl: media.coverImage ? media.coverImage.large : null,
             crunchyrollUrl: null,
             adnUrl: null,
-            episodesTotal: Math.max(media.episodes || 0, 1),
+            episodesTotal: media.episodes || 0,
             episodesWatched: 0,
             status: "plan-to-watch",
             rating: 0,
@@ -176,11 +194,11 @@ function toFrDate(d) {
 
         if (done % 100 === 0) {
             console.log(`${done}/${jwTitles.length} — liés: ${linked}, ajoutés: ${added}, réintégrés: ${reintegrated}`);
-            fs.writeFileSync(path, "const DEFAULT_ANIME_DATA = " + JSON.stringify(catalog, null, 2) + ";\n", "utf8");
+            writeAtomic(path, "const DEFAULT_ANIME_DATA = " + JSON.stringify(catalog, null, 2) + ";\n");
         }
     }
 
-    fs.writeFileSync(path, "const DEFAULT_ANIME_DATA = " + JSON.stringify(catalog, null, 2) + ";\n", "utf8");
+    writeAtomic(path, "const DEFAULT_ANIME_DATA = " + JSON.stringify(catalog, null, 2) + ";\n");
     console.log(`TERMINÉ — plateformes liées: ${linked}, nouveaux animés: ${added}, fiches réintégrées: ${reintegrated}, non-japonais ignorés: ${skippedNonJp}, sans correspondance: ${noMatch}`);
     console.log("Catalogue final:", catalog.length);
 })();

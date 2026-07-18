@@ -1,11 +1,21 @@
 // Fusionne les fiches quasi-doublons du catalogue : même franchise avec un
 // suffixe de saison/partie/film dans le titre. La fiche au titre le plus
 // court (la franchise) absorbe les URLs de plateformes et le max d'épisodes.
+// Lancer avec --dry-run pour lister les fusions qui seraient faites SANS
+// ecrire catalog.js : la detection de franchise (SUFFIX_RE) reste heuristique
+// et une fusion a tort supprime definitivement la fiche absorbee.
 const fs = require("fs");
 const path = require("path").join(__dirname, "..", "catalog.js");
+const { normTitle } = require("./lib/norm-title");
 
-function normTitle(s) {
-    return (s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
+const DRY_RUN = process.argv.includes("--dry-run");
+
+// Ecriture atomique : evite un catalog.js tronque/invalide si le process
+// est tue en cours d'ecriture (chargé en <script> bloquant sur le site).
+function writeAtomic(filePath, content) {
+    const tmp = filePath + ".tmp";
+    fs.writeFileSync(tmp, content, "utf8");
+    fs.renameSync(tmp, filePath);
 }
 
 // Suffixes autorisés pour considérer deux titres comme la même franchise.
@@ -52,7 +62,7 @@ const PLATFORM_FIELDS = ["crunchyrollUrl", "adnUrl", "netflixUrl", "disneyUrl", 
             for (const f of PLATFORM_FIELDS) {
                 if (!main.a[f] && cand.a[f]) main.a[f] = cand.a[f];
             }
-            main.a.episodesTotal = Math.max(main.a.episodesTotal || 1, cand.a.episodesTotal || 1);
+            main.a.episodesTotal = Math.max(main.a.episodesTotal || 0, cand.a.episodesTotal || 0);
             if (!main.a.openingUrl && cand.a.openingUrl) main.a.openingUrl = cand.a.openingUrl;
             if (!main.a.trailerId && cand.a.trailerId) main.a.trailerId = cand.a.trailerId;
             if ((!main.a.seasons || main.a.seasons.length === 0) && cand.a.seasons && cand.a.seasons.length > 0) {
@@ -71,6 +81,10 @@ const PLATFORM_FIELDS = ["crunchyrollUrl", "adnUrl", "netflixUrl", "disneyUrl", 
 
     const result = catalog.filter((a) => !absorbed.has(a.id));
     console.log(`Fusions: ${merges} | catalogue après: ${result.length}`);
-    fs.writeFileSync(path, "const DEFAULT_ANIME_DATA = " + JSON.stringify(result, null, 2) + ";\n", "utf8");
+    if (DRY_RUN) {
+        console.log("DRY RUN — aucune ecriture. Relancer sans --dry-run pour appliquer ces fusions.");
+        return;
+    }
+    writeAtomic(path, "const DEFAULT_ANIME_DATA = " + JSON.stringify(result, null, 2) + ";\n");
     console.log("catalog.js mis à jour.");
 })();

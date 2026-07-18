@@ -5,6 +5,14 @@ const path = require("path").join(__dirname, "..", "catalog.js");
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+// Ecriture atomique : evite un catalog.js tronque/invalide si le process
+// est tue en cours d'ecriture (chargé en <script> bloquant sur le site).
+function writeAtomic(filePath, content) {
+    const tmp = filePath + ".tmp";
+    fs.writeFileSync(tmp, content, "utf8");
+    fs.renameSync(tmp, filePath);
+}
+
 function pickOpeningUrl(animeEntry) {
     if (!animeEntry || !Array.isArray(animeEntry.animethemes)) return null;
     const ops = animeEntry.animethemes
@@ -25,7 +33,7 @@ function pickOpeningUrl(animeEntry) {
 async function fetchJson(url) {
     for (let attempt = 0; attempt < 3; attempt++) {
         try {
-            const res = await fetch(url, { headers: { "User-Agent": "AnimeTrackerVF/1.0 (site de suivi personnel)" } });
+            const res = await fetch(url, { headers: { "User-Agent": "AnimeTrackerVF/1.0 (site de suivi personnel)" }, signal: AbortSignal.timeout(20000) });
             if (res.status === 429) { await sleep(5000); continue; }
             if (!res.ok) return null;
             return await res.json();
@@ -44,9 +52,7 @@ async function byAnilistId(id) {
     return pickOpeningUrl(json.anime[0]);
 }
 
-function normTitle(s) {
-    return (s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
-}
+const { normTitle } = require("./lib/norm-title");
 
 async function byTitle(anime) {
     for (const title of [anime.titleOrig, anime.titleFr]) {
@@ -91,11 +97,11 @@ async function byTitle(anime) {
         }
         if (done % 25 === 0) {
             console.log(`${done}/${catalog.length} traités — openings: ${found}, absents: ${missing}`);
-            fs.writeFileSync(path, "const DEFAULT_ANIME_DATA = " + JSON.stringify(catalog, null, 2) + ";\n", "utf8");
+            writeAtomic(path, "const DEFAULT_ANIME_DATA = " + JSON.stringify(catalog, null, 2) + ";\n");
         }
         await sleep(700);
     }
 
-    fs.writeFileSync(path, "const DEFAULT_ANIME_DATA = " + JSON.stringify(catalog, null, 2) + ";\n", "utf8");
+    writeAtomic(path, "const DEFAULT_ANIME_DATA = " + JSON.stringify(catalog, null, 2) + ";\n");
     console.log(`TERMINÉ : ${found} openings trouvés, ${missing} absents, total ${catalog.length}.`);
 })();

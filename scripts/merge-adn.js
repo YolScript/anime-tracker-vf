@@ -1,22 +1,25 @@
 // Fusionne le catalogue ADN (doublage VF) dans catalog.js
 const fs = require("fs");
 const path = require("path").join(__dirname, "..", "catalog.js");
+const { normTitle } = require("./lib/norm-title");
 
-function normTitle(s) {
-    return (s || "")
-        .toLowerCase()
-        .normalize("NFD").replace(/[̀-ͯ]/g, "")
-        .replace(/[^a-z0-9]+/g, " ")
-        .trim();
+// Ecriture atomique : evite un catalog.js tronque/invalide si le process
+// est tue en cours d'ecriture (chargé en <script> bloquant sur le site).
+function writeAtomic(filePath, content) {
+    const tmp = filePath + ".tmp";
+    fs.writeFileSync(tmp, content, "utf8");
+    fs.renameSync(tmp, filePath);
 }
 
 async function fetchAdnCatalog() {
     const all = [];
     let offset = 0;
     const limit = 100;
-    while (true) {
+    // Plafond de securite : l'API ADN est finie (quelques centaines de shows).
+    for (let page = 0; page < 50; page++) {
         const res = await fetch(`https://gw.api.animationdigitalnetwork.fr/show/catalog?limit=${limit}&offset=${offset}`, {
-            headers: { "X-Target-Distribution": "fr" }
+            headers: { "X-Target-Distribution": "fr" },
+            signal: AbortSignal.timeout(20000)
         });
         if (!res.ok) throw new Error("API ADN: " + res.status);
         const json = await res.json();
@@ -82,7 +85,7 @@ function toFrDate(parts) {
             imageUrl: show.image2x || show.image || null,
             crunchyrollUrl: null,
             adnUrl: adnUrl,
-            episodesTotal: Math.max(show.episodeCount || 0, 1),
+            episodesTotal: show.episodeCount || 0,
             episodesWatched: 0,
             status: "plan-to-watch",
             rating: 0,
@@ -110,6 +113,6 @@ function toFrDate(parts) {
     console.log("Nouveaux animés ADN VF ajoutés:", added);
     console.log("Catalogue final:", catalog.length);
 
-    fs.writeFileSync(path, "const DEFAULT_ANIME_DATA = " + JSON.stringify(catalog, null, 2) + ";\n", "utf8");
+    writeAtomic(path, "const DEFAULT_ANIME_DATA = " + JSON.stringify(catalog, null, 2) + ";\n");
     console.log("catalog.js réécrit.");
 })();

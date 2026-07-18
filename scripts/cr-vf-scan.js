@@ -37,9 +37,7 @@ async function getAnonToken() {
     return m[1];
 }
 
-function normTitle(s) {
-    return (s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
-}
+const { normTitle } = require("./lib/norm-title");
 
 (async () => {
     const src = fs.readFileSync(path, "utf8");
@@ -115,6 +113,7 @@ function normTitle(s) {
         const poster = show.images && show.images.poster_tall && show.images.poster_tall[0]
             ? show.images.poster_tall[0][Math.min(2, show.images.poster_tall[0].length - 1)].source
             : null;
+        const rawStartDate = meta.series_launch_year ? { year: meta.series_launch_year, month: 1, day: 1 } : null;
         catalog.push({
             id: "cr-" + show.id,
             titleFr: title,
@@ -122,7 +121,7 @@ function normTitle(s) {
             imageUrl: poster,
             crunchyrollUrl: url,
             adnUrl: null,
-            episodesTotal: Math.max(meta.episode_count || 0, 1),
+            episodesTotal: meta.episode_count || 0,
             episodesWatched: 0,
             status: "plan-to-watch",
             rating: 0,
@@ -132,9 +131,13 @@ function normTitle(s) {
             synopsis: show.description || "",
             cast: "",
             airingStatus: meta.is_simulcast ? "RELEASING" : "FINISHED",
-            releaseDate: null,
+            // Annee connue via rawStartDate mais releaseDate restait "null" :
+            // l'UI affiche "Inconnue" pour la date de sortie alors que l'annee
+            // est disponible (jour/mois par defaut a 01, comme ailleurs dans
+            // le catalogue quand seule l'annee est connue).
+            releaseDate: rawStartDate ? `01/01/${rawStartDate.year}` : null,
             lastEpisodeDate: null,
-            rawStartDate: meta.series_launch_year ? { year: meta.series_launch_year, month: 1, day: 1 } : null,
+            rawStartDate: rawStartDate,
             rawEndDate: null,
             nextAiringEpisode: null,
             nextAiringAt: null,
