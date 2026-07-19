@@ -319,7 +319,7 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 26
       },
       {
-        "name": "OVAs",
+        "name": "Memories",
         "episodesCount": 4
       },
       {
@@ -393,7 +393,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21-ELSYx3yMPcKM.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GRMG8ZQZR/one-piece",
     "adnUrl": "https://animationdigitalnetwork.fr/video/561-one-piece",
-    "episodesTotal": 1209,
+    "episodesTotal": 1211,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -495,8 +495,12 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 79
       },
       {
+        "name": "HEROINES",
+        "episodesCount": 1
+      },
+      {
         "name": "Elbaph",
-        "episodesCount": 13
+        "episodesCount": 14
       }
     ],
     "openingUrl": "https://v.animethemes.moe/OnePiece-OP1.webm",
@@ -969,15 +973,15 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Mob Psycho 100: Season 1",
+        "name": "Mob Psycho 100",
         "episodesCount": 12
       },
       {
-        "name": "Mob Psycho 100: Season 2",
+        "name": "Mob Psycho 100 II",
         "episodesCount": 13
       },
       {
-        "name": "Mob Psycho 100: Season 3",
+        "name": "Mob Psycho 100 III",
         "episodesCount": 12
       },
       {
@@ -999,7 +1003,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx127230-DdP4vAdssLoz.png",
     "crunchyrollUrl": "https://crunchyroll.com/series/GVDHX8QNW",
     "adnUrl": null,
-    "episodesTotal": 16,
+    "episodesTotal": 14,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -1072,7 +1076,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Re:ZERO -Starting Life in Another World- (Re-Edit)",
+        "name": "Saison 1 (Director's Cut)",
         "episodesCount": 13
       },
       {
@@ -1080,11 +1084,11 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 2
       },
       {
-        "name": "Re:ZERO –Starting Life in Another World– (Saison 2)",
+        "name": "Saison 2",
         "episodesCount": 25
       },
       {
-        "name": "Season 3",
+        "name": "Saison 3",
         "episodesCount": 16
       },
       {
@@ -1442,15 +1446,15 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "SPY x FAMILY",
+        "name": "Saison 1",
         "episodesCount": 25
       },
       {
-        "name": "SPY x FAMILY Saison 2",
+        "name": "Saison 2",
         "episodesCount": 12
       },
       {
-        "name": "SPY x FAMILY Saison 3",
+        "name": "Saison 3",
         "episodesCount": 13
       }
     ],
@@ -1790,7 +1794,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "KONOSUBA -God's blessing on this wonderful world!",
+        "name": "KONOSUBA -God's blessing on this wonderful world! (US)",
         "episodesCount": 11
       },
       {
@@ -1923,15 +1927,15 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Fire Force",
+        "name": "Saison 1",
         "episodesCount": 24
       },
       {
-        "name": "Fire Force Saison 2",
+        "name": "Saison 2",
         "episodesCount": 24
       },
       {
-        "name": "Fire Force Saison 3",
+        "name": "Saison 3",
         "episodesCount": 25
       }
     ],
@@ -2072,15 +2076,15 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "One-Punch Man",
+        "name": "Saison 1",
         "episodesCount": 12
       },
       {
-        "name": "One-Punch Man Saison 2",
+        "name": "Saison 2",
         "episodesCount": 12
       },
       {
-        "name": "One-Punch Man Saison 3",
+        "name": "Saison 3",
         "episodesCount": 13
       }
     ],
@@ -2293,7 +2297,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101280-tDxCVJm714nt.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GYZJ43JMR/that-time-i-got-reincarnated-as-a-slime",
     "adnUrl": null,
-    "episodesTotal": 97,
+    "episodesTotal": 99,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -2332,7 +2336,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Saison 4",
-        "episodesCount": 13
+        "episodesCount": 15
       },
       {
         "name": "Moi, quand je me réincarne en Slime (OAD)",
@@ -2353,7 +2357,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx108465-1ANspF1EWyFx.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G24H1N3MP/mushoku-tensei-jobless-reincarnation",
     "adnUrl": null,
-    "episodesTotal": 51,
+    "episodesTotal": 53,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -5301,7 +5305,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21613-qT3NiwYP5dYc.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GR9P57W96/saga-of-tanya-the-evil",
     "adnUrl": null,
-    "episodesTotal": 15,
+    "episodesTotal": 17,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -5337,6 +5341,10 @@ const DEFAULT_ANIME_DATA = [
       {
         "name": "Opération Desert pasta",
         "episodesCount": 1
+      },
+      {
+        "name": "Saison 2",
+        "episodesCount": 2
       }
     ],
     "openingUrl": "https://v.animethemes.moe/YoujoSenki-OP1.webm"
@@ -7046,7 +7054,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx100922-uxEhaCsqMMp3.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/series/GNVHKN94W/grand-blue-dreaming",
     "adnUrl": null,
-    "episodesTotal": 25,
+    "episodesTotal": 26,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -7081,7 +7089,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Season 3",
-        "episodesCount": 1
+        "episodesCount": 2
       }
     ],
     "openingUrl": "https://v.animethemes.moe/GrandBlue-OP1-NCBD1080.webm",
@@ -7772,7 +7780,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx108430-UdruJPro4vDK.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GRG5WWD4R/given",
     "adnUrl": null,
-    "episodesTotal": 13,
+    "episodesTotal": 14,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -7800,6 +7808,10 @@ const DEFAULT_ANIME_DATA = [
       {
         "name": "Given: Season 1",
         "episodesCount": 11
+      },
+      {
+        "name": "Given le film",
+        "episodesCount": 1
       },
       {
         "name": "given the Movie: To the Sea",
@@ -9750,11 +9762,11 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Shangri-La Frontier",
+        "name": "Saison 1",
         "episodesCount": 26
       },
       {
-        "name": "Shangri-La Frontier (Saison 2)",
+        "name": "Saison 2",
         "episodesCount": 25
       }
     ],
@@ -16334,7 +16346,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx180746-eqDiHbzoHMFh.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00365787/shiboyugi-playing-death-games-to-put-food-on-the-table",
     "adnUrl": null,
-    "episodesTotal": 11,
+    "episodesTotal": 12,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -16361,7 +16373,7 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [
       {
         "name": "Season 1",
-        "episodesCount": 11
+        "episodesCount": 12
       }
     ],
     "netflixUrl": "https://www.netflix.com/title/82047155",
