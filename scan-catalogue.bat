@@ -2,9 +2,18 @@
 chcp 65001 >nul
 setlocal enabledelayedexpansion
 cd /d "%~dp0"
+set "MODE=%~1"
 
+if /i "%MODE%"=="auto" (
+    call :main >> "%~dp0scan-log.txt" 2>&1
+) else (
+    call :main
+)
+goto :eof
+
+:main
 echo ============================================
-echo  Scan complet du catalogue - Anime Tracker VF
+echo  Scan lance le %date% %time%
 echo  (nouveaux animes + nouveaux episodes)
 echo ============================================
 echo.
@@ -52,8 +61,14 @@ echo Changements detectes :
 git diff --stat -- catalog.js
 echo.
 
+if /i "%MODE%"=="auto" (
+    set "COMMIT_MSG=chore: scan automatique local du catalogue (toutes les 6h)"
+) else (
+    set "COMMIT_MSG=chore: scan manuel du catalogue (episodes, saisons, nouveaux animes VF)"
+)
+
 git add catalog.js
-git commit -m "chore: scan manuel du catalogue (episodes, saisons, nouveaux animes VF)"
+git commit -m "!COMMIT_MSG!"
 git push
 if errorlevel 1 (
     echo ERREUR : le push a echoue. Verifiez la connexion / l'authentification git.
@@ -63,4 +78,5 @@ if errorlevel 1 (
 
 :end
 echo.
-pause
+echo Scan termine le %date% %time%
+if /i not "%MODE%"=="auto" pause

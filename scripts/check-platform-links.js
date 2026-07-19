@@ -30,12 +30,19 @@ const PLATFORM_FIELDS = ["crunchyrollUrl", "adnUrl", "netflixUrl", "disneyUrl", 
     const src = fs.readFileSync(path, "utf8");
     const catalog = JSON.parse(src.replace(/^const DEFAULT_ANIME_DATA = /, "").replace(/;\s*$/, ""));
 
+    const totalLinks = catalog.reduce((n, a) => n + FIELDS.filter((f) => a[f]).length, 0);
+    console.log(`Liens Netflix/Disney+/Prime Video a verifier: ${totalLinks}`);
+
     let removed = 0, checked = 0;
     for (const anime of catalog) {
         for (const field of FIELDS) {
             if (!anime[field]) continue;
             const code = await httpStatus(anime[field]);
             checked++;
+            // Ce scan n'a aucune sortie console pendant plusieurs minutes sans
+            // ca (300+ requetes curl a ~400ms-20s chacune) : ca ressemble a un
+            // blocage a l'ecran alors que ca tourne juste normalement.
+            if (checked % 20 === 0) console.log(`  ${checked}/${totalLinks} liens verifies...`);
             await sleep(400);
             if (code === "404" || code === "410") {
                 console.log(`  MORT (${code}) [${field}]:`, anime.titleFr, anime[field]);
