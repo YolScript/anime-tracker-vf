@@ -1692,9 +1692,11 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
             playerWatchedBtn.onclick = () => {
                 changeEpisodeCount(anime.id, epNum);
 
-                const autoplayCb = document.getElementById("player-autoplay-cb");
-                const isAutoplay = autoplayCb ? autoplayCb.checked : false;
-                
+                // Plus de case a cocher dans l'UI (colonne laterale retiree) :
+                // l'autoplay reste actif par defaut, comme l'etat coche
+                // initial de l'ancienne case.
+                const isAutoplay = true;
+
                 if (isAutoplay && epNum < total) {
                     startAutoplayCountdown(epNum + 1);
                 } else if (epNum === total) {
