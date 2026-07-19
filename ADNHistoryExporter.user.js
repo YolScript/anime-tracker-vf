@@ -306,6 +306,20 @@
             document.head.appendChild(style);
         }
 
+        // Ouvrir l'onglet tout de suite, encore dans le geste utilisateur du
+        // clic : les "await fetch" ci-dessous (plusieurs endpoints testés en
+        // séquence) consomment sinon l'activation utilisateur et le
+        // window.open() final vers le tracker est bloqué en silence par le
+        // navigateur — cause la plus probable d'une sync qui ne se voit
+        // jamais appliquée.
+        let syncTab = null;
+        try {
+            syncTab = window.open("about:blank", "_blank");
+            if (syncTab) {
+                syncTab.document.write("<title>Anime Tracker VF</title><body style='background:#0e0f13;color:#fff;font-family:sans-serif;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;'>Synchronisation en cours…</body>");
+            }
+        } catch (e) { /* ignore */ }
+
         try {
             let trackerData = [];
 
@@ -357,15 +371,25 @@
                     "⚠️ Aucun historique trouvé. Assurez-vous d'être connecté sur ADN et d'avoir visionné des épisodes.",
                     "warning"
                 );
+                if (syncTab) syncTab.close();
                 resetButton(btn, originalText);
                 return;
             }
 
-            // Redirection pour synchronisation automatique
+            // Redirection de l'onglet déjà ouvert (voir plus haut) pour la
+            // synchronisation automatique. Repli sur un window.open normal si
+            // l'onglet a été fermé entre-temps ou n'a jamais pu s'ouvrir.
             try {
                 const b64Data = btoa(unescape(encodeURIComponent(JSON.stringify(trackerData))));
                 const trackerUrl = `https://yolscript.github.io/anime-tracker-vf/#sync-data=${b64Data}`;
-                window.open(trackerUrl, "_blank");
+                if (syncTab && !syncTab.closed) {
+                    syncTab.location.href = trackerUrl;
+                } else {
+                    const fallbackTab = window.open(trackerUrl, "_blank");
+                    if (!fallbackTab) {
+                        showNotification("⚠️ Fenêtre bloquée par le navigateur : autorisez les popups pour ADN, ou importez le fichier téléchargé sur le site.", "warning");
+                    }
+                }
             } catch (e) {
                 console.error("[ADN Sync] Erreur redirection auto-sync:", e);
             }
@@ -390,6 +414,7 @@
         } catch (e) {
             console.error("[ADN Sync] Erreur:", e);
             showNotification("❌ Erreur lors de la synchronisation : " + e.message, "error");
+            if (syncTab && !syncTab.closed) syncTab.close();
         }
 
         resetButton(btn, originalText);

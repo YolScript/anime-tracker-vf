@@ -303,11 +303,27 @@
             document.head.appendChild(style);
         }
 
+        // Ouvrir l'onglet tout de suite, encore dans le geste utilisateur du
+        // clic : sinon les "await fetch" ci-dessous (plusieurs pages
+        // d'historique, parfois plusieurs secondes) consomment l'activation
+        // utilisateur et le window.open() final vers le tracker est bloqué en
+        // silence par le navigateur (aucune erreur JS, juste l'icône "popup
+        // bloqué" dans la barre d'adresse — c'est la cause la plus probable
+        // d'une sync qui "ne se met jamais à jour").
+        let syncTab = null;
+        try {
+            syncTab = window.open("about:blank", "_blank");
+            if (syncTab) {
+                syncTab.document.write("<title>Anime Tracker VF</title><body style='background:#0e0f13;color:#fff;font-family:sans-serif;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;'>Synchronisation en cours…</body>");
+            }
+        } catch (e) { /* ignore */ }
+
         try {
             // Étape 1 : Token
             const token = await getAuthToken();
             if (!token) {
                 showNotification("❌ Impossible de récupérer votre session. Êtes-vous bien connecté sur Crunchyroll ?", "error");
+                if (syncTab) syncTab.close();
                 resetButton(btn, originalText);
                 return;
             }
@@ -316,6 +332,7 @@
             const accountId = await getAccountId(token);
             if (!accountId) {
                 showNotification("❌ Impossible de récupérer votre profil Crunchyroll.", "error");
+                if (syncTab) syncTab.close();
                 resetButton(btn, originalText);
                 return;
             }
@@ -324,6 +341,7 @@
             const history = await fetchWatchHistory(token, accountId);
             if (history.length === 0) {
                 showNotification("⚠️ Aucun historique de visionnage trouvé.", "warning");
+                if (syncTab) syncTab.close();
                 resetButton(btn, originalText);
                 return;
             }
@@ -331,11 +349,28 @@
             // Étape 4 : Transformer
             const trackerData = transformToTrackerFormat(history);
 
-            // Redirection pour synchronisation automatique
+            if (trackerData.length === 0) {
+                showNotification("⚠️ Aucun épisode en VF trouvé dans votre historique.", "warning");
+                if (syncTab) syncTab.close();
+                resetButton(btn, originalText);
+                return;
+            }
+
+            // Redirection de l'onglet déjà ouvert (voir plus haut) pour la
+            // synchronisation automatique. Si l'onglet a été fermé par
+            // l'utilisateur entre-temps ou n'a jamais pu s'ouvrir (bloqué dès
+            // le clic), on retente un window.open normal en dernier recours.
             try {
                 const b64Data = btoa(unescape(encodeURIComponent(JSON.stringify(trackerData))));
                 const trackerUrl = `https://yolscript.github.io/anime-tracker-vf/#sync-data=${b64Data}`;
-                window.open(trackerUrl, "_blank");
+                if (syncTab && !syncTab.closed) {
+                    syncTab.location.href = trackerUrl;
+                } else {
+                    const fallbackTab = window.open(trackerUrl, "_blank");
+                    if (!fallbackTab) {
+                        showNotification("⚠️ Fenêtre bloquée par le navigateur : autorisez les popups pour Crunchyroll, ou importez le fichier téléchargé sur le site.", "warning");
+                    }
+                }
             } catch (e) {
                 console.error("[CR Sync] Erreur redirection auto-sync:", e);
             }
@@ -360,6 +395,7 @@
         } catch (e) {
             console.error("[CR Sync] Erreur:", e);
             showNotification("❌ Erreur lors de la synchronisation : " + e.message, "error");
+            if (syncTab && !syncTab.closed) syncTab.close();
         }
 
         resetButton(btn, originalText);
