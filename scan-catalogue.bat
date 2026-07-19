@@ -51,11 +51,6 @@ if not errorlevel 1 (
 echo Changements detectes :
 git diff --stat -- catalog.js
 echo.
-set /p CONFIRM="Publier ces changements sur le vrai site en ligne (commit + push) ? [O/N] "
-if /i not "%CONFIRM%"=="O" (
-    echo Push annule. catalog.js est modifie en local mais pas envoye.
-    goto :end
-)
 
 git add catalog.js
 git commit -m "chore: scan manuel du catalogue (episodes, saisons, nouveaux animes VF)"
