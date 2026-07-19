@@ -35,10 +35,9 @@ let syncPushTimer = null;
 let pushRetryTimer = null;
 let lastPushedJson = null;
 
-// Validation minimale des donnees cloud avant de les appliquer en local ou
-// de les afficher publiquement (classement) : rejette les entrees qui ne
-// sont pas des objets simples (une ligne Supabase corrompue ou d'un ancien
-// format ne doit pas se propager telle quelle).
+// Validation minimale des donnees cloud avant de les appliquer en local :
+// rejette les entrees qui ne sont pas des objets simples (une ligne Supabase
+// corrompue ou d'un ancien format ne doit pas se propager telle quelle).
 function sanitizeCloudProgress(cloud) {
     const clean = {};
     if (!cloud || typeof cloud !== "object") return clean;
@@ -106,16 +105,13 @@ async function pullAndMergeFromCloud(showFeedback) {
         if (typeof updateStats === "function") updateStats();
         if (typeof renderGrid === "function") renderGrid();
     }
-    if (typeof isLeaderboardOpen !== "undefined" && isLeaderboardOpen) {
-        fetchAndRenderLeaderboard();
-    }
 }
 
 async function pushToCloud() {
     if (!sbClient || !syncUser) return;
     const json = localStorage.getItem(SYNC_STORAGE_KEY) || "{}";
     if (json === lastPushedJson) return;
-    
+
     let progressData = {};
     try {
         progressData = JSON.parse(json);
@@ -123,20 +119,7 @@ async function pushToCloud() {
         console.error("Error parsing progress for pushToCloud", e);
         progressData = {};
     }
-    
-    // Inject user profile for the leaderboard
-    if (syncUser && syncUser.user_metadata) {
-        const meta = syncUser.user_metadata;
-        const name = meta.custom_claims && meta.custom_claims.global_name
-            ? meta.custom_claims.global_name
-            : (meta.full_name || meta.name || "Utilisateur Discord");
-            
-        progressData.__user_profile = {
-            name: name,
-            avatar_url: meta.avatar_url || ""
-        };
-    }
-    
+
     const { error } = await sbClient.from(SYNC_TABLE).upsert({
         user_id: syncUser.id,
         data: progressData,
@@ -158,9 +141,6 @@ async function pushToCloud() {
         clearTimeout(pushRetryTimer);
         pushRetryTimer = null;
         lastPushedJson = json;
-        if (typeof isLeaderboardOpen !== "undefined" && isLeaderboardOpen) {
-            fetchAndRenderLeaderboard();
-        }
     }
 }
 
@@ -293,9 +273,6 @@ function initDiscordSync() {
         syncUser = session ? session.user : null;
         lastPushedJson = null;
         updateDiscordUi();
-        if (typeof isLeaderboardOpen !== "undefined" && isLeaderboardOpen) {
-            fetchAndRenderLeaderboard();
-        }
         if (syncUser && !wasConnected) {
             pullAndMergeFromCloud(!CAME_FROM_OAUTH).then(() => {
                 if (CAME_FROM_OAUTH) {
@@ -357,288 +334,7 @@ function initDiscordSync() {
     // Appelé par MainActivity (APK) à chaque retour au premier plan
     window.__animeSyncPull = pullIfConnected;
 
-    initLeaderboardEvents();
     updateDiscordUi();
-}
-
-// ==========================================================================
-// LEADERBOARD DISCORD LOGIC
-// ==========================================================================
-let isLeaderboardOpen = false;
-
-async function fetchAndRenderLeaderboard() {
-    const contentEl = document.getElementById("leaderboard-content");
-    if (!contentEl) return;
-    
-    // Spinner uniquement au premier chargement (le rafraîchissement auto
-    // remplace le contenu sans clignotement)
-    if (!lbUsersCache) {
-        contentEl.innerHTML = `
-            <div class="leaderboard-loading">
-                <div class="spinner"></div>
-                <span>Chargement du classement...</span>
-            </div>
-        `;
-    }
-
-    if (!sbClient) {
-        contentEl.innerHTML = `
-            <div class="leaderboard-empty">
-                <p>La synchronisation Discord n'est pas activée.</p>
-            </div>
-        `;
-        return;
-    }
-    
-    try {
-        const { data, error } = await sbClient
-            .from(SYNC_TABLE)
-            .select("user_id, data, updated_at");
-            
-        if (error) throw error;
-        
-        if (!data || data.length === 0) {
-            contentEl.innerHTML = `
-                <div class="leaderboard-empty">
-                    <p>Aucun utilisateur connecté pour le moment.</p>
-                </div>
-            `;
-            return;
-        }
-        
-        const users = data.map(row => {
-            const progress = row.data || {};
-            const profile = progress.__user_profile || {};
-
-            let totalEps = 0;
-            let completedCount = 0;
-            let topAnimeId = null;
-            let topAnimeEps = 0;
-            Object.keys(progress).forEach(key => {
-                if (key !== "__user_profile" && progress[key] && typeof progress[key] === "object" && !Array.isArray(progress[key])) {
-                    const eps = Math.max(0, parseInt(progress[key].episodesWatched, 10) || 0);
-                    totalEps += eps;
-                    if (progress[key].status === "completed") completedCount++;
-                    if (eps > topAnimeEps) { topAnimeEps = eps; topAnimeId = key; }
-                }
-            });
-            // Titre de l'animé le plus regardé (depuis le catalogue chargé)
-            let topAnimeTitle = null;
-            if (topAnimeId && typeof DEFAULT_ANIME_DATA !== "undefined") {
-                const found = DEFAULT_ANIME_DATA.find(a => a.id === topAnimeId);
-                if (found) topAnimeTitle = found.titleFr;
-            }
-
-            const totalMins = totalEps * 24;
-            const hours = Math.round(totalMins / 60);
-            const name = profile.name || `Utilisateur ${row.user_id.substring(0, 5)}`;
-            const avatarUrl = profile.avatar_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=ff6400&color=fff&bold=true`;
-
-            return {
-                userId: row.user_id,
-                name: name,
-                avatarUrl: avatarUrl,
-                episodesCount: totalEps,
-                completedCount: completedCount,
-                topAnimeTitle: topAnimeTitle,
-                hours: hours,
-                updatedAt: new Date(row.updated_at)
-            };
-        });
-        
-        // Filter out users with 0 hours to make the leaderboard cleaner
-        const activeUsers = users.filter(u => u.hours > 0 || u.episodesCount > 0);
-        
-        if (activeUsers.length === 0) {
-            contentEl.innerHTML = `
-                <div class="leaderboard-empty">
-                    <p>Aucun utilisateur avec du temps de visionnage.</p>
-                </div>
-            `;
-            return;
-        }
-        
-        lbUsersCache = activeUsers;
-        renderLeaderboardContent(contentEl);
-        return;
-        
-    } catch (err) {
-        console.error("Error fetching leaderboard:", err);
-        contentEl.innerHTML = `
-            <div class="leaderboard-empty">
-                <p style="color: var(--color-on-hold);">⚠️ Erreur de chargement.</p>
-                <p style="font-size: 0.75rem; margin-top: 8px;">Vérifiez que la table <code>anime_progress</code> est lisible publiquement (RLS SELECT) dans Supabase.</p>
-            </div>
-        `;
-    }
-}
-
-// ----- Rendu du classement : stats communauté, tri, podium, liste -----
-let lbUsersCache = null;
-let lbSortMode = "hours"; // hours | completed | episodes
-
-function renderLeaderboardContent(contentEl) {
-    if (!contentEl || !lbUsersCache || lbUsersCache.length === 0) return;
-
-    const fallbackAvatar = (name) => `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=ff6400&color=fff&bold=true`;
-    const levelOf = (h) => h >= 500 ? { name: "Légende", color: "#f59e0b" }
-        : h >= 200 ? { name: "Otaku", color: "#a855f7" }
-        : h >= 50 ? { name: "Passionné", color: "#3b82f6" }
-        : h >= 10 ? { name: "Amateur", color: "#22c55e" }
-        : { name: "Novice", color: "#9ca3af" };
-    const fmtTime = (h) => h >= 48 ? `${Math.floor(h / 24)}j ${h % 24}h` : `${h}h`;
-    const activityOf = (d) => {
-        const days = Math.floor((Date.now() - d.getTime()) / 86400000);
-        return days <= 0 ? "🟢 actif aujourd'hui" : days === 1 ? "🟡 actif hier" : `⚪ actif il y a ${days} j`;
-    };
-
-    const sorters = {
-        hours: (a, b) => b.hours - a.hours || b.episodesCount - a.episodesCount,
-        completed: (a, b) => b.completedCount - a.completedCount || b.hours - a.hours,
-        episodes: (a, b) => b.episodesCount - a.episodesCount || b.hours - a.hours
-    };
-    const mainValue = {
-        hours: (u) => fmtTime(u.hours),
-        completed: (u) => `${u.completedCount}`,
-        episodes: (u) => `${u.episodesCount}`
-    };
-    const mainLabel = { hours: "de visionnage", completed: "terminés", episodes: "épisodes" };
-
-    const users = [...lbUsersCache].sort(sorters[lbSortMode] || sorters.hours);
-    const maxRef = Math.max(lbSortMode === "completed" ? users[0].completedCount : lbSortMode === "episodes" ? users[0].episodesCount : users[0].hours, 1);
-    const refOf = (u) => lbSortMode === "completed" ? u.completedCount : lbSortMode === "episodes" ? u.episodesCount : u.hours;
-
-    // Stats de la communauté
-    const totalHours = users.reduce((s, u) => s + u.hours, 0);
-    const totalEps = users.reduce((s, u) => s + u.episodesCount, 0);
-    let html = `
-        <div class="lb-community">
-            <div class="lb-community-stat"><span>${users.length}</span><label>Membre${users.length > 1 ? "s" : ""}</label></div>
-            <div class="lb-community-stat"><span>${fmtTime(totalHours)}</span><label>Cumulées</label></div>
-            <div class="lb-community-stat"><span>${totalEps}</span><label>Épisodes</label></div>
-        </div>
-        <div class="lb-tabs">
-            <button class="lb-tab ${lbSortMode === "hours" ? "active" : ""}" data-sort="hours">⏱ Heures</button>
-            <button class="lb-tab ${lbSortMode === "completed" ? "active" : ""}" data-sort="completed">🏁 Terminés</button>
-            <button class="lb-tab ${lbSortMode === "episodes" ? "active" : ""}" data-sort="episodes">📺 Épisodes</button>
-        </div>
-    `;
-
-    // Podium simplifie : juste un cadre par membre du top 3 (pseudo + heures)
-    const podium = [users[0], users[1], users[2]].filter(Boolean);
-    html += `<div class="lb-podium">`;
-    podium.forEach((user) => {
-        const rank = users.indexOf(user) + 1;
-        const isMe = syncUser && syncUser.id === user.userId;
-        html += `
-            <div class="lb-podium-col place-${rank} ${isMe ? "current-user" : ""}">
-                <span class="lb-podium-rank">#${rank}</span>
-                <span class="lb-podium-name">${escapeHtml(user.name)}${isMe ? " (Vous)" : ""}</span>
-                <span class="lb-podium-hours">${mainValue[lbSortMode](user)}</span>
-            </div>
-        `;
-    });
-    html += `</div>`;
-
-    // Liste à partir du 4e
-    users.slice(3).forEach((user, i) => {
-        const rank = i + 4;
-        const isMe = syncUser && syncUser.id === user.userId;
-        const lvl = levelOf(user.hours);
-        const barPct = Math.max(3, Math.round((refOf(user) / maxRef) * 100));
-        html += `
-            <div class="leaderboard-item ${isMe ? "current-user" : ""}" style="--i: ${i};">
-                <div class="leaderboard-rank">${rank}</div>
-                <img class="leaderboard-avatar" src="${user.avatarUrl}" alt="" data-avatar-fallback-name="${escapeHtml(user.name)}">
-                <div class="leaderboard-info">
-                    <div class="leaderboard-name">${escapeHtml(user.name)}${isMe ? " (Vous)" : ""} <span class="lb-level" style="color: ${lvl.color}; border-color: ${lvl.color}44; background: ${lvl.color}1a;">${lvl.name}</span></div>
-                    <div class="leaderboard-stats">${user.episodesCount} ép. · ${user.completedCount} terminé${user.completedCount > 1 ? "s" : ""} · ${activityOf(user.updatedAt)}</div>
-                    ${user.topAnimeTitle ? `<div class="lb-top-anime">Fan de ${escapeHtml(user.topAnimeTitle)}</div>` : ""}
-                    <div class="lb-bar"><div style="width: ${barPct}%"></div></div>
-                </div>
-                <div class="leaderboard-hours">
-                    <span>${mainValue[lbSortMode](user)}</span>
-                    <span class="leaderboard-hours-label">${mainLabel[lbSortMode]}</span>
-                </div>
-            </div>
-        `;
-    });
-
-    contentEl.innerHTML = html;
-
-    // Repli avatar (evite l'echappement JS-dans-attribut d'un onerror inline
-    // pour un nom entierement controle par le client Supabase qui l'a ecrit)
-    contentEl.querySelectorAll(".leaderboard-avatar").forEach(img => {
-        img.addEventListener("error", () => {
-            img.src = fallbackAvatar(img.getAttribute("data-avatar-fallback-name") || "?");
-        }, { once: true });
-    });
-
-    // Onglets de tri
-    contentEl.querySelectorAll(".lb-tab").forEach(tab => {
-        tab.addEventListener("click", () => {
-            lbSortMode = tab.getAttribute("data-sort");
-            renderLeaderboardContent(contentEl);
-        });
-    });
-
-    // Ma position épinglée (clic = défiler jusqu'à ma ligne)
-    if (syncUser) {
-        const myIndex = users.findIndex(u => u.userId === syncUser.id);
-        const meBar = document.createElement("div");
-        meBar.className = "lb-me-bar";
-        if (myIndex !== -1) {
-            const me = users[myIndex];
-            const ahead = myIndex > 0 ? users[myIndex - 1] : null;
-            const gap = ahead ? Math.max(refOf(ahead) - refOf(me), 0) : 0;
-            const gapText = lbSortMode === "hours" ? fmtTime(gap) : gap;
-            meBar.innerHTML = `
-                <span class="lb-me-rank">#${myIndex + 1}</span>
-                <span class="lb-me-text">Votre position · ${mainValue[lbSortMode](me)} ${mainLabel[lbSortMode]}</span>
-                <span class="lb-me-gap">${myIndex === 0 ? "👑 En tête !" : `${gapText} du rang #${myIndex}`}</span>
-            `;
-            meBar.addEventListener("click", () => {
-                const meRow = contentEl.querySelector(".leaderboard-item.current-user, .lb-podium-col.current-user");
-                if (meRow) meRow.scrollIntoView({ behavior: "smooth", block: "center" });
-            });
-        } else {
-            meBar.innerHTML = `<span class="lb-me-text">Marquez des épisodes vus pour entrer au classement !</span>`;
-        }
-        contentEl.appendChild(meBar);
-    }
-}
-
-function initLeaderboardEvents() {
-    const drawer = document.getElementById("discord-leaderboard-drawer");
-    const toggleBtn = document.getElementById("leaderboard-toggle-btn");
-    
-    if (!drawer || !toggleBtn) return;
-    
-    toggleBtn.addEventListener("click", () => {
-        isLeaderboardOpen = !isLeaderboardOpen;
-        if (isLeaderboardOpen) {
-            drawer.classList.add("open");
-            toggleBtn.classList.add("drawer-open");
-            fetchAndRenderLeaderboard();
-        } else {
-            drawer.classList.remove("open");
-            toggleBtn.classList.remove("drawer-open");
-        }
-    });
-    
-    // Close drawer when clicking outside it
-    document.addEventListener("click", (e) => {
-        if (isLeaderboardOpen && !drawer.contains(e.target) && e.target !== toggleBtn && !toggleBtn.contains(e.target)) {
-            isLeaderboardOpen = false;
-            drawer.classList.remove("open");
-            toggleBtn.classList.remove("drawer-open");
-        }
-    });
-
-    // Rafraîchissement automatique tant que le classement est ouvert
-    setInterval(() => {
-        if (isLeaderboardOpen) fetchAndRenderLeaderboard();
-    }, 60000);
 }
 
 window.addEventListener("load", initDiscordSync);

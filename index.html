@@ -96,40 +96,6 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="filters-menu-group">
-                            <label>Statut</label>
-                            <div class="filter-navbar">
-                                <button class="filter-tab active" data-status="all">
-                                    <span>Tout</span>
-                                    <span class="tab-count" id="count-all">0</span>
-                                </button>
-                                <button class="filter-tab" data-status="watching">
-                                    <span class="indicator watching"></span>
-                                    <span>En cours</span>
-                                    <span class="tab-count" id="count-watching">0</span>
-                                </button>
-                                <button class="filter-tab" data-status="plan-to-watch">
-                                    <span class="indicator plan-to-watch"></span>
-                                    <span>À voir</span>
-                                    <span class="tab-count" id="count-plan-to-watch">0</span>
-                                </button>
-                                <button class="filter-tab" data-status="completed">
-                                    <span class="indicator completed"></span>
-                                    <span>Terminé</span>
-                                    <span class="tab-count" id="count-completed">0</span>
-                                </button>
-                                <button class="filter-tab" data-status="on-hold">
-                                    <span class="indicator on-hold"></span>
-                                    <span>En pause</span>
-                                    <span class="tab-count" id="count-on-hold">0</span>
-                                </button>
-                                <button class="filter-tab" data-status="hidden">
-                                    <span class="indicator hidden-indicator"></span>
-                                    <span>Masqués</span>
-                                    <span class="tab-count" id="count-hidden">0</span>
-                                </button>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -268,7 +234,6 @@
                     <div class="player-controls-desc">
                         <div>
                             <h3 id="player-anime-name" style="margin-bottom: 4px;">Nom de l'animé</h3>
-                            <p id="player-episode-desc">Épisode 1</p>
                         </div>
                         <div id="player-platforms-container">
                             <!-- Dynamically filled with platform buttons -->
@@ -288,9 +253,6 @@
                             <input type="checkbox" id="player-autoplay-cb" checked>
                             <span>Lecture Auto</span>
                         </label>
-                    </div>
-                    <div id="player-episodes-list" class="player-episodes-list">
-                        <!-- Dynamically filled with episode items -->
                     </div>
                 </div>
             </div>
@@ -417,27 +379,6 @@
         </div>
     </div>
 
-
-    <!-- Discord Leaderboard Toggle (independent fixed button) -->
-    <button id="leaderboard-toggle-btn" class="leaderboard-toggle-btn" aria-label="Classement Discord">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="15 18 9 12 15 6"></polyline>
-        </svg>
-    </button>
-
-    <!-- Discord Leaderboard Drawer -->
-    <div id="discord-leaderboard-drawer" class="leaderboard-drawer">
-        <div class="leaderboard-header">
-            <h3>Classement Visionnage</h3>
-            <p class="leaderboard-subtitle">Par heures de doublage VF vues</p>
-        </div>
-        <div id="leaderboard-content" class="leaderboard-content">
-            <div class="leaderboard-loading">
-                <div class="spinner"></div>
-                <span>Chargement...</span>
-            </div>
-        </div>
-    </div>
 
     <!-- Apercu video APK : hors de .app-header (backdrop-filter du header cree un
          containing block pour les descendants position:fixed, ce qui rognait la

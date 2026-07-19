@@ -10,7 +10,6 @@ if (typeof DEFAULT_ANIME_DATA === 'undefined') {
 // STATE MANAGEMENT
 // ==========================================================================
 let animeList = [];
-let currentFilter = "all";
 let currentSearch = "";
 let currentSort = "last-episode-desc";
 let currentPlatform = "all";
@@ -72,7 +71,6 @@ const sortSelect = document.getElementById("sort-select");
 const platformSelect = document.getElementById("platform-select");
 const filtersToggleBtn = document.getElementById("filters-toggle-btn");
 const filtersMenu = document.getElementById("filters-menu");
-const filterTabs = document.querySelectorAll(".filter-tab");
 const addAnimeBtn = document.getElementById("add-anime-btn");
 const emptyAddBtn = document.getElementById("empty-add-btn");
 const dataDropdownBtn = document.getElementById("data-dropdown-btn");
@@ -95,7 +93,6 @@ const playerModal = document.getElementById("player-modal");
 const playerTitle = document.getElementById("player-title");
 const videoPlayerWrapper = document.getElementById("video-player-wrapper");
 const playerAnimeName = document.getElementById("player-anime-name");
-const playerEpisodeDesc = document.getElementById("player-episode-desc");
 const playerWatchedBtn = document.getElementById("player-watched-btn");
 
 // Form Inputs
@@ -120,14 +117,6 @@ const formCast = document.getElementById("form-cast");
 // Stats Counters
 const statCompletionPct = document.getElementById("stat-completion-pct");
 const statProgressBar = document.getElementById("stat-progress-bar");
-
-// Filter Counts
-const countAll = document.getElementById("count-all");
-const countWatching = document.getElementById("count-watching");
-const countPlanToWatch = document.getElementById("count-plan-to-watch");
-const countCompleted = document.getElementById("count-completed");
-const countOnHold = document.getElementById("count-on-hold");
-const countHidden = document.getElementById("count-hidden");
 
 // Toast notification system removed
 
@@ -515,31 +504,14 @@ function renderHero() {
 
 
 function updateStats() {
-    const hiddenCount = animeList.filter(a => a.status === "hidden").length;
     const visibleList = animeList.filter(a => a.status !== "hidden");
     const total = visibleList.length;
-    const watched = visibleList.reduce((sum, a) => sum + parseInt(a.episodesWatched || 0), 0);
     const completed = visibleList.filter(a => a.status === "completed").length;
-    
-    // Minutes of anime: 24 mins per episode
-    const totalMinutes = watched * 24;
-    const totalHours = Math.floor(totalMinutes / 60);
-    const remainingMins = totalMinutes % 60;
-    
 
-    
     // Completion Pct (completed animes / total animes)
     const pct = total > 0 ? Math.round((completed / total) * 100) : 0;
     statCompletionPct.textContent = `${pct}%`;
     statProgressBar.style.width = `${pct}%`;
-    
-    // Tab Counts
-    countAll.textContent = total;
-    countWatching.textContent = animeList.filter(a => a.status === "watching").length;
-    countPlanToWatch.textContent = animeList.filter(a => a.status === "plan-to-watch").length;
-    countCompleted.textContent = completed;
-    countOnHold.textContent = animeList.filter(a => a.status === "on-hold").length;
-    if (countHidden) countHidden.textContent = hiddenCount;
 
     renderHero();
 }
@@ -574,12 +546,9 @@ function detectIfVf(anime) {
 function renderGrid() {
     // 1. Filter
     let filteredList = animeList.filter(anime => {
-        // Hide "hidden" anime from all tabs except the "hidden" tab
-        if (currentFilter !== "hidden" && anime.status === "hidden") {
-            return false;
-        }
-        // Status filter
-        if (currentFilter !== "all" && anime.status !== currentFilter) {
+        // Plus de filtre par statut dans l'UI : les animes masques restent
+        // simplement exclus de la grille principale.
+        if (anime.status === "hidden") {
             return false;
         }
 
@@ -704,17 +673,9 @@ function renderGrid() {
     // Titre de section dynamique au-dessus de la grille
     const gridHeading = document.getElementById("grid-heading");
     if (gridHeading) {
-        const filterLabels = {
-            "all": "Tout le catalogue",
-            "watching": "En cours de visionnage",
-            "plan-to-watch": "À voir plus tard",
-            "completed": "Terminés",
-            "on-hold": "En pause",
-            "hidden": "Masqués"
-        };
         const label = currentSearch
             ? `Résultats pour « ${currentSearch} »`
-            : (filterLabels[currentFilter] || "Catalogue");
+            : "Tout le catalogue";
         gridHeading.style.display = "flex";
         gridHeading.innerHTML = `<span>${label}</span><span class="grid-heading-count">${filteredList.length} animé${filteredList.length > 1 ? "s" : ""}</span>`;
     }
@@ -760,8 +721,7 @@ function createAnimeCard(anime) {
         // Progress calculations
         const watched = parseInt(anime.episodesWatched || 0);
         const total = parseInt(anime.episodesTotal || 0);
-        const progressPct = total > 0 ? Math.round((watched / total) * 100) : 0;
-        
+
         // Image URL handling
         const coverSrc = anime.imageUrl ? anime.imageUrl : getFallbackImage(anime.titleFr);
         const safeTitleFr = escapeHtml(anime.titleFr || "Sans titre");
@@ -863,10 +823,7 @@ function createAnimeCard(anime) {
                 <div class="card-progress-section">
                     <div class="progress-info-row">
                         <span class="progress-label">Épisodes</span>
-                        <span class="progress-value">${watched} / ${total} (${progressPct}%)</span>
-                    </div>
-                    <div class="card-progress-bar-bg">
-                        <div class="card-progress-bar-fill" style="width: ${progressPct}%"></div>
+                        <span class="progress-value">${total}</span>
                     </div>
                 </div>
             </div>
@@ -934,10 +891,8 @@ function showAnimeDetails(id) {
     const anime = animeList.find(a => a.id === id);
     if (!anime) return;
     
-    const watched = parseInt(anime.episodesWatched || 0);
     const total = parseInt(anime.episodesTotal || 0);
-    const progressPct = total > 0 ? Math.round((watched / total) * 100) : 0;
-    
+
     // Format rating stars
     let starsHtml = "";
     for (let i = 1; i <= 5; i++) {
@@ -962,46 +917,6 @@ function showAnimeDetails(id) {
         
     const coverSrc = anime.imageUrl ? anime.imageUrl : getFallbackImage(anime.titleFr);
 
-    // Build episodes progress list grouped by season
-    let episodesHtml = "";
-    if (anime.seasons && Array.isArray(anime.seasons) && anime.seasons.length > 0) {
-        let globalIndex = 0;
-        anime.seasons.forEach((season, seasonIdx) => {
-            episodesHtml += `
-                <div class="detail-season-block" style="margin-top: 14px;">
-                    <div style="font-size: 13px; font-weight: 700; color: var(--text-white); margin-bottom: 6px;">
-                        ${season.name} <span style="font-weight: 400; color: var(--text-muted); font-size: 11px;">(${season.episodesCount} épisodes)</span>
-                    </div>
-                    <div class="detail-episodes-grid">
-            `;
-            for (let i = 1; i <= season.episodesCount; i++) {
-                globalIndex++;
-                const isWatched = globalIndex <= watched;
-                episodesHtml += `
-                    <div class="detail-ep-badge ${isWatched ? 'watched' : ''}">
-                        ${i}
-                    </div>
-                `;
-            }
-            episodesHtml += `
-                    </div>
-                </div>
-            `;
-        });
-    } else {
-        // Fallback for single season if seasons is empty
-        episodesHtml += `<div class="detail-episodes-grid">`;
-        for (let i = 1; i <= total; i++) {
-            const isWatched = i <= watched;
-            episodesHtml += `
-                <div class="detail-ep-badge ${isWatched ? 'watched' : ''}">
-                    ${i}
-                </div>
-            `;
-        }
-        episodesHtml += `</div>`;
-    }
-    
     // Build hero banner (we can use the poster image with custom styles or a blurred fallback)
     const safeDetailTitleFr = escapeHtml(anime.titleFr || "Sans titre");
     const safeDetailTitleOrig = escapeHtml(anime.titleOrig || "");
@@ -1072,8 +987,8 @@ function showAnimeDetails(id) {
                 </div>
 
                 <div class="detail-sidebar-section">
-                    <span class="sidebar-label">Progression</span>
-                    <span class="sidebar-value">${watched} / ${total} episodes (${progressPct}%)</span>
+                    <span class="sidebar-label">Épisodes</span>
+                    <span class="sidebar-value">${total}</span>
                 </div>
             </div>
             
@@ -1093,12 +1008,7 @@ function showAnimeDetails(id) {
                     <p class="detail-cast-list">${escapeHtml(anime.cast)}</p>
                 </div>
                 ` : ''}
-                
-                <div class="detail-episodes-section">
-                    <h3 class="detail-section-title">Historique des Épisodes</h3>
-                    ${episodesHtml}
-                </div>
-                
+
                 <div class="detail-btn-row">
                     <button class="btn-primary card-btn-play" id="detail-play-btn">
                         <svg viewBox="0 0 24 24" fill="currentColor" style="width: 14px; height: 14px;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
@@ -1581,30 +1491,6 @@ function resetToDefault() {
     }
 }
 
-// ==========================================================================
-// PLAYER MODAL ENGINE
-// ==========================================================================
-// ==========================================================================
-// SEASONS AND EPISODES UTILS
-// ==========================================================================
-function getSeasonAndEpisodeFromGlobal(seasons, globalCount) {
-    if (!seasons || !Array.isArray(seasons) || seasons.length === 0) {
-        return { seasonIdx: 0, seasonName: "Saison 1", epNum: globalCount };
-    }
-    let remaining = globalCount;
-    for (let i = 0; i < seasons.length; i++) {
-        if (remaining <= seasons[i].episodesCount) {
-            return { seasonIdx: i, seasonName: seasons[i].name, epNum: remaining };
-        }
-        remaining -= seasons[i].episodesCount;
-    }
-    return { 
-        seasonIdx: seasons.length - 1, 
-        seasonName: seasons[seasons.length - 1].name, 
-        epNum: seasons[seasons.length - 1].episodesCount 
-    };
-}
-
 // Map of custom VF trailers
 const VF_TRAILER_MAP = {
     "franchise-16498": "m0y4Ym-tCjE", // L'Attaque des Titans
@@ -1754,95 +1640,6 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
     };
     document.addEventListener("fullscreenchange", fsChangeHandler);
 
-    // Function to render the list of episodes in the sidebar
-    const renderPlaylist = () => {
-        refreshAnimeFromList();
-        const listContainer = document.getElementById("player-episodes-list");
-        if (!listContainer) return;
-
-        listContainer.innerHTML = "";
-        const currentWatched = parseInt(anime.episodesWatched || 0);
-        
-        if (anime.seasons && Array.isArray(anime.seasons) && anime.seasons.length > 0) {
-            let globalIndex = 0;
-            anime.seasons.forEach((season, seasonIdx) => {
-                const seasonWatched = Math.max(0, Math.min(season.episodesCount, currentWatched - globalIndex));
-                const seasonHeader = document.createElement("div");
-                seasonHeader.style.cssText = "font-size: 12px; font-weight: 700; color: var(--text-muted); margin: 12px 0 6px 0; text-transform: uppercase; letter-spacing: 0.5px; display: flex; justify-content: space-between; align-items: center;";
-                seasonHeader.innerHTML = `<span>${season.name}</span><span style="font-weight: 600; color: var(--primary); font-size: 11px;">${seasonWatched}/${season.episodesCount}</span>`;
-                listContainer.appendChild(seasonHeader);
-                
-                for (let i = 1; i <= season.episodesCount; i++) {
-                    globalIndex++;
-                    const currentGlobalIndex = globalIndex;
-                    const item = document.createElement("div");
-                    item.className = "player-episode-item";
-                    if (currentGlobalIndex === currentPlayingEp) item.classList.add("active");
-                    if (currentGlobalIndex <= currentWatched) item.classList.add("watched");
-                    
-                    const isWatched = currentGlobalIndex <= currentWatched;
-                    
-                    item.innerHTML = `
-                        <span class="player-episode-title">Épisode ${i}</span>
-                        <span class="player-episode-status ${isWatched ? 'watched-label' : ''}">
-                            ${isWatched ? `
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="width:12px; height:12px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                Vu
-                            ` : `
-                                <svg viewBox="0 0 24 24" fill="currentColor" style="width:10px; height:10px; opacity:0.6;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                                Lire
-                            `}
-                        </span>
-                        <div class="player-episode-progress-bar">
-                            <div style="width: ${isWatched ? 100 : 0}%"></div>
-                        </div>
-                    `;
-                    
-                    item.addEventListener("click", () => {
-                        clearCountdown();
-                        loadEpisode(currentGlobalIndex);
-                    });
-                    
-                    listContainer.appendChild(item);
-                }
-            });
-        } else {
-            // Fallback flat list
-            for (let i = 1; i <= total; i++) {
-                const currentGlobalIndex = i;
-                const item = document.createElement("div");
-                item.className = "player-episode-item";
-                if (currentGlobalIndex === currentPlayingEp) item.classList.add("active");
-                if (currentGlobalIndex <= currentWatched) item.classList.add("watched");
-                
-                const isWatched = currentGlobalIndex <= currentWatched;
-                
-                item.innerHTML = `
-                    <span class="player-episode-title">Épisode ${i}</span>
-                    <span class="player-episode-status ${isWatched ? 'watched-label' : ''}">
-                        ${isWatched ? `
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="width:12px; height:12px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            Vu
-                        ` : `
-                            <svg viewBox="0 0 24 24" fill="currentColor" style="width:10px; height:10px; opacity:0.6;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                            Lire
-                        `}
-                    </span>
-                    <div class="player-episode-progress-bar">
-                        <div style="width: ${isWatched ? 100 : 0}%"></div>
-                    </div>
-                `;
-                
-                item.addEventListener("click", () => {
-                    clearCountdown();
-                    loadEpisode(currentGlobalIndex);
-                });
-                
-                listContainer.appendChild(item);
-            }
-        }
-    };
-    
     let countdownInterval = null;
     let countdownTimeout = null;
     
@@ -1866,14 +1663,7 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
         const currentWatched = parseInt(anime.episodesWatched || 0);
         
         playerAnimeName.textContent = anime.titleFr;
-        
-        let displayDesc = `Épisode ${epNum} sur ${total}`;
-        if (anime.seasons && Array.isArray(anime.seasons) && anime.seasons.length > 0) {
-            const mapped = getSeasonAndEpisodeFromGlobal(anime.seasons, epNum);
-            displayDesc = `${mapped.seasonName} - Épisode ${mapped.epNum} sur ${total}`;
-        }
-        playerEpisodeDesc.textContent = displayDesc;
-        
+
         playerWatchedBtn.disabled = false;
         playerWatchedBtn.style.opacity = "1";
 
@@ -1901,8 +1691,7 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
             setWatchedBtnLabel(`Marquer l'épisode ${epNum} comme vu`);
             playerWatchedBtn.onclick = () => {
                 changeEpisodeCount(anime.id, epNum);
-                renderPlaylist();
-                
+
                 const autoplayCb = document.getElementById("player-autoplay-cb");
                 const isAutoplay = autoplayCb ? autoplayCb.checked : false;
                 
@@ -2113,15 +1902,6 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                         <span>Regarder sur Prime Video</span>
                     </a>
                 ` : ''}
-                <div id="player-episode-progress" style="width: 100%; margin-top: 12px;">
-                    <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--text-muted); margin-bottom: 5px;">
-                        <span>Progression — Épisode ${epNum} sélectionné</span>
-                        <span style="color: var(--text-white); font-weight: 600;">${currentWatched} / ${total} vus (${total > 0 ? Math.round((currentWatched / total) * 100) : 0}%)</span>
-                    </div>
-                    <div style="height: 6px; background: var(--bg-darker); border-radius: 9999px; overflow: hidden;">
-                        <div style="height: 100%; width: ${total > 0 ? Math.round((currentWatched / total) * 100) : 0}%; background: var(--primary); border-radius: 9999px; transition: width 0.3s ease;"></div>
-                    </div>
-                </div>
             `;
 
             // Add automatic validation hooks
@@ -2258,10 +2038,8 @@ function openPlayerModal(animeId, startEpisodeIndex = null) {
                 });
             }
         }
-        
-        renderPlaylist();
     };
-    
+
     const startAutoplayCountdown = (nextEpNum) => {
         let timeLeft = 3;
         
@@ -2365,17 +2143,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
         handleHashSync();
         window.addEventListener("hashchange", handleHashSync);
-        
-        // Filter Navigation
-        filterTabs.forEach(tab => {
-            tab.addEventListener("click", () => {
-                filterTabs.forEach(t => t.classList.remove("active"));
-                tab.classList.add("active");
-                currentFilter = tab.getAttribute("data-status");
-                renderGrid();
-            });
-        });
-        
+
         // Search Listener (debounced : évite un rebuild complet de la grille
         // à chaque frappe, qui saccadait la saisie sur un catalogue de 600+ fiches)
         searchInput.addEventListener("input", (e) => {
