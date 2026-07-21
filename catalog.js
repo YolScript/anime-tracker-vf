@@ -7054,7 +7054,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx100922-uxEhaCsqMMp3.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/series/GNVHKN94W/grand-blue-dreaming",
     "adnUrl": null,
-    "episodesTotal": 26,
+    "episodesTotal": 27,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -7089,7 +7089,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Season 3",
-        "episodesCount": 2
+        "episodesCount": 3
       }
     ],
     "openingUrl": "https://v.animethemes.moe/GrandBlue-OP1-NCBD1080.webm",
@@ -9262,11 +9262,11 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Season 1",
+        "name": "Saison 1",
         "episodesCount": 13
       },
       {
-        "name": "WIND BREAKER (Saison 2)",
+        "name": "Saison 2",
         "episodesCount": 12
       }
     ],
@@ -9806,11 +9806,11 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "BOFURI: Je suis pas venue ici pour souffrir alors j'ai tout mis en défense (Saison 1)",
+        "name": "Bofuri: I Don't Want to Get Hurt, so I'll Max Out My Defense: Season 1",
         "episodesCount": 12
       },
       {
-        "name": "BOFURI: Je suis pas venue ici pour souffrir alors j'ai tout mis en défense (Saison 2)",
+        "name": "Bofuri: I Don't Want to Get Hurt, so I'll Max Out My Defense: Season 2",
         "episodesCount": 12
       }
     ],
@@ -20443,11 +20443,11 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "A Couple of Cuckoos",
+        "name": "A Couple of Cuckoos: Season 1",
         "episodesCount": 24
       },
       {
-        "name": "A Couple of Cuckoos Season2",
+        "name": "A Couple of Cuckoos: Season 2",
         "episodesCount": 12
       }
     ]
@@ -20485,7 +20485,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "A Sign of Affection",
+        "name": "Season 01",
         "episodesCount": 12
       }
     ]
@@ -21840,11 +21840,11 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "I Was Reincarnated as the 7th Prince so I Can Take My Time Perfecting My Magical Ability",
+        "name": "Season 01",
         "episodesCount": 12
       },
       {
-        "name": "I Was Reincarnated as the 7th Prince so I Can Take My Time Perfecting My Magical Ability 2nd Season",
+        "name": "Season 2",
         "episodesCount": 12
       }
     ]
@@ -22948,7 +22948,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Season 1",
+        "name": "Saison 1",
         "episodesCount": 13
       },
       {
@@ -24463,7 +24463,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "The Great Cleric",
+        "name": "The Great Cleric: Season 1",
         "episodesCount": 12
       }
     ]
@@ -24979,7 +24979,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Tomo-chan est une fille !",
+        "name": "Tomo-chan is a Girl! - Season 01",
         "episodesCount": 13
       }
     ]
