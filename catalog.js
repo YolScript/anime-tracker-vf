@@ -5305,7 +5305,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21613-qT3NiwYP5dYc.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GR9P57W96/saga-of-tanya-the-evil",
     "adnUrl": null,
-    "episodesTotal": 17,
+    "episodesTotal": 18,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -5344,7 +5344,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Saison 2",
-        "episodesCount": 2
+        "episodesCount": 3
       }
     ],
     "openingUrl": "https://v.animethemes.moe/YoujoSenki-OP1.webm"
@@ -9806,11 +9806,11 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Bofuri: I Don't Want to Get Hurt, so I'll Max Out My Defense: Season 1",
+        "name": "BOFURI: Je ne suis pas venue ici pour souffrir alors j'ai tout mis en défense",
         "episodesCount": 12
       },
       {
-        "name": "Bofuri: I Don't Want to Get Hurt, so I'll Max Out My Defense: Season 2",
+        "name": "BOFURI: Je suis pas venue ici pour souffrir alors j'ai tout mis en défense. S2",
         "episodesCount": 12
       }
     ],
@@ -20485,7 +20485,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Season 01",
+        "name": "A Sign of Affection",
         "episodesCount": 12
       }
     ]
@@ -21192,7 +21192,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/002b83652d95a17250ab882f328435c4.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G8DHV78ZM/clevatess",
     "adnUrl": null,
-    "episodesTotal": 14,
+    "episodesTotal": 15,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -21223,7 +21223,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Saison 2",
-        "episodesCount": 2
+        "episodesCount": 3
       }
     ],
     "openingUrl": "https://v.animethemes.moe/Clevatess-OP1.webm"
@@ -21840,7 +21840,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Season 01",
+        "name": "Season 1",
         "episodesCount": 12
       },
       {
@@ -23268,7 +23268,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/4591a591a0342bc500e9951e28e71d2d.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00365568/hana-kimi",
     "adnUrl": null,
-    "episodesTotal": 16,
+    "episodesTotal": 17,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -23295,7 +23295,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Parmi eux Saison 2",
-        "episodesCount": 4
+        "episodesCount": 5
       }
     ]
   },
@@ -24463,7 +24463,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "The Great Cleric: Season 1",
+        "name": "The Great Cleric",
         "episodesCount": 12
       }
     ]
@@ -24979,7 +24979,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Tomo-chan is a Girl! - Season 01",
+        "name": "Tomo-chan est une fille !",
         "episodesCount": 13
       }
     ]
@@ -25030,7 +25030,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/06313d602ade408cb604143a8efab718.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G0XHWM0D3/trapped-in-a-dating-sim-the-world-of-otome-games-is-tough-for-mobs",
     "adnUrl": null,
-    "episodesTotal": 14,
+    "episodesTotal": 15,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -25061,7 +25061,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Saison 2",
-        "episodesCount": 2
+        "episodesCount": 3
       }
     ]
   },
