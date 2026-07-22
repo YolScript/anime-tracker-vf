@@ -26090,5 +26090,39 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [],
     "netflixUrl": "https://www.netflix.com/title/81177638"
+  },
+  {
+    "id": "franchise-2471",
+    "titleFr": "Doraemon",
+    "titleOrig": "Doraemon (1979)",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx2471-FVQ44eZlRDP2.jpg",
+    "crunchyrollUrl": null,
+    "adnUrl": null,
+    "episodesTotal": 1787,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "3.8",
+    "trailerId": null,
+    "genres": "Comedy, Sci-Fi",
+    "synopsis": "Nobi Nobita is a 4th-grade boy in Tokyo. One day, a round, blue cat-style robot (minus ears) pops up in his desk drawer. Nobita's great-great-grandson (or something) lives in the 22nd Century, but thanks to Nobita's mistakes, the entire family is living in poverty. To rectify this, Nobita's descendent is sent Doraemon back to the past, to help prevent Nobita from making mistakes. Of course this is a difficult task since Nobita is the weakest and least intelligent child in his class. Doraemon does, however, have a 4-dimensional pocket on his front, which contains cool gadgets from the future. With these toys, Doraemon will try to help Nobita. Unfortunately, Nobita also has the bad habit of misusing Doraemon's gadgets and landing himself in yet more trouble? \n(Source: AnimeNfo)",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "02/04/1979",
+    "lastEpisodeDate": "18/03/2005",
+    "rawStartDate": {
+      "year": 1979,
+      "month": 4,
+      "day": 2
+    },
+    "rawEndDate": {
+      "year": 2005,
+      "month": 3,
+      "day": 18
+    },
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [],
+    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.e76b7e10-5a52-4a92-9dc1-0ae6febf9aff"
   }
 ];
