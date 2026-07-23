@@ -7005,8 +7005,7 @@ const DEFAULT_ANIME_DATA = [
       }
     ],
     "openingUrl": "https://v.animethemes.moe/MagiLabyrinthOfMagic-OP1.webm",
-    "noVf": true,
-    "unavailable": true
+    "netflixUrl": "https://www.netflix.com/title/80009097"
   },
   {
     "id": "franchise-21709",
