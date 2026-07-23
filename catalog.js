@@ -20443,11 +20443,11 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "A Couple of Cuckoos: Season 1",
+        "name": "A Couple of Cuckoos",
         "episodesCount": 24
       },
       {
-        "name": "A Couple of Cuckoos: Season 2",
+        "name": "A Couple of Cuckoos Season2",
         "episodesCount": 12
       }
     ]
