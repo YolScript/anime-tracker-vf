@@ -2297,7 +2297,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101280-tDxCVJm714nt.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GYZJ43JMR/that-time-i-got-reincarnated-as-a-slime",
     "adnUrl": null,
-    "episodesTotal": 99,
+    "episodesTotal": 100,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -2336,7 +2336,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Saison 4",
-        "episodesCount": 15
+        "episodesCount": 16
       },
       {
         "name": "Moi, quand je me réincarne en Slime (OAD)",
@@ -20773,7 +20773,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/e454e218db49b5b66b8e79ba4e98617a.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00377907/black-torch",
     "adnUrl": null,
-    "episodesTotal": 3,
+    "episodesTotal": 4,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -20796,7 +20796,7 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [
       {
         "name": "Saison 1",
-        "episodesCount": 3
+        "episodesCount": 4
       }
     ],
     "openingUrl": "https://v.animethemes.moe/BlackTorch-OP1.webm"
@@ -22411,7 +22411,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/14cac07bc03ae5aa3262a1d5caa861a9.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00371872/the-drops-of-god",
     "adnUrl": null,
-    "episodesTotal": 15,
+    "episodesTotal": 16,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -22434,7 +22434,7 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [
       {
         "name": "Saison 1",
-        "episodesCount": 15
+        "episodesCount": 16
       }
     ]
   },
@@ -24238,7 +24238,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/7f3b77abac2f46221e91de3a0fc83c4d.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GQWH0M19X/the-elusive-samurai",
     "adnUrl": null,
-    "episodesTotal": 14,
+    "episodesTotal": 15,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -24269,7 +24269,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Saison 2",
-        "episodesCount": 1
+        "episodesCount": 2
       }
     ]
   },
@@ -25183,7 +25183,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/c8835413e0f794fdafa629cc973a273e.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00371630/daemons-of-the-shadow-realm",
     "adnUrl": null,
-    "episodesTotal": 15,
+    "episodesTotal": 16,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -25206,7 +25206,7 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [
       {
         "name": "Tsugai - Daemons of the Shadow Realm",
-        "episodesCount": 15
+        "episodesCount": 16
       }
     ],
     "netflixUrl": "https://www.netflix.com/title/82719204",
