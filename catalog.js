@@ -393,7 +393,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21-ELSYx3yMPcKM.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GRMG8ZQZR/one-piece",
     "adnUrl": "https://animationdigitalnetwork.fr/video/561-one-piece",
-    "episodesTotal": 1212,
+    "episodesTotal": 1213,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -500,7 +500,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Elbaph",
-        "episodesCount": 15
+        "episodesCount": 16
       }
     ],
     "openingUrl": "https://v.animethemes.moe/OnePiece-OP1.webm",
@@ -2357,7 +2357,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx108465-1ANspF1EWyFx.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G24H1N3MP/mushoku-tensei-jobless-reincarnation",
     "adnUrl": null,
-    "episodesTotal": 53,
+    "episodesTotal": 54,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
