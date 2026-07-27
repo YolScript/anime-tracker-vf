@@ -26123,5 +26123,39 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [],
     "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.e76b7e10-5a52-4a92-9dc1-0ae6febf9aff"
+  },
+  {
+    "id": "franchise-180436",
+    "titleFr": "Wandance",
+    "titleOrig": "WanDance",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx180436-zR0dJuKGZNOK.jpg",
+    "crunchyrollUrl": null,
+    "adnUrl": null,
+    "episodesTotal": 12,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "3.3",
+    "trailerId": "-0SudgDzshc",
+    "genres": "Drama, Sports",
+    "synopsis": "Kaboku Kotani is starting high school, and he plans to do what he’s always done: go along with his friends, keep quiet, and not draw too much attention to himself. After all, it’s hard enough to get by with a stutter like his— why make things worse by standing out from the crowd? But then he sees another first-year, Hikari Wanda, dancing like no one is watching—or like she doesn’t care who sees her. It makes Kaboku wonder: Could he reach that same freedom? To find his way to Wanda, he does something he never thought he could: He joins the dance club. After all, every routine begins with a single step, right? Join Kaboku and Wanda as they freestyle their way to life and love!\n\n(Source: Kodansha USA)",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "08/10/2025",
+    "lastEpisodeDate": "24/12/2025",
+    "rawStartDate": {
+      "year": 2025,
+      "month": 10,
+      "day": 8
+    },
+    "rawEndDate": {
+      "year": 2025,
+      "month": 12,
+      "day": 24
+    },
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [],
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-8019edc8-5f73-4c70-88eb-02ea35f724d4"
   }
 ];
