@@ -1351,7 +1351,7 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 16
       },
       {
-        "name": "The All Magic Knights Thanksgiving Festa",
+        "name": "OVA",
         "episodesCount": 1
       }
     ],
