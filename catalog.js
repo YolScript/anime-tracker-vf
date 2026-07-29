@@ -1798,7 +1798,7 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 11
       },
       {
-        "name": "KONOSUBA -God's blessing on this wonderful world! 2",
+        "name": "KONOSUBA -God's blessing on this wonderful world! 2 (US)",
         "episodesCount": 11
       },
       {
@@ -26157,5 +26157,34 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [],
     "disneyUrl": "https://www.disneyplus.com/browse/entity-8019edc8-5f73-4c70-88eb-02ea35f724d4"
+  },
+  {
+    "id": "cr-GT00378123",
+    "titleFr": "Tomb Raider King",
+    "titleOrig": "Tomb Raider King",
+    "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/b1fa4cfec92000dc539f7330051d05da.png",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00378123/tomb-raider-king",
+    "adnUrl": null,
+    "episodesTotal": 4,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": null,
+    "trailerId": null,
+    "genres": "Adventure, Action, Fantasy",
+    "synopsis": "Un jour, de mystérieux tombeaux sont apparus partout dans le monde, chacun renfermant une relique qui confère à son propriétaire des pouvoirs surnaturels. Seo Juheon est explorateur, archéologue et pilleur. Trahi par son employeur, il est sur le point de mourir lorsqu’il se retrouve 15 ans dans le passé, avant même l’apparition des reliques et des tombeaux…",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "01/01/2026",
+    "lastEpisodeDate": null,
+    "rawStartDate": {
+      "year": 2026,
+      "month": 1,
+      "day": 1
+    },
+    "rawEndDate": null,
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": []
   }
 ];
