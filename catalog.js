@@ -26165,7 +26165,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/b1fa4cfec92000dc539f7330051d05da.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00378123/tomb-raider-king",
     "adnUrl": null,
-    "episodesTotal": 4,
+    "episodesTotal": 8,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -26185,6 +26185,15 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [
+      {
+        "name": "Saison 1",
+        "episodesCount": 4
+      },
+      {
+        "name": "Saison 1",
+        "episodesCount": 4
+      }
+    ]
   }
 ];
