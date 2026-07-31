@@ -26195,5 +26195,39 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 4
       }
     ]
+  },
+  {
+    "id": "franchise-232",
+    "titleFr": "Sakura, chasseuse de cartes",
+    "titleOrig": "Cardcaptor Sakura",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx232-ERyKCNNPJJeh.png",
+    "crunchyrollUrl": null,
+    "adnUrl": null,
+    "episodesTotal": 70,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "4.0",
+    "trailerId": "W8pQIpheFSw",
+    "genres": "Comedy, Drama, Fantasy, Mahou Shoujo, Romance",
+    "synopsis": "One day, Kinomoto Sakura, a 4th grader stumbles upon the mysterious book of Clow. Upon opening it and reading the name of The Windy aloud, Sakura scatters the cards to the winds. Sakura is elected and appointed by Keroberos, Guardian of the Cards to capture the remaining cards. With her friend Tomoyo and rival Syaoran, Sakura begins an adventure that will forever change her.",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "07/04/1998",
+    "lastEpisodeDate": "21/03/2000",
+    "rawStartDate": {
+      "year": 1998,
+      "month": 4,
+      "day": 7
+    },
+    "rawEndDate": {
+      "year": 2000,
+      "month": 3,
+      "day": 21
+    },
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [],
+    "netflixUrl": "https://www.netflix.com/title/70309056"
   }
 ];
