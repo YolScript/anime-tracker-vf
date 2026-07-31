@@ -22411,7 +22411,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/14cac07bc03ae5aa3262a1d5caa861a9.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00371872/the-drops-of-god",
     "adnUrl": null,
-    "episodesTotal": 16,
+    "episodesTotal": 17,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -22434,7 +22434,7 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [
       {
         "name": "Saison 1",
-        "episodesCount": 16
+        "episodesCount": 17
       }
     ]
   },
@@ -24238,7 +24238,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/7f3b77abac2f46221e91de3a0fc83c4d.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GQWH0M19X/the-elusive-samurai",
     "adnUrl": null,
-    "episodesTotal": 15,
+    "episodesTotal": 16,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -24269,7 +24269,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Saison 2",
-        "episodesCount": 2
+        "episodesCount": 3
       }
     ]
   },
@@ -26229,5 +26229,39 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [],
     "netflixUrl": "https://www.netflix.com/title/70309056"
+  },
+  {
+    "id": "franchise-98449",
+    "titleFr": "Les Enfants de la Baleine",
+    "titleOrig": "Kujira no Kora wa Sajou ni Utau",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx98449-CxVQsAWFPpMa.jpg",
+    "crunchyrollUrl": null,
+    "adnUrl": null,
+    "episodesTotal": 12,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "3.5",
+    "trailerId": "jCzcjyh3fyU",
+    "genres": "Adventure, Drama, Fantasy, Mystery, Romance, Sci-Fi",
+    "synopsis": "Chakuro is the 14-year-old archivist of the Mud Whale, a nigh-utopian island that floats across the surface of an endless sea of sand. Nine in ten of the inhabitants of the Mud Whale have been blessed and cursed with the ability to use saimia, special powers that doom them to an early death.\nChakuro and his friends have stumbled across other islands, but they have never met, seen, or even heard of a human who wasn't from their own. One day, Chakuro visits an island as large as the Mud Whale and meets a girl who will change his destiny.",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "08/10/2017",
+    "lastEpisodeDate": "24/12/2017",
+    "rawStartDate": {
+      "year": 2017,
+      "month": 10,
+      "day": 8
+    },
+    "rawEndDate": {
+      "year": 2017,
+      "month": 12,
+      "day": 24
+    },
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [],
+    "netflixUrl": "https://www.netflix.com/title/80174917"
   }
 ];
