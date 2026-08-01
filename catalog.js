@@ -10699,7 +10699,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "netflixUrl": "https://www.netflix.com/title/82040442"
   },
   {
     "id": "adn-248",
@@ -21064,7 +21065,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Captain Tsubasa Saison 2, Junior Youth Arc",
+        "name": "Captain Tsubasa Saison 2, Junior Youth Arc (VF)",
         "episodesCount": 39
       }
     ]
