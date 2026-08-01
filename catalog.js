@@ -20773,7 +20773,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/e454e218db49b5b66b8e79ba4e98617a.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00377907/black-torch",
     "adnUrl": null,
-    "episodesTotal": 4,
+    "episodesTotal": 5,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -20796,7 +20796,7 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [
       {
         "name": "Saison 1",
-        "episodesCount": 4
+        "episodesCount": 5
       }
     ],
     "openingUrl": "https://v.animethemes.moe/BlackTorch-OP1.webm"
@@ -25183,7 +25183,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/c8835413e0f794fdafa629cc973a273e.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00371630/daemons-of-the-shadow-realm",
     "adnUrl": null,
-    "episodesTotal": 16,
+    "episodesTotal": 17,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -25206,7 +25206,7 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [
       {
         "name": "Tsugai - Daemons of the Shadow Realm",
-        "episodesCount": 16
+        "episodesCount": 17
       }
     ],
     "netflixUrl": "https://www.netflix.com/title/82719204",
