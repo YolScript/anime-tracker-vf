@@ -25414,7 +25414,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/4ad5af6ef0acba2c0ab531469f31f196.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00365624/you-and-i-are-polar-opposites",
     "adnUrl": null,
-    "episodesTotal": 16,
+    "episodesTotal": 17,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -25445,7 +25445,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Saison 2",
-        "episodesCount": 4
+        "episodesCount": 5
       }
     ]
   },
