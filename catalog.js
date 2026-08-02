@@ -269,7 +269,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21459-nYh85uj2Fuwr.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6NQ5DWZ6/my-hero-academia",
     "adnUrl": "https://animationdigitalnetwork.fr/video/405-my-hero-academia",
-    "episodesTotal": 181,
+    "episodesTotal": 182,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -325,6 +325,10 @@ const DEFAULT_ANIME_DATA = [
       {
         "name": "My Hero Academia Saison 7",
         "episodesCount": 21
+      },
+      {
+        "name": "I am a hero too",
+        "episodesCount": 1
       },
       {
         "name": "My Hero Academia SAISON FINALE",
@@ -393,7 +397,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21-ELSYx3yMPcKM.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GRMG8ZQZR/one-piece",
     "adnUrl": "https://animationdigitalnetwork.fr/video/561-one-piece",
-    "episodesTotal": 1213,
+    "episodesTotal": 1214,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -500,7 +504,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Elbaph",
-        "episodesCount": 16
+        "episodesCount": 17
       }
     ],
     "openingUrl": "https://v.animethemes.moe/OnePiece-OP1.webm",
@@ -26292,6 +26296,11 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [
+      {
+        "name": "Saison 1",
+        "episodesCount": 4
+      }
+    ]
   }
 ];
