@@ -2357,7 +2357,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx108465-1ANspF1EWyFx.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G24H1N3MP/mushoku-tensei-jobless-reincarnation",
     "adnUrl": null,
-    "episodesTotal": 54,
+    "episodesTotal": 55,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -26264,5 +26264,34 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [],
     "netflixUrl": "https://www.netflix.com/title/80174917"
+  },
+  {
+    "id": "cr-GT00371881",
+    "titleFr": "Though I Am an Inept Villainess",
+    "titleOrig": "Though I Am an Inept Villainess",
+    "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/edd69ad0bd64a31b14d68facaf52d209.png",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00371881/though-i-am-an-inept-villainess",
+    "adnUrl": null,
+    "episodesTotal": 4,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": null,
+    "trailerId": null,
+    "genres": "Fantasy, Drama, Romance",
+    "synopsis": "Rongée par la jalousie en ayant perdu les faveurs du prince héritier qui lui préfère Reirin, Keigetsu a recours à une magie interdite pour échanger son corps avec celui de la bien-aimée. Mais elle récupère ainsi un corps à la santé fragile et se retrouve à l’article de la mort. Pendant ce temps, Reirin, qui porte désormais le visage d’une paria, doit répondre des crimes de Keigetsu...",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "01/01/2026",
+    "lastEpisodeDate": null,
+    "rawStartDate": {
+      "year": 2026,
+      "month": 1,
+      "day": 1
+    },
+    "rawEndDate": null,
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": []
   }
 ];
