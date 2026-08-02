@@ -21065,7 +21065,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Captain Tsubasa Saison 2, Junior Youth Arc (VF)",
+        "name": "Captain Tsubasa Saison 2, Junior Youth Arc",
         "episodesCount": 39
       }
     ]
