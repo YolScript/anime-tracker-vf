@@ -7057,7 +7057,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx100922-uxEhaCsqMMp3.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/series/GNVHKN94W/grand-blue-dreaming",
     "adnUrl": null,
-    "episodesTotal": 28,
+    "episodesTotal": 29,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -7092,7 +7092,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Season 3",
-        "episodesCount": 4
+        "episodesCount": 5
       }
     ],
     "openingUrl": "https://v.animethemes.moe/GrandBlue-OP1-NCBD1080.webm",
