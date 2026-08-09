@@ -845,8 +845,7 @@ const DEFAULT_ANIME_DATA = [
       }
     ],
     "openingUrl": "https://v.animethemes.moe/KimiNoNaWa-OP1-EN.webm",
-    "noVf": true,
-    "unavailable": true
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-bd02fbb8-38b5-44fe-a85b-98cb13e1a8c2"
   },
   {
     "id": "franchise-101759",
@@ -14019,7 +14018,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "netflixUrl": null,
+    "netflixUrl": "https://www.netflix.com/title/80152538",
     "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.0ab6a7ab-1804-c22a-ec45-a45654c26263"
   },
   {
@@ -19646,9 +19645,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "netflixUrl": null,
-    "noVf": true,
-    "unavailable": true
+    "netflixUrl": "https://www.netflix.com/title/81024452"
   },
   {
     "id": "franchise-1030",
