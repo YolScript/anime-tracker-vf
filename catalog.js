@@ -14287,8 +14287,7 @@ const DEFAULT_ANIME_DATA = [
       }
     ],
     "openingUrl": "https://v.animethemes.moe/BananaFish-OP1-NCBD1080.webm",
-    "noVf": true,
-    "unavailable": true
+    "netflixUrl": "https://www.netflix.com/title/81218604"
   },
   {
     "id": "franchise-101347",
