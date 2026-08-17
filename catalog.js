@@ -14018,7 +14018,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "netflixUrl": null,
+    "netflixUrl": "https://www.netflix.com/title/80152538",
     "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.0ab6a7ab-1804-c22a-ec45-a45654c26263"
   },
   {
@@ -19644,9 +19644,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "netflixUrl": null,
-    "noVf": true,
-    "unavailable": true
+    "netflixUrl": "https://www.netflix.com/title/81024452"
   },
   {
     "id": "franchise-1030",
@@ -26303,5 +26301,39 @@ const DEFAULT_ANIME_DATA = [
       }
     ],
     "disneyUrl": "https://www.disneyplus.com/browse/entity-79a3e335-2acc-408e-a942-1b0bac47d952"
+  },
+  {
+    "id": "franchise-468",
+    "titleFr": "Ghost in the Shell 2 : Innocence",
+    "titleOrig": "Innocence",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx468-rfiX1uY8bsPp.jpg",
+    "crunchyrollUrl": null,
+    "adnUrl": null,
+    "episodesTotal": 1,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "3.8",
+    "trailerId": "0XkATpPvqEA",
+    "genres": "Action, Psychological, Sci-Fi",
+    "synopsis": "The year is 2032. With the advancement of medical technology humanity has grown into a more technologically driven creature, creating a breed of cyborg citizen. Along with the development of cybernetics the world has seen rapid development in the field of artificial intelligence, making androids a commercially viable venture.\n\nA recent string of murders perpetrated by a prototype female android has drawn the attention of Section 9, a unit specializing in counter cyber-terrorism. With none of the victims' families pressing charges, suspicions arise regarding the nature of the androids and their production.\n\nMonths have passed since the end of the Puppet Master incident, and with the Major still missing investigative duties fall to her cyborg commando partner Batou and his newly recruited biological partner, Togusa. Can the two overcome their differences and discover the truth behind this string of murders?\n\n(Source: Bandai Entertainment)",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "06/03/2004",
+    "lastEpisodeDate": "06/03/2004",
+    "rawStartDate": {
+      "year": 2004,
+      "month": 3,
+      "day": 6
+    },
+    "rawEndDate": {
+      "year": 2004,
+      "month": 3,
+      "day": 6
+    },
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [],
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-7dc37200-a3c7-4fc5-96a5-de5459843049"
   }
 ];
