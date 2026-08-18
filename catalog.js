@@ -26335,5 +26335,39 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [],
     "disneyUrl": "https://www.disneyplus.com/browse/entity-7dc37200-a3c7-4fc5-96a5-de5459843049"
+  },
+  {
+    "id": "franchise-213847",
+    "titleFr": "Star Wars: Visions Presents - The Ninth Jedi",
+    "titleOrig": "Star Wars: Visions - Kyuuninme no Jedi",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx213847-VJBiihCv12zh.jpg",
+    "crunchyrollUrl": null,
+    "adnUrl": null,
+    "episodesTotal": 8,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "3.3",
+    "trailerId": "6nUStmkGRec",
+    "genres": "Action, Adventure, Sci-Fi",
+    "synopsis": "The 8-episode limited anime series is part of an all-new Star Wars: Visions Presents banner, which allows filmmakers to tell longer-form Star Wars: Visions stories. Picking up not long after the events of the Visions shorts, in the new series, Lah Kara continues to train in the ways of the Jedi under Margrave Juro amid an epic journey of self-discovery as she and Juro’s small fellowship of Jedi-in-training embark on a quest to save her father.",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "05/08/2026",
+    "lastEpisodeDate": "05/08/2026",
+    "rawStartDate": {
+      "year": 2026,
+      "month": 8,
+      "day": 5
+    },
+    "rawEndDate": {
+      "year": 2026,
+      "month": 8,
+      "day": 5
+    },
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [],
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-921588f0-9a3b-4cd6-80d6-0a7cc9ed388a"
   }
 ];
