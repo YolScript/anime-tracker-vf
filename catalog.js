@@ -14517,7 +14517,8 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [],
     "netflixUrl": "https://www.netflix.com/title/82757009",
-    "openingUrl": "https://v.animethemes.moe/KillAo-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/KillAo-OP1.webm",
+    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.8eb355ee-8001-4741-a2a2-6a6d83b02357"
   },
   {
     "id": "franchise-177699",
@@ -26399,5 +26400,39 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [],
     "netflixUrl": "https://www.netflix.com/title/81698957"
+  },
+  {
+    "id": "franchise-5681",
+    "titleFr": "Summer Wars",
+    "titleOrig": "Summer Wars",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx5681-3DmxUVn3grD0.jpg",
+    "crunchyrollUrl": null,
+    "adnUrl": null,
+    "episodesTotal": 1,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "3.9",
+    "trailerId": "AMASWEhv7_g",
+    "genres": "Action, Comedy, Drama, Romance, Sci-Fi",
+    "synopsis": "When timid eleventh-grader and math genius Kenji Koiso is asked by older student and secret crush Natsuki to come with her to her family's Nagano home for a summer job, he agrees without hesitation. \nNatsuki's family, the Jinnouchi clan, dates back to the Muromachi era (1336 to 1573), and they've all come together to celebrate the 90th birthday of the spunky matriarch of the family, Sakae. That&rsquo;s when Kenji discovers his \"summer job\" is to pretend to be Natsuki's fiance and dance with her at the birthday celebration. \nAs Kenji attempts to keep up with Natsuki's act around her family, he receives a strange math problem on his cell phone which, being a math genius, he can't resist solving. As it turns out, the solution to the mysterious equation causes Oz, the program that controls nearly every aspect of life to be hacked into, it's up to Kenji and his new \"family\" to stop the hacker before it's too late.\n(Source: twitchfilm.net)",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "01/08/2009",
+    "lastEpisodeDate": "01/08/2009",
+    "rawStartDate": {
+      "year": 2009,
+      "month": 8,
+      "day": 1
+    },
+    "rawEndDate": {
+      "year": 2009,
+      "month": 8,
+      "day": 1
+    },
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [],
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-7c8a4e5c-59b9-4387-b4f6-70e03178f950"
   }
 ];
