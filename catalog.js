@@ -1359,7 +1359,8 @@ const DEFAULT_ANIME_DATA = [
       }
     ],
     "openingUrl": "https://v.animethemes.moe/BlackClover-OP1-NCBD1080.webm",
-    "netflixUrl": "https://www.netflix.com/title/80238012"
+    "netflixUrl": "https://www.netflix.com/title/80238012",
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-484054dc-6486-477a-a31a-87163fbbb65a"
   },
   {
     "id": "franchise-101291",
