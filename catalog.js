@@ -1771,7 +1771,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Kono Subarashii Sekai ni Shukufuku wo!",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21202-mPOr80AEjUcZ.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GYE5K3GQR/konosuba-gods-blessing-on-this-wonderful-world",
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1120-konosuba-gods-blessing-on-this-wonderful-world",
+    "adnUrl": null,
     "episodesTotal": 36,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -11563,7 +11563,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Kono Subarashii Sekai ni Shukufuku wo! Kurenai Densetsu",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/konosuba/film/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1124-konosuba-god-s-blessing-on-this-wonderful-world-legend-of-crimson",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -11588,7 +11588,9 @@ const DEFAULT_ANIME_DATA = [
     },
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-1106",
