@@ -941,7 +941,8 @@ const DEFAULT_ANIME_DATA = [
     ],
     "openingUrl": "https://v.animethemes.moe/AnsatsuKyoushitsu-OP1.webm",
     "netflixUrl": "https://www.netflix.com/title/80045948",
-    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.d613532f-7789-4685-9811-c7d712693d59"
+    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.d613532f-7789-4685-9811-c7d712693d59",
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-2684ff07-7c36-4400-81ba-507ba1310742"
   },
   {
     "id": "franchise-21507",
@@ -11140,7 +11141,8 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-da0b874c-fe01-4a14-9db0-c476bfcc57f1"
   },
   {
     "id": "adn-971",
@@ -11681,7 +11683,8 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [],
     "openingUrl": "https://v.animethemes.moe/ShadowGarden-OP1-NCBD1080.webm",
     "netflixUrl": "https://www.netflix.com/title/81642096",
-    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ff3d02a7-4f3f-4eb6-84dc-63eb0d2e7466"
+    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ff3d02a7-4f3f-4eb6-84dc-63eb0d2e7466",
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-c0ed3ad5-47e8-42f1-b54e-e22f5a7d98e9"
   },
   {
     "id": "adn-1084",
@@ -26437,5 +26440,39 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [],
     "disneyUrl": "https://www.disneyplus.com/browse/entity-7c8a4e5c-59b9-4387-b4f6-70e03178f950"
+  },
+  {
+    "id": "franchise-158898",
+    "titleFr": "Yozakura Family",
+    "titleOrig": "Yozakura-san Chi no Daisakusen",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx158898-O3egiBNkxLQO.png",
+    "crunchyrollUrl": null,
+    "adnUrl": null,
+    "episodesTotal": 27,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "3.7",
+    "trailerId": "xT3AryUklAk",
+    "genres": "Action, Comedy, Romance",
+    "synopsis": "Taiyou Asano is a super shy high school student and the only person he can talk to is his childhood friend, Mutsumi Yozakura. It turns out that Mutsumi is the daughter of the ultimate spy family! Even worse, Mutsumi is being harassed by her overprotective, nightmare of a brother, Kyouichirou. What drastic steps will Taiyou have to take to save Mutsumi?! A spy family comedy - the mission begins!\n\n(Source: MANGA Plus)",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "07/04/2024",
+    "lastEpisodeDate": "06/10/2024",
+    "rawStartDate": {
+      "year": 2024,
+      "month": 4,
+      "day": 7
+    },
+    "rawEndDate": {
+      "year": 2024,
+      "month": 10,
+      "day": 6
+    },
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [],
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-0113d236-c3a2-4098-a663-bdb5979bfb74"
   }
 ];
