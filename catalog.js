@@ -662,7 +662,8 @@ const DEFAULT_ANIME_DATA = [
     ],
     "openingUrl": "https://v.animethemes.moe/Naruto-OP1.webm",
     "netflixUrl": "https://www.netflix.com/title/70205012",
-    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.5eb6f772-ac40-3165-11cf-4eaaa6925a0d"
+    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.5eb6f772-ac40-3165-11cf-4eaaa6925a0d",
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-bc2dae95-23e6-45dc-8177-066425b10fa0"
   },
   {
     "id": "franchise-11757",
@@ -14806,8 +14807,10 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "netflixUrl": "https://www.netflix.com/title/80172949",
-    "openingUrl": "https://v.animethemes.moe/Kingdom-OP1.webm"
+    "netflixUrl": null,
+    "openingUrl": "https://v.animethemes.moe/Kingdom-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-170083",
