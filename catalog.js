@@ -26477,5 +26477,39 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [],
     "disneyUrl": "https://www.disneyplus.com/browse/entity-0113d236-c3a2-4098-a663-bdb5979bfb74"
+  },
+  {
+    "id": "franchise-106286",
+    "titleFr": "Les Enfants du temps",
+    "titleOrig": "Tenki no Ko",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx106286-5COcpd0J9VbL.png",
+    "crunchyrollUrl": null,
+    "adnUrl": null,
+    "episodesTotal": 1,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "4.0",
+    "trailerId": "Q6iK6DjV_iE",
+    "genres": "Drama, Romance, Slice of Life, Supernatural",
+    "synopsis": "High school student Hodaka leaves his home on an isolated island and moves to Tokyo, but he immediately becomes broke. He lives his days in isolation, but finally finds a job as a writer for a shady occult magazine. After he starts his job, the weather has been rainy day after day. In a corner of the crowded and busy city, Hodaka meets a young woman named Hina. Due to certain circumstances, Hina and her younger brother live together, but have a cheerful and sturdy life. Hina also has a certain power: the power to stop the rain and clear the sky.\n\n(Source: Anime News Network)",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "19/07/2019",
+    "lastEpisodeDate": "19/07/2019",
+    "rawStartDate": {
+      "year": 2019,
+      "month": 7,
+      "day": 19
+    },
+    "rawEndDate": {
+      "year": 2019,
+      "month": 7,
+      "day": 19
+    },
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [],
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-74a10b8a-a4e1-4d7e-b292-b1d41b463e10"
   }
 ];
