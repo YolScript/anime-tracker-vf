@@ -2595,7 +2595,8 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 16
       }
     ],
-    "openingUrl": "https://v.animethemes.moe/YoukosoZitsu-OP1-NCBD1080.webm"
+    "openingUrl": "https://v.animethemes.moe/YoukosoZitsu-OP1-NCBD1080.webm",
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-99a9d6e4-9ca8-4cfd-ba86-1f7dd9ea19d3"
   },
   {
     "id": "franchise-151807",
@@ -14025,7 +14026,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "netflixUrl": "https://www.netflix.com/title/80152538",
+    "netflixUrl": null,
     "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.0ab6a7ab-1804-c22a-ec45-a45654c26263"
   },
   {
@@ -19654,7 +19655,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "netflixUrl": "https://www.netflix.com/title/81024452"
+    "netflixUrl": null,
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-1030",
