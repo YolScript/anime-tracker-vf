@@ -14026,7 +14026,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "netflixUrl": null,
+    "netflixUrl": "https://www.netflix.com/title/80152538",
     "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.0ab6a7ab-1804-c22a-ec45-a45654c26263"
   },
   {
@@ -19655,9 +19655,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "netflixUrl": null,
-    "noVf": true,
-    "unavailable": true
+    "netflixUrl": "https://www.netflix.com/title/81024452"
   },
   {
     "id": "franchise-1030",
