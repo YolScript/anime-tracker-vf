@@ -9921,7 +9921,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://image.animationdigitalnetwork.com/license/doremi/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
     "adnUrl": "https://animationdigitalnetwork.fr/video/1343-magical-doremi",
-    "episodesTotal": 201,
+    "episodesTotal": 214,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -13514,7 +13514,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Fairy Tail Dragon Cry",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/fairytail/film2/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/462-fairy-tail-film-dragon-cry",
+    "adnUrl": null,
     "episodesTotal": 5,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -13886,7 +13886,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Fairy Tail : Houou no Miko",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/fairytail/film/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/297-fairy-tail-film-la-pretresse-du-phoenix",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -13911,7 +13911,9 @@ const DEFAULT_ANIME_DATA = [
     },
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-291",
