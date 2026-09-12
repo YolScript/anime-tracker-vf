@@ -26514,5 +26514,39 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [],
     "disneyUrl": "https://www.disneyplus.com/browse/entity-74a10b8a-a4e1-4d7e-b292-b1d41b463e10"
+  },
+  {
+    "id": "franchise-196144",
+    "titleFr": "Snowball Earth",
+    "titleOrig": "Snowball Earth",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx196144-UqVOcMjThkqa.jpg",
+    "crunchyrollUrl": null,
+    "adnUrl": null,
+    "episodesTotal": 13,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "3.4",
+    "trailerId": "0vTK8SWTgws",
+    "genres": "Action, Mecha, Sci-Fi",
+    "synopsis": "\"Yukio... I'm going to make a friend.\" A shy boy named Tetsuo. The only thing he had was a giant robot named Yukio. They became \"saviors\" in the fight against the galactic monsters coming from outer space. After the final battle, Tetsuo returns to Earth for the first time in ten years and witnesses an astonishing world. It's a frozen Earth (named Snowball Earth), where the entire land is covered in snow and ice, being turned into a deadly world! What happened to the human race? And will Tetsuo be able to fulfill the promise he made to Yukio?\n(Source: Shogakukan, translated)",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "03/04/2026",
+    "lastEpisodeDate": "26/06/2026",
+    "rawStartDate": {
+      "year": 2026,
+      "month": 4,
+      "day": 3
+    },
+    "rawEndDate": {
+      "year": 2026,
+      "month": 6,
+      "day": 26
+    },
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [],
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-5ecc8b00-79fd-4c1a-81ed-f44260ef38d4"
   }
 ];
