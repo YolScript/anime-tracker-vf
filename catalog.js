@@ -4700,7 +4700,8 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 14
       }
     ],
-    "openingUrl": "https://v.animethemes.moe/TheGodOfHighSchool-OP1-NCBD1080.webm"
+    "openingUrl": "https://v.animethemes.moe/TheGodOfHighSchool-OP1-NCBD1080.webm",
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-71bcb11f-763c-4609-8965-540eaf7fa795"
   },
   {
     "id": "franchise-918",
