@@ -2294,7 +2294,8 @@ const DEFAULT_ANIME_DATA = [
       }
     ],
     "openingUrl": "https://v.animethemes.moe/ShieldHero-OP1-NCBD1080.webm",
-    "netflixUrl": "https://www.netflix.com/title/81058649"
+    "netflixUrl": "https://www.netflix.com/title/81058649",
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-1b84d641-1bb3-422d-be4c-8e24c7b547cc"
   },
   {
     "id": "franchise-101280",
@@ -15931,8 +15932,10 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "netflixUrl": "https://www.netflix.com/title/70204964",
-    "openingUrl": "https://v.animethemes.moe/Claymore-OP1.webm"
+    "netflixUrl": null,
+    "openingUrl": "https://v.animethemes.moe/Claymore-OP1.webm",
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-153930",
@@ -20504,7 +20507,8 @@ const DEFAULT_ANIME_DATA = [
         "name": "A Sign of Affection",
         "episodesCount": 12
       }
-    ]
+    ],
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-81a4b821-1dbe-4ecc-9e01-57a7941982c3"
   },
   {
     "id": "cr-GP5HJ84XV",
