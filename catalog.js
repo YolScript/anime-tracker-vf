@@ -10120,7 +10120,8 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [],
     "openingUrl": "https://v.animethemes.moe/SailorMoon-OP1.webm",
     "netflixUrl": "https://www.netflix.com/title/80992787",
-    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.31375807-c6a9-485d-bff3-460920f8cc40"
+    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.31375807-c6a9-485d-bff3-460920f8cc40",
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-dcec05bc-2f1c-41df-9dee-a9c1ac8886f6"
   },
   {
     "id": "adn-1393",
@@ -11181,7 +11182,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [],
     "openingUrl": "https://v.animethemes.moe/UruseiYatsura-OP1.webm",
-    "netflixUrl": "https://www.netflix.com/title/81642888",
+    "netflixUrl": null,
     "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.b1895ccc-20b4-4b19-94bc-9f8db9ddfc5f"
   },
   {
@@ -19661,7 +19662,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "netflixUrl": "https://www.netflix.com/title/81024452"
+    "netflixUrl": null,
+    "noVf": true,
+    "unavailable": true
   },
   {
     "id": "franchise-1030",
