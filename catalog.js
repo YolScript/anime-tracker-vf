@@ -25545,7 +25545,8 @@ const DEFAULT_ANIME_DATA = [
       }
     ],
     "netflixUrl": "https://www.netflix.com/title/81602834",
-    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ac388135-ac50-4c7b-9116-df2bf4a0b2f3"
+    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ac388135-ac50-4c7b-9116-df2bf4a0b2f3",
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-7c74ce17-ce8d-42d7-b2b5-afc0db501194"
   },
   {
     "id": "franchise-5114",
