@@ -10093,7 +10093,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://image.animationdigitalnetwork.com/license/sailormoon/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
     "adnUrl": "https://animationdigitalnetwork.fr/video/427-sailor-moon",
-    "episodesTotal": 200,
+    "episodesTotal": 202,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -10753,7 +10753,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Kimagure Orange Road : Ano Hi ni Kaeritai",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/orangeroad/film/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1279-kimagure-orange-road-je-veux-revenir-a-ce-jour",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -10779,7 +10779,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/KimagureOrangeRoad-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/KimagureOrangeRoad-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-588",
@@ -12970,7 +12972,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Roger et ses humains",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/roger/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/756-roger-et-ses-humains",
+    "adnUrl": null,
     "episodesTotal": 76,
     "episodesWatched": 0,
     "status": "plan-to-watch",
