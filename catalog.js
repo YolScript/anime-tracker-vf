@@ -3266,7 +3266,8 @@ const DEFAULT_ANIME_DATA = [
       }
     ],
     "openingUrl": "https://v.animethemes.moe/SoulEater-OP1.webm",
-    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.36a90e05-96b2-4ebf-a63f-c35cea90b59b"
+    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.36a90e05-96b2-4ebf-a63f-c35cea90b59b",
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-748030aa-5e23-477d-9f4b-23ce788ce8f8"
   },
   {
     "id": "franchise-11111",
@@ -26559,5 +26560,39 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [],
     "disneyUrl": "https://www.disneyplus.com/browse/entity-5ecc8b00-79fd-4c1a-81ed-f44260ef38d4"
+  },
+  {
+    "id": "franchise-141902",
+    "titleFr": "One Piece Film - Red",
+    "titleOrig": "ONE PIECE FILM: RED",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx141902-fTyoTk8F8qOl.jpg",
+    "crunchyrollUrl": null,
+    "adnUrl": null,
+    "episodesTotal": 1,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "3.9",
+    "trailerId": "YAN45KAL5lg",
+    "genres": "Action, Adventure, Comedy, Drama, Fantasy, Music",
+    "synopsis": "An almighty voice. With fiery red locks.\nThe story takes place on an island where Uta, the world’s favorite diva, performs for the first time in public. Uta’s singing voice, which she sings with while concealing her true identity, has been described as “otherworldly,” and while the venue is filled with the Straw Hats led by Luffy, pirates, navy, and fans from all over the world who have come to enjoy her voice, Uta’s voice is heard in a new light. The curtain rises on the story with the shocking revelation that she is “Shanks’ daughter!“ \n\n(Source: ONE PIECE FILM RED Website)\n",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "06/08/2022",
+    "lastEpisodeDate": "06/08/2022",
+    "rawStartDate": {
+      "year": 2022,
+      "month": 8,
+      "day": 6
+    },
+    "rawEndDate": {
+      "year": 2022,
+      "month": 8,
+      "day": 6
+    },
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [],
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-776554e5-1cf1-42ee-b33d-579fa35862ef"
   }
 ];
