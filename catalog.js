@@ -8863,8 +8863,7 @@ const DEFAULT_ANIME_DATA = [
         }
       }
     ],
-    "noVf": true,
-    "unavailable": true
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-fa6361ce-458d-4554-8164-700d96b9021d"
   },
   {
     "id": "franchise-11843",
