@@ -1465,7 +1465,8 @@ const DEFAULT_ANIME_DATA = [
       }
     ],
     "openingUrl": "https://v.animethemes.moe/SpyXFamily-OP1.webm",
-    "netflixUrl": "https://www.netflix.com/title/81511410"
+    "netflixUrl": "https://www.netflix.com/title/81511410",
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-1ad522c4-bd79-464f-b483-c2fa01aaca2e"
   },
   {
     "id": "franchise-101921",
