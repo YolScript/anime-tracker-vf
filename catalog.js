@@ -6524,7 +6524,8 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 24
       }
     ],
-    "openingUrl": "https://v.animethemes.moe/Gachiakuta-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/Gachiakuta-OP1.webm",
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-14f5d468-38b2-4d4b-97ed-649e6c3ba4c8"
   },
   {
     "id": "franchise-21857",
@@ -26559,7 +26560,8 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "disneyUrl": "https://www.disneyplus.com/browse/entity-5ecc8b00-79fd-4c1a-81ed-f44260ef38d4"
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-5ecc8b00-79fd-4c1a-81ed-f44260ef38d4",
+    "netflixUrl": "https://www.netflix.com/title/82746480"
   },
   {
     "id": "franchise-141902",
@@ -26594,5 +26596,35 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [],
     "disneyUrl": "https://www.disneyplus.com/browse/entity-776554e5-1cf1-42ee-b33d-579fa35862ef"
+  },
+  {
+    "id": "franchise-209499",
+    "titleFr": "TANK CHAIR",
+    "titleOrig": "TANK CHAIR: Sensha Isu",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx209499-S0sWFrCpft85.jpg",
+    "crunchyrollUrl": null,
+    "adnUrl": null,
+    "episodesTotal": 0,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "2.9",
+    "trailerId": "ihAvU833DHA",
+    "genres": "Action, Sci-Fi",
+    "synopsis": "Shizuka takes on the most dangerous of assassin jobs, but she's not the one doing the killing. Rather, it's her brother, Nagi, a strong assassin who took a bullet to protect his sister, leaving him in a comatose state and having to use a wheelchair. However, Shizuka has figured out the key to waking her brother up: he must be faced with killing intent! Thus begins a violent journey of recovery, battling the most dangerous foes!\n\n(Source: Kodansha USA)",
+    "cast": "",
+    "airingStatus": "RELEASING",
+    "releaseDate": "04/10/2026",
+    "lastEpisodeDate": null,
+    "rawStartDate": {
+      "year": 2026,
+      "month": 10,
+      "day": 4
+    },
+    "rawEndDate": null,
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [],
+    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.42a44704-5a1e-4199-9f26-36ebc23057e0"
   }
 ];
