@@ -206,7 +206,8 @@ const DEFAULT_ANIME_DATA = [
       }
     ],
     "openingUrl": "https://v.animethemes.moe/KimetsuNoYaiba-OP1-NCBD1080.webm",
-    "netflixUrl": "https://www.netflix.com/title/81091393"
+    "netflixUrl": "https://www.netflix.com/title/81091393",
+    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.a21fb024-b946-479b-9c83-5441b80b8549"
   },
   {
     "id": "franchise-113415",
@@ -12118,7 +12119,8 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/AirGear-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/AirGear-OP1.webm",
+    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.a353a473-945c-40b0-87a9-313522d1650a"
   },
   {
     "id": "adn-624",
@@ -12186,7 +12188,8 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/Beck-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/Beck-OP1.webm",
+    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.bd7ca624-ae5e-4f36-826c-eee81b144613"
   },
   {
     "id": "adn-1046",
@@ -13677,7 +13680,8 @@ const DEFAULT_ANIME_DATA = [
     },
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.d6c4d930-8e42-4c8c-a359-0da6a83684a0"
   },
   {
     "id": "adn-432",
@@ -13781,7 +13785,8 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/Endride-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/Endride-OP1.webm",
+    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.76de8c2f-41d2-4fb8-9fbd-5e37a68a6862"
   },
   {
     "id": "adn-319",
@@ -26626,5 +26631,39 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [],
     "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.42a44704-5a1e-4199-9f26-36ebc23057e0"
+  },
+  {
+    "id": "franchise-20972",
+    "titleFr": "Le Rakugo ou la vie",
+    "titleOrig": "Shouwa Genroku Rakugo Shinjuu",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20972-95dyLz6lkCZ8.jpg",
+    "crunchyrollUrl": null,
+    "adnUrl": null,
+    "episodesTotal": 13,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "4.2",
+    "trailerId": "W137rrbpdkA",
+    "genres": "Drama",
+    "synopsis": "The story revolves around a mature prisoner who was released on good behavior during Japan's Shouwa Genroku era (1960s to early 1970s). He is called Yotarou by others, a term that means an \"anti-hero\" or a \"dim-witted man.\" When he returns to society, he starts a new life in rakugo (comic storytelling). Touched by Yakumo's role as the \"grim reaper,\" he asks the master to take him in as an apprentice. Most of the season delves into Yakumo's own past during World War II and the years afterward.\n\n(Source: Anime News Network)\n\nNote: The first episode aired with a runtime of 48 minutes as opposed to the standard 24 minute long episode.",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "09/01/2016",
+    "lastEpisodeDate": "02/04/2016",
+    "rawStartDate": {
+      "year": 2016,
+      "month": 1,
+      "day": 9
+    },
+    "rawEndDate": {
+      "year": 2016,
+      "month": 4,
+      "day": 2
+    },
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [],
+    "netflixUrl": "https://www.netflix.com/title/82746959"
   }
 ];
