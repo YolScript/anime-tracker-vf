@@ -14788,7 +14788,8 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [],
     "disneyUrl": "https://www.disneyplus.com/browse/entity-eb5b776f-8162-491a-9aca-c1e9b56729e5",
-    "openingUrl": "https://v.animethemes.moe/NiwatoriFighter-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/NiwatoriFighter-OP1.webm",
+    "netflixUrl": "https://www.netflix.com/title/82647303"
   },
   {
     "id": "franchise-12031",
