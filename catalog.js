@@ -1947,7 +1947,8 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 25
       }
     ],
-    "openingUrl": "https://v.animethemes.moe/EnenNoShouboutai-OP1-NCBD1080.webm"
+    "openingUrl": "https://v.animethemes.moe/EnenNoShouboutai-OP1-NCBD1080.webm",
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-8d548e2d-9a64-4f0e-9cdd-14fc2d547718"
   },
   {
     "id": "franchise-14719",
