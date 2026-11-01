@@ -11065,7 +11065,9 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "netflixUrl": "https://www.netflix.com/title/81910115",
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-9e0f146c-5c4b-447b-8265-6f99f5bc0d61"
   },
   {
     "id": "adn-1214",
@@ -11642,7 +11644,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Manie-Manie 迷宮物語",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/maniemanie/film/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1127-manie-manie",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -11659,7 +11661,9 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-973",
@@ -11705,7 +11709,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://image.animationdigitalnetwork.com/license/lecollegenoir/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
     "adnUrl": "https://animationdigitalnetwork.fr/video/1084-le-college-noir",
-    "episodesTotal": 10,
+    "episodesTotal": 12,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -14825,10 +14829,8 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "netflixUrl": null,
-    "openingUrl": "https://v.animethemes.moe/Kingdom-OP1.webm",
-    "noVf": true,
-    "unavailable": true
+    "netflixUrl": "https://www.netflix.com/title/80172949",
+    "openingUrl": "https://v.animethemes.moe/Kingdom-OP1.webm"
   },
   {
     "id": "franchise-170083",
