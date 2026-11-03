@@ -21804,7 +21804,8 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 12
       }
     ],
-    "openingUrl": "https://v.animethemes.moe/HoneyLemonSoda-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/HoneyLemonSoda-OP1.webm",
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-6985037f-9614-48e7-91f3-ca8a4d7428bb"
   },
   {
     "id": "cr-GKEH2G004",
