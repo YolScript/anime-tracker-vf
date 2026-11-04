@@ -558,7 +558,7 @@ const DEFAULT_ANIME_DATA = [
       }
     ],
     "openingUrl": "https://v.animethemes.moe/TokyoGhoul-OP1.webm",
-    "netflixUrl": "https://www.netflix.com/title/80023687"
+    "netflixUrl": null
   },
   {
     "id": "franchise-20",
