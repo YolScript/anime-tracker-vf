@@ -26701,5 +26701,35 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [],
     "netflixUrl": "https://www.netflix.com/title/83189604"
+  },
+  {
+    "id": "franchise-203275",
+    "titleFr": "Devils' Crest",
+    "titleOrig": "Demons' Crest",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b203275-YyNHygkzIjMC.jpg",
+    "crunchyrollUrl": null,
+    "adnUrl": null,
+    "episodesTotal": 0,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "2.5",
+    "trailerId": "z_aHrTag3Ig",
+    "genres": "Action, Adventure, Fantasy",
+    "synopsis": "Sixth-grader Yuuma Ashihara and his twin sister, Sawa, are playing Actual Magic, a brand-new virtual reality MMORPG, when it suddenly begins fusing with the real world. Amid all the chaos and confusion, it becomes clear that death is lurking around every corner, including when Yuuma runs into his classmate Sumika. Before, she was one of the cutest girls in his class, but she’s since undergone a terrible metamorphosis—into one of the game’s horrifying monsters! From the author of Sword Art Online and Accel World comes a story beyond VR and AR, where gaming and reality are one and the same…and staying alive is just the beginning!\n\n(Source: Yen Press)",
+    "cast": "",
+    "airingStatus": "RELEASING",
+    "releaseDate": "06/11/2026",
+    "lastEpisodeDate": null,
+    "rawStartDate": {
+      "year": 2026,
+      "month": 11,
+      "day": 6
+    },
+    "rawEndDate": null,
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [],
+    "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ecd9cd5f-7635-438a-9c8d-73e2ae8d9739"
   }
 ];
