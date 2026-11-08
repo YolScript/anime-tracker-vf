@@ -11709,7 +11709,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://image.animationdigitalnetwork.com/license/lecollegenoir/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
     "adnUrl": "https://animationdigitalnetwork.fr/video/1084-le-college-noir",
-    "episodesTotal": 12,
+    "episodesTotal": 14,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
