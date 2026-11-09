@@ -155,7 +155,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101922-WBsBl0ClmgYL.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GY5P48XEY/demon-slayer-kimetsu-no-yaiba",
     "adnUrl": "https://animationdigitalnetwork.fr/video/846-demon-slayer-kimetsu-no-yaiba",
-    "episodesTotal": 64,
+    "episodesTotal": 69,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -185,8 +185,12 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 26
       },
       {
-        "name": "Demon Slayer -Kimetsu no Yaiba- The Movie: Mugen Train",
+        "name": "Demon Slayer -Kimetsu no Yaiba- Le film : Le train de l'infini",
         "episodesCount": 1
+      },
+      {
+        "name": "Demon Slayer: Kimetsu no Yaiba TV Specials",
+        "episodesCount": 5
       },
       {
         "name": "Demon Slayer: Kimetsu no Yaiba Le train de l’infini",
@@ -398,7 +402,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21-ELSYx3yMPcKM.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GRMG8ZQZR/one-piece",
     "adnUrl": "https://animationdigitalnetwork.fr/video/561-one-piece",
-    "episodesTotal": 1214,
+    "episodesTotal": 1291,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -428,12 +432,24 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 61
       },
       {
+        "name": "East Blue Special Edition HD, Subtitled (1-61)",
+        "episodesCount": 61
+      },
+      {
+        "name": "One Piece: Episode of East Blue",
+        "episodesCount": 1
+      },
+      {
         "name": "Alabasta",
         "episodesCount": 82
       },
       {
         "name": "Skypeia",
         "episodesCount": 63
+      },
+      {
+        "name": "One Piece: Episode of Skypiea",
+        "episodesCount": 1
       },
       {
         "name": "Davy Back Fight",
@@ -465,15 +481,27 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Marineford",
-        "episodesCount": 57
+        "episodesCount": 58
+      },
+      {
+        "name": "One Piece: 3D2Y",
+        "episodesCount": 1
+      },
+      {
+        "name": "One Piece Fan Letter",
+        "episodesCount": 1
       },
       {
         "name": "Île des hommes-poissons",
-        "episodesCount": 61
+        "episodesCount": 62
       },
       {
         "name": "One Piece Log: saga de l'Île des hommes-poissons remasterisée et remontée",
         "episodesCount": 21
+      },
+      {
+        "name": "One Piece: Adventure of Nebulandia",
+        "episodesCount": 1
       },
       {
         "name": "Punk Hazard",
@@ -482,6 +510,14 @@ const DEFAULT_ANIME_DATA = [
       {
         "name": "Dressrosa",
         "episodesCount": 122
+      },
+      {
+        "name": "One Piece: Episode of Sabo",
+        "episodesCount": 1
+      },
+      {
+        "name": "One Piece: Heart of Gold",
+        "episodesCount": 1
       },
       {
         "name": "Zo",
@@ -497,15 +533,15 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Egghead",
-        "episodesCount": 79
+        "episodesCount": 78
       },
       {
-        "name": "HEROINES",
+        "name": "One Piece HEROINES Special",
         "episodesCount": 1
       },
       {
         "name": "Elbaph",
-        "episodesCount": 17
+        "episodesCount": 25
       }
     ],
     "openingUrl": "https://v.animethemes.moe/OnePiece-OP1.webm",
@@ -519,7 +555,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b20605-k665mVkSug8D.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6NV7Z50Y/tokyo-ghoul",
     "adnUrl": "https://animationdigitalnetwork.fr/video/656-tokyo-ghoul",
-    "episodesTotal": 48,
+    "episodesTotal": 50,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -555,6 +591,10 @@ const DEFAULT_ANIME_DATA = [
       {
         "name": "Tokyo Ghoul: re",
         "episodesCount": 24
+      },
+      {
+        "name": "Tokyo Ghoul: OVA Season 1",
+        "episodesCount": 2
       }
     ],
     "openingUrl": "https://v.animethemes.moe/TokyoGhoul-OP1.webm",
@@ -593,72 +633,120 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Naruto Shippuden: The Kazekage's Rescue",
+        "name": "Part 1",
         "episodesCount": 32
       },
       {
-        "name": "Naruto Shippuden: The Long-Awaited Reunion",
+        "name": "Part 2",
         "episodesCount": 21
       },
       {
-        "name": "Naruto Shippuden: The Guardian Shinobi Twelve",
+        "name": "Part 3",
         "episodesCount": 18
       },
       {
-        "name": "Naruto Shippuden: Hidan and Kakuzu",
+        "name": "Part 4",
         "episodesCount": 17
       },
       {
-        "name": "Naruto Shippuden: Three-Tails Appears",
+        "name": "Part 5",
         "episodesCount": 24
       },
       {
-        "name": "Naruto Shippuden: The Master's Prophecy and Vengeance",
+        "name": "Part 6",
         "episodesCount": 31
       },
       {
-        "name": "Naruto Shippuden: Six-Tails Unleashed",
+        "name": "Part 7",
         "episodesCount": 8
       },
       {
-        "name": "Naruto Shippuden: The Two Saviors",
+        "name": "Part 8",
         "episodesCount": 24
       },
       {
-        "name": "Naruto Shippuden: The Past: The Hidden Leaf Village",
+        "name": "Part 9",
         "episodesCount": 21
       },
       {
-        "name": "Naruto Shippuden: The Assembly of the Five Kage",
+        "name": "Part 10",
         "episodesCount": 25
       },
       {
-        "name": "Naruto Shippuden: Paradise on Water",
+        "name": "Part 11",
         "episodesCount": 21
       },
       {
-        "name": "Naruto Shippuden: The Taming of Nine-Tails and Fateful Encounters",
+        "name": "Part 12",
         "episodesCount": 33
       },
       {
-        "name": "Naruto Shippuden: The Seven Ninja Swordsmen of the Mist",
+        "name": "Part 13",
         "episodesCount": 14
       },
       {
-        "name": "Naruto Shippuden: Power",
+        "name": "Part 14",
         "episodesCount": 6
       },
       {
-        "name": "Naruto Shippuden: The Fourth Great Ninja War - Attackers from Beyond",
+        "name": "Part 15",
         "episodesCount": 25
       },
       {
-        "name": "Naruto Shippuden: The Fourth Great Ninja War - Sasuke and Itachi",
+        "name": "Part 16",
+        "episodesCount": 28
+      },
+      {
+        "name": "Part 17",
+        "episodesCount": 13
+      },
+      {
+        "name": "Part 18",
         "episodesCount": 16
       },
       {
-        "name": "Naruto Shippuden: Season 17",
-        "episodesCount": 164
+        "name": "Part 19",
+        "episodesCount": 16
+      },
+      {
+        "name": "Part 20",
+        "episodesCount": 20
+      },
+      {
+        "name": "Part 21",
+        "episodesCount": 18
+      },
+      {
+        "name": "Part 22",
+        "episodesCount": 19
+      },
+      {
+        "name": "Part 23",
+        "episodesCount": 8
+      },
+      {
+        "name": "Part 24",
+        "episodesCount": 11
+      },
+      {
+        "name": "Part 25",
+        "episodesCount": 10
+      },
+      {
+        "name": "Part 26",
+        "episodesCount": 4
+      },
+      {
+        "name": "Part 27",
+        "episodesCount": 5
+      },
+      {
+        "name": "Part 28",
+        "episodesCount": 5
+      },
+      {
+        "name": "Part 29",
+        "episodesCount": 7
       }
     ],
     "openingUrl": "https://v.animethemes.moe/Naruto-OP1.webm",
@@ -673,7 +761,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx11757-SxYDUzdr9rh2.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GR49G9VP6/sword-art-online",
     "adnUrl": "https://animationdigitalnetwork.fr/video/442-sword-art-online",
-    "episodesTotal": 100,
+    "episodesTotal": 104,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -1009,7 +1097,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx127230-DdP4vAdssLoz.png",
     "crunchyrollUrl": "https://crunchyroll.com/series/GVDHX8QNW",
     "adnUrl": null,
-    "episodesTotal": 14,
+    "episodesTotal": 15,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -1043,8 +1131,8 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 2
       },
       {
-        "name": "Chainsaw Man Festival",
-        "episodesCount": 2
+        "name": "Chainsaw Man The Stage",
+        "episodesCount": 1
       }
     ],
     "openingUrl": "https://v.animethemes.moe/ChainsawMan-OP1-NCBD1080.webm"
@@ -1056,7 +1144,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21355-wRVUrGxpvIQQ.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GRGG9798R/rezero-starting-life-in-another-world-",
     "adnUrl": null,
-    "episodesTotal": 67,
+    "episodesTotal": 75,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -1099,7 +1187,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Saison 4",
-        "episodesCount": 11
+        "episodesCount": 19
       }
     ],
     "openingUrl": "https://v.animethemes.moe/ReZero-OP1.webm"
@@ -1256,7 +1344,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20464-ooZUyBe4ptp9.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GY8VM8MWY/haikyu",
     "adnUrl": "https://animationdigitalnetwork.fr/video/461-haikyuu",
-    "episodesTotal": 92,
+    "episodesTotal": 94,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -1294,6 +1382,10 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 10
       },
       {
+        "name": "Compilation Movies",
+        "episodesCount": 2
+      },
+      {
         "name": "HAIKYU‼ TO THE TOP (Saison 4)",
         "episodesCount": 25
       },
@@ -1315,7 +1407,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx97940-fyh8o7gNbha0.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/series/GRE50KV36/black-clover",
     "adnUrl": "https://animationdigitalnetwork.fr/video/449-black-clover",
-    "episodesTotal": 171,
+    "episodesTotal": 177,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -1341,24 +1433,28 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Season 1 Part 1",
+        "name": "Black Clover Saison 1 Partie 1",
         "episodesCount": 51
       },
       {
-        "name": "Season 1 Part 2",
+        "name": "Black Clover Saison 1 Partie 2",
         "episodesCount": 51
       },
       {
-        "name": "Season 1 Part 3",
+        "name": "Black Clover Saison 1 Partie 3",
         "episodesCount": 52
       },
       {
-        "name": "Season 1 Part 4",
+        "name": "Black Clover Saison 1 Partie 4",
         "episodesCount": 16
       },
       {
         "name": "OVA",
         "episodesCount": 1
+      },
+      {
+        "name": "Saison 2",
+        "episodesCount": 6
       }
     ],
     "openingUrl": "https://v.animethemes.moe/BlackClover-OP1-NCBD1080.webm",
@@ -1476,7 +1572,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101921-ufrjLzhSz7L1.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GRJ0J828Y/kaguya-sama-love-is-war",
     "adnUrl": null,
-    "episodesTotal": 39,
+    "episodesTotal": 43,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -1502,19 +1598,19 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Kaguya-sama: Love Is War",
+        "name": "Kaguya-sama: Love is War",
         "episodesCount": 12
       },
       {
-        "name": "Kaguya-sama: Love Is War?",
+        "name": "Kaguya-sama: Love is War?",
         "episodesCount": 12
       },
       {
-        "name": "Kaguya-sama: Love Is War -Ultra Romantic-",
+        "name": "Kaguya-sama: Love is War -Ultra Romantic-",
         "episodesCount": 13
       },
       {
-        "name": "Kaguya-sama: Love Is War -The First Kiss That Never Ends-",
+        "name": "Kaguya-sama: Love is War: Season 3.5: The First Kiss That Never Ends - Episodic Cut",
         "episodesCount": 4
       },
       {
@@ -1714,11 +1810,11 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Vinland Saga (Saison 1)",
+        "name": "VINLAND SAGA Saison 1",
         "episodesCount": 24
       },
       {
-        "name": "Vinland Saga (Saison 2)",
+        "name": "VINLAND SAGA Saison 2",
         "episodesCount": 24
       }
     ],
@@ -1802,20 +1898,24 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "KONOSUBA -God's blessing on this wonderful world! (US)",
-        "episodesCount": 11
+        "name": "KONOSUBA -God's blessing on this wonderful world!",
+        "episodesCount": 10
       },
       {
-        "name": "KONOSUBA -God's blessing on this wonderful world! 2 (US)",
-        "episodesCount": 11
+        "name": "KONOSUBA -God's blessing on this wonderful world! 2",
+        "episodesCount": 10
+      },
+      {
+        "name": "OVAs",
+        "episodesCount": 2
+      },
+      {
+        "name": "Legend of Crimson",
+        "episodesCount": 1
       },
       {
         "name": "KONOSUBA -God's blessing on this wonderful world! 3",
         "episodesCount": 13
-      },
-      {
-        "name": "KONOSUBA -God's blessing on this wonderful world!- Legend of Crimson",
-        "episodesCount": 1
       }
     ],
     "openingUrl": "https://v.animethemes.moe/Konosuba-OP1.webm"
@@ -1957,7 +2057,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx14719-VT5dRzTBSZ0w.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GYP8DP1MY/jojos-bizarre-adventure",
     "adnUrl": null,
-    "episodesTotal": 131,
+    "episodesTotal": 158,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -1983,20 +2083,24 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "JoJo's Bizarre Adventure",
+        "name": "Season 1: JoJo's Bizarre Adventure",
         "episodesCount": 26
       },
       {
-        "name": "JoJo's Bizarre Adventure: Stardust Crusaders",
-        "episodesCount": 24
+        "name": "Season 2: Stardust Crusaders",
+        "episodesCount": 48
       },
       {
-        "name": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
-        "episodesCount": 39
+        "name": "Season 3: Diamond is Unbreakable",
+        "episodesCount": 41
       },
       {
-        "name": "JoJo's Bizarre Adventure: Golden Wind",
-        "episodesCount": 42
+        "name": "Season 4: Golden Wind",
+        "episodesCount": 40
+      },
+      {
+        "name": "Season 1: JoJo's Bizarre Adventure Re-Edited",
+        "episodesCount": 3
       }
     ],
     "openingUrl": "https://v.animethemes.moe/JojoNoKimyouNaBouken-OP1.webm"
@@ -2203,7 +2307,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx9919-nXS7JOZrWHfS.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G649PJ0JY/blue-exorcist",
     "adnUrl": null,
-    "episodesTotal": 48,
+    "episodesTotal": 73,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -2228,6 +2332,10 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [
+      {
+        "name": "Blue Exorcist",
+        "episodesCount": 25
+      },
       {
         "name": "Blue Exorcist: Kyoto Saga",
         "episodesCount": 12
@@ -2307,7 +2415,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101280-tDxCVJm714nt.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GYZJ43JMR/that-time-i-got-reincarnated-as-a-slime",
     "adnUrl": null,
-    "episodesTotal": 100,
+    "episodesTotal": 109,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -2338,7 +2446,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Saison 2",
-        "episodesCount": 25
+        "episodesCount": 26
       },
       {
         "name": "Saison 3",
@@ -2346,7 +2454,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Saison 4",
-        "episodesCount": 16
+        "episodesCount": 24
       },
       {
         "name": "Moi, quand je me réincarne en Slime (OAD)",
@@ -2367,7 +2475,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx108465-1ANspF1EWyFx.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G24H1N3MP/mushoku-tensei-jobless-reincarnation",
     "adnUrl": null,
-    "episodesTotal": 55,
+    "episodesTotal": 63,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -2744,7 +2852,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21311-hAXyT8Yoh6G9.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GR5VXQ8PR/bungo-stray-dogs",
     "adnUrl": null,
-    "episodesTotal": 62,
+    "episodesTotal": 61,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -2833,7 +2941,7 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 12
       },
       {
-        "name": "My Dress-Up Darling (Saison 2)",
+        "name": "Season 2",
         "episodesCount": 12
       }
     ],
@@ -2896,7 +3004,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20850-glDf9EMKeCwe.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6NV7Z50Y/tokyo-ghoul",
     "adnUrl": null,
-    "episodesTotal": 48,
+    "episodesTotal": 50,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -2932,6 +3040,10 @@ const DEFAULT_ANIME_DATA = [
       {
         "name": "Tokyo Ghoul: re",
         "episodesCount": 24
+      },
+      {
+        "name": "Tokyo Ghoul: OVA Season 1",
+        "episodesCount": 2
       }
     ],
     "openingUrl": "https://v.animethemes.moe/TokyoGhoulRootA-OP1.webm"
@@ -2943,7 +3055,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20923-pNT38pjW3RFH.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6GG91P26/food-wars-shokugeki-no-soma",
     "adnUrl": null,
-    "episodesTotal": 92,
+    "episodesTotal": 31,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -3087,7 +3199,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx15809-ECv3HyOYJKrk.jpg",
     "crunchyrollUrl": "https://crunchyroll.com/series/GR75Z5KKY/the-devil-is-a-part-timer",
     "adnUrl": null,
-    "episodesTotal": 25,
+    "episodesTotal": 38,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -3113,7 +3225,11 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "The Devil is a Part Timer! Saison 2",
+        "name": "The Devil is a Part-Timer!",
+        "episodesCount": 13
+      },
+      {
+        "name": "The Devil is a Part-Timer! Saison 2",
         "episodesCount": 25
       }
     ],
@@ -3617,7 +3733,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx13601-i42VFuHpqEOJ.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GR75253JY/psycho-pass",
     "adnUrl": "https://animationdigitalnetwork.fr/video/536-psycho-pass",
-    "episodesTotal": 34,
+    "episodesTotal": 58,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -3643,20 +3759,28 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Saison 1",
-        "episodesCount": 22,
-        "releaseDate": "12/10/2012",
-        "lastEpisodeDate": "22/03/2013",
-        "rawStartDate": {
-          "year": 2012,
-          "month": 10,
-          "day": 12
-        },
-        "rawEndDate": {
-          "year": 2013,
-          "month": 3,
-          "day": 22
-        }
+        "name": "PSYCHO-PASS",
+        "episodesCount": 22
+      },
+      {
+        "name": "PSYCHO-PASS Extended Edition",
+        "episodesCount": 11
+      },
+      {
+        "name": "PSYCHO-PASS 2",
+        "episodesCount": 11
+      },
+      {
+        "name": "PSYCHO-PASS: Sinners of the System",
+        "episodesCount": 3
+      },
+      {
+        "name": "PSYCHO-PASS 3",
+        "episodesCount": 8
+      },
+      {
+        "name": "PSYCHO-PASS 3: First Inspector",
+        "episodesCount": 3
       }
     ],
     "openingUrl": "https://v.animethemes.moe/PsychoPass-OP1.webm",
@@ -3888,7 +4012,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20474-xuqem5GBlBtb.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GYP8DP1MY/jojos-bizarre-adventure",
     "adnUrl": null,
-    "episodesTotal": 131,
+    "episodesTotal": 158,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -3914,20 +4038,24 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "JoJo's Bizarre Adventure",
+        "name": "Season 1: JoJo's Bizarre Adventure",
         "episodesCount": 26
       },
       {
-        "name": "JoJo's Bizarre Adventure: Stardust Crusaders",
-        "episodesCount": 24
+        "name": "Season 2: Stardust Crusaders",
+        "episodesCount": 48
       },
       {
-        "name": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
-        "episodesCount": 39
+        "name": "Season 3: Diamond is Unbreakable",
+        "episodesCount": 41
       },
       {
-        "name": "JoJo's Bizarre Adventure: Golden Wind",
-        "episodesCount": 42
+        "name": "Season 4: Golden Wind",
+        "episodesCount": 40
+      },
+      {
+        "name": "Season 1: JoJo's Bizarre Adventure Re-Edited",
+        "episodesCount": 3
       }
     ],
     "openingUrl": "https://v.animethemes.moe/JojoNoKimyouNaBoukenS2-OP1.webm"
@@ -4033,7 +4161,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21776-bwPaYKhnKfUs.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6497Z43Y/miss-kobayashis-dragon-maid",
     "adnUrl": null,
-    "episodesTotal": 43,
+    "episodesTotal": 44,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -4064,7 +4192,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Miss Kobayashi's Dragon Maid S",
-        "episodesCount": 12
+        "episodesCount": 13
       },
       {
         "name": "Miss Kobayashi's Dragon Maid S Short Animation Series",
@@ -4331,7 +4459,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21450-D7XFwEQjZ5GA.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GYP8DP1MY/jojos-bizarre-adventure",
     "adnUrl": null,
-    "episodesTotal": 131,
+    "episodesTotal": 158,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -4357,20 +4485,24 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "JoJo's Bizarre Adventure",
+        "name": "Season 1: JoJo's Bizarre Adventure",
         "episodesCount": 26
       },
       {
-        "name": "JoJo's Bizarre Adventure: Stardust Crusaders",
-        "episodesCount": 24
+        "name": "Season 2: Stardust Crusaders",
+        "episodesCount": 48
       },
       {
-        "name": "JoJo's Bizarre Adventure: Diamond is Unbreakable",
-        "episodesCount": 39
+        "name": "Season 3: Diamond is Unbreakable",
+        "episodesCount": 41
       },
       {
-        "name": "JoJo's Bizarre Adventure: Golden Wind",
-        "episodesCount": 42
+        "name": "Season 4: Golden Wind",
+        "episodesCount": 40
+      },
+      {
+        "name": "Season 1: JoJo's Bizarre Adventure Re-Edited",
+        "episodesCount": 3
       }
     ],
     "openingUrl": "https://v.animethemes.moe/JojoNoKimyouNaBoukenS4-OP1.webm"
@@ -4478,7 +4610,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx161645-QLbzHXiYRgV2.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/series/G3KHEVDJ7/the-apothecary-diaries",
     "adnUrl": null,
-    "episodesTotal": 48,
+    "episodesTotal": 54,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -4504,12 +4636,16 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Les Carnets de l'apothicaire Saison 1",
+        "name": "Les Carnets de l'apothicaire",
         "episodesCount": 24
       },
       {
         "name": "Les Carnets de l'apothicaire Saison 2",
         "episodesCount": 24
+      },
+      {
+        "name": "Les Carnets de l'apothicaire Saison 3",
+        "episodesCount": 6
       }
     ],
     "openingUrl": "https://v.animethemes.moe/KusuriyaNoHitorigoto-OP1-NCBD1080.webm",
@@ -4577,7 +4713,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx100240-vJNaKd5HwPJ2.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6NV7Z50Y/tokyo-ghoul",
     "adnUrl": null,
-    "episodesTotal": 48,
+    "episodesTotal": 50,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -4613,6 +4749,10 @@ const DEFAULT_ANIME_DATA = [
       {
         "name": "Tokyo Ghoul: re",
         "episodesCount": 24
+      },
+      {
+        "name": "Tokyo Ghoul: OVA Season 1",
+        "episodesCount": 2
       }
     ],
     "openingUrl": "https://v.animethemes.moe/TokyoGhoulRE-OP1-NCBD1080.webm"
@@ -4624,7 +4764,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101165-v5NwPXWPFDuD.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6VDMN306/goblin-slayer",
     "adnUrl": "https://animationdigitalnetwork.fr/video/701-goblin-slayer",
-    "episodesTotal": 25,
+    "episodesTotal": 26,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -4650,20 +4790,16 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Saison 1",
-        "episodesCount": 12,
-        "releaseDate": "07/10/2018",
-        "lastEpisodeDate": "30/12/2018",
-        "rawStartDate": {
-          "year": 2018,
-          "month": 10,
-          "day": 7
-        },
-        "rawEndDate": {
-          "year": 2018,
-          "month": 12,
-          "day": 30
-        }
+        "name": "GOBLIN SLAYER",
+        "episodesCount": 13
+      },
+      {
+        "name": "-GOBLIN'S CROWN-",
+        "episodesCount": 1
+      },
+      {
+        "name": "GOBLIN SLAYER Season 2",
+        "episodesCount": 12
       }
     ],
     "openingUrl": "https://v.animethemes.moe/GoblinSlayer-OP1-NCBD1080.webm"
@@ -4702,7 +4838,11 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [
       {
         "name": "The God of High School",
-        "episodesCount": 14
+        "episodesCount": 13
+      },
+      {
+        "name": "Behind the Scenes of The God of High School",
+        "episodesCount": 1
       }
     ],
     "openingUrl": "https://v.animethemes.moe/TheGodOfHighSchool-OP1-NCBD1080.webm",
@@ -4715,7 +4855,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx918-iOaeBVUn4uK7.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GYQ4MKDZ6/gintama",
     "adnUrl": null,
-    "episodesTotal": 206,
+    "episodesTotal": 381,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -4741,20 +4881,52 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Gintama Season 1 — EP 100-150 (VOSTA)",
+        "name": "Gintama Part 1 (1-49)",
+        "episodesCount": 49
+      },
+      {
+        "name": "Gintama Part 2 (50-99)",
+        "episodesCount": 50
+      },
+      {
+        "name": "Gintama Part 3 (100-150)",
         "episodesCount": 51
       },
       {
-        "name": "Gintama Season 2 — EP 202-252 (VOSTA)",
-        "episodesCount": 52
-      },
-      {
-        "name": "Gintama Season 3 (VOSTA)",
-        "episodesCount": 52
-      },
-      {
-        "name": "Gintama Season 4 (VOSTA)",
+        "name": "Gintama Part 4 (151-201)",
         "episodesCount": 51
+      },
+      {
+        "name": "Gintama' (202-252)",
+        "episodesCount": 52
+      },
+      {
+        "name": "Gintama': Enchōsen (253-265)",
+        "episodesCount": 14
+      },
+      {
+        "name": "Gintama° (266-316)",
+        "episodesCount": 51
+      },
+      {
+        "name": "Gintama. (317-328)",
+        "episodesCount": 12
+      },
+      {
+        "name": "Gintama. Porori-hen (329-341)",
+        "episodesCount": 13
+      },
+      {
+        "name": "Gintama. Shirogane no Tamashii-hen (342-367)",
+        "episodesCount": 26
+      },
+      {
+        "name": "Gintama Classic",
+        "episodesCount": 11
+      },
+      {
+        "name": "Extras",
+        "episodesCount": 1
       }
     ],
     "openingUrl": "https://v.animethemes.moe/Gintama-OP1.webm",
@@ -4767,7 +4939,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx106625-UR22wB2NuNVi.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GY8VM8MWY/haikyu",
     "adnUrl": null,
-    "episodesTotal": 92,
+    "episodesTotal": 94,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -4803,6 +4975,10 @@ const DEFAULT_ANIME_DATA = [
       {
         "name": "HAIKYU!! (Saison 3)",
         "episodesCount": 10
+      },
+      {
+        "name": "Compilation Movies",
+        "episodesCount": 2
       },
       {
         "name": "HAIKYU‼ TO THE TOP (Saison 4)",
@@ -4919,7 +5095,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx11771-uvr44RAwRxPw.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G62P48X56/kurokos-basketball",
     "adnUrl": "https://animationdigitalnetwork.fr/video/437-kuroko-film-1",
-    "episodesTotal": 79,
+    "episodesTotal": 82,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -4955,6 +5131,10 @@ const DEFAULT_ANIME_DATA = [
       {
         "name": "Kuroko's Basketball 3",
         "episodesCount": 26
+      },
+      {
+        "name": "Winter Cup Highlights",
+        "episodesCount": 3
       }
     ],
     "openingUrl": "https://v.animethemes.moe/KurokoNoBasket-OP1.webm",
@@ -5168,7 +5348,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx153288-25FBfFJzEQ5O.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/series/GG5H5XQ7D/kaiju-no-8",
     "adnUrl": null,
-    "episodesTotal": 25,
+    "episodesTotal": 29,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -5204,6 +5384,10 @@ const DEFAULT_ANIME_DATA = [
       {
         "name": "Season 2",
         "episodesCount": 12
+      },
+      {
+        "name": "Narumi's Week at Work",
+        "episodesCount": 4
       }
     ],
     "openingUrl": "https://v.animethemes.moe/Kaijuu8Gou-OP1-NCBD1080.webm"
@@ -5318,7 +5502,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21613-qT3NiwYP5dYc.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GR9P57W96/saga-of-tanya-the-evil",
     "adnUrl": null,
-    "episodesTotal": 20,
+    "episodesTotal": 27,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -5348,7 +5532,7 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 13
       },
       {
-        "name": "Saga of Tanya the Evil - the Movie -",
+        "name": "Saga of Tanya the Evil – the Movie –",
         "episodesCount": 1
       },
       {
@@ -5357,7 +5541,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Saison 2",
-        "episodesCount": 5
+        "episodesCount": 12
       }
     ],
     "openingUrl": "https://v.animethemes.moe/YoujoSenki-OP1.webm"
@@ -5542,11 +5726,11 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "The Misfit of Demon King Academy: Season 1",
+        "name": "The Misfit of Demon King Academy",
         "episodesCount": 13
       },
       {
-        "name": "The Misfit of Demon King Academy: Season 2",
+        "name": "The Misfit of Demon King Academy II",
         "episodesCount": 24
       }
     ],
@@ -5559,7 +5743,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21518-uBqzDGIuSxJ5.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6GG91P26/food-wars-shokugeki-no-soma",
     "adnUrl": null,
-    "episodesTotal": 92,
+    "episodesTotal": 31,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -5618,7 +5802,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx4898-mW4gabZvwmLC.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/series/GYQ43P3E6/black-butler",
     "adnUrl": "https://animationdigitalnetwork.fr/video/273-black-butler-kuroshitsuji",
-    "episodesTotal": 55,
+    "episodesTotal": 77,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -5644,20 +5828,28 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Saison 1",
-        "episodesCount": 24,
-        "releaseDate": "03/10/2008",
-        "lastEpisodeDate": "27/03/2009",
-        "rawStartDate": {
-          "year": 2008,
-          "month": 10,
-          "day": 3
-        },
-        "rawEndDate": {
-          "year": 2009,
-          "month": 3,
-          "day": 27
-        }
+        "name": "Black Butler",
+        "episodesCount": 24
+      },
+      {
+        "name": "Black Butler II",
+        "episodesCount": 12
+      },
+      {
+        "name": "OVAs",
+        "episodesCount": 7
+      },
+      {
+        "name": "Black Butler: Book of Circus",
+        "episodesCount": 10
+      },
+      {
+        "name": "Black Butler -Public School Arc-",
+        "episodesCount": 11
+      },
+      {
+        "name": "Black Butler -Emerald Witch Arc-",
+        "episodesCount": 13
       }
     ],
     "openingUrl": "https://v.animethemes.moe/Kuroshitsuji-OP1.webm"
@@ -5709,7 +5901,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx130003-HTDmeL4RGeJ4.png",
     "crunchyrollUrl": "https://beta.crunchyroll.com/series/GXJHM3P19",
     "adnUrl": null,
-    "episodesTotal": 14,
+    "episodesTotal": 12,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -5989,8 +6181,68 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Dragon Ball Z",
-        "episodesCount": 291
+        "name": "Part 1",
+        "episodesCount": 35
+      },
+      {
+        "name": "Part 2",
+        "episodesCount": 32
+      },
+      {
+        "name": "Part 3",
+        "episodesCount": 7
+      },
+      {
+        "name": "Part 4",
+        "episodesCount": 33
+      },
+      {
+        "name": "Part 5",
+        "episodesCount": 10
+      },
+      {
+        "name": "Part 6",
+        "episodesCount": 8
+      },
+      {
+        "name": "Part 7",
+        "episodesCount": 14
+      },
+      {
+        "name": "Part 8",
+        "episodesCount": 13
+      },
+      {
+        "name": "Part 9",
+        "episodesCount": 13
+      },
+      {
+        "name": "Part 10",
+        "episodesCount": 29
+      },
+      {
+        "name": "Part 11",
+        "episodesCount": 15
+      },
+      {
+        "name": "Part 12",
+        "episodesCount": 10
+      },
+      {
+        "name": "Part 13",
+        "episodesCount": 12
+      },
+      {
+        "name": "Part 14",
+        "episodesCount": 22
+      },
+      {
+        "name": "Part 15",
+        "episodesCount": 22
+      },
+      {
+        "name": "Part 16",
+        "episodesCount": 16
       }
     ],
     "openingUrl": "https://v.animethemes.moe/DragonBallZ-OP1-NCBD1080.webm"
@@ -6314,7 +6566,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx15583-Sxd2J4RJdRhj.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GYEX5E1G6/date-a-live",
     "adnUrl": null,
-    "episodesTotal": 26,
+    "episodesTotal": 58,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -6340,20 +6592,24 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Date A Live IV",
+        "name": "DATE A LIVE",
         "episodesCount": 12
       },
       {
-        "name": "Date A Live V",
+        "name": "DATE A LIVE II",
+        "episodesCount": 10
+      },
+      {
+        "name": "DATE A LIVE III",
         "episodesCount": 12
       },
       {
-        "name": "Date A Bullet: Dead or Bullet & Nightmare or Queen",
-        "episodesCount": 1
+        "name": "DATE A LIVE IV",
+        "episodesCount": 12
       },
       {
-        "name": "Date A Live Mayuri Judgement",
-        "episodesCount": 1
+        "name": "DATE A LIVE V",
+        "episodesCount": 12
       }
     ]
   },
@@ -6415,7 +6671,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx116267-Eo1biPBTlL4i.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GRWMGGQ86/tonikawa-over-the-moon-for-you",
     "adnUrl": null,
-    "episodesTotal": 27,
+    "episodesTotal": 31,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -6445,8 +6701,12 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 14
       },
       {
-        "name": "TONIKAWA: Over The Moon For You (S2)",
+        "name": "TONIKAWA: Over The Moon For You Saison 2",
         "episodesCount": 13
+      },
+      {
+        "name": "~High School Days~",
+        "episodesCount": 4
       }
     ],
     "openingUrl": "https://v.animethemes.moe/Tonikawa-OP1.webm"
@@ -6715,7 +6975,7 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 12
       },
       {
-        "name": "Toilet-bound Hanako-kun 2",
+        "name": "Toilet-bound Hanako-kun Season 2",
         "episodesCount": 24
       }
     ],
@@ -6759,11 +7019,11 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 25
       },
       {
-        "name": "Log Horizon 2",
+        "name": "Season 2",
         "episodesCount": 25
       },
       {
-        "name": "Log Horizon Destruction of the Round Table",
+        "name": "Log Horizon: Destruction of the Round Table",
         "episodesCount": 12
       }
     ],
@@ -6963,8 +7223,40 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Dragon Ball",
-        "episodesCount": 153
+        "name": "Pilaf Saga (1-13)",
+        "episodesCount": 13
+      },
+      {
+        "name": "Tournament Saga (14-28)",
+        "episodesCount": 15
+      },
+      {
+        "name": "Red Ribbon Army Saga (29-45)",
+        "episodesCount": 17
+      },
+      {
+        "name": "General Blue Saga (46-57)",
+        "episodesCount": 12
+      },
+      {
+        "name": "Commander Red Saga (58-67)",
+        "episodesCount": 10
+      },
+      {
+        "name": "Fortuneteller Baba Saga (68-83)",
+        "episodesCount": 16
+      },
+      {
+        "name": "Tien Shinhan Saga (84-101)",
+        "episodesCount": 18
+      },
+      {
+        "name": "King Piccolo Saga (102-122)",
+        "episodesCount": 21
+      },
+      {
+        "name": "Piccolo Jr. Saga (123-153)",
+        "episodesCount": 31
       }
     ],
     "openingUrl": "https://v.animethemes.moe/DragonBall-OP1.webm"
@@ -7054,7 +7346,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Yuri!!! on ICE",
+        "name": "Season 1",
         "episodesCount": 12
       }
     ],
@@ -7067,7 +7359,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx100922-uxEhaCsqMMp3.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/series/GNVHKN94W/grand-blue-dreaming",
     "adnUrl": null,
-    "episodesTotal": 29,
+    "episodesTotal": 36,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -7102,7 +7394,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Season 3",
-        "episodesCount": 5
+        "episodesCount": 12
       }
     ],
     "openingUrl": "https://v.animethemes.moe/GrandBlue-OP1-NCBD1080.webm",
@@ -7218,7 +7510,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx99255-heGTtj5b4owl.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6GG91P26/food-wars-shokugeki-no-soma",
     "adnUrl": null,
-    "episodesTotal": 92,
+    "episodesTotal": 31,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -7646,7 +7938,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Yona, princesse de l'aube",
+        "name": "Season 1",
         "episodesCount": 24
       }
     ],
@@ -7686,8 +7978,28 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Dragon Ball Super",
-        "episodesCount": 131
+        "name": "Part 1",
+        "episodesCount": 15
+      },
+      {
+        "name": "Part 2",
+        "episodesCount": 12
+      },
+      {
+        "name": "Part 3",
+        "episodesCount": 14
+      },
+      {
+        "name": "Part 4",
+        "episodesCount": 5
+      },
+      {
+        "name": "Part 5",
+        "episodesCount": 30
+      },
+      {
+        "name": "Part 6",
+        "episodesCount": 55
       }
     ],
     "openingUrl": "https://v.animethemes.moe/DragonBallSuper-OP1.webm",
@@ -7793,7 +8105,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx108430-UdruJPro4vDK.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GRG5WWD4R/given",
     "adnUrl": null,
-    "episodesTotal": 14,
+    "episodesTotal": 16,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -7819,12 +8131,16 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Given: Season 1",
+        "name": "given",
         "episodesCount": 11
       },
       {
         "name": "Given le film",
         "episodesCount": 1
+      },
+      {
+        "name": "given the Movie: Hiiragi mix",
+        "episodesCount": 2
       },
       {
         "name": "given the Movie: To the Sea",
@@ -8551,7 +8867,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20631-LdCiy3goitcT.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G60914JM6/trinity-seven",
     "adnUrl": null,
-    "episodesTotal": 14,
+    "episodesTotal": 12,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -8781,7 +9097,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21196-2PfPfIDrxKki.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GR24GX896/kabaneri-of-the-iron-fortress",
     "adnUrl": null,
-    "episodesTotal": 14,
+    "episodesTotal": 12,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -8929,7 +9245,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx4654-ba44icsxDQZd.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GRVNZK5PY/a-certain-magical-index",
     "adnUrl": null,
-    "episodesTotal": 26,
+    "episodesTotal": 74,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -8954,6 +9270,14 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [
+      {
+        "name": "A Certain Magical Index",
+        "episodesCount": 24
+      },
+      {
+        "name": "A Certain Magical Index II",
+        "episodesCount": 24
+      },
       {
         "name": "A Certain Magical Index III",
         "episodesCount": 26
@@ -9522,7 +9846,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Wise Man's Grandchild: Season 1",
+        "name": "Wise Man's Grandchild",
         "episodesCount": 12
       }
     ],
@@ -9876,7 +10200,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21861-KDvJJQenJJlT.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G649PJ0JY/blue-exorcist",
     "adnUrl": null,
-    "episodesTotal": 48,
+    "episodesTotal": 73,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -9901,6 +10225,10 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [
+      {
+        "name": "Blue Exorcist",
+        "episodesCount": 25
+      },
       {
         "name": "Blue Exorcist: Kyoto Saga",
         "episodesCount": 12
@@ -10255,7 +10583,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "KONOSUBA -An Explosion on This Wonderful World!",
+        "name": "KONOSUBA - An Explosion on This Wonderful World!",
         "episodesCount": 12
       }
     ],
@@ -12397,8 +12725,20 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Dragon Ball GT",
-        "episodesCount": 64
+        "name": "Part 1",
+        "episodesCount": 16
+      },
+      {
+        "name": "Part 2",
+        "episodesCount": 24
+      },
+      {
+        "name": "Part 3",
+        "episodesCount": 7
+      },
+      {
+        "name": "Part 4",
+        "episodesCount": 17
       }
     ]
   },
@@ -14517,7 +14857,7 @@ const DEFAULT_ANIME_DATA = [
     "titleFr": "KILL BLUE",
     "titleOrig": "Kill Ao",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx198113-NRa47idWSlnx.jpg",
-    "crunchyrollUrl": null,
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00371896/kill-blue",
     "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
@@ -15533,7 +15873,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177474-oHil1yLWldfl.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GP5HJ84D2/tougen-anki",
     "adnUrl": null,
-    "episodesTotal": 24,
+    "episodesTotal": 30,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -15559,8 +15899,12 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Season 1",
+        "name": "Saison 1",
         "episodesCount": 24
+      },
+      {
+        "name": "Arc des chutes de Kegon à Nikkô",
+        "episodesCount": 6
       }
     ],
     "netflixUrl": "https://www.netflix.com/title/81969861",
@@ -16122,7 +16466,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "WITCH WATCH",
+        "name": "Season 1",
         "episodesCount": 25
       }
     ],
@@ -20626,7 +20970,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/5bc04caee584d3f44263b57d7af8d356.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G4PH0WX5J/aoashi",
     "adnUrl": null,
-    "episodesTotal": 24,
+    "episodesTotal": 30,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -20650,6 +20994,10 @@ const DEFAULT_ANIME_DATA = [
       {
         "name": "Saison 1",
         "episodesCount": 24
+      },
+      {
+        "name": "Saison 2",
+        "episodesCount": 6
       }
     ],
     "openingUrl": "https://v.animethemes.moe/AoAshi-OP1.webm"
@@ -20811,7 +21159,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/e454e218db49b5b66b8e79ba4e98617a.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00377907/black-torch",
     "adnUrl": null,
-    "episodesTotal": 5,
+    "episodesTotal": 12,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -20834,7 +21182,7 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [
       {
         "name": "Saison 1",
-        "episodesCount": 5
+        "episodesCount": 12
       }
     ],
     "openingUrl": "https://v.animethemes.moe/BlackTorch-OP1.webm"
@@ -20846,7 +21194,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/e685ff38c0bf0189bd56ad285bd0c992.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GR24JJ086/blackfox",
     "adnUrl": null,
-    "episodesTotal": 2,
+    "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -20873,7 +21221,7 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [
       {
         "name": "BLACKFOX",
-        "episodesCount": 2
+        "episodesCount": 1
       }
     ]
   },
@@ -21041,7 +21389,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/41c3cd1d910578720cdaa307c9e06061.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GZJH3D7G9/captain-tsubasa",
     "adnUrl": null,
-    "episodesTotal": 91,
+    "episodesTotal": 52,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -21068,7 +21416,7 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [
       {
         "name": "Captain Tsubasa 2018",
-        "episodesCount": 91
+        "episodesCount": 52
       }
     ],
     "openingUrl": "https://v.animethemes.moe/CaptainTsubasa2018-OP1.webm"
@@ -21178,7 +21526,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Chillin’ in Another World with Level 2 Super Cheat Powers",
+        "name": "Chillin' in Another World with Level 2 Super Cheat Powers",
         "episodesCount": 12
       }
     ]
@@ -21190,7 +21538,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/254c4cc9d47136e8bb38c182a96b019a.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6P5M4156/city-hunter",
     "adnUrl": null,
-    "episodesTotal": 1,
+    "episodesTotal": 140,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -21216,8 +21564,20 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "City Hunter Shinjuku Private Eyes",
-        "episodesCount": 1
+        "name": "City Hunter",
+        "episodesCount": 51
+      },
+      {
+        "name": "City Hunter 2",
+        "episodesCount": 63
+      },
+      {
+        "name": "City Hunter 3",
+        "episodesCount": 13
+      },
+      {
+        "name": "City Hunter '91",
+        "episodesCount": 13
       }
     ],
     "openingUrl": "https://v.animethemes.moe/CityHunter-OP2.webm"
@@ -21229,7 +21589,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/002b83652d95a17250ab882f328435c4.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G8DHV78ZM/clevatess",
     "adnUrl": null,
-    "episodesTotal": 17,
+    "episodesTotal": 25,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -21260,7 +21620,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Saison 2",
-        "episodesCount": 5
+        "episodesCount": 13
       }
     ],
     "openingUrl": "https://v.animethemes.moe/Clevatess-OP1.webm"
@@ -21272,7 +21632,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/8d5a74116ba03d8f60fd273c7ccec95f.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GEXH3W49W/cobra-the-animation",
     "adnUrl": null,
-    "episodesTotal": 19,
+    "episodesTotal": 13,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -22263,7 +22623,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Joker Game",
+        "name": "JOKER GAME: Season 1",
         "episodesCount": 12
       }
     ],
@@ -22450,7 +22810,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/14cac07bc03ae5aa3262a1d5caa861a9.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00371872/the-drops-of-god",
     "adnUrl": null,
-    "episodesTotal": 17,
+    "episodesTotal": 24,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -22473,7 +22833,7 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [
       {
         "name": "Saison 1",
-        "episodesCount": 17
+        "episodesCount": 24
       }
     ]
   },
@@ -22519,7 +22879,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/e23754aa2b0a24b5066ab60d50664392.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GP5HJ8E81/link-click",
     "adnUrl": null,
-    "episodesTotal": 48,
+    "episodesTotal": 60,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -22555,6 +22915,10 @@ const DEFAULT_ANIME_DATA = [
       {
         "name": "Bridon Arc",
         "episodesCount": 6
+      },
+      {
+        "name": "Saison 3",
+        "episodesCount": 12
       }
     ]
   },
@@ -22565,7 +22929,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/fe327935c67fd8318817853cca73a76c.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GEXH3W2EZ/lord-of-mysteries",
     "adnUrl": null,
-    "episodesTotal": 33,
+    "episodesTotal": 16,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -23066,7 +23430,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "My Unique Skill Makes Me OP even at Level 1",
+        "name": "My Unique Skill Makes Me OP Even at Level 1",
         "episodesCount": 12
       }
     ]
@@ -23216,7 +23580,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Nyaight of the Living Cat",
+        "name": "Season 1",
         "episodesCount": 12
       }
     ],
@@ -23229,7 +23593,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/7d3823cebc14cf9fad34bf9334c56964.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G69XGJXJR/onyx-equinox",
     "adnUrl": null,
-    "episodesTotal": 24,
+    "episodesTotal": 12,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -23306,7 +23670,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/4591a591a0342bc500e9951e28e71d2d.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00365568/hana-kimi",
     "adnUrl": null,
-    "episodesTotal": 19,
+    "episodesTotal": 25,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -23333,7 +23697,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Parmi eux Saison 2",
-        "episodesCount": 7
+        "episodesCount": 13
       }
     ]
   },
@@ -23570,8 +23934,12 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 10
       },
       {
-        "name": "Recovery of an MMO Junkie OAV",
-        "episodesCount": 2
+        "name": "OVA",
+        "episodesCount": 1
+      },
+      {
+        "name": "Extra",
+        "episodesCount": 1
       }
     ]
   },
@@ -23724,7 +24092,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Schwarzes Marken (VOSTFR)",
+        "name": "Schwarzes Marken",
         "episodesCount": 12
       }
     ]
@@ -24201,7 +24569,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/2aa639bbbb7600222f764a8a11dfc174.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G24H1N334/the-detective-is-already-dead",
     "adnUrl": null,
-    "episodesTotal": 12,
+    "episodesTotal": 17,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -24227,8 +24595,12 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "The Detective Is Already Dead",
+        "name": "Saison 1",
         "episodesCount": 12
+      },
+      {
+        "name": "Saison 2",
+        "episodesCount": 5
       }
     ]
   },
@@ -24277,7 +24649,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/7f3b77abac2f46221e91de3a0fc83c4d.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GQWH0M19X/the-elusive-samurai",
     "adnUrl": null,
-    "episodesTotal": 16,
+    "episodesTotal": 25,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -24308,7 +24680,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Saison 2",
-        "episodesCount": 3
+        "episodesCount": 12
       }
     ]
   },
@@ -24361,7 +24733,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/14add982cd2dba236d5664a2b8f71b50.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6DK07N7R/the-garden-of-sinners",
     "adnUrl": null,
-    "episodesTotal": 8,
+    "episodesTotal": 10,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -24387,8 +24759,8 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "The Garden of Sinners",
-        "episodesCount": 8
+        "name": "the Garden of sinners",
+        "episodesCount": 10
       }
     ]
   },
@@ -24463,7 +24835,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "The Gorilla God's Go-To Girl",
+        "name": "Season 1",
         "episodesCount": 12
       }
     ]
@@ -24687,7 +25059,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "The Reincarnation Of The Strongest Exorcist In Another World",
+        "name": "The Reincarnation of the Strongest Exorcist in Another World",
         "episodesCount": 13
       }
     ]
@@ -24911,7 +25283,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "The Wrong Way to Use Healing Magic",
+        "name": "Season 1",
         "episodesCount": 13
       }
     ]
@@ -24983,7 +25355,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Tokyo 24th Ward",
+        "name": "Season 1",
         "episodesCount": 12
       }
     ]
@@ -25068,7 +25440,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/06313d602ade408cb604143a8efab718.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G0XHWM0D3/trapped-in-a-dating-sim-the-world-of-otome-games-is-tough-for-mobs",
     "adnUrl": null,
-    "episodesTotal": 17,
+    "episodesTotal": 24,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -25099,7 +25471,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Saison 2",
-        "episodesCount": 5
+        "episodesCount": 12
       }
     ]
   },
@@ -25149,7 +25521,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/fb120e3874c3ed30c4101ce778c25c04.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GXJHM3PK5/trigun-stampede",
     "adnUrl": null,
-    "episodesTotal": 12,
+    "episodesTotal": 24,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -25176,6 +25548,10 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [
       {
         "name": "TRIGUN STAMPEDE",
+        "episodesCount": 12
+      },
+      {
+        "name": "TRIGUN STARGAZE",
         "episodesCount": 12
       }
     ],
@@ -25222,7 +25598,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/c8835413e0f794fdafa629cc973a273e.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00371630/daemons-of-the-shadow-realm",
     "adnUrl": null,
-    "episodesTotal": 17,
+    "episodesTotal": 24,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -25245,7 +25621,7 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [
       {
         "name": "Tsugai - Daemons of the Shadow Realm",
-        "episodesCount": 17
+        "episodesCount": 24
       }
     ],
     "netflixUrl": "https://www.netflix.com/title/82719204",
@@ -25284,7 +25660,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Tying the Knot with an Amagami Sister",
+        "name": "Season 01",
         "episodesCount": 25
       }
     ]
@@ -25326,7 +25702,7 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 12
       },
       {
-        "name": "Uzaki-chan Wants to Hang Out! (Saison 2)",
+        "name": "Uzaki-chan Wants to Hang Out! Saison 2",
         "episodesCount": 13
       }
     ]
@@ -25452,7 +25828,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/4ad5af6ef0acba2c0ab531469f31f196.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00365624/you-and-i-are-polar-opposites",
     "adnUrl": null,
-    "episodesTotal": 17,
+    "episodesTotal": 25,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -25483,7 +25859,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Saison 2",
-        "episodesCount": 5
+        "episodesCount": 13
       }
     ]
   },
@@ -26205,7 +26581,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/b1fa4cfec92000dc539f7330051d05da.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00378123/tomb-raider-king",
     "adnUrl": null,
-    "episodesTotal": 10,
+    "episodesTotal": 24,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -26228,11 +26604,11 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [
       {
         "name": "Saison 1",
-        "episodesCount": 5
+        "episodesCount": 12
       },
       {
         "name": "Saison 1",
-        "episodesCount": 5
+        "episodesCount": 12
       }
     ]
   },
@@ -26311,7 +26687,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/edd69ad0bd64a31b14d68facaf52d209.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00371881/though-i-am-an-inept-villainess",
     "adnUrl": null,
-    "episodesTotal": 4,
+    "episodesTotal": 11,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -26334,7 +26710,7 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [
       {
         "name": "Saison 1",
-        "episodesCount": 4
+        "episodesCount": 11
       }
     ],
     "disneyUrl": "https://www.disneyplus.com/browse/entity-79a3e335-2acc-408e-a942-1b0bac47d952"
@@ -26544,7 +26920,7 @@ const DEFAULT_ANIME_DATA = [
     "titleFr": "Snowball Earth",
     "titleOrig": "Snowball Earth",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx196144-UqVOcMjThkqa.jpg",
-    "crunchyrollUrl": null,
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00371869/snowball-earth",
     "adnUrl": null,
     "episodesTotal": 13,
     "episodesWatched": 0,
@@ -26731,5 +27107,411 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [],
     "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.ecd9cd5f-7635-438a-9c8d-73e2ae8d9739"
+  },
+  {
+    "id": "cr-GVDHX8DM5",
+    "titleFr": "86 EIGHTY-SIX",
+    "titleOrig": "86 EIGHTY-SIX",
+    "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/df7aa018d551876b283f58c285be8c25.png",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GVDHX8DM5/86-eighty-six",
+    "adnUrl": null,
+    "episodesTotal": 26,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": null,
+    "trailerId": null,
+    "genres": "Action, Sci-Fi, Seinen",
+    "synopsis": "Pour répondre aux attaques de drones autonomes envoyés par l’empire voisin de Giad, la république de San Magnolia a développé ses propres drones de combat surnommés les “Juggernaut\", espérant ainsi limiter les pertes humaines. En réalité, ces appareils sont pilotés par les 86, les habitants d’un district secret considérés comme du bétail.",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "01/01/2021",
+    "lastEpisodeDate": null,
+    "rawStartDate": {
+      "year": 2021,
+      "month": 1,
+      "day": 1
+    },
+    "rawEndDate": null,
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": []
+  },
+  {
+    "id": "cr-GNVHKN92K",
+    "titleFr": "CHAINSAW MAN – LE FILM : L'ARC DE REZE",
+    "titleOrig": "CHAINSAW MAN – LE FILM : L'ARC DE REZE",
+    "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/2ef947db8f1826666ee8c74d3ac2b74c.png",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GNVHKN92K/chainsaw-man--the-movie-reze-arc",
+    "adnUrl": null,
+    "episodesTotal": 1,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": null,
+    "trailerId": null,
+    "genres": "Action, Supernatural",
+    "synopsis": "Power devant être saignée, Denji change d’équipier et va faire la rencontre de la mystérieuse Reze.",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "01/01/2025",
+    "lastEpisodeDate": null,
+    "rawStartDate": {
+      "year": 2025,
+      "month": 1,
+      "day": 1
+    },
+    "rawEndDate": null,
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": []
+  },
+  {
+    "id": "cr-GT00324705",
+    "titleFr": "Cobra the Animation: The Psychogun",
+    "titleOrig": "Cobra the Animation: The Psychogun",
+    "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/7bf30c14cfd1eb5e05a2ad5bede93f34.png",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00324705/cobra-the-animation-the-psychogun",
+    "adnUrl": null,
+    "episodesTotal": 4,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": null,
+    "trailerId": null,
+    "genres": "Sci-Fi, Adventure, Action",
+    "synopsis": "24ème siècle. L’univers tel qu’on le connaît est tombé peu à peu sous le joug de puissantes organisations mafieuses. La plus terrifiante d’entre toutes, la Guilde des Pirates de l’Espace, recherche avidement le seul homme à lui avoir tenu tête, un pirate solitaire dont le nom raisonne comme une légende : COBRA.\\r\\nPlanète Vénus. La voiture de Cobra se fait réduire en miettes par un camion...",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "01/01/2008",
+    "lastEpisodeDate": null,
+    "rawStartDate": {
+      "year": 2008,
+      "month": 1,
+      "day": 1
+    },
+    "rawEndDate": null,
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": []
+  },
+  {
+    "id": "cr-GT00324719",
+    "titleFr": "Cobra the Animation: Time Drive",
+    "titleOrig": "Cobra the Animation: Time Drive",
+    "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/7bf30c14cfd1eb5e05a2ad5bede93f34.png",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00324719/cobra-the-animation-time-drive",
+    "adnUrl": null,
+    "episodesTotal": 2,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": null,
+    "trailerId": null,
+    "genres": "Sci-Fi, Adventure, Action",
+    "synopsis": "24ème siècle. L’univers tel qu’on le connaît est tombé peu à peu sous le joug de puissantes organisations mafieuses. La plus terrifiante d’entre toutes, la Guilde des Pirates de l’Espace, recherche avidement le seul homme à lui avoir tenu tête, un pirate solitaire dont le nom raisonne comme une légende : COBRA.\\r\\nPlanète Vénus. La voiture de Cobra se fait réduire en miettes par un camion...",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "01/01/2009",
+    "lastEpisodeDate": null,
+    "rawStartDate": {
+      "year": 2009,
+      "month": 1,
+      "day": 1
+    },
+    "rawEndDate": null,
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": []
+  },
+  {
+    "id": "cr-G8DHV7809",
+    "titleFr": "Demon Slayer: Kimetsu no Yaiba La Forteresse infinie I",
+    "titleOrig": "Demon Slayer: Kimetsu no Yaiba La Forteresse infinie I",
+    "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/91008b564b6db1b77a63a61117597c29.png",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G8DHV7809/demon-slayer-kimetsu-no-yaiba-infinity-castle-i",
+    "adnUrl": null,
+    "episodesTotal": 1,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": null,
+    "trailerId": null,
+    "genres": "Fantasy, Action",
+    "synopsis": "Tanjirô et les pourfendeurs ont poussé Muzan dans ses derniers retranchements. Il invoque alors la Forteresse infinie, dans laquelle il précipite les chasseurs, qui devront en découdre avec une horde de démons et les plus fidèles lieutenants de Muzan, les lunes supérieures, dans l'espoir de retrouver Muzan et de mettre fin à une guerre vieille de près d'un millénaire.",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "01/01/2025",
+    "lastEpisodeDate": null,
+    "rawStartDate": {
+      "year": 2025,
+      "month": 1,
+      "day": 1
+    },
+    "rawEndDate": null,
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": []
+  },
+  {
+    "id": "cr-GT00383998",
+    "titleFr": "Dreamland",
+    "titleOrig": "Dreamland",
+    "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/63f5ccb3d772d7bc4f84f72f2e0476de.png",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00383998/dreamland",
+    "adnUrl": null,
+    "episodesTotal": 4,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": null,
+    "trailerId": null,
+    "genres": "Adventure, Fantasy",
+    "synopsis": "Depuis le décès de sa mère dans un incendie, Terrence a une peur panique du feu, qui vient le hanter jusque dans ses cauchemars. Mais le jour où il réalise qu’il se trouve dans un rêve et parvient à dépasser sa phobie, il devient un Voyageur ! Il est désormais un contrôleur du feu capable d’arpenter Dreamland, une dimension née de nos rêves… et de nos pires cauchemars !",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "01/01/2026",
+    "lastEpisodeDate": null,
+    "rawStartDate": {
+      "year": 2026,
+      "month": 1,
+      "day": 1
+    },
+    "rawEndDate": null,
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": []
+  },
+  {
+    "id": "cr-GT00383992",
+    "titleFr": "Full Clearing Another World under a Goddess with Zero Believers",
+    "titleOrig": "Full Clearing Another World under a Goddess with Zero Believers",
+    "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/0a8942e9c744767f087361f4a254b930.png",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00383992/full-clearing-another-world-under-a-goddess-with-zero-believers",
+    "adnUrl": null,
+    "episodesTotal": 5,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": null,
+    "trailerId": null,
+    "genres": "Fantasy, Adventure",
+    "synopsis": "À cause d'un accident de bus, Makoto Takatsuki et ses camarades de classe se retrouvent propulsés dans un monde magique peuplé de dieux et de monstres. Ils bénéficient tous de compétences exceptionnelles, sauf Makoto, qui n'est, pour une raison inconnue, qu'un apprenti magicien. Sa rencontre avec une jeune déesse va l'aider à évoluer dans cet univers.",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "01/01/2026",
+    "lastEpisodeDate": null,
+    "rawStartDate": {
+      "year": 2026,
+      "month": 1,
+      "day": 1
+    },
+    "rawEndDate": null,
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": []
+  },
+  {
+    "id": "cr-GT00378078",
+    "titleFr": "Jaadugar, la légende de Fatima",
+    "titleOrig": "Jaadugar, la légende de Fatima",
+    "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/e6636cb831e30370749421919448c780.png",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00378078/jaadugar-a-witch-in-mongolia",
+    "adnUrl": null,
+    "episodesTotal": 12,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": null,
+    "trailerId": null,
+    "genres": "Drama",
+    "synopsis": "Unies par la vengeance, deux femmes déclenchent une tempête sur le plus puissant empire au monde. Arrachée à sa ville natale après la perte de sa mère, Sitara entre au service de dame Fatima, l'épouse d’un érudit. Le fils de cette dernière, Mohammed, lui enseigne alors la force et l’importance du savoir. Mais un jour, sa nouvelle cité est balayée par le puissant Empire mongol mené par Gengis Khan.",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "01/01/2026",
+    "lastEpisodeDate": null,
+    "rawStartDate": {
+      "year": 2026,
+      "month": 1,
+      "day": 1
+    },
+    "rawEndDate": null,
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": []
+  },
+  {
+    "id": "cr-GT00383999",
+    "titleFr": "Les Noces des Lucioles",
+    "titleOrig": "Les Noces des Lucioles",
+    "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/48db2568a6d8fa91c95cb4dfd582157e.png",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00383999/firefly-wedding",
+    "adnUrl": null,
+    "episodesTotal": 5,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": null,
+    "trailerId": null,
+    "genres": "Romance, Drama",
+    "synopsis": "Durant l'ère Meiji, Satoko Kirigaya n’a qu’un seul souhait : se marier pour l'honneur de sa famille et ce, même si ses jours sont comptés. Mais alors qu'un assassin tente de la tuer, elle lui offre de l’épouser ! Une proposition que Shinpei Goto accepte, mais qui pourrait bien se retourner contre elle…",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "01/01/2026",
+    "lastEpisodeDate": null,
+    "rawStartDate": {
+      "year": 2026,
+      "month": 1,
+      "day": 1
+    },
+    "rawEndDate": null,
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": []
+  },
+  {
+    "id": "cr-GT00383994",
+    "titleFr": "Magic Knight Rayearth (2026)",
+    "titleOrig": "Magic Knight Rayearth (2026)",
+    "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/68bbb0dc0edfe3e8b8fc61db10092b1b.png",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00383994/magic-knight-rayearth-2026",
+    "adnUrl": null,
+    "episodesTotal": 5,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": null,
+    "trailerId": null,
+    "genres": "Fantasy, Comedy, Drama, Shojo",
+    "synopsis": "Lors d’une sortie scolaire, Hikaru, Umi et Fû sont soudain transportées à Cefiro, un monde parallèle envahi de psycho-monstres. Pour retourner chez elles, ces collégiennes devront s’unir et délivrer la Princesse Émeraude, garante de l’harmonie et prisonnière du félon Zagato, que seules les trois “Magic Knights” peuvent vaincre !",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "01/01/2026",
+    "lastEpisodeDate": null,
+    "rawStartDate": {
+      "year": 2026,
+      "month": 1,
+      "day": 1
+    },
+    "rawEndDate": null,
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": []
+  },
+  {
+    "id": "cr-GMTE00374450",
+    "titleFr": "Moi, quand je me réincarne en Slime, le Film - Les larmes de la mer azur",
+    "titleOrig": "Moi, quand je me réincarne en Slime, le Film - Les larmes de la mer azur",
+    "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/e69c6031521f7b8ba1a80010c9b8a7d4.png",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GMTE00374450/that-time-i-got-reincarnated-as-a-slime-the-movie-tears-of-the-azure-sea",
+    "adnUrl": null,
+    "episodesTotal": 1,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": null,
+    "trailerId": null,
+    "genres": "Fantasy, Adventure, Comedy",
+    "synopsis": "Limule et ses compagnons sont invités par l'Impératrice Elmecia à visiter son île privée.",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "01/01/2026",
+    "lastEpisodeDate": null,
+    "rawStartDate": {
+      "year": 2026,
+      "month": 1,
+      "day": 1
+    },
+    "rawEndDate": null,
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": []
+  },
+  {
+    "id": "cr-GT00384004",
+    "titleFr": "Overgeared",
+    "titleOrig": "Overgeared",
+    "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/6fa02d19fff5ee11129efa61a0bf89ac.png",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00384004/overgeared",
+    "adnUrl": null,
+    "episodesTotal": 7,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": null,
+    "trailerId": null,
+    "genres": "Action, Fantasy, Comedy, Adventure",
+    "synopsis": "Grid, un homme malchanceux dans la vie et joueur de bas niveau dans le célèbre jeu vidéo Satisfy, trouve un objet puissant qui lui vaut un titre légendaire rare : L'Héritier de Pagma. Il est désormais un forgeron talentueux doté d’armes uniques, mais il se rend compte que sa réputation lui cause quelques soucis.",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "01/01/2026",
+    "lastEpisodeDate": null,
+    "rawStartDate": {
+      "year": 2026,
+      "month": 1,
+      "day": 1
+    },
+    "rawEndDate": null,
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": []
+  },
+  {
+    "id": "cr-GT00384006",
+    "titleFr": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
+    "titleOrig": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
+    "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/6797ecdfc96f0a83c8d4983a0dae5c82.png",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00384006/reborn-as-a-space-mercenary-i-woke-up-piloting-the-strongest-starship",
+    "adnUrl": null,
+    "episodesTotal": 6,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": null,
+    "trailerId": null,
+    "genres": "Sci-Fi, Action",
+    "synopsis": "Takahiro Satô est arraché à son quotidien lorsqu’il se réincarne dans l'univers de son jeu vidéo préféré : un monde galactique où se jouent des batailles spatiales, peuplé de colonies interstellaires mais aussi jonché de dangers. Très vite, il devient « Hiro », un mercenaire équipé d'un vaisseau spatial ultra-sophistiqué et accompagné de deux beautés !",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "01/01/2026",
+    "lastEpisodeDate": null,
+    "rawStartDate": {
+      "year": 2026,
+      "month": 1,
+      "day": 1
+    },
+    "rawEndDate": null,
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": []
+  },
+  {
+    "id": "cr-GT00384015",
+    "titleFr": "The Vermilion Mask",
+    "titleOrig": "The Vermilion Mask",
+    "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/39a7856c1737fecc47552dba64b4c8e2.png",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00384015/the-vermilion-mask",
+    "adnUrl": null,
+    "episodesTotal": 5,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": null,
+    "trailerId": null,
+    "genres": "Action, Fantasy, Seinen",
+    "synopsis": "Apprenti fabricant de masques, Peru aurait dû connaître les dangers liés à ces artefacts. Possédé par le Masque du Dieu Guerrier, il tue involontairement ses amis et son maître, le légendaire Gaston Roux. Rongé par la culpabilité, Peru jure de détruire tous les masques créés par son maître avant qu’une nouvelle tragédie ne se produise.",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "01/01/2026",
+    "lastEpisodeDate": null,
+    "rawStartDate": {
+      "year": 2026,
+      "month": 1,
+      "day": 1
+    },
+    "rawEndDate": null,
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": []
   }
 ];
