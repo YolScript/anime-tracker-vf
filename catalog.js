@@ -14386,7 +14386,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "netflixUrl": null,
+    "netflixUrl": "https://www.netflix.com/title/80152538",
     "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.0ab6a7ab-1804-c22a-ec45-a45654c26263"
   },
   {
@@ -14883,7 +14883,12 @@ const DEFAULT_ANIME_DATA = [
     },
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": [],
+    "seasons": [
+      {
+        "name": "KILL BLUE",
+        "episodesCount": 12
+      }
+    ],
     "netflixUrl": "https://www.netflix.com/title/82757009",
     "openingUrl": "https://v.animethemes.moe/KillAo-OP1.webm",
     "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.8eb355ee-8001-4741-a2a2-6a6d83b02357"
@@ -26946,7 +26951,12 @@ const DEFAULT_ANIME_DATA = [
     },
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": [],
+    "seasons": [
+      {
+        "name": "Season 1",
+        "episodesCount": 13
+      }
+    ],
     "disneyUrl": "https://www.disneyplus.com/browse/entity-5ecc8b00-79fd-4c1a-81ed-f44260ef38d4",
     "netflixUrl": "https://www.netflix.com/title/82746480"
   },
@@ -27135,7 +27145,12 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [
+      {
+        "name": "86 EIGHTY-SIX",
+        "episodesCount": 26
+      }
+    ]
   },
   {
     "id": "cr-GNVHKN92K",
@@ -27164,7 +27179,12 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [
+      {
+        "name": "CHAINSAW MAN – LE FILM : L'ARC DE REZE",
+        "episodesCount": 1
+      }
+    ]
   },
   {
     "id": "cr-GT00324705",
@@ -27193,7 +27213,12 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [
+      {
+        "name": "Cobra the Animation: The Psychogun",
+        "episodesCount": 4
+      }
+    ]
   },
   {
     "id": "cr-GT00324719",
@@ -27222,7 +27247,12 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [
+      {
+        "name": "Cobra the Animation: Time Drive",
+        "episodesCount": 2
+      }
+    ]
   },
   {
     "id": "cr-G8DHV7809",
@@ -27251,7 +27281,12 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [
+      {
+        "name": "Demon Slayer: Kimetsu no Yaiba La Forteresse infinie I",
+        "episodesCount": 1
+      }
+    ]
   },
   {
     "id": "cr-GT00383998",
@@ -27260,7 +27295,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/63f5ccb3d772d7bc4f84f72f2e0476de.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00383998/dreamland",
     "adnUrl": null,
-    "episodesTotal": 4,
+    "episodesTotal": 8,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -27280,7 +27315,16 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [
+      {
+        "name": "Dreamland (Version Française)",
+        "episodesCount": 4
+      },
+      {
+        "name": "Dreamland (Version Japonaise)",
+        "episodesCount": 4
+      }
+    ]
   },
   {
     "id": "cr-GT00383992",
@@ -27309,7 +27353,12 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [
+      {
+        "name": "Saison 1",
+        "episodesCount": 5
+      }
+    ]
   },
   {
     "id": "cr-GT00378078",
@@ -27338,7 +27387,12 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [
+      {
+        "name": "Saison 1",
+        "episodesCount": 12
+      }
+    ]
   },
   {
     "id": "cr-GT00383999",
@@ -27367,7 +27421,12 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [
+      {
+        "name": "Saison 1",
+        "episodesCount": 5
+      }
+    ]
   },
   {
     "id": "cr-GT00383994",
@@ -27396,7 +27455,12 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [
+      {
+        "name": "Saison 1",
+        "episodesCount": 5
+      }
+    ]
   },
   {
     "id": "cr-GMTE00374450",
@@ -27425,7 +27489,12 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [
+      {
+        "name": "Moi, quand je me réincarne en Slime, le Film - Les larmes de la mer azur",
+        "episodesCount": 1
+      }
+    ]
   },
   {
     "id": "cr-GT00384004",
@@ -27454,7 +27523,12 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [
+      {
+        "name": "Saison 1",
+        "episodesCount": 7
+      }
+    ]
   },
   {
     "id": "cr-GT00384006",
@@ -27483,7 +27557,12 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [
+      {
+        "name": "Saison 1",
+        "episodesCount": 6
+      }
+    ]
   },
   {
     "id": "cr-GT00384015",
@@ -27512,6 +27591,11 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [
+      {
+        "name": "Saison 1",
+        "episodesCount": 5
+      }
+    ]
   }
 ];
