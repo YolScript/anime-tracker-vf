@@ -3621,7 +3621,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx171018-60q1B6GK2Ghb.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/series/GG5H5XQ0D/dan-da-dan",
     "adnUrl": "https://animationdigitalnetwork.fr/video/1160-dan-da-dan",
-    "episodesTotal": 26,
+    "episodesTotal": 24,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -3647,36 +3647,12 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Saison 1",
-        "episodesCount": 12,
-        "releaseDate": "04/10/2024",
-        "lastEpisodeDate": "20/12/2024",
-        "rawStartDate": {
-          "year": 2024,
-          "month": 10,
-          "day": 4
-        },
-        "rawEndDate": {
-          "year": 2024,
-          "month": 12,
-          "day": 20
-        }
+        "name": "DAN DA DAN",
+        "episodesCount": 12
       },
       {
-        "name": "Saison 2",
-        "episodesCount": 12,
-        "releaseDate": "04/07/2025",
-        "lastEpisodeDate": "19/09/2025",
-        "rawStartDate": {
-          "year": 2025,
-          "month": 7,
-          "day": 4
-        },
-        "rawEndDate": {
-          "year": 2025,
-          "month": 9,
-          "day": 19
-        }
+        "name": "Season 2",
+        "episodesCount": 12
       }
     ],
     "openingUrl": "https://v.animethemes.moe/Dandadan-OP1-NCBD1080.webm",
@@ -4265,7 +4241,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx150672-WqmmwZ4nMzAy.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/series/GT00366791/oshi-no-ko",
     "adnUrl": "https://animationdigitalnetwork.fr/video/1034-oshi-no-ko",
-    "episodesTotal": 37,
+    "episodesTotal": 35,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -4291,20 +4267,16 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Saison 1",
-        "episodesCount": 11,
-        "releaseDate": "12/04/2023",
-        "lastEpisodeDate": "28/06/2023",
-        "rawStartDate": {
-          "year": 2023,
-          "month": 4,
-          "day": 12
-        },
-        "rawEndDate": {
-          "year": 2023,
-          "month": 6,
-          "day": 28
-        }
+        "name": "Season 1",
+        "episodesCount": 11
+      },
+      {
+        "name": "Season 2",
+        "episodesCount": 13
+      },
+      {
+        "name": "Season 3",
+        "episodesCount": 11
       }
     ],
     "openingUrl": "https://v.animethemes.moe/OshiNoKo-OP1-NCBD1080.webm"
@@ -7617,7 +7589,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx97938-BnF6M5yTaNB1.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GR75Q020Y/boruto-naruto-next-generations",
     "adnUrl": "https://animationdigitalnetwork.fr/video/457-boruto-naruto-next-generations",
-    "episodesTotal": 296,
+    "episodesTotal": 293,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -7643,20 +7615,52 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Saison 1",
-        "episodesCount": 293,
-        "releaseDate": "05/04/2017",
-        "lastEpisodeDate": "26/03/2023",
-        "rawStartDate": {
-          "year": 2017,
-          "month": 4,
-          "day": 5
-        },
-        "rawEndDate": {
-          "year": 2023,
-          "month": 3,
-          "day": 26
-        }
+        "name": "Season 1",
+        "episodesCount": 26
+      },
+      {
+        "name": "Season 2",
+        "episodesCount": 25
+      },
+      {
+        "name": "Season 3",
+        "episodesCount": 24
+      },
+      {
+        "name": "Season 4",
+        "episodesCount": 25
+      },
+      {
+        "name": "Season 5",
+        "episodesCount": 26
+      },
+      {
+        "name": "Season 6",
+        "episodesCount": 24
+      },
+      {
+        "name": "Season 7",
+        "episodesCount": 30
+      },
+      {
+        "name": "Season 8",
+        "episodesCount": 25
+      },
+      {
+        "name": "Season 9",
+        "episodesCount": 25
+      },
+      {
+        "name": "Season 10",
+        "episodesCount": 25
+      },
+      {
+        "name": "Season 11",
+        "episodesCount": 26
+      },
+      {
+        "name": "Season 12",
+        "episodesCount": 12
       }
     ],
     "openingUrl": "https://v.animethemes.moe/Boruto-OP1-BD1080.webm",
@@ -9521,7 +9525,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx111762-C8TNf5uRlVNQ.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6ZJMGEXY/fruits-basket",
     "adnUrl": "https://animationdigitalnetwork.fr/video/558-fruits-basket",
-    "episodesTotal": 66,
+    "episodesTotal": 65,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -9547,20 +9551,24 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Saison 1",
-        "episodesCount": 25,
-        "releaseDate": "07/04/2020",
-        "lastEpisodeDate": "22/09/2020",
-        "rawStartDate": {
-          "year": 2020,
-          "month": 4,
-          "day": 7
-        },
-        "rawEndDate": {
-          "year": 2020,
-          "month": 9,
-          "day": 22
-        }
+        "name": "Fruits Basket",
+        "episodesCount": 25
+      },
+      {
+        "name": "Fruits Basket Saison 2",
+        "episodesCount": 25
+      },
+      {
+        "name": "Saison 3",
+        "episodesCount": 13
+      },
+      {
+        "name": "-Prélude-",
+        "episodesCount": 1
+      },
+      {
+        "name": "-Prélude-",
+        "episodesCount": 1
       }
     ],
     "openingUrl": "https://v.animethemes.moe/FruitsBasketS2-OP1-NCBD1080.webm"
