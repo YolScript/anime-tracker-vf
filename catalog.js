@@ -3621,7 +3621,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx171018-60q1B6GK2Ghb.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/series/GG5H5XQ0D/dan-da-dan",
     "adnUrl": "https://animationdigitalnetwork.fr/video/1160-dan-da-dan",
-    "episodesTotal": 24,
+    "episodesTotal": 26,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -4241,7 +4241,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx150672-WqmmwZ4nMzAy.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/series/GT00366791/oshi-no-ko",
     "adnUrl": "https://animationdigitalnetwork.fr/video/1034-oshi-no-ko",
-    "episodesTotal": 35,
+    "episodesTotal": 37,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -7589,7 +7589,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx97938-BnF6M5yTaNB1.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GR75Q020Y/boruto-naruto-next-generations",
     "adnUrl": "https://animationdigitalnetwork.fr/video/457-boruto-naruto-next-generations",
-    "episodesTotal": 293,
+    "episodesTotal": 296,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -9525,7 +9525,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx111762-C8TNf5uRlVNQ.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6ZJMGEXY/fruits-basket",
     "adnUrl": "https://animationdigitalnetwork.fr/video/558-fruits-basket",
-    "episodesTotal": 65,
+    "episodesTotal": 66,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -24582,7 +24582,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/2aa639bbbb7600222f764a8a11dfc174.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G24H1N334/the-detective-is-already-dead",
     "adnUrl": null,
-    "episodesTotal": 17,
+    "episodesTotal": 18,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -24613,7 +24613,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Saison 2",
-        "episodesCount": 5
+        "episodesCount": 6
       }
     ]
   },
@@ -27443,7 +27443,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/68bbb0dc0edfe3e8b8fc61db10092b1b.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00383994/magic-knight-rayearth-2026",
     "adnUrl": null,
-    "episodesTotal": 5,
+    "episodesTotal": 6,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -27466,7 +27466,7 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [
       {
         "name": "Saison 1",
-        "episodesCount": 5
+        "episodesCount": 6
       }
     ]
   },
