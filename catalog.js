@@ -1407,7 +1407,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx97940-fyh8o7gNbha0.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/series/GRE50KV36/black-clover",
     "adnUrl": "https://animationdigitalnetwork.fr/video/449-black-clover",
-    "episodesTotal": 177,
+    "episodesTotal": 178,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -1454,7 +1454,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Saison 2",
-        "episodesCount": 6
+        "episodesCount": 7
       }
     ],
     "openingUrl": "https://v.animethemes.moe/BlackClover-OP1-NCBD1080.webm",
@@ -3386,7 +3386,8 @@ const DEFAULT_ANIME_DATA = [
     ],
     "openingUrl": "https://v.animethemes.moe/SoulEater-OP1.webm",
     "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.36a90e05-96b2-4ebf-a63f-c35cea90b59b",
-    "disneyUrl": "https://www.disneyplus.com/browse/entity-748030aa-5e23-477d-9f4b-23ce788ce8f8"
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-748030aa-5e23-477d-9f4b-23ce788ce8f8",
+    "netflixUrl": "https://www.netflix.com/title/70205024"
   },
   {
     "id": "franchise-11111",
@@ -12045,7 +12046,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://image.animationdigitalnetwork.com/license/lecollegenoir/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
     "adnUrl": "https://animationdigitalnetwork.fr/video/1084-le-college-noir",
-    "episodesTotal": 14,
+    "episodesTotal": 16,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -20983,7 +20984,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/5bc04caee584d3f44263b57d7af8d356.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G4PH0WX5J/aoashi",
     "adnUrl": null,
-    "episodesTotal": 30,
+    "episodesTotal": 31,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -21010,7 +21011,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Saison 2",
-        "episodesCount": 6
+        "episodesCount": 7
       }
     ],
     "openingUrl": "https://v.animethemes.moe/AoAshi-OP1.webm"
@@ -27303,7 +27304,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/63f5ccb3d772d7bc4f84f72f2e0476de.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00383998/dreamland",
     "adnUrl": null,
-    "episodesTotal": 8,
+    "episodesTotal": 10,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -27326,11 +27327,11 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [
       {
         "name": "Dreamland (Version Française)",
-        "episodesCount": 4
+        "episodesCount": 5
       },
       {
         "name": "Dreamland (Version Japonaise)",
-        "episodesCount": 4
+        "episodesCount": 5
       }
     ]
   },
@@ -27605,5 +27606,39 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 6
       }
     ]
+  },
+  {
+    "id": "franchise-169969",
+    "titleFr": "Hero Without a Class: Who Even Needs Skills?!",
+    "titleOrig": "Mushoku no Eiyuu: Betsu ni Skill nanka Ira Nakattan Daga",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx169969-SqCjoqYT4A6Z.jpg",
+    "crunchyrollUrl": null,
+    "adnUrl": null,
+    "episodesTotal": 12,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "3.1",
+    "trailerId": "0pwdLZbLOjU",
+    "genres": "Action, Adventure, Comedy, Fantasy",
+    "synopsis": "In a world where one’s class determines everything, Arel, the son of a Sword Princess and an Archmage, was expected to inherit greatness. But when he discovers he’s classless, everything changes. Now he’s determined to prove that hard work and dedication are enough to not just succeed, but to excel as an adventurer!\n\n(Source: HIDIVE)\n\nNote: Mushoku no Eiyuu: Betsu ni Skill nanka Ira Nakattan Daga was streamed a week in advance of the TV broadcast on dAnimestore, ABEMA and HIDIVE beginning September 24, 2025. Regular broadcasting began on October 1, 2025.",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "24/09/2025",
+    "lastEpisodeDate": "10/12/2025",
+    "rawStartDate": {
+      "year": 2025,
+      "month": 9,
+      "day": 24
+    },
+    "rawEndDate": {
+      "year": 2025,
+      "month": 12,
+      "day": 10
+    },
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [],
+    "netflixUrl": "https://www.netflix.com/title/82662122"
   }
 ];
