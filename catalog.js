@@ -13223,7 +13223,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "La nuit je danse avec la mort",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/dansemort/film/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/809-la-nuit-je-danse-avec-la-mort",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -13240,7 +13240,9 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-810",
@@ -13248,7 +13250,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Coffin",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/coffin/film/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/810-coffin",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -13265,7 +13267,9 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-811",
@@ -13273,7 +13277,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Thermostat 6",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/thermostat6/film/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/811-thermostat-6",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -13290,7 +13294,9 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-764",
@@ -27342,7 +27348,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/0a8942e9c744767f087361f4a254b930.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00383992/full-clearing-another-world-under-a-goddess-with-zero-believers",
     "adnUrl": null,
-    "episodesTotal": 5,
+    "episodesTotal": 6,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -27365,7 +27371,7 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [
       {
         "name": "Saison 1",
-        "episodesCount": 5
+        "episodesCount": 6
       }
     ]
   },
@@ -27512,7 +27518,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/6fa02d19fff5ee11129efa61a0bf89ac.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00384004/overgeared",
     "adnUrl": null,
-    "episodesTotal": 7,
+    "episodesTotal": 8,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -27535,7 +27541,7 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [
       {
         "name": "Saison 1",
-        "episodesCount": 7
+        "episodesCount": 8
       }
     ]
   },
@@ -27546,7 +27552,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/6797ecdfc96f0a83c8d4983a0dae5c82.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00384006/reborn-as-a-space-mercenary-i-woke-up-piloting-the-strongest-starship",
     "adnUrl": null,
-    "episodesTotal": 6,
+    "episodesTotal": 7,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -27569,7 +27575,7 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [
       {
         "name": "Saison 1",
-        "episodesCount": 6
+        "episodesCount": 7
       }
     ]
   },
