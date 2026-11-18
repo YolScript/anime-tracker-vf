@@ -883,7 +883,8 @@ const DEFAULT_ANIME_DATA = [
         }
       }
     ],
-    "openingUrl": "https://v.animethemes.moe/SwordArtOnline-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/SwordArtOnline-OP1.webm",
+    "netflixUrl": "https://www.netflix.com/title/70302573"
   },
   {
     "id": "franchise-21519",
@@ -4763,7 +4764,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "GOBLIN SLAYER",
+        "name": "Season 1",
         "episodesCount": 13
       },
       {
@@ -4771,7 +4772,7 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 1
       },
       {
-        "name": "GOBLIN SLAYER Season 2",
+        "name": "Season 2",
         "episodesCount": 12
       }
     ],
