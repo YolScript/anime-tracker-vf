@@ -5,7 +5,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Shingeki no Kyojin",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx16498-buvcRTBx4NSm.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GR751KNZY/attack-on-titan",
-    "adnUrl": "https://animationdigitalnetwork.fr/video/662-attaque-des-titans-shingeki-no-kyojin",
+    "adnUrl": null,
     "episodesTotal": 99,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -154,7 +154,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Kimetsu no Yaiba",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101922-WBsBl0ClmgYL.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GY5P48XEY/demon-slayer-kimetsu-no-yaiba",
-    "adnUrl": "https://animationdigitalnetwork.fr/video/846-demon-slayer-kimetsu-no-yaiba",
+    "adnUrl": null,
     "episodesTotal": 69,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -273,7 +273,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Boku no Hero Academia",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21459-nYh85uj2Fuwr.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6NQ5DWZ6/my-hero-academia",
-    "adnUrl": "https://animationdigitalnetwork.fr/video/405-my-hero-academia",
+    "adnUrl": null,
     "episodesTotal": 182,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -350,7 +350,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "HUNTER×HUNTER (2011)",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx11061-y5gsT1hoHuHw.png",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/267-hunter-x-hunter-2011",
+    "adnUrl": null,
     "episodesTotal": 148,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -393,7 +393,9 @@ const DEFAULT_ANIME_DATA = [
         }
       }
     ],
-    "openingUrl": "https://v.animethemes.moe/HunterHunter2011-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/HunterHunter2011-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "franchise-21",
@@ -554,7 +556,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Tokyo Ghoul",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b20605-k665mVkSug8D.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6NV7Z50Y/tokyo-ghoul",
-    "adnUrl": "https://animationdigitalnetwork.fr/video/656-tokyo-ghoul",
+    "adnUrl": null,
     "episodesTotal": 50,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -760,7 +762,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Sword Art Online",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx11757-SxYDUzdr9rh2.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GR49G9VP6/sword-art-online",
-    "adnUrl": "https://animationdigitalnetwork.fr/video/442-sword-art-online",
+    "adnUrl": null,
     "episodesTotal": 104,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -987,7 +989,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Ansatsu Kyoushitsu",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20755-dWrhs569YGUO.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/344-assassination-classroom",
+    "adnUrl": null,
     "episodesTotal": 47,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -1344,7 +1346,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Haikyuu!!",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20464-ooZUyBe4ptp9.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GY8VM8MWY/haikyu",
-    "adnUrl": "https://animationdigitalnetwork.fr/video/461-haikyuu",
+    "adnUrl": null,
     "episodesTotal": 94,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -1407,7 +1409,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Black Clover",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx97940-fyh8o7gNbha0.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/series/GRE50KV36/black-clover",
-    "adnUrl": "https://animationdigitalnetwork.fr/video/449-black-clover",
+    "adnUrl": null,
     "episodesTotal": 178,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -1468,7 +1470,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Seishun Buta Yarou wa Bunny Girl Senpai no Yume wo Minai",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101291-wfEdgPqtfU0l.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/series/GYW4MG9G6/rascal-does-not-dream-series",
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1313-rascal-does-not-dream-of-bunny-girl-senpai",
+    "adnUrl": null,
     "episodesTotal": 29,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -2614,7 +2616,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Angel Beats!",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx6547-SYexAn5aFyss.png",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1304-angel-beats",
+    "adnUrl": null,
     "episodesTotal": 15,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -2657,7 +2659,9 @@ const DEFAULT_ANIME_DATA = [
         }
       }
     ],
-    "openingUrl": "https://v.animethemes.moe/AngelBeats-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/AngelBeats-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "franchise-98659",
@@ -2954,7 +2958,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Kill la Kill",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b18679-lbkq7iYESoFW.png",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1218-kill-la-kill",
+    "adnUrl": null,
     "episodesTotal": 25,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -2996,7 +3000,9 @@ const DEFAULT_ANIME_DATA = [
           "day": 28
         }
       }
-    ]
+    ],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "franchise-20850",
@@ -3114,7 +3120,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Overlord",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20832-vUNm5zrYWifc.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/370-overlord",
+    "adnUrl": null,
     "episodesTotal": 55,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -3342,7 +3348,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Soul Eater",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx3588-fSMggQoFSbUI.png",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/171-soul-eater",
+    "adnUrl": null,
     "episodesTotal": 51,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -3449,7 +3455,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "FAIRY TAIL",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b6702-KI4qgSMyI8Pm.png",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/269-fairy-tail",
+    "adnUrl": null,
     "episodesTotal": 330,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -3571,7 +3577,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Tengen Toppa Gurren Lagann",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx2001-XwRnjzGeFWRQ.png",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1219-gurren-lagann",
+    "adnUrl": null,
     "episodesTotal": 27,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -3614,7 +3620,9 @@ const DEFAULT_ANIME_DATA = [
         }
       }
     ],
-    "openingUrl": "https://v.animethemes.moe/TengenToppaGurrenLagann-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/TengenToppaGurrenLagann-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "franchise-171018",
@@ -3623,7 +3631,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx171018-60q1B6GK2Ghb.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/series/GG5H5XQ0D/dan-da-dan",
     "adnUrl": "https://animationdigitalnetwork.fr/video/1160-dan-da-dan",
-    "episodesTotal": 26,
+    "episodesTotal": 24,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -3710,7 +3718,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "PSYCHO-PASS",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx13601-i42VFuHpqEOJ.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GR75253JY/psycho-pass",
-    "adnUrl": "https://animationdigitalnetwork.fr/video/536-psycho-pass",
+    "adnUrl": null,
     "episodesTotal": 58,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -4044,7 +4052,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Bakemonogatari",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx5081-9GocceQ5Z865.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1216-bakemonogatari",
+    "adnUrl": null,
     "episodesTotal": 15,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -4087,7 +4095,9 @@ const DEFAULT_ANIME_DATA = [
         }
       }
     ],
-    "openingUrl": "https://v.animethemes.moe/Bakemonogatari-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/Bakemonogatari-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "franchise-115230",
@@ -4242,8 +4252,8 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "[Oshi no Ko]",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx150672-WqmmwZ4nMzAy.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/series/GT00366791/oshi-no-ko",
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1034-oshi-no-ko",
-    "episodesTotal": 37,
+    "adnUrl": null,
+    "episodesTotal": 35,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -4737,7 +4747,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Goblin Slayer",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101165-v5NwPXWPFDuD.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6VDMN306/goblin-slayer",
-    "adnUrl": "https://animationdigitalnetwork.fr/video/701-goblin-slayer",
+    "adnUrl": null,
     "episodesTotal": 26,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -5068,7 +5078,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Kuroko no Basket",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx11771-uvr44RAwRxPw.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G62P48X56/kurokos-basketball",
-    "adnUrl": "https://animationdigitalnetwork.fr/video/437-kuroko-film-1",
+    "adnUrl": null,
     "episodesTotal": 82,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -5217,7 +5227,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "K-ON!",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx5680-r3AI3Cwfv0Aq.png",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/62-k-on",
+    "adnUrl": null,
     "episodesTotal": 14,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -5260,7 +5270,9 @@ const DEFAULT_ANIME_DATA = [
         }
       }
     ],
-    "openingUrl": "https://v.animethemes.moe/KOn-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/KOn-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "franchise-13759",
@@ -5425,7 +5437,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Elfen Lied",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx226-MibyRKhIrnTe.png",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/172-elfen-lied",
+    "adnUrl": null,
     "episodesTotal": 13,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -5467,7 +5479,9 @@ const DEFAULT_ANIME_DATA = [
           "day": 17
         }
       }
-    ]
+    ],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "franchise-21613",
@@ -5622,7 +5636,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Fate/stay night: Unlimited Blade Works",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx19603-ycT0pyEgDVQu.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1295-fatestay-night-unlimited-blade-works",
+    "adnUrl": null,
     "episodesTotal": 26,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -5665,7 +5679,9 @@ const DEFAULT_ANIME_DATA = [
         }
       }
     ],
-    "openingUrl": "https://v.animethemes.moe/FateStayNightUBW-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/FateStayNightUBW-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "franchise-112301",
@@ -5775,7 +5791,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Kuroshitsuji",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx4898-mW4gabZvwmLC.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/series/GYQ43P3E6/black-butler",
-    "adnUrl": "https://animationdigitalnetwork.fr/video/273-black-butler-kuroshitsuji",
+    "adnUrl": null,
     "episodesTotal": 77,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -6128,7 +6144,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Dragon Ball Z",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx813-ZhnFNOeCU5dQ.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G9VHN9PPW/dragon-ball-z",
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1003-dragon-ball-z",
+    "adnUrl": null,
     "episodesTotal": 291,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -6436,7 +6452,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Kimi ni Todoke",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx6045-JujXjoWtslUM.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1117-kimi-ni-todoke",
+    "adnUrl": null,
     "episodesTotal": 38,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -6479,7 +6495,9 @@ const DEFAULT_ANIME_DATA = [
         }
       }
     ],
-    "openingUrl": "https://v.animethemes.moe/KimiNiTodoke-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/KimiNiTodoke-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "franchise-20807",
@@ -7170,7 +7188,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Dragon Ball",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx223-scE5uJfXqqj8.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G8DHV7W21/dragon-ball",
-    "adnUrl": "https://animationdigitalnetwork.fr/video/996-dragon-ball",
+    "adnUrl": null,
     "episodesTotal": 153,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -7380,7 +7398,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "AKIRA",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx47-4CR68arv452h.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/851-akira",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -7432,7 +7450,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Kekkai Sensen",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20727-jgVnxLCHAKqZ.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/351-kekkai-sensen",
+    "adnUrl": null,
     "episodesTotal": 24,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -7475,7 +7493,9 @@ const DEFAULT_ANIME_DATA = [
         }
       }
     ],
-    "openingUrl": "https://v.animethemes.moe/KekkaiSensen-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/KekkaiSensen-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "franchise-99255",
@@ -7590,8 +7610,8 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "BORUTO: NARUTO NEXT GENERATIONS",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx97938-BnF6M5yTaNB1.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GR75Q020Y/boruto-naruto-next-generations",
-    "adnUrl": "https://animationdigitalnetwork.fr/video/457-boruto-naruto-next-generations",
-    "episodesTotal": 296,
+    "adnUrl": null,
+    "episodesTotal": 293,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -8426,7 +8446,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Kiznaiver",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx21421-5y8ryXsMB7aJ.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1026-kiznaiver",
+    "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -8469,7 +8489,9 @@ const DEFAULT_ANIME_DATA = [
         }
       }
     ],
-    "openingUrl": "https://v.animethemes.moe/Kiznaiver-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/Kiznaiver-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "franchise-147105",
@@ -9012,7 +9034,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "GATE: Jieitai Kanochi nite, Kaku Tatakaeri",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20994-pSDk4I58jAK5.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1027-gate",
+    "adnUrl": null,
     "episodesTotal": 24,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -9055,7 +9077,9 @@ const DEFAULT_ANIME_DATA = [
         }
       }
     ],
-    "openingUrl": "https://v.animethemes.moe/Gate-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/Gate-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "franchise-162804",
@@ -9475,7 +9499,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Nisemonogatari",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx11597-x2vd4KSHcI1S.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1217-nisemonogatari",
+    "adnUrl": null,
     "episodesTotal": 11,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -9518,7 +9542,9 @@ const DEFAULT_ANIME_DATA = [
         }
       }
     ],
-    "openingUrl": "https://v.animethemes.moe/Nisemonogatari-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/Nisemonogatari-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "franchise-111762",
@@ -9526,8 +9552,8 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Fruits Basket: 2nd Season",
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx111762-C8TNf5uRlVNQ.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6ZJMGEXY/fruits-basket",
-    "adnUrl": "https://animationdigitalnetwork.fr/video/558-fruits-basket",
-    "episodesTotal": 66,
+    "adnUrl": null,
+    "episodesTotal": 65,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -10264,7 +10290,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Ojamajo Doremi",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/doremi/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1343-magical-doremi",
+    "adnUrl": null,
     "episodesTotal": 214,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -10290,7 +10316,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/OjamajoDoremi-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/OjamajoDoremi-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-1405",
@@ -10298,7 +10326,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Le Jardin de Rossini",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/lejardinderossini/film/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1405-le-jardin-de-rossini",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -10315,7 +10343,9 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-1407",
@@ -10323,7 +10353,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "TUMBLEWEED",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/tumbleweed/film/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1407-tumbleweed",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -10340,7 +10370,9 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-1008",
@@ -10348,7 +10380,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Isekai Nonbiri Nouka",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/farminganotherworld/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1008-farming-life-in-another-world",
+    "adnUrl": null,
     "episodesTotal": 24,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -10374,7 +10406,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/IsekaiNonbiriNouka-OP1-NCBD1080.webm"
+    "openingUrl": "https://v.animethemes.moe/IsekaiNonbiriNouka-OP1-NCBD1080.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-1398",
@@ -10382,7 +10416,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Hagane no Renkinjutsushi",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/fma/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1398-fullmetal-alchemist",
+    "adnUrl": null,
     "episodesTotal": 51,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -10434,7 +10468,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "美少女戦士セーラームーン",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/sailormoon/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/427-sailor-moon",
+    "adnUrl": null,
     "episodesTotal": 202,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -10471,7 +10505,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Hellsing",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/hellsing/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1393-hellsing",
+    "adnUrl": null,
     "episodesTotal": 13,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -10497,7 +10531,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/Hellsing-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/Hellsing-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-1358",
@@ -10505,7 +10541,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Inazuma Eleven",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/inazumaeleven/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1358-inazuma-eleven",
+    "adnUrl": null,
     "episodesTotal": 127,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -10540,7 +10576,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Bishoujo Senshi Sailor Moon Crystal",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/sailormooncrystal/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1361-sailor-moon-crystal",
+    "adnUrl": null,
     "episodesTotal": 39,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -10562,7 +10598,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/SailorMoonCrystal-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/SailorMoonCrystal-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-1371",
@@ -10570,7 +10608,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Kono Subarashii Sekai ni Shukufuku wo! Spin-off: Kono Subarashii Sekai ni Bakuen wo",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/konosubaexplosion/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GJ0H7Q5V7/konosuba--an-explosion-on-this-wonderful-world",
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1371-konosuba-an-explosion-on-this-wonderful-world",
+    "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -10605,7 +10643,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Giant Robo The Animation : Chikyuu ga Seishisuru Hi",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/giantrobo/oav/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1359-giant-robo",
+    "adnUrl": null,
     "episodesTotal": 7,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -10626,7 +10664,9 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-1354",
@@ -10664,7 +10704,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Dragon Ball Z Movie 15 : Fukkatsu no F",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/dbz/film15/web/affiche_350x500.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GMTE00002920/dragon-ball-z-resurrection-f",
-    "adnUrl": "https://animationdigitalnetwork.fr/video/430-dragon-ball-z-la-resurrection-de-f",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -10724,7 +10764,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Neon Genesis Evangelion",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/evangelion/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1335-neon-genesis-evangelion",
+    "adnUrl": null,
     "episodesTotal": 26,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -10830,7 +10870,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Mahô Shôjo Madoka Magica the Movie Part I : Hajimari no Monogatari",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/puellamagimadokamagica/film1/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1319-puella-magi-madoka-magica-film-1-au-commencement",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -10847,7 +10887,9 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-1320",
@@ -10855,7 +10897,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Mahô Shôjo Madoka Magica the Movie Part II : Eien no Monogatari",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/puellamagimadokamagica/film2/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1320-puella-magi-madoka-magica-film-2-une-histoire-infinie",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -10872,7 +10914,9 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-1321",
@@ -10880,7 +10924,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Mahô Shôjo Madoka Magica the Movie Part III : Hangyaku no Monogatari",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/puellamagimadokamagica/film3/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1321-puella-magi-madoka-magica-film-3-rebellion",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -10897,7 +10941,9 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-546",
@@ -10905,7 +10951,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Kuroshitsuji Book of the Atlantic",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/blackbutler/film/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/546-black-butler-book-of-the-atlantic",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -10930,7 +10976,9 @@ const DEFAULT_ANIME_DATA = [
     },
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-1306",
@@ -10938,7 +10986,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Shin Taketori Monogatari : Sennen Joou",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/queenmillenium/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1306-queen-millenium",
+    "adnUrl": null,
     "episodesTotal": 42,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -10959,7 +11007,9 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-1316",
@@ -10967,7 +11017,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "遊☆戯☆王 THE DARK SIDE OF DIMENSIONS",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/yugioh/film/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1316-yu-gi-oh-the-dark-side-of-dimensions",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -10993,7 +11043,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/YGO-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/YGO-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-329",
@@ -11001,7 +11053,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Eyeshield 21",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/eyeshield/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/329-eyeshield-21",
+    "adnUrl": null,
     "episodesTotal": 145,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -11027,7 +11079,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/Eyeshield21-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/Eyeshield21-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-1301",
@@ -11035,7 +11089,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Gekijō-ban Overlord : Sei Ōkoku-hen",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/overlord/film/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1301-overlord-the-sacred-kingdom",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -11132,7 +11186,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Wakfu",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/wakfu/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/588-wakfu",
+    "adnUrl": null,
     "episodesTotal": 13,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -11163,7 +11217,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "BESTIALE",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/bestiale/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1270-bestiale",
+    "adnUrl": null,
     "episodesTotal": 7,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -11184,7 +11238,9 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-1205",
@@ -11192,7 +11248,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "ソニック X",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/sonicx/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1205-sonic-x",
+    "adnUrl": null,
     "episodesTotal": 78,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -11227,7 +11283,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "フェアリーテイル 100年クエスト",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/fairytail/tv2/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1187-fairy-tail-100-years-quest",
+    "adnUrl": null,
     "episodesTotal": 26,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -11259,7 +11315,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "ドラゴンボールZ: 神と神",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/dbz/film14/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/363-dragon-ball-z-battle-of-gods",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -11285,7 +11341,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/DragonBallZ-OP1-NCBD1080.webm"
+    "openingUrl": "https://v.animethemes.moe/DragonBallZ-OP1-NCBD1080.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-1252",
@@ -11293,7 +11351,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Dragon Ball Z : Rivaux dangereux",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/dbz/film10/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1252-dragon-ball-z-rivaux-dangereux",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -11311,7 +11369,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/DragonBallZ-OP1-NCBD1080.webm"
+    "openingUrl": "https://v.animethemes.moe/DragonBallZ-OP1-NCBD1080.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-1241",
@@ -11319,7 +11379,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Oropo : Bataille pour l'Éliacube",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/wakfu/tv35/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1241-wakfu-oropo-bataille-pour-leliacube",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -11340,7 +11400,9 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-441",
@@ -11348,7 +11410,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Toriko",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/toriko/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/441-toriko",
+    "adnUrl": null,
     "episodesTotal": 146,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -11374,7 +11436,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/Toriko-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/Toriko-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-1207",
@@ -11413,7 +11477,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "聖闘士星矢 -黄金魂 soul of gold-",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/saintseiyasoulofgold/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1214-saint-seiya-soul-of-gold",
+    "adnUrl": null,
     "episodesTotal": 13,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -11439,7 +11503,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/SaintSeiyaSoulOfGold-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/SaintSeiyaSoulOfGold-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-1210",
@@ -11447,7 +11513,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Try Hard",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/tryhard/oav/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1210-try-hard",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -11464,7 +11530,9 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-1161",
@@ -11472,7 +11540,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Dead Cells : Immortalis",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/deadcells/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1161-dead-cells-immortalis",
+    "adnUrl": null,
     "episodesTotal": 11,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -11538,7 +11606,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Tenjô Tenge",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/tenjotenge/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1200-enfer-et-paradis",
+    "adnUrl": null,
     "episodesTotal": 26,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -11559,7 +11627,9 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-1195",
@@ -11567,7 +11637,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Saint Seiya : Meiou Hades Meikai-hen",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/saintseiyahades/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1195-saint-seiya-chapitre-hades",
+    "adnUrl": null,
     "episodesTotal": 31,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -11593,7 +11663,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/SaintSeiyaHadesMeikaiHen-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/SaintSeiyaHadesMeikaiHen-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-307",
@@ -11601,7 +11673,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Great Teacher Onizuka",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/gto/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/307-great-teacher-onizuka",
+    "adnUrl": null,
     "episodesTotal": 43,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -11661,7 +11733,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "City Hunter : Ai to Shukumei no Magnum",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/cityhunter/special/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/927-city-hunter-amour-destin-et-un-magnum-357",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -11687,7 +11759,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/CityHunter-OP2.webm"
+    "openingUrl": "https://v.animethemes.moe/CityHunter-OP2.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-934",
@@ -11695,7 +11769,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "City Hunter : Bay City Wars",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/cityhunter/special2/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/934-city-hunter-bay-city-wars",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -11721,7 +11795,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/CityHunter-OP2.webm"
+    "openingUrl": "https://v.animethemes.moe/CityHunter-OP2.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-935",
@@ -11729,7 +11805,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "City Hunter : Hyakuman Dollar no Inbou",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/cityhunter/special3/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/935-city-hunter-complot-pour-un-million-de-dollars",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -11751,7 +11827,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/CityHunter-OP2.webm"
+    "openingUrl": "https://v.animethemes.moe/CityHunter-OP2.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-936",
@@ -11759,7 +11837,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "City Hunter : The Secret Service",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/cityhunter/special4/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/936-city-hunter-services-secrets",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -11785,7 +11863,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/CityHunter-OP2.webm"
+    "openingUrl": "https://v.animethemes.moe/CityHunter-OP2.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-937",
@@ -11793,7 +11873,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "City Hunter : Goodbye my Sweetheart",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/cityhunter/special5/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/937-city-hunter-goodbye-my-sweetheart",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -11819,7 +11899,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/CityHunter-OP2.webm"
+    "openingUrl": "https://v.animethemes.moe/CityHunter-OP2.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-938",
@@ -11827,7 +11909,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "City Hunter : Kinkyû chûkei!? Kyôaku han Saeba Ryô no Saigo",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/cityhunter/special6/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/938-city-hunter-la-mort-de-ryo-saeba",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -11845,7 +11927,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/CityHunter-OP2.webm"
+    "openingUrl": "https://v.animethemes.moe/CityHunter-OP2.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-1037",
@@ -12046,7 +12130,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Le Collège Noir - Complainte d'Auvergne",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/lecollegenoir/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1084-le-college-noir",
+    "adnUrl": null,
     "episodesTotal": 16,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -12067,7 +12151,9 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-1088",
@@ -12075,7 +12161,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Shigurui",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/shigurui/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1088-shigurui",
+    "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -12101,7 +12187,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/Shigurui-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/Shigurui-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-1096",
@@ -12109,7 +12197,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "ゴブリンスレイヤー -GOBLIN'S CROWN-",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/goblinslayer/film/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1096-goblin-slayer-goblins-crown",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -12134,7 +12222,9 @@ const DEFAULT_ANIME_DATA = [
     },
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-1035",
@@ -12178,7 +12268,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Saint Seiya : Jashin Eris",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/saintseiya/film1/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1076-saint-seiya-la-legende-de-la-pomme-d-or",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -12204,7 +12294,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/SaintSeiya-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/SaintSeiya-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-1077",
@@ -12212,7 +12304,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Saint Seiya : Kamigami no Atsuki Tatakai",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/saintseiya/film2/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1077-saint-seiya-la-bataille-des-dieux",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -12238,7 +12330,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/SaintSeiya-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/SaintSeiya-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-1078",
@@ -12246,7 +12340,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Saint Seiya : Shinku no Shounen Densetsu",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/saintseiya/film3/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1078-saint-seiya-les-guerriers-d-abel",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -12272,7 +12366,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/SaintSeiya-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/SaintSeiya-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-1079",
@@ -12280,7 +12376,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Saint Seiya : Saishuu Seisen no Senshi-tachi",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/saintseiya/film4/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1079-saint-seiya-le-temple-de-lucifer",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -12306,7 +12402,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/SaintSeiya-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/SaintSeiya-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-1080",
@@ -12314,7 +12412,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Saint Seiya Tenkai-hen Jousou ~Overture~",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/saintseiya/film5/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1080-saint-seiya-le-chapitre-celeste-ouverture",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -12332,7 +12430,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/SaintSeiya-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/SaintSeiya-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-1069",
@@ -12340,7 +12440,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Card Captor Sakura",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/ccsakura/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1069-card-captor-sakura",
+    "adnUrl": null,
     "episodesTotal": 70,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -12361,7 +12461,9 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-1065",
@@ -12369,7 +12471,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Yu-Gi-Oh! 5D's",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/yugiohfiveds/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1065-yu-gi-oh-five-d-s",
+    "adnUrl": null,
     "episodesTotal": 64,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -12395,7 +12497,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/YGO5DS-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/YGO5DS-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-1060",
@@ -12403,7 +12507,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Gakuen Mokushiroku : Highschool of the Dead",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/hsotd/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1060-high-school-of-the-dead",
+    "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -12437,7 +12541,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Air Gear",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/airgear/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/22-air-gear",
+    "adnUrl": null,
     "episodesTotal": 26,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -12472,7 +12576,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Yu Yu Hakusho",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/yuyuhakusho/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/624-yu-yu-hakusho",
+    "adnUrl": null,
     "episodesTotal": 112,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -12506,7 +12610,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Beck",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/beck/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/31-beck",
+    "adnUrl": null,
     "episodesTotal": 26,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -12541,7 +12645,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Berserk",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/berserk/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1046-berserk",
+    "adnUrl": null,
     "episodesTotal": 25,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -12577,7 +12681,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "はじめの一歩 / はじめの一歩 THE FIGHTING!",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/ippo/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/885-hajime-no-ippo-the-fighting",
+    "adnUrl": null,
     "episodesTotal": 127,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -12603,7 +12707,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/HajimeNoIppo-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/HajimeNoIppo-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-1017",
@@ -12611,7 +12717,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Fushigi no Umi no Nadia",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/nadia/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1017-nadia-le-secret-de-l-eau-bleue",
+    "adnUrl": null,
     "episodesTotal": 39,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -12637,7 +12743,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/FushigiNoUmiNoNadia-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/FushigiNoUmiNoNadia-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-1018",
@@ -12645,7 +12753,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Lastman",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/lastman/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/1018-lastman",
+    "adnUrl": null,
     "episodesTotal": 32,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -12666,7 +12774,9 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-919",
@@ -12674,7 +12784,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Ie Naki Ko",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/remi/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/919-remi-sans-famille",
+    "adnUrl": null,
     "episodesTotal": 51,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -12700,7 +12810,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/IeNakiKo-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/IeNakiKo-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-998",
@@ -12708,7 +12820,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "ドラゴンボールGT",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/dbgt/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G4PH0WXXM/dragon-ball-gt",
-    "adnUrl": "https://animationdigitalnetwork.fr/video/998-dragon-ball-gt",
+    "adnUrl": null,
     "episodesTotal": 64,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -12758,7 +12870,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Hajime no Ippo : Champion Road",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/ippo/film/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/979-hajime-no-ippo-the-fighting-champion-road",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -12792,7 +12904,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Dr Slump",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/drslump/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/482-docteur-slump",
+    "adnUrl": null,
     "episodesTotal": 54,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -12818,7 +12930,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/DrSlumpAraleChan-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/DrSlumpAraleChan-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-997",
@@ -12826,7 +12940,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Dドラゴンボール改",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/dbzkai/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GMEHMEWP0/dragon-ball-z-kai",
-    "adnUrl": "https://animationdigitalnetwork.fr/video/997-dragon-ball-z-kai",
+    "adnUrl": null,
     "episodesTotal": 167,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -12862,7 +12976,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Hajime no Ippo : Mashiba VS Kimura",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/ippo/oav/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/978-hajime-no-ippo-the-fighting-mashiba-vs-kimura",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -12887,7 +13001,9 @@ const DEFAULT_ANIME_DATA = [
     },
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-957",
@@ -12895,7 +13011,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Versailles no Bara",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/ladyoscar/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/957-lady-oscar",
+    "adnUrl": null,
     "episodesTotal": 40,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -12920,7 +13036,9 @@ const DEFAULT_ANIME_DATA = [
     },
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-647",
@@ -12928,7 +13046,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Dragon Quest Dai no Daibôken",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/dragonquest/tv2/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/647-dragon-quest-the-adventure-of-dai-fly-daibouken",
+    "adnUrl": null,
     "episodesTotal": 102,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -12949,7 +13067,9 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-959",
@@ -12957,7 +13077,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Je sors acheter des cigarettes",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/jsadc/film/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/959-je-sors-acheter-des-cigarettes",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -12974,7 +13094,9 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-960",
@@ -12982,7 +13104,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "R.A.S.",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/ras/film/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/960-ras",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -12999,7 +13121,9 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-962",
@@ -13007,7 +13131,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Le Royaume",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/leroyaume/film/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/962-le-royaume",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -13024,7 +13148,9 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-952",
@@ -13032,7 +13158,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Ashita no Joe 2",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/ashitanojoe/tv2/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/952-ashita-no-joe",
+    "adnUrl": null,
     "episodesTotal": 47,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -13058,7 +13184,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/AshitaNoJoe2-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/AshitaNoJoe2-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-908",
@@ -13100,7 +13228,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Capitaine Flam",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/capitaineflam/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/879-capitaine-flam",
+    "adnUrl": null,
     "episodesTotal": 52,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -13121,7 +13249,9 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-867",
@@ -13129,7 +13259,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Galactik Football",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/galactikfootball/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/867-galactik-football",
+    "adnUrl": null,
     "episodesTotal": 78,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -13159,7 +13289,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Saint Seiya - Les Chevaliers du Zodiaque",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/saintseiya/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/850-saint-seiya-les-chevaliers-du-zodiaque",
+    "adnUrl": null,
     "episodesTotal": 114,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -13181,7 +13311,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/SaintSeiya-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/SaintSeiya-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-847",
@@ -13189,7 +13321,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Mousou Dairinin",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/paranoiaagent/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/847-paranoia-agent",
+    "adnUrl": null,
     "episodesTotal": 13,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -13305,7 +13437,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "UFO Robo Grendizer",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/goldorak/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/764-goldorak",
+    "adnUrl": null,
     "episodesTotal": 74,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -13331,7 +13463,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/UFORoboGrendizer-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/UFORoboGrendizer-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-756",
@@ -13369,7 +13503,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Hokuto no Ken",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/ken/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/704-hokuto-no-ken-le-survivant",
+    "adnUrl": null,
     "episodesTotal": 152,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -13395,7 +13529,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/HokutoNoKen-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/HokutoNoKen-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-856",
@@ -13403,7 +13539,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Papa Zaza",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/papazaza/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/856-papa-zaza",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -13420,7 +13556,9 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-711",
@@ -13428,7 +13566,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Owari no Seraph",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/seraph/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/711-seraph-of-the-end-owari-no-seraph",
+    "adnUrl": null,
     "episodesTotal": 24,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -13454,7 +13592,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/OwariNoSeraph-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/OwariNoSeraph-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-697",
@@ -13462,7 +13602,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Code Lyoko",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/codelyoko/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/697-code-lyoko",
+    "adnUrl": null,
     "episodesTotal": 97,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -13492,7 +13632,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Gansta.",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/gangsta/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GR09GQZMR/gangsta",
-    "adnUrl": "https://animationdigitalnetwork.fr/video/671-gangsta",
+    "adnUrl": null,
     "episodesTotal": 13,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -13527,7 +13667,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Soccer Fever",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/lesenfantsdumondial/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/644-les-enfants-du-mondial",
+    "adnUrl": null,
     "episodesTotal": 52,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -13552,7 +13692,9 @@ const DEFAULT_ANIME_DATA = [
     },
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-639",
@@ -13560,7 +13702,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Digimon Tamers",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/digimon/tv3/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/639-digimon-tamers",
+    "adnUrl": null,
     "episodesTotal": 51,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -13586,7 +13728,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/DigimonTamers-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/DigimonTamers-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-137",
@@ -13594,7 +13738,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "xxxHolic ( XXX ???? )",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/holic/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/137-xxxholic",
+    "adnUrl": null,
     "episodesTotal": 37,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -13616,7 +13760,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/xxxHOLiC-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/xxxHOLiC-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-615",
@@ -13624,7 +13770,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Dofus : Aux trésors de Kerubim",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/dofus/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/615-dofus-serie-aux-tresors-de-kerubim",
+    "adnUrl": null,
     "episodesTotal": 52,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -13645,7 +13791,9 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-49",
@@ -13653,7 +13801,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Fate/stay night",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/fate/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/49-fate-stay-night",
+    "adnUrl": null,
     "episodesTotal": 24,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -13679,7 +13827,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/FateStayNight-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/FateStayNight-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-591",
@@ -13687,7 +13837,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Digimon Adventure",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/digimon/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/591-digimon-digital-monsters",
+    "adnUrl": null,
     "episodesTotal": 54,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -13713,7 +13863,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/DigimonAdventure-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/DigimonAdventure-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-582",
@@ -13721,7 +13873,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Uchû Kaizoku Captain Harlock",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/albator/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/582-albator",
+    "adnUrl": null,
     "episodesTotal": 42,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -13742,7 +13894,9 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-548",
@@ -13750,7 +13904,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Cat's Eye",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/catseye/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/548-cats-eye",
+    "adnUrl": null,
     "episodesTotal": 74,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -13776,7 +13930,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/CatsEye-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/CatsEye-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-587",
@@ -13784,7 +13940,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Nanatsu no Taizai",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/deadlysins/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/587-the-seven-deadly-sins",
+    "adnUrl": null,
     "episodesTotal": 24,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -13815,7 +13971,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Boruto",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/boruto/film/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/362-boruto-naruto-le-film",
+    "adnUrl": null,
     "episodesTotal": 2,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -13851,7 +14007,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Devils' Line",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/devilsline/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/510-devils-line",
+    "adnUrl": null,
     "episodesTotal": 15,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -13920,7 +14076,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Assassination Classroom Le Film J-365",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/assclass/film/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/511-assassination-classroom-film",
+    "adnUrl": null,
     "episodesTotal": 2,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -13950,7 +14106,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "The Last -Naruto the Movie-",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/naruto/film10/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/376-naruto-the-last-film",
+    "adnUrl": null,
     "episodesTotal": 2,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -13975,7 +14131,9 @@ const DEFAULT_ANIME_DATA = [
     },
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-498",
@@ -13983,7 +14141,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "頭文字〈イニシャル〉D EXTRA STAGE",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/initiald/oav/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/498-initial-d-extra-stages",
+    "adnUrl": null,
     "episodesTotal": 2,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -14009,7 +14167,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/InitialDExtraStage-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/InitialDExtraStage-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-463",
@@ -14017,7 +14177,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "ClockWork Planet",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/clockwork/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/463-clockwork-planet",
+    "adnUrl": null,
     "episodesTotal": 13,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -14051,7 +14211,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "All Out!!",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/allout/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/432-all-out",
+    "adnUrl": null,
     "episodesTotal": 25,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -14086,7 +14246,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "殺せんせーQ[クエスト]!",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/koroquest/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/451-koro-sensei-quest",
+    "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -14121,7 +14281,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Endride",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/endride/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/411-endride",
+    "adnUrl": null,
     "episodesTotal": 25,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -14156,7 +14316,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Naruto SD : Rock Lee no Seishun Full-Power Ninden",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/rocklee/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/319-naruto-sd-rock-lee-les-peripeties-dun-ninja-en-herbe",
+    "adnUrl": null,
     "episodesTotal": 51,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -14182,7 +14342,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/NarutoSD-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/NarutoSD-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-315",
@@ -14190,7 +14352,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "No Game No Life",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/ngnl/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/315-no-game-no-life",
+    "adnUrl": null,
     "episodesTotal": 13,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -14225,7 +14387,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Witch Craft works",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/witchcraft/tv/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/301-witchcraft-works",
+    "adnUrl": null,
     "episodesTotal": 12,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -14295,7 +14457,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Gekijōban Naruto Shippūden",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/naruto/film4/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/291-naruto-shippuden-film-un-funeste-presage",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -14323,7 +14485,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Gekijōban Naruto Shippūden - Buraddo Purizun",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/naruto/film8/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/295-naruto-shippuden-film-blood-prison",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -14341,7 +14503,9 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "openingUrl": "https://v.animethemes.moe/Naruto-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/Naruto-OP1.webm",
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-292",
@@ -14349,7 +14513,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Gekijōban Naruto Shippūden - Kizuna",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/naruto/film5/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/292-naruto-shippuden-film-les-liens",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -14376,7 +14540,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Road to Ninja: Naruto the Movie",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/naruto/film9/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/296-naruto-shippuden-film-road-to-ninja",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -14411,7 +14575,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Naruto Shippuden : Hi no Ishi wo Tsugu Mono",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/naruto/film6/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/293-naruto-shippuden-film-la-flamme-de-la-volonte",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -14438,7 +14602,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Gekijouban Naruto Shippuuden: The Lost Tower",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/naruto/film7/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/294-naruto-shippuden-film-the-lost-tower",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -14455,7 +14619,9 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-290",
@@ -14463,7 +14629,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Gekijyouban Naruto Daikoufun! Mikazuki Shima no Animal Panic Dattebay",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/naruto/film3/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/290-naruto-film-mission-speciale-au-pays-de-la-lune",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -14480,7 +14646,9 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-289",
@@ -14488,7 +14656,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Gekijyouban Naruto Daigekitotsu! Maboroshi no Chiteiiseki Dattebayo!",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/naruto/film2/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/289-naruto-film-la-legende-de-la-pierre-de-guelel",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -14505,7 +14673,9 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [],
+    "unavailable": true,
+    "noVf": true
   },
   {
     "id": "adn-288",
@@ -14513,7 +14683,7 @@ const DEFAULT_ANIME_DATA = [
     "titleOrig": "Gekijouban Naruto: Dai Katsugeki! Yuki Hime Ninpouchou Dattebayo!!",
     "imageUrl": "https://image.animationdigitalnetwork.com/license/naruto/film/web/affiche_350x500.jpg",
     "crunchyrollUrl": null,
-    "adnUrl": "https://animationdigitalnetwork.fr/video/288-naruto-film-naruto-et-la-princesse-des-neiges",
+    "adnUrl": null,
     "episodesTotal": 1,
     "episodesWatched": 0,
     "status": "plan-to-watch",
@@ -24590,7 +24760,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/2aa639bbbb7600222f764a8a11dfc174.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G24H1N334/the-detective-is-already-dead",
     "adnUrl": null,
-    "episodesTotal": 18,
+    "episodesTotal": 19,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -24621,7 +24791,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Saison 2",
-        "episodesCount": 6
+        "episodesCount": 7
       }
     ]
   },
@@ -27451,7 +27621,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/68bbb0dc0edfe3e8b8fc61db10092b1b.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00383994/magic-knight-rayearth-2026",
     "adnUrl": null,
-    "episodesTotal": 6,
+    "episodesTotal": 7,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -27474,7 +27644,7 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [
       {
         "name": "Saison 1",
-        "episodesCount": 6
+        "episodesCount": 7
       }
     ]
   },
