@@ -3631,7 +3631,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx171018-60q1B6GK2Ghb.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/series/GG5H5XQ0D/dan-da-dan",
     "adnUrl": "https://animationdigitalnetwork.fr/video/1160-dan-da-dan",
-    "episodesTotal": 24,
+    "episodesTotal": 26,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -7215,39 +7215,39 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Pilaf Saga (1-13)",
+        "name": "Part 1",
         "episodesCount": 13
       },
       {
-        "name": "Tournament Saga (14-28)",
+        "name": "Part 2",
         "episodesCount": 15
       },
       {
-        "name": "Red Ribbon Army Saga (29-45)",
+        "name": "Part 3",
         "episodesCount": 17
       },
       {
-        "name": "General Blue Saga (46-57)",
+        "name": "Part 4",
         "episodesCount": 12
       },
       {
-        "name": "Commander Red Saga (58-67)",
+        "name": "Part 5",
         "episodesCount": 10
       },
       {
-        "name": "Fortuneteller Baba Saga (68-83)",
+        "name": "Part 6",
         "episodesCount": 16
       },
       {
-        "name": "Tien Shinhan Saga (84-101)",
+        "name": "Part 7",
         "episodesCount": 18
       },
       {
-        "name": "King Piccolo Saga (102-122)",
+        "name": "Part 8",
         "episodesCount": 21
       },
       {
-        "name": "Piccolo Jr. Saga (123-153)",
+        "name": "Part 9",
         "episodesCount": 31
       }
     ],
@@ -27817,5 +27817,34 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [],
     "netflixUrl": "https://www.netflix.com/title/82662122"
+  },
+  {
+    "id": "cr-GT00378018",
+    "titleFr": "The Exiled Heavy Knight Knows How to Game the System",
+    "titleOrig": "The Exiled Heavy Knight Knows How to Game the System",
+    "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/c88d7ed27873ff262e1f2808e02f1b99.png",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00378018/the-exiled-heavy-knight-knows-how-to-game-the-system",
+    "adnUrl": null,
+    "episodesTotal": 21,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": null,
+    "trailerId": null,
+    "genres": "Action, Fantasy, Adventure",
+    "synopsis": "Issu d’une prestigieuse famille de maîtres épéistes, Elymas Edvaughn est renié et banni lorsqu’il s’affirme en tant que “Chevalier Lourd”, une classe inférieure et complètement dénigrée. En réalité, le monde d’Elymas est similaire à celui d’un jeu qu’il maîtrisait dans une autre vie. Et il sait parfaitement que les Chevaliers Lourds sont en fait les plus puissants…",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "01/01/2026",
+    "lastEpisodeDate": null,
+    "rawStartDate": {
+      "year": 2026,
+      "month": 1,
+      "day": 1
+    },
+    "rawEndDate": null,
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": []
   }
 ];
