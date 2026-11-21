@@ -6,7 +6,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx16498-buvcRTBx4NSm.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GR751KNZY/attack-on-titan",
     "adnUrl": null,
-    "episodesTotal": 99,
+    "episodesTotal": 100,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -4594,7 +4594,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx161645-QLbzHXiYRgV2.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/series/G3KHEVDJ7/the-apothecary-diaries",
     "adnUrl": null,
-    "episodesTotal": 55,
+    "episodesTotal": 56,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -4629,7 +4629,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Les Carnets de l'apothicaire Saison 3",
-        "episodesCount": 7
+        "episodesCount": 8
       }
     ],
     "openingUrl": "https://v.animethemes.moe/KusuriyaNoHitorigoto-OP1-NCBD1080.webm",
@@ -7611,7 +7611,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx97938-BnF6M5yTaNB1.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GR75Q020Y/boruto-naruto-next-generations",
     "adnUrl": null,
-    "episodesTotal": 293,
+    "episodesTotal": 282,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -7646,23 +7646,23 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Season 3",
-        "episodesCount": 24
+        "episodesCount": 23
       },
       {
         "name": "Season 4",
-        "episodesCount": 25
+        "episodesCount": 23
       },
       {
         "name": "Season 5",
-        "episodesCount": 26
+        "episodesCount": 22
       },
       {
         "name": "Season 6",
-        "episodesCount": 24
+        "episodesCount": 21
       },
       {
         "name": "Season 7",
-        "episodesCount": 30
+        "episodesCount": 29
       },
       {
         "name": "Season 8",
@@ -9553,7 +9553,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx111762-C8TNf5uRlVNQ.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G6ZJMGEXY/fruits-basket",
     "adnUrl": null,
-    "episodesTotal": 65,
+    "episodesTotal": 64,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -16064,7 +16064,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177474-oHil1yLWldfl.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GP5HJ84D2/tougen-anki",
     "adnUrl": null,
-    "episodesTotal": 31,
+    "episodesTotal": 32,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -16095,7 +16095,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Arc des chutes de Kegon à Nikkô",
-        "episodesCount": 7
+        "episodesCount": 8
       }
     ],
     "netflixUrl": "https://www.netflix.com/title/81969861",
@@ -21457,7 +21457,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/51217e17030bc00540316a61234a8311.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G5PHNM985/bucchigiri",
     "adnUrl": null,
-    "episodesTotal": 12,
+    "episodesTotal": 13,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -21484,7 +21484,7 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [
       {
         "name": "BUCCHIGIRI?!",
-        "episodesCount": 12
+        "episodesCount": 13
       }
     ],
     "openingUrl": "https://v.animethemes.moe/Bucchigiri-OP1.webm"
@@ -27587,7 +27587,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/48db2568a6d8fa91c95cb4dfd582157e.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00383999/firefly-wedding",
     "adnUrl": null,
-    "episodesTotal": 6,
+    "episodesTotal": 7,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -27610,7 +27610,7 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [
       {
         "name": "Saison 1",
-        "episodesCount": 6
+        "episodesCount": 7
       }
     ]
   },
@@ -27757,7 +27757,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/39a7856c1737fecc47552dba64b4c8e2.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00384015/the-vermilion-mask",
     "adnUrl": null,
-    "episodesTotal": 6,
+    "episodesTotal": 7,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -27780,7 +27780,7 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [
       {
         "name": "Saison 1",
-        "episodesCount": 6
+        "episodesCount": 7
       }
     ]
   },
@@ -27833,6 +27833,69 @@ const DEFAULT_ANIME_DATA = [
     "trailerId": null,
     "genres": "Action, Fantasy, Adventure",
     "synopsis": "Issu d’une prestigieuse famille de maîtres épéistes, Elymas Edvaughn est renié et banni lorsqu’il s’affirme en tant que “Chevalier Lourd”, une classe inférieure et complètement dénigrée. En réalité, le monde d’Elymas est similaire à celui d’un jeu qu’il maîtrisait dans une autre vie. Et il sait parfaitement que les Chevaliers Lourds sont en fait les plus puissants…",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "01/01/2026",
+    "lastEpisodeDate": null,
+    "rawStartDate": {
+      "year": 2026,
+      "month": 1,
+      "day": 1
+    },
+    "rawEndDate": null,
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [
+      {
+        "name": "Saison 1",
+        "episodesCount": 21
+      }
+    ]
+  },
+  {
+    "id": "cr-GMTE00309876",
+    "titleFr": "Quand ça concerne notre mère - De retour sur l'île Tsunade - La Cendrillon qui a dépassé minuit",
+    "titleOrig": "Quand ça concerne notre mère - De retour sur l'île Tsunade - La Cendrillon qui a dépassé minuit",
+    "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/46caaa2e848250fdd65fee4af1d868f6.png",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GMTE00309876/of-course-my-mom--tsunade-island-once-more--cinderella-after-twelve",
+    "adnUrl": null,
+    "episodesTotal": 1,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": null,
+    "trailerId": null,
+    "genres": "Romance, Comedy",
+    "synopsis": "L'heure est venue de retrouver Masamune, Aki, Yoshino et tous leurs amis dans plusieurs mini-histoires, longtemps après le festival du lycée. Que sont-ils devenus ?",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "01/01/2018",
+    "lastEpisodeDate": null,
+    "rawStartDate": {
+      "year": 2018,
+      "month": 1,
+      "day": 1
+    },
+    "rawEndDate": null,
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": []
+  },
+  {
+    "id": "cr-GT00378121",
+    "titleFr": "The Ogre's Bride",
+    "titleOrig": "The Ogre's Bride",
+    "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/458a874ad280adddde9b63222d695b28.png",
+    "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00378121/the-ogres-bride",
+    "adnUrl": null,
+    "episodesTotal": 12,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": null,
+    "trailerId": null,
+    "genres": "Supernatural, Romance, Fantasy",
+    "synopsis": "Au Japon, ayakashi et humains cohabitent en harmonie. Dotés de pouvoirs supérieurs et d’une grande beauté, les ayakashi trouvent parfois leur partenaire parmi les femmes humaines qu’ils prennent pour « épouse ». En échange de la prospérité qu’elle apporte, cette dernière reçoit l’amour inconditionnel de l’ayakashi.",
     "cast": "",
     "airingStatus": "FINISHED",
     "releaseDate": "01/01/2026",
