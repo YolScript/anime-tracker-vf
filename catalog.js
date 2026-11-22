@@ -1410,7 +1410,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx97940-fyh8o7gNbha0.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/series/GRE50KV36/black-clover",
     "adnUrl": null,
-    "episodesTotal": 178,
+    "episodesTotal": 179,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -1457,7 +1457,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Saison 2",
-        "episodesCount": 7
+        "episodesCount": 8
       }
     ],
     "openingUrl": "https://v.animethemes.moe/BlackClover-OP1-NCBD1080.webm",
@@ -21161,7 +21161,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/5bc04caee584d3f44263b57d7af8d356.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G4PH0WX5J/aoashi",
     "adnUrl": null,
-    "episodesTotal": 31,
+    "episodesTotal": 32,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -21188,7 +21188,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Saison 2",
-        "episodesCount": 7
+        "episodesCount": 8
       }
     ],
     "openingUrl": "https://v.animethemes.moe/AoAshi-OP1.webm"
@@ -21610,7 +21610,8 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 52
       }
     ],
-    "openingUrl": "https://v.animethemes.moe/CaptainTsubasa2018-OP1.webm"
+    "openingUrl": "https://v.animethemes.moe/CaptainTsubasa2018-OP1.webm",
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-aceae0b6-ffd5-4323-91c8-ee3b4a26f2c3"
   },
   {
     "id": "cr-G4PH0WJDQ",
@@ -27481,7 +27482,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/63f5ccb3d772d7bc4f84f72f2e0476de.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00383998/dreamland",
     "adnUrl": null,
-    "episodesTotal": 10,
+    "episodesTotal": 12,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -27504,11 +27505,11 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [
       {
         "name": "Dreamland (Version Française)",
-        "episodesCount": 5
+        "episodesCount": 6
       },
       {
         "name": "Dreamland (Version Japonaise)",
-        "episodesCount": 5
+        "episodesCount": 6
       }
     ]
   },
@@ -27879,7 +27880,12 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [
+      {
+        "name": "Quand ça concerne notre mère - De retour sur l'île Tsunade - La Cendrillon qui a dépassé minuit",
+        "episodesCount": 1
+      }
+    ]
   },
   {
     "id": "cr-GT00378121",
@@ -27908,6 +27914,11 @@ const DEFAULT_ANIME_DATA = [
     "rawEndDate": null,
     "nextAiringEpisode": null,
     "nextAiringAt": null,
-    "seasons": []
+    "seasons": [
+      {
+        "name": "Saison 1",
+        "episodesCount": 12
+      }
+    ]
   }
 ];
