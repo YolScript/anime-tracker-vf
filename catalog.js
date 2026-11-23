@@ -27520,7 +27520,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/0a8942e9c744767f087361f4a254b930.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00383992/full-clearing-another-world-under-a-goddess-with-zero-believers",
     "adnUrl": null,
-    "episodesTotal": 6,
+    "episodesTotal": 7,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -27543,7 +27543,7 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [
       {
         "name": "Saison 1",
-        "episodesCount": 6
+        "episodesCount": 7
       }
     ]
   },
@@ -27690,7 +27690,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/6fa02d19fff5ee11129efa61a0bf89ac.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00384004/overgeared",
     "adnUrl": null,
-    "episodesTotal": 8,
+    "episodesTotal": 9,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -27713,7 +27713,7 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [
       {
         "name": "Saison 1",
-        "episodesCount": 8
+        "episodesCount": 9
       }
     ]
   },
@@ -27724,7 +27724,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/6797ecdfc96f0a83c8d4983a0dae5c82.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00384006/reborn-as-a-space-mercenary-i-woke-up-piloting-the-strongest-starship",
     "adnUrl": null,
-    "episodesTotal": 7,
+    "episodesTotal": 8,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -27747,7 +27747,7 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [
       {
         "name": "Saison 1",
-        "episodesCount": 7
+        "episodesCount": 8
       }
     ]
   },
