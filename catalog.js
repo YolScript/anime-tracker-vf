@@ -2205,7 +2205,8 @@ const DEFAULT_ANIME_DATA = [
       }
     ],
     "openingUrl": "https://v.animethemes.moe/OnePunchManS2-OP1-NCBD1080.webm",
-    "netflixUrl": "https://www.netflix.com/title/80117291"
+    "netflixUrl": "https://www.netflix.com/title/80117291",
+    "disneyUrl": "https://www.disneyplus.com/browse/entity-d00ee2ba-ca47-49d8-a543-d88c44c15bbb"
   },
   {
     "id": "franchise-1",
@@ -12708,8 +12709,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [],
     "openingUrl": "https://v.animethemes.moe/HajimeNoIppo-OP1.webm",
-    "unavailable": true,
-    "noVf": true
+    "netflixUrl": "https://www.netflix.com/title/80995578"
   },
   {
     "id": "adn-1017",
