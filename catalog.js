@@ -14566,7 +14566,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "netflixUrl": "https://www.netflix.com/title/80152538",
+    "netflixUrl": null,
     "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.0ab6a7ab-1804-c22a-ec45-a45654c26263"
   },
   {
@@ -24761,7 +24761,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/2aa639bbbb7600222f764a8a11dfc174.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/G24H1N334/the-detective-is-already-dead",
     "adnUrl": null,
-    "episodesTotal": 19,
+    "episodesTotal": 20,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -24792,7 +24792,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Saison 2",
-        "episodesCount": 7
+        "episodesCount": 8
       }
     ]
   },
