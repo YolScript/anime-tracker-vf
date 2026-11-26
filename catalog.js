@@ -5827,7 +5827,7 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 12
       },
       {
-        "name": "OVAs",
+        "name": "Black Butler OVAs",
         "episodesCount": 7
       },
       {
@@ -14566,7 +14566,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringEpisode": null,
     "nextAiringAt": null,
     "seasons": [],
-    "netflixUrl": null,
+    "netflixUrl": "https://www.netflix.com/title/80152538",
     "primeUrl": "https://app.primevideo.com/detail?gti=amzn1.dv.gti.0ab6a7ab-1804-c22a-ec45-a45654c26263"
   },
   {
@@ -27622,7 +27622,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/68bbb0dc0edfe3e8b8fc61db10092b1b.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00383994/magic-knight-rayearth-2026",
     "adnUrl": null,
-    "episodesTotal": 7,
+    "episodesTotal": 8,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -27645,7 +27645,7 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [
       {
         "name": "Saison 1",
-        "episodesCount": 7
+        "episodesCount": 8
       }
     ]
   },
@@ -27920,5 +27920,39 @@ const DEFAULT_ANIME_DATA = [
         "episodesCount": 12
       }
     ]
+  },
+  {
+    "id": "franchise-213457",
+    "titleFr": "Fool Night",
+    "titleOrig": "Fool Night",
+    "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx213457-gN5p1GZjK3zi.jpg",
+    "crunchyrollUrl": null,
+    "adnUrl": null,
+    "episodesTotal": 12,
+    "episodesWatched": 0,
+    "status": "plan-to-watch",
+    "rating": 0,
+    "siteRating": "1.9",
+    "trailerId": "p15JWZsi3Ao",
+    "genres": "Drama, Psychological, Sci-Fi, Thriller",
+    "synopsis": "The earth of the distant future is covered in thick clouds, and the sun no longer shines. Plants wither, and oxygen is thin. To fight extinction, humankind has developed a technology that turns humans into plants, providing a small amount of oxygen. Is this process sustainable? Is it ethical? Toshiro Kamiya must consider these questions as he’s faced with a difficult choice—save his family or save himself.\n\nKamiya is at the end of his rope. His mother is ill, and his job barely pays for her medication, much less food. With few options left, he considers the life-changing process of transfloration. Ready to give his body up for a payday, Kamiya is about to explore the limits of society’s waning humanity.\n\n(Source: VIZ Media)",
+    "cast": "",
+    "airingStatus": "FINISHED",
+    "releaseDate": "26/11/2026",
+    "lastEpisodeDate": "26/11/2026",
+    "rawStartDate": {
+      "year": 2026,
+      "month": 11,
+      "day": 26
+    },
+    "rawEndDate": {
+      "year": 2026,
+      "month": 11,
+      "day": 26
+    },
+    "nextAiringEpisode": null,
+    "nextAiringAt": null,
+    "seasons": [],
+    "netflixUrl": "https://www.netflix.com/title/81991076"
   }
 ];
