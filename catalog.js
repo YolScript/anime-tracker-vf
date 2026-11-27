@@ -23093,7 +23093,7 @@ const DEFAULT_ANIME_DATA = [
     "nextAiringAt": null,
     "seasons": [
       {
-        "name": "Link Click",
+        "name": "Saison 1",
         "episodesCount": 12
       },
       {
@@ -27826,7 +27826,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/c88d7ed27873ff262e1f2808e02f1b99.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00378018/the-exiled-heavy-knight-knows-how-to-game-the-system",
     "adnUrl": null,
-    "episodesTotal": 21,
+    "episodesTotal": 22,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -27849,7 +27849,7 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [
       {
         "name": "Saison 1",
-        "episodesCount": 21
+        "episodesCount": 22
       }
     ]
   },
