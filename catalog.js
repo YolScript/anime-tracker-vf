@@ -4595,7 +4595,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx161645-QLbzHXiYRgV2.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/series/G3KHEVDJ7/the-apothecary-diaries",
     "adnUrl": null,
-    "episodesTotal": 56,
+    "episodesTotal": 57,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -4630,7 +4630,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Les Carnets de l'apothicaire Saison 3",
-        "episodesCount": 8
+        "episodesCount": 9
       }
     ],
     "openingUrl": "https://v.animethemes.moe/KusuriyaNoHitorigoto-OP1-NCBD1080.webm",
@@ -16064,7 +16064,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx177474-oHil1yLWldfl.jpg",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GP5HJ84D2/tougen-anki",
     "adnUrl": null,
-    "episodesTotal": 32,
+    "episodesTotal": 33,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -16095,7 +16095,7 @@ const DEFAULT_ANIME_DATA = [
       },
       {
         "name": "Arc des chutes de Kegon à Nikkô",
-        "episodesCount": 8
+        "episodesCount": 9
       }
     ],
     "netflixUrl": "https://www.netflix.com/title/81969861",
@@ -27588,7 +27588,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/48db2568a6d8fa91c95cb4dfd582157e.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00383999/firefly-wedding",
     "adnUrl": null,
-    "episodesTotal": 7,
+    "episodesTotal": 8,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -27611,7 +27611,7 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [
       {
         "name": "Saison 1",
-        "episodesCount": 7
+        "episodesCount": 8
       }
     ]
   },
@@ -27758,7 +27758,7 @@ const DEFAULT_ANIME_DATA = [
     "imageUrl": "https://www.crunchyroll.com/imgsrv/display/thumbnail/240x360/catalog/crunchyroll/39a7856c1737fecc47552dba64b4c8e2.png",
     "crunchyrollUrl": "https://www.crunchyroll.com/fr/series/GT00384015/the-vermilion-mask",
     "adnUrl": null,
-    "episodesTotal": 7,
+    "episodesTotal": 8,
     "episodesWatched": 0,
     "status": "plan-to-watch",
     "rating": 0,
@@ -27781,7 +27781,7 @@ const DEFAULT_ANIME_DATA = [
     "seasons": [
       {
         "name": "Saison 1",
-        "episodesCount": 7
+        "episodesCount": 8
       }
     ]
   },
